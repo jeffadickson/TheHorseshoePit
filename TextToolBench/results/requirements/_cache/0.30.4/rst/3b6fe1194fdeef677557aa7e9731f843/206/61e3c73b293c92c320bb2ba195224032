@@ -1,3 +1,0 @@
-<div class="document">
-<p>Compare eight documented operations using GNU utilities, idiomatic PowerShell pipelines and PowerShell StreamReader loops. Validate output length and SHA-256 against an independent reference for every run.</p>
-</div>

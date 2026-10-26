@@ -1,3 +1,0 @@
-<div class="document">
-<p>Compare GNU sed, BusyBox sed, uutils/sed and red on six equivalent operations across the existing five corpus sizes. Compare sd only for literal and numeric-regex replacements using non-mutating preview mode. Deduplicate byte-identical GNU binaries. Qualify each corpus cell, use one warmup and seven seeded shuffled sequential repeats, verify every timed output by length and SHA-256, and preserve input hashes. Retain edge/binary compatibility failures separately from passes. Record pinned acquisitions, independent oracle tests, seeded random cases, malformed input, command and Stryker.NET source mutations, line/branch coverage and tooling limitations. Add results to the existing report without combining historical sessions.</p>
-</div>

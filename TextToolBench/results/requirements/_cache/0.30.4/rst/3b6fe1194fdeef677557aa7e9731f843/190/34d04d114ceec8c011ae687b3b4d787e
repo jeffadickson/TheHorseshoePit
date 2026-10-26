@@ -1,3 +1,0 @@
-<div class="document">
-<p>Run sequentially with one warmup and seven measured repeats per cell, seeded random order and process-startup-inclusive wall time. Retain raw measurements and report medians and dispersion.</p>
-</div>

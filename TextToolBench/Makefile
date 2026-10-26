@@ -30,9 +30,18 @@ benchmark: build native data grep-tuned sed
 	$(RUN) -Action benchmark
 report: build
 	$(RUN) -Action report
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Build-Overview.ps1
 requirements:
 	$(RUN) -Action requirements
 all: benchmark report requirements
+
+.PHONY: overview overview-test overview-mutation
+overview:
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Build-Overview.ps1 -Native
+overview-test:
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Build-Overview.ps1 -Mode Test
+overview-mutation:
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Build-Overview.ps1 -Mode Mutation
 
 # The sed extension acquires pinned official releases and keeps timing separate from instrumentation.
 sed:

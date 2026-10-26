@@ -21,6 +21,8 @@
   <ItemGroup>
     <Using Include="NUnit.Framework" />
     <ProjectReference Include="../SedBench.csproj" />
+    <ProjectReference Include="../Overview.csproj" />
+    <EmbeddedResource Include="../results/summary.json" LogicalName="overview-summary.json" />
   </ItemGroup>
 
 </Project>

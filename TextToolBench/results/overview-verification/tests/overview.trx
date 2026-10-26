@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="222087ad-0f62-48fc-859f-6eab76cc03b0" name="jeffd@OPTIPLEX7090 2026-10-26 14:25:02" runUser="OPTIPLEX7090\jeffd" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-26T14:25:02.0877788-07:00" queuing="2026-10-26T14:25:02.0877798-07:00" start="2026-10-26T14:25:00.1836729-07:00" finish="2026-10-26T14:25:03.9727964-07:00" />
+  <TestSettings name="default" id="9996d9d3-9749-4a66-b57f-b02378efc3bf">
+    <Deployment runDeploymentRoot="jeffd_OPTIPLEX7090_2026-10-26_14_25_02" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="39135cd9-4fbd-4755-846d-2edc26b58fb0" testId="ca959b35-f0f4-5341-101d-07ef2be8a859" testName="Examples(&quot;sed-select&quot;,&quot;prince\nPrince\nPrince&quot;,&quot;Prince\nPrince&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000220" startTime="2026-10-26T14:25:02.3469642-07:00" endTime="2026-10-26T14:25:02.3469860-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="39135cd9-4fbd-4755-846d-2edc26b58fb0" />
+    <UnitTestResult executionId="d2749def-69c5-4680-899e-ca8abfd45e3b" testId="248eb92c-b127-2256-6a59-1d8fe14492a6" testName="Examples(&quot;sed-nonblank&quot;,&quot;word&quot;,&quot;word&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000160" startTime="2026-10-26T14:25:02.3469405-07:00" endTime="2026-10-26T14:25:02.3469582-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2749def-69c5-4680-899e-ca8abfd45e3b" />
+    <UnitTestResult executionId="9f74c292-1634-41de-9369-894220d9479b" testId="8fc874d2-a793-cd17-bc55-446cf0937864" testName="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;grep&quot;,&quot;field&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0026050" startTime="2026-10-26T14:25:02.2198321-07:00" endTime="2026-10-26T14:25:02.2224364-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9f74c292-1634-41de-9369-894220d9479b" />
+    <UnitTestResult executionId="1ffe5f93-6cf7-44f2-a8c3-da8f2ad1cdf8" testId="d82f284b-844b-6982-402b-6f42653e9a28" testName="CohortBoundaries(&quot;pipeline&quot;,1048616,&quot;baseline&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000190" startTime="2026-10-26T14:25:01.9838143-07:00" endTime="2026-10-26T14:25:01.9838327-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ffe5f93-6cf7-44f2-a8c3-da8f2ad1cdf8" />
+    <UnitTestResult executionId="0a5ea6f5-8aa5-4e62-96e7-ead7438768bb" testId="76c62caf-1fe6-25a6-4bc6-4f4daec187e8" testName="CohortBoundaries(&quot;rawk-stefan-control&quot;,33554436,&quot;buffer&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000110" startTime="2026-10-26T14:25:01.9839171-07:00" endTime="2026-10-26T14:25:01.9839284-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0a5ea6f5-8aa5-4e62-96e7-ead7438768bb" />
+    <UnitTestResult executionId="e4ba6a93-062c-4f2e-aec4-cd7072be3471" testId="9600bcf4-6cd7-ca46-2eb9-755d1b9256cd" testName="CohortBoundaries(&quot;grep-current&quot;,33554436,&quot;grep&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.2079810" startTime="2026-10-26T14:25:01.7739339-07:00" endTime="2026-10-26T14:25:01.9818327-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e4ba6a93-062c-4f2e-aec4-cd7072be3471" />
+    <UnitTestResult executionId="965b10fb-dbc4-46c7-b346-5db4f6b932fe" testId="04fadc82-f537-eeb2-bbe0-0a67e5fe8581" testName="CohortBoundaries(&quot;awk-current&quot;,33554436,&quot;rawk&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000140" startTime="2026-10-26T14:25:01.9838828-07:00" endTime="2026-10-26T14:25:01.9838968-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="965b10fb-dbc4-46c7-b346-5db4f6b932fe" />
+    <UnitTestResult executionId="8feaf8c2-fb68-46fc-9132-3af360e48f62" testId="befcb5be-081d-b10f-5d00-daf7f2ac6611" testName="HeadBoundary(101,True)" computerName="OPTIPLEX7090" duration="00:00:00.0002540" startTime="2026-10-26T14:25:02.3495245-07:00" endTime="2026-10-26T14:25:02.3497781-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8feaf8c2-fb68-46fc-9132-3af360e48f62" />
+    <UnitTestResult executionId="0e0cf301-bd91-4691-82e7-c76c9b4c1fc0" testId="f3ea1fff-5996-c9d6-f87e-89d15c00618b" testName="HeadBoundary(100,False)" computerName="OPTIPLEX7090" duration="00:00:00.0002780" startTime="2026-10-26T14:25:02.3504262-07:00" endTime="2026-10-26T14:25:02.3507038-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e0cf301-bd91-4691-82e7-c76c9b4c1fc0" />
+    <UnitTestResult executionId="03376448-d39c-4917-90db-6cdd051b076b" testId="24ec076a-c4f2-0275-5990-fdb2dafdf1e3" testName="CohortBoundaries(&quot;reader&quot;,65580,&quot;small&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000110" startTime="2026-10-26T14:25:01.9838378-07:00" endTime="2026-10-26T14:25:01.9838491-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="03376448-d39c-4917-90db-6cdd051b076b" />
+    <UnitTestResult executionId="8b186d1a-5093-43c2-b509-38bf2c31b6a1" testId="f0a0fe57-9828-7a5e-997a-e3223130e4aa" testName="Examples(&quot;sed-nonblank&quot;,&quot; \t&quot;,&quot;&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000190" startTime="2026-10-26T14:25:02.3469135-07:00" endTime="2026-10-26T14:25:02.3469327-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b186d1a-5093-43c2-b509-38bf2c31b6a1" />
+    <UnitTestResult executionId="6f1e78eb-9e40-49ba-8190-6902cd42501a" testId="341ebb51-4f37-12b9-8746-88bdf2f723a4" testName="HeadBoundary(1,False)" computerName="OPTIPLEX7090" duration="00:00:00.0000100" startTime="2026-10-26T14:25:02.3500901-07:00" endTime="2026-10-26T14:25:02.3501003-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f1e78eb-9e40-49ba-8190-6902cd42501a" />
+    <UnitTestResult executionId="59afc17c-792c-49d6-9f99-e75b4bb95102" testId="9989d281-22cd-3e3a-b004-6ad1e1c77b10" testName="HeadBoundary(250,True)" computerName="OPTIPLEX7090" duration="00:00:00.0002830" startTime="2026-10-26T14:25:02.3497856-07:00" endTime="2026-10-26T14:25:02.3500687-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59afc17c-792c-49d6-9f99-e75b4bb95102" />
+    <UnitTestResult executionId="b0ef5273-aec1-4623-9013-de525d5f4670" testId="397a0651-089d-5187-055f-1b4424efdb48" testName="Examples(&quot;sed-select&quot;,&quot;other\n&quot;,&quot;&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000110" startTime="2026-10-26T14:25:02.3469914-07:00" endTime="2026-10-26T14:25:02.3470018-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0ef5273-aec1-4623-9013-de525d5f4670" />
+    <UnitTestResult executionId="6e2a0031-3c44-49e3-b0ec-69960c625463" testId="391ef888-e61c-0712-c88f-46666fc7a0ec" testName="Examples(&quot;sed-literal&quot;,&quot;Prince PrincePrince prince\n&quot;,&quot;PRINCE PRINCEPRINCE prince\n&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.1096390" startTime="2026-10-26T14:25:02.2299525-07:00" endTime="2026-10-26T14:25:02.3395945-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e2a0031-3c44-49e3-b0ec-69960c625463" />
+    <UnitTestResult executionId="d5361f93-c548-4b8d-b57a-dd1f7873f852" testId="d8ea45db-25e3-0d89-97ac-900edefb1f5f" testName="Examples(&quot;sed-regex&quot;,&quot;no digits\n&quot;,&quot;no digits\n&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000780" startTime="2026-10-26T14:25:02.3460728-07:00" endTime="2026-10-26T14:25:02.3461504-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d5361f93-c548-4b8d-b57a-dd1f7873f852" />
+    <UnitTestResult executionId="cfc61546-2de7-4148-b550-8c425cc39e22" testId="8fe077f2-b357-a9de-188a-6aac7b4b7fae" testName="InvalidCellsAreRejected" computerName="OPTIPLEX7090" duration="00:00:00.0017320" startTime="2026-10-26T14:25:02.2063610-07:00" endTime="2026-10-26T14:25:02.2080924-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cfc61546-2de7-4148-b550-8c425cc39e22" />
+    <UnitTestResult executionId="e017646a-d84b-44b9-b164-bd365fa6e834" testId="9b6fbf9f-eb56-3a6b-1ba1-d9b8557681dc" testName="CohortBoundaries(&quot;selectstring&quot;,1071,&quot;small&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000100" startTime="2026-10-26T14:25:01.9838683-07:00" endTime="2026-10-26T14:25:01.9838781-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e017646a-d84b-44b9-b164-bd365fa6e834" />
+    <UnitTestResult executionId="a0474556-d4f6-4222-8721-415fbcf9ba7a" testId="a844fa58-bed2-79d2-a8d3-14abead64631" testName="HeadBoundary(0,True)" computerName="OPTIPLEX7090" duration="00:00:00.0006310" startTime="2026-10-26T14:25:02.3474021-07:00" endTime="2026-10-26T14:25:02.3480326-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0474556-d4f6-4222-8721-415fbcf9ba7a" />
+    <UnitTestResult executionId="7900ad63-df17-42e2-926c-fd638ae80d69" testId="f5651808-d55d-9df6-3a63-6c47173253c5" testName="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;buffer&quot;,&quot;literal&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0038770" startTime="2026-10-26T14:25:02.2249071-07:00" endTime="2026-10-26T14:25:02.2287842-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7900ad63-df17-42e2-926c-fd638ae80d69" />
+    <UnitTestResult executionId="f147532f-4c7d-44c1-b05b-8bc2dd104d04" testId="be597c87-4c0e-9e0f-518a-360021bdb7fe" testName="HeadBoundary(100,True)" computerName="OPTIPLEX7090" duration="00:00:00.0002440" startTime="2026-10-26T14:25:02.3492731-07:00" endTime="2026-10-26T14:25:02.3495173-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f147532f-4c7d-44c1-b05b-8bc2dd104d04" />
+    <UnitTestResult executionId="7b1a67f6-dd6f-4776-afe8-4310e735fdcb" testId="9153c57e-fc52-4136-eabc-8b81266bc35c" testName="CohortBoundaries(&quot;ripgrep&quot;,1071,&quot;small&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000090" startTime="2026-10-26T14:25:01.9837987-07:00" endTime="2026-10-26T14:25:01.9838080-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7b1a67f6-dd6f-4776-afe8-4310e735fdcb" />
+    <UnitTestResult executionId="015e270c-0058-4369-9ee7-cabf7c448fef" testId="8bf18e9c-7541-45cb-afd6-5dadf88a5359" testName="CohortBoundaries(&quot;awk-extra-control&quot;,33554436,&quot;awk&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000090" startTime="2026-10-26T14:25:01.9839023-07:00" endTime="2026-10-26T14:25:01.9839109-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="015e270c-0058-4369-9ee7-cabf7c448fef" />
+    <UnitTestResult executionId="3f695a60-5740-4055-9402-ea07ba63e761" testId="db2f531e-97b6-5d11-d44c-0df4b3c6b103" testName="HeadBoundary(99,True)" computerName="OPTIPLEX7090" duration="00:00:00.0002720" startTime="2026-10-26T14:25:02.3489928-07:00" endTime="2026-10-26T14:25:02.3492644-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f695a60-5740-4055-9402-ea07ba63e761" />
+    <UnitTestResult executionId="a1b1814c-3f84-400a-aa9c-0944ff61028d" testId="c849f4de-4884-0642-7566-497dfadd076b" testName="HeadBoundary(1,True)" computerName="OPTIPLEX7090" duration="00:00:00.0009330" startTime="2026-10-26T14:25:02.3480442-07:00" endTime="2026-10-26T14:25:02.3489771-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a1b1814c-3f84-400a-aa9c-0944ff61028d" />
+    <UnitTestResult executionId="a70bab97-e034-4489-aead-f49e4d31b2ba" testId="a32d7613-df34-838b-eb52-9c3febb2a2a4" testName="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;selectstring&quot;,&quot;words&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0027520" startTime="2026-10-26T14:25:02.2170582-07:00" endTime="2026-10-26T14:25:02.2198097-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a70bab97-e034-4489-aead-f49e4d31b2ba" />
+    <UnitTestResult executionId="90f9e692-bbb6-4cf9-8c1f-518fd0f24643" testId="f6d9888b-47d0-ffd8-758e-151014f626c7" testName="HeadBoundary(250,False)" computerName="OPTIPLEX7090" duration="00:00:00.0003630" startTime="2026-10-26T14:25:02.3509936-07:00" endTime="2026-10-26T14:25:02.3513562-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90f9e692-bbb6-4cf9-8c1f-518fd0f24643" />
+    <UnitTestResult executionId="e43275d5-b753-4321-bf9b-67ec9bfd549d" testId="05fed45e-c030-487a-39d4-d071d704ff51" testName="CohortBoundaries(&quot;ripgrep&quot;,33554436,&quot;grep&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000210" startTime="2026-10-26T14:25:01.9837698-07:00" endTime="2026-10-26T14:25:01.9837911-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e43275d5-b753-4321-bf9b-67ec9bfd549d" />
+    <UnitTestResult executionId="7c9cbb32-a3f9-4d6b-83f2-90cf46ed97bb" testId="0f5d4d18-1573-13ce-059c-78e0c331cb17" testName="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;small&quot;,&quot;field&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0024160" startTime="2026-10-26T14:25:02.2224650-07:00" endTime="2026-10-26T14:25:02.2248809-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c9cbb32-a3f9-4d6b-83f2-90cf46ed97bb" />
+    <UnitTestResult executionId="726b3dee-d3de-4b81-8502-408c1acde04c" testId="92d511e1-12b1-7501-ffac-8a8234a981d5" testName="CorruptedCampaignFailsClosed" computerName="OPTIPLEX7090" duration="00:00:00.0261209" startTime="2026-10-26T14:25:02.0510743-07:00" endTime="2026-10-26T14:25:02.0771959-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="726b3dee-d3de-4b81-8502-408c1acde04c" />
+    <UnitTestResult executionId="e8882e19-fc83-4473-9f27-714bae1f384c" testId="3a79ce0e-ee6e-e19a-a6be-d520541c45e0" testName="GeneratorRejectsMalformedInputsAndWritesDeterministically" computerName="OPTIPLEX7090" duration="00:00:00.1290740" startTime="2026-10-26T14:25:02.0772363-07:00" endTime="2026-10-26T14:25:02.2063133-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8882e19-fc83-4473-9f27-714bae1f384c">
+      <Output>
+        <StdOut>Overview: 9 cohorts, 2989 measured commands, 427 warmups.&#xD;
+Overview: 9 cohorts, 2989 measured commands, 427 warmups.</StdOut>
+        <StdErr>Run from a benchmark checkout.&#xD;
+&#xD;
+Could not find file 'C:\Users\jeffd\AppData\Local\Temp\TextToolBench-overview-614d1dd5d0f84053a4203d26a459ef77\results\summary.json'.&#xD;
+&#xD;
+The JSON value could not be converted to OverviewCell[]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.&#xD;
+&#xD;
+Missing summary data.&#xD;
+&#xD;
+Expected exactly one embedded-data placeholder.</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c6abeba4-d05d-421f-b2af-f6f95833a812" testId="830d8385-45bf-0ce8-0a41-9412062bde3e" testName="HeadBoundary(99,False)" computerName="OPTIPLEX7090" duration="00:00:00.0003150" startTime="2026-10-26T14:25:02.3501052-07:00" endTime="2026-10-26T14:25:02.3504204-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c6abeba4-d05d-421f-b2af-f6f95833a812" />
+    <UnitTestResult executionId="b0740bbe-490b-4b98-8d86-a0dbb067f62a" testId="a72fe0a4-3a95-1aa3-09a5-7e7b74da39dd" testName="SeededByteProperties" computerName="OPTIPLEX7090" duration="00:00:01.3255660" startTime="2026-10-26T14:25:02.3513758-07:00" endTime="2026-10-26T14:25:03.6769869-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0740bbe-490b-4b98-8d86-a0dbb067f62a" />
+    <UnitTestResult executionId="4b85edac-8ec8-4247-9b11-238ee5d6d65a" testId="bb92bed1-18d7-da8c-2d5a-ab3e69476dc4" testName="CohortBoundaries(&quot;sed-uutils&quot;,33554436,&quot;sed&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000090" startTime="2026-10-26T14:25:01.9839328-07:00" endTime="2026-10-26T14:25:01.9839421-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b85edac-8ec8-4247-9b11-238ee5d6d65a" />
+    <UnitTestResult executionId="4e1dd052-11be-4ce4-8880-14583b1dcefd" testId="59944ce7-dcf7-327f-386d-a1dbdd878f9c" testName="Examples(&quot;sed-regex&quot;,&quot;12x0 456\n7&quot;,&quot;#x# #\n#&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0064000" startTime="2026-10-26T14:25:02.3396344-07:00" endTime="2026-10-26T14:25:02.3460339-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4e1dd052-11be-4ce4-8880-14583b1dcefd" />
+    <UnitTestResult executionId="89f9639e-424e-4cfe-87c5-da33a1faba60" testId="0edfcb75-1cb6-d78f-d492-70d95c82b515" testName="Examples(&quot;sed-head&quot;,&quot;&quot;,&quot;&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000140" startTime="2026-10-26T14:25:02.3473481-07:00" endTime="2026-10-26T14:25:02.3473619-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="89f9639e-424e-4cfe-87c5-da33a1faba60" />
+    <UnitTestResult executionId="67e65745-6a70-48dc-8076-e3042d504ed2" testId="be9b1aa5-dc18-4f9e-a2dd-2d21b1730c80" testName="SeededValidSummaries" computerName="OPTIPLEX7090" duration="00:00:00.0059610" startTime="2026-10-26T14:25:02.2081128-07:00" endTime="2026-10-26T14:25:02.2140739-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67e65745-6a70-48dc-8076-e3042d504ed2" />
+    <UnitTestResult executionId="50239ab4-8603-4ffd-b7fb-5c8537cad760" testId="7e8ef1c6-8140-1990-a22d-0dac226747a5" testName="CohortBoundaries(&quot;grep-current&quot;,65580,&quot;small&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0003240" startTime="2026-10-26T14:25:01.9834195-07:00" endTime="2026-10-26T14:25:01.9837436-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50239ab4-8603-4ffd-b7fb-5c8537cad760" />
+    <UnitTestResult executionId="ee3db0b1-eb7e-44c2-ad95-1b5be2b922e4" testId="abefff42-9f4a-6d32-d1ec-feb746e7c054" testName="HeadBoundary(0,False)" computerName="OPTIPLEX7090" duration="00:00:00.0000110" startTime="2026-10-26T14:25:02.3500752-07:00" endTime="2026-10-26T14:25:02.3500857-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee3db0b1-eb7e-44c2-ad95-1b5be2b922e4" />
+    <UnitTestResult executionId="5eca1268-3ea8-488d-9744-bf5e19f3e841" testId="883563cf-1487-2516-c67c-b7c502b16be1" testName="HeadBoundary(101,False)" computerName="OPTIPLEX7090" duration="00:00:00.0002770" startTime="2026-10-26T14:25:02.3507096-07:00" endTime="2026-10-26T14:25:02.3509866-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5eca1268-3ea8-488d-9744-bf5e19f3e841" />
+    <UnitTestResult executionId="609862c2-f458-436f-b0bb-0565a4238fc1" testId="655e668d-86cc-844f-206b-fc31b28a5c09" testName="CompleteCampaignPreservesAllSessions" computerName="OPTIPLEX7090" duration="00:00:00.0654860" startTime="2026-10-26T14:25:01.9855425-07:00" endTime="2026-10-26T14:25:02.0510315-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="609862c2-f458-436f-b0bb-0565a4238fc1" />
+    <UnitTestResult executionId="2d041eb4-61bd-41a0-bec3-8f0d177f7f0e" testId="96deaf8b-a1e8-b7b9-63d6-dc603e5b252a" testName="CohortBoundaries(&quot;selectstring&quot;,1048616,&quot;selectstring&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0000100" startTime="2026-10-26T14:25:01.9838540-07:00" endTime="2026-10-26T14:25:01.9838641-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d041eb4-61bd-41a0-bec3-8f0d177f7f0e" />
+    <UnitTestResult executionId="0fa5298f-2995-40ca-952c-e0ff443e495d" testId="6cf1412b-1e1e-23c0-de1c-abbd102728ed" testName="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;baseline&quot;,&quot;sed-head&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0028910" startTime="2026-10-26T14:25:02.2141513-07:00" endTime="2026-10-26T14:25:02.2170422-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0fa5298f-2995-40ca-952c-e0ff443e495d" />
+    <UnitTestResult executionId="e6b6c986-c339-4532-91cd-2f94c2876b6b" testId="168c41a5-4574-60cb-24b4-d0b34b3c163e" testName="UnknownTaskIsRejected" computerName="OPTIPLEX7090" duration="00:00:00.0007850" startTime="2026-10-26T14:25:03.6770441-07:00" endTime="2026-10-26T14:25:03.6778291-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e6b6c986-c339-4532-91cd-2f94c2876b6b" />
+    <UnitTestResult executionId="4ea4fe2f-d623-4562-a043-704f4c0c02cb" testId="867a793c-43ba-8b55-82eb-23648a24cfee" testName="Examples(&quot;sed-nonblank&quot;,&quot;\n \t\nword\n\r\n&quot;,&quot;word\n\r\n&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0007380" startTime="2026-10-26T14:25:02.3461600-07:00" endTime="2026-10-26T14:25:02.3468977-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4ea4fe2f-d623-4562-a043-704f4c0c02cb" />
+    <UnitTestResult executionId="157031a5-6cd3-4f1a-b4b4-12eb844d9c90" testId="2d0d0999-b9c2-a005-d8f8-c9d067ef1245" testName="Examples(&quot;sed-transliterate&quot;,&quot;aeiou AEIOU y\r\n&quot;,&quot;AEIOU AEIOU y\r\n&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0003310" startTime="2026-10-26T14:25:02.3470066-07:00" endTime="2026-10-26T14:25:02.3473369-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="157031a5-6cd3-4f1a-b4b4-12eb844d9c90" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Examples(&quot;sed-head&quot;,&quot;&quot;,&quot;&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="0edfcb75-1cb6-d78f-d492-70d95c82b515">
+      <Execution id="89f9639e-424e-4cfe-87c5-da33a1faba60" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-head&quot;,&quot;&quot;,&quot;&quot;)" />
+    </UnitTest>
+    <UnitTest name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;baseline&quot;,&quot;sed-head&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="6cf1412b-1e1e-23c0-de1c-abbd102728ed">
+      <Execution id="0fa5298f-2995-40ca-952c-e0ff443e495d" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;baseline&quot;,&quot;sed-head&quot;)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;ripgrep&quot;,33554436,&quot;grep&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="05fed45e-c030-487a-39d4-d071d704ff51">
+      <Execution id="e43275d5-b753-4321-bf9b-67ec9bfd549d" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;ripgrep&quot;,33554436,&quot;grep&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(100,False)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="f3ea1fff-5996-c9d6-f87e-89d15c00618b">
+      <Execution id="0e0cf301-bd91-4691-82e7-c76c9b4c1fc0" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(100,False)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-select&quot;,&quot;prince\nPrince\nPrince&quot;,&quot;Prince\nPrince&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="ca959b35-f0f4-5341-101d-07ef2be8a859">
+      <Execution id="39135cd9-4fbd-4755-846d-2edc26b58fb0" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-select&quot;,&quot;prince\nPrince\nPrince&quot;,&quot;Prince\nPrince&quot;)" />
+    </UnitTest>
+    <UnitTest name="UnknownTaskIsRejected" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="168c41a5-4574-60cb-24b4-d0b34b3c163e">
+      <Execution id="e6b6c986-c339-4532-91cd-2f94c2876b6b" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="UnknownTaskIsRejected" />
+    </UnitTest>
+    <UnitTest name="GeneratorRejectsMalformedInputsAndWritesDeterministically" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="3a79ce0e-ee6e-e19a-a6be-d520541c45e0">
+      <Execution id="e8882e19-fc83-4473-9f27-714bae1f384c" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="GeneratorRejectsMalformedInputsAndWritesDeterministically" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;rawk-stefan-control&quot;,33554436,&quot;buffer&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="76c62caf-1fe6-25a6-4bc6-4f4daec187e8">
+      <Execution id="0a5ea6f5-8aa5-4e62-96e7-ead7438768bb" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;rawk-stefan-control&quot;,33554436,&quot;buffer&quot;)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-nonblank&quot;,&quot; \t&quot;,&quot;&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="f0a0fe57-9828-7a5e-997a-e3223130e4aa">
+      <Execution id="8b186d1a-5093-43c2-b509-38bf2c31b6a1" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-nonblank&quot;,&quot; \t&quot;,&quot;&quot;)" />
+    </UnitTest>
+    <UnitTest name="SeededByteProperties" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="a72fe0a4-3a95-1aa3-09a5-7e7b74da39dd">
+      <Execution id="b0740bbe-490b-4b98-8d86-a0dbb067f62a" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="SeededByteProperties" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-regex&quot;,&quot;12x0 456\n7&quot;,&quot;#x# #\n#&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="59944ce7-dcf7-327f-386d-a1dbdd878f9c">
+      <Execution id="4e1dd052-11be-4ce4-8880-14583b1dcefd" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-regex&quot;,&quot;12x0 456\n7&quot;,&quot;#x# #\n#&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(101,True)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="befcb5be-081d-b10f-5d00-daf7f2ac6611">
+      <Execution id="8feaf8c2-fb68-46fc-9132-3af360e48f62" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(101,True)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-select&quot;,&quot;other\n&quot;,&quot;&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="397a0651-089d-5187-055f-1b4424efdb48">
+      <Execution id="b0ef5273-aec1-4623-9013-de525d5f4670" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-select&quot;,&quot;other\n&quot;,&quot;&quot;)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-nonblank&quot;,&quot;word&quot;,&quot;word&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="248eb92c-b127-2256-6a59-1d8fe14492a6">
+      <Execution id="d2749def-69c5-4680-899e-ca8abfd45e3b" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-nonblank&quot;,&quot;word&quot;,&quot;word&quot;)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;pipeline&quot;,1048616,&quot;baseline&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="d82f284b-844b-6982-402b-6f42653e9a28">
+      <Execution id="1ffe5f93-6cf7-44f2-a8c3-da8f2ad1cdf8" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;pipeline&quot;,1048616,&quot;baseline&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(101,False)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="883563cf-1487-2516-c67c-b7c502b16be1">
+      <Execution id="5eca1268-3ea8-488d-9744-bf5e19f3e841" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(101,False)" />
+    </UnitTest>
+    <UnitTest name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;buffer&quot;,&quot;literal&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="f5651808-d55d-9df6-3a63-6c47173253c5">
+      <Execution id="7900ad63-df17-42e2-926c-fd638ae80d69" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;buffer&quot;,&quot;literal&quot;)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;grep-current&quot;,65580,&quot;small&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="7e8ef1c6-8140-1990-a22d-0dac226747a5">
+      <Execution id="50239ab4-8603-4ffd-b7fb-5c8537cad760" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;grep-current&quot;,65580,&quot;small&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(250,True)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="9989d281-22cd-3e3a-b004-6ad1e1c77b10">
+      <Execution id="59afc17c-792c-49d6-9f99-e75b4bb95102" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(250,True)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-transliterate&quot;,&quot;aeiou AEIOU y\r\n&quot;,&quot;AEIOU AEIOU y\r\n&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="2d0d0999-b9c2-a005-d8f8-c9d067ef1245">
+      <Execution id="157031a5-6cd3-4f1a-b4b4-12eb844d9c90" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-transliterate&quot;,&quot;aeiou AEIOU y\r\n&quot;,&quot;AEIOU AEIOU y\r\n&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(1,False)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="341ebb51-4f37-12b9-8746-88bdf2f723a4">
+      <Execution id="6f1e78eb-9e40-49ba-8190-6902cd42501a" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(1,False)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;awk-current&quot;,33554436,&quot;rawk&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="04fadc82-f537-eeb2-bbe0-0a67e5fe8581">
+      <Execution id="965b10fb-dbc4-46c7-b346-5db4f6b932fe" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;awk-current&quot;,33554436,&quot;rawk&quot;)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;selectstring&quot;,1048616,&quot;selectstring&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="96deaf8b-a1e8-b7b9-63d6-dc603e5b252a">
+      <Execution id="2d041eb4-61bd-41a0-bec3-8f0d177f7f0e" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;selectstring&quot;,1048616,&quot;selectstring&quot;)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;awk-extra-control&quot;,33554436,&quot;awk&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="8bf18e9c-7541-45cb-afd6-5dadf88a5359">
+      <Execution id="015e270c-0058-4369-9ee7-cabf7c448fef" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;awk-extra-control&quot;,33554436,&quot;awk&quot;)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;ripgrep&quot;,1071,&quot;small&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="9153c57e-fc52-4136-eabc-8b81266bc35c">
+      <Execution id="7b1a67f6-dd6f-4776-afe8-4310e735fdcb" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;ripgrep&quot;,1071,&quot;small&quot;)" />
+    </UnitTest>
+    <UnitTest name="InvalidCellsAreRejected" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="8fe077f2-b357-a9de-188a-6aac7b4b7fae">
+      <Execution id="cfc61546-2de7-4148-b550-8c425cc39e22" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="InvalidCellsAreRejected" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;reader&quot;,65580,&quot;small&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="24ec076a-c4f2-0275-5990-fdb2dafdf1e3">
+      <Execution id="03376448-d39c-4917-90db-6cdd051b076b" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;reader&quot;,65580,&quot;small&quot;)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-regex&quot;,&quot;no digits\n&quot;,&quot;no digits\n&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="d8ea45db-25e3-0d89-97ac-900edefb1f5f">
+      <Execution id="d5361f93-c548-4b8d-b57a-dd1f7873f852" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-regex&quot;,&quot;no digits\n&quot;,&quot;no digits\n&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(1,True)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="c849f4de-4884-0642-7566-497dfadd076b">
+      <Execution id="a1b1814c-3f84-400a-aa9c-0944ff61028d" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(1,True)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;selectstring&quot;,1071,&quot;small&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="9b6fbf9f-eb56-3a6b-1ba1-d9b8557681dc">
+      <Execution id="e017646a-d84b-44b9-b164-bd365fa6e834" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;selectstring&quot;,1071,&quot;small&quot;)" />
+    </UnitTest>
+    <UnitTest name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;selectstring&quot;,&quot;words&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="a32d7613-df34-838b-eb52-9c3febb2a2a4">
+      <Execution id="a70bab97-e034-4489-aead-f49e4d31b2ba" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;selectstring&quot;,&quot;words&quot;)" />
+    </UnitTest>
+    <UnitTest name="CompleteCampaignPreservesAllSessions" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="655e668d-86cc-844f-206b-fc31b28a5c09">
+      <Execution id="609862c2-f458-436f-b0bb-0565a4238fc1" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CompleteCampaignPreservesAllSessions" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(0,False)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="abefff42-9f4a-6d32-d1ec-feb746e7c054">
+      <Execution id="ee3db0b1-eb7e-44c2-ad95-1b5be2b922e4" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(0,False)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;sed-uutils&quot;,33554436,&quot;sed&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="bb92bed1-18d7-da8c-2d5a-ab3e69476dc4">
+      <Execution id="4b85edac-8ec8-4247-9b11-238ee5d6d65a" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;sed-uutils&quot;,33554436,&quot;sed&quot;)" />
+    </UnitTest>
+    <UnitTest name="CohortBoundaries(&quot;grep-current&quot;,33554436,&quot;grep&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="9600bcf4-6cd7-ca46-2eb9-755d1b9256cd">
+      <Execution id="e4ba6a93-062c-4f2e-aec4-cd7072be3471" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CohortBoundaries(&quot;grep-current&quot;,33554436,&quot;grep&quot;)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-nonblank&quot;,&quot;\n \t\nword\n\r\n&quot;,&quot;word\n\r\n&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="867a793c-43ba-8b55-82eb-23648a24cfee">
+      <Execution id="4ea4fe2f-d623-4562-a043-704f4c0c02cb" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-nonblank&quot;,&quot;\n \t\nword\n\r\n&quot;,&quot;word\n\r\n&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(100,True)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="be597c87-4c0e-9e0f-518a-360021bdb7fe">
+      <Execution id="f147532f-4c7d-44c1-b05b-8bc2dd104d04" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(100,True)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(99,True)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="db2f531e-97b6-5d11-d44c-0df4b3c6b103">
+      <Execution id="3f695a60-5740-4055-9402-ea07ba63e761" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(99,True)" />
+    </UnitTest>
+    <UnitTest name="Examples(&quot;sed-literal&quot;,&quot;Prince PrincePrince prince\n&quot;,&quot;PRINCE PRINCEPRINCE prince\n&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="391ef888-e61c-0712-c88f-46666fc7a0ec">
+      <Execution id="6e2a0031-3c44-49e3-b0ec-69960c625463" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="Examples(&quot;sed-literal&quot;,&quot;Prince PrincePrince prince\n&quot;,&quot;PRINCE PRINCEPRINCE prince\n&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(0,True)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="a844fa58-bed2-79d2-a8d3-14abead64631">
+      <Execution id="a0474556-d4f6-4222-8721-415fbcf9ba7a" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(0,True)" />
+    </UnitTest>
+    <UnitTest name="SeededValidSummaries" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="be9b1aa5-dc18-4f9e-a2dd-2d21b1730c80">
+      <Execution id="67e65745-6a70-48dc-8076-e3042d504ed2" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="SeededValidSummaries" />
+    </UnitTest>
+    <UnitTest name="CorruptedCampaignFailsClosed" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="92d511e1-12b1-7501-ffac-8a8234a981d5">
+      <Execution id="726b3dee-d3de-4b81-8502-408c1acde04c" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="CorruptedCampaignFailsClosed" />
+    </UnitTest>
+    <UnitTest name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;grep&quot;,&quot;field&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="8fc874d2-a793-cd17-bc55-446cf0937864">
+      <Execution id="9f74c292-1634-41de-9369-894220d9479b" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;grep&quot;,&quot;field&quot;)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(99,False)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="830d8385-45bf-0ce8-0a41-9412062bde3e">
+      <Execution id="c6abeba4-d05d-421f-b2af-f6f95833a812" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(99,False)" />
+    </UnitTest>
+    <UnitTest name="HeadBoundary(250,False)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="f6d9888b-47d0-ffd8-758e-151014f626c7">
+      <Execution id="90f9e692-bbb6-4cf9-8c1f-518fd0f24643" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.Tests" name="HeadBoundary(250,False)" />
+    </UnitTest>
+    <UnitTest name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;small&quot;,&quot;field&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\sedbench.tests\bin\debug\net10.0\sedbench.tests.dll" id="0f5d4d18-1573-13ce-059c-78e0c331cb17">
+      <Execution id="7c9cbb32-a3f9-4d6b-83f2-90cf46ed97bb" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="SedBench.Tests.OverviewTests" name="WrongOperationCannotMasqueradeAsACompleteCohort(&quot;small&quot;,&quot;field&quot;)" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ca959b35-f0f4-5341-101d-07ef2be8a859" executionId="39135cd9-4fbd-4755-846d-2edc26b58fb0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="248eb92c-b127-2256-6a59-1d8fe14492a6" executionId="d2749def-69c5-4680-899e-ca8abfd45e3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8fc874d2-a793-cd17-bc55-446cf0937864" executionId="9f74c292-1634-41de-9369-894220d9479b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d82f284b-844b-6982-402b-6f42653e9a28" executionId="1ffe5f93-6cf7-44f2-a8c3-da8f2ad1cdf8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="76c62caf-1fe6-25a6-4bc6-4f4daec187e8" executionId="0a5ea6f5-8aa5-4e62-96e7-ead7438768bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9600bcf4-6cd7-ca46-2eb9-755d1b9256cd" executionId="e4ba6a93-062c-4f2e-aec4-cd7072be3471" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04fadc82-f537-eeb2-bbe0-0a67e5fe8581" executionId="965b10fb-dbc4-46c7-b346-5db4f6b932fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="befcb5be-081d-b10f-5d00-daf7f2ac6611" executionId="8feaf8c2-fb68-46fc-9132-3af360e48f62" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f3ea1fff-5996-c9d6-f87e-89d15c00618b" executionId="0e0cf301-bd91-4691-82e7-c76c9b4c1fc0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="24ec076a-c4f2-0275-5990-fdb2dafdf1e3" executionId="03376448-d39c-4917-90db-6cdd051b076b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f0a0fe57-9828-7a5e-997a-e3223130e4aa" executionId="8b186d1a-5093-43c2-b509-38bf2c31b6a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="341ebb51-4f37-12b9-8746-88bdf2f723a4" executionId="6f1e78eb-9e40-49ba-8190-6902cd42501a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9989d281-22cd-3e3a-b004-6ad1e1c77b10" executionId="59afc17c-792c-49d6-9f99-e75b4bb95102" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="397a0651-089d-5187-055f-1b4424efdb48" executionId="b0ef5273-aec1-4623-9013-de525d5f4670" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="391ef888-e61c-0712-c88f-46666fc7a0ec" executionId="6e2a0031-3c44-49e3-b0ec-69960c625463" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d8ea45db-25e3-0d89-97ac-900edefb1f5f" executionId="d5361f93-c548-4b8d-b57a-dd1f7873f852" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8fe077f2-b357-a9de-188a-6aac7b4b7fae" executionId="cfc61546-2de7-4148-b550-8c425cc39e22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9b6fbf9f-eb56-3a6b-1ba1-d9b8557681dc" executionId="e017646a-d84b-44b9-b164-bd365fa6e834" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a844fa58-bed2-79d2-a8d3-14abead64631" executionId="a0474556-d4f6-4222-8721-415fbcf9ba7a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f5651808-d55d-9df6-3a63-6c47173253c5" executionId="7900ad63-df17-42e2-926c-fd638ae80d69" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be597c87-4c0e-9e0f-518a-360021bdb7fe" executionId="f147532f-4c7d-44c1-b05b-8bc2dd104d04" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9153c57e-fc52-4136-eabc-8b81266bc35c" executionId="7b1a67f6-dd6f-4776-afe8-4310e735fdcb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8bf18e9c-7541-45cb-afd6-5dadf88a5359" executionId="015e270c-0058-4369-9ee7-cabf7c448fef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="db2f531e-97b6-5d11-d44c-0df4b3c6b103" executionId="3f695a60-5740-4055-9402-ea07ba63e761" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c849f4de-4884-0642-7566-497dfadd076b" executionId="a1b1814c-3f84-400a-aa9c-0944ff61028d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a32d7613-df34-838b-eb52-9c3febb2a2a4" executionId="a70bab97-e034-4489-aead-f49e4d31b2ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f6d9888b-47d0-ffd8-758e-151014f626c7" executionId="90f9e692-bbb6-4cf9-8c1f-518fd0f24643" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="05fed45e-c030-487a-39d4-d071d704ff51" executionId="e43275d5-b753-4321-bf9b-67ec9bfd549d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f5d4d18-1573-13ce-059c-78e0c331cb17" executionId="7c9cbb32-a3f9-4d6b-83f2-90cf46ed97bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92d511e1-12b1-7501-ffac-8a8234a981d5" executionId="726b3dee-d3de-4b81-8502-408c1acde04c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a79ce0e-ee6e-e19a-a6be-d520541c45e0" executionId="e8882e19-fc83-4473-9f27-714bae1f384c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="830d8385-45bf-0ce8-0a41-9412062bde3e" executionId="c6abeba4-d05d-421f-b2af-f6f95833a812" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a72fe0a4-3a95-1aa3-09a5-7e7b74da39dd" executionId="b0740bbe-490b-4b98-8d86-a0dbb067f62a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb92bed1-18d7-da8c-2d5a-ab3e69476dc4" executionId="4b85edac-8ec8-4247-9b11-238ee5d6d65a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="59944ce7-dcf7-327f-386d-a1dbdd878f9c" executionId="4e1dd052-11be-4ce4-8880-14583b1dcefd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0edfcb75-1cb6-d78f-d492-70d95c82b515" executionId="89f9639e-424e-4cfe-87c5-da33a1faba60" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be9b1aa5-dc18-4f9e-a2dd-2d21b1730c80" executionId="67e65745-6a70-48dc-8076-e3042d504ed2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e8ef1c6-8140-1990-a22d-0dac226747a5" executionId="50239ab4-8603-4ffd-b7fb-5c8537cad760" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="abefff42-9f4a-6d32-d1ec-feb746e7c054" executionId="ee3db0b1-eb7e-44c2-ad95-1b5be2b922e4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="883563cf-1487-2516-c67c-b7c502b16be1" executionId="5eca1268-3ea8-488d-9744-bf5e19f3e841" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="655e668d-86cc-844f-206b-fc31b28a5c09" executionId="609862c2-f458-436f-b0bb-0565a4238fc1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="96deaf8b-a1e8-b7b9-63d6-dc603e5b252a" executionId="2d041eb4-61bd-41a0-bec3-8f0d177f7f0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6cf1412b-1e1e-23c0-de1c-abbd102728ed" executionId="0fa5298f-2995-40ca-952c-e0ff443e495d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="168c41a5-4574-60cb-24b4-d0b34b3c163e" executionId="e6b6c986-c339-4532-91cd-2f94c2876b6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="867a793c-43ba-8b55-82eb-23648a24cfee" executionId="4ea4fe2f-d623-4562-a043-704f4c0c02cb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d0d0999-b9c2-a005-d8f8-c9d067ef1245" executionId="157031a5-6cd3-4f1a-b4b4-12eb844d9c90" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="46" executed="46" passed="46" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 5.0.0.0: Test execution started&#xD;
+Running all tests in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\SedBench.Tests\bin\Debug\net10.0\SedBench.Tests.dll&#xD;
+   NUnit3TestExecutor discovered 46 of 46 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Overview: 9 cohorts, 2989 measured commands, 427 warmups.&#xD;
+Overview: 9 cohorts, 2989 measured commands, 427 warmups.&#xD;
+&#xD;
+NUnit Adapter 5.0.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T14:25:02.0932228-07:00">
+        <Text>Run from a benchmark checkout.</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T14:25:02.0935067-07:00">
+        <Text>Could not find file 'C:\Users\jeffd\AppData\Local\Temp\TextToolBench-overview-614d1dd5d0f84053a4203d26a459ef77\results\summary.json'.</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T14:25:02.0972080-07:00">
+        <Text>The JSON value could not be converted to OverviewCell[]. Path: $ | LineNumber: 0 | BytePositionInLine: 1.</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T14:25:02.0978366-07:00">
+        <Text>Missing summary data.</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T14:25:02.1190606-07:00">
+        <Text>Expected exactly one embedded-data placeholder.</Text>
+      </RunInfo>
+    </RunInfos>
+    <CollectorDataEntries>
+      <Collector agentName="OPTIPLEX7090" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="OPTIPLEX7090\coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

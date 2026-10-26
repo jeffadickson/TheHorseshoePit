@@ -12,3 +12,4 @@
 /results/awk-tuned/user-*
 /results/frawk-bug/email-draft-metadata.json
 /results/sed/acquisition-tests/
+/results/requirements/_cache/

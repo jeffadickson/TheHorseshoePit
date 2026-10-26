@@ -1,3 +1,0 @@
-<div class="document">
-<p>Build stefanalfbo/rawk and quinnjr/rawk (awk-rs) from unmodified pinned commits in release mode with locked dependencies. Compare identical field extraction, word count and line count programs against contemporaneous GNU awk at all five existing file sizes, with sequential interleaved order, one warmup and seven measured repetitions. Verify each output against an independent reference; retain compiler, source and executable provenance, bounded fuzz, malformed-input, negative, mutation and coverage evidence.</p>
-</div>

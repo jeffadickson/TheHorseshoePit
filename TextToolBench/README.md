@@ -1,5 +1,7 @@
 # Text-tool benchmark results
 
+[Open the experiment overview](results/overview.html) for the methodology, key findings, cohort-aware interactive charts and verification limitations.
+
 2989 measured runs plus 427 warmups: original suites 1260; mawk/frawk interpreter/fresh GNU awk 315; controlled Rust buffering experiment 84; same-source GNU grep build-flags experiment 420; sed comparison 910. All timed outputs verified by length and SHA-256. Profiles and bug probes are separate diagnostic evidence, not extra benchmark samples.
 
 ## Sed implementations across five sizes

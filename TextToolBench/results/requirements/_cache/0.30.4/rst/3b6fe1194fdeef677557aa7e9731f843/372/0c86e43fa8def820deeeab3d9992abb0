@@ -1,3 +1,0 @@
-<div class="document">
-<p>Install BurntSushi.ripgrep.MSVC with winget. Compare four equivalent search operations against contemporaneous GNU grep, interleaving sequential runs across all three existing inputs with one warmup and seven measured repetitions. Record the installed executable version, path and SHA-256, verify outputs, and retain seeded fuzz, negative, mutation and coverage evidence.</p>
-</div>

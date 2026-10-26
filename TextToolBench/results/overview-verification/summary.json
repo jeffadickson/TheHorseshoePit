@@ -1,0 +1,64 @@
+{
+  "VisualPreview": "Not performed: browser URL policy rejected file: URLs",
+  "RandomSeed": 20261026,
+  "RandomCases": 500,
+  "OverviewTests": 22,
+  "NativeAot": "Windows x64 Native AOT built and run; managed/native HTML hashes match",
+  "Module": {
+    "Scope": "Includes DTO/source-generated serialization code",
+    "Lines": 87.54,
+    "Branches": 84.41
+  },
+  "UnitTests": 46,
+  "Classes": [
+    {
+      "Class": "Overview",
+      "Lines": 100.0,
+      "Branches": 90.0
+    },
+    {
+      "Class": "OverviewModel",
+      "Lines": 98.38,
+      "Branches": 93.44
+    }
+  ],
+  "JavaScript": {
+    "Branches": 93.75,
+    "Tests": 4,
+    "Functions": 100,
+    "CommandMutantsKilled": 2,
+    "Scope": "Non-rendering DOM tests; no browser or network",
+    "Lines": 100,
+    "Runtime": "Node 24.19.0",
+    "DOM": "jsdom 30.1.3",
+    "Views": 134
+  },
+  "Stryker": {
+    "Mutants": [
+      {
+        "Count": 16,
+        "Status": "CompileError"
+      },
+      {
+        "Count": 35,
+        "Status": "Ignored"
+      },
+      {
+        "Count": 184,
+        "Status": "Killed"
+      },
+      {
+        "Count": 1,
+        "Status": "NoCoverage"
+      },
+      {
+        "Count": 30,
+        "Status": "Survived"
+      }
+    ],
+    "NotProof": "Survivors retained; no claim that all are equivalent",
+    "Version": "5.0.0",
+    "Score": 85.58,
+    "Scope": "OverviewModel.cs; 46-test baseline; prose/order/defensive guards included"
+  }
+}

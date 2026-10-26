@@ -10,5 +10,21 @@ Reacquisition requires network access. Run benchmark suites sequentially and kee
 
 The tuned awk/grep user installation is a separate experiment: see [its installation and rollback evidence](results/awk-tuned/README.md). The frawk fix is also separate from the original executable used in historical measurements. No successful Windows frawk JIT timings are claimed.
 
-A clean-machine make all bootstrap has not been exercised end to end. The recorded measurement and verification campaigns ran on this Windows host. The MSYS2 base archive is pinned, but subsequent pacman packages may advance; regenerated compiler/runtime metadata must identify any new run rather than inheriting the historical labels.
+## Offline HTML overview
+
+Open `results/overview.html` for the narrative overview and interactive cohort-aware charts. All 427 summaries are embedded; there are no external scripts, fonts or runtime data requests. Relative evidence links resolve inside the checkout.
+
+From the project root, check that the scripts directory exists, then rebuild:
+
+```powershell
+$project=(Get-Location).Path
+if (!(Test-Path -LiteralPath (Join-Path $project 'scripts') -PathType Container)) { throw 'Run from the checkout root' }
+& (Join-Path $project 'scripts/Build-Overview.ps1') -Native
+```
+
+`-Native` builds and runs a Windows x64 Native AOT helper using .NET 10 and the C++ build tools. Omit it for a managed build. The two implementations were checked for byte-identical HTML output. `make overview` selects the native build; `make report` also regenerates the overview after the detailed tables. `make overview-test` runs the test suite, and `make overview-mutation` selects the dedicated Stryker configuration.
+
+Optional non-rendering interaction tests require Node.js compatible with jsdom 30.1.3 (the tested runtime is Node 24.19.0). Install `scripts/overview-dom-package.json` into a local `tools/overview-dom-tests` directory with the retained `scripts/overview-dom-lock.yaml` as its pnpm lockfile, then run `scripts/Test-OverviewDom.cjs` from the project root using Node's test runner. jsdom is a development-only DOM implementation; it is not a browser or a renderer. The generator and final HTML do not need Node. See `results/overview-verification/README.md` for exact verification scope and the visual-preview limitation.
+
+A clean-machine make all bootstrap has not been exercised end to end. The retained campaigns ran on this Windows host. The MSYS2 base is pinned but later pacman packages may advance; record actual compiler/runtime metadata for any new run.
 

@@ -31,6 +31,7 @@ using(var csv=new StreamWriter("results/summary.csv")) {
     foreach(var s in summaries) csv.WriteLine(FormattableString.Invariant($"{s.Task},{s.Engine},{s.InputBytes},{s.N},{s.Median:F3},{s.Min:F3},{s.Max:F3},{s.Q1:F3},{s.Q3:F3},{Rate(s,"F3")}"));
 }
 var md=new StringBuilder("# Text-tool benchmark results\n\n");
+md.AppendLine("[Open the experiment overview](results/overview.html) for the methodology, key findings, cohort-aware interactive charts and verification limitations.\n");
 md.AppendLine($"{rows.Length} measured runs plus {expectedWarmups} warmups: original suites 1260; mawk/frawk interpreter/fresh GNU awk 315; controlled Rust buffering experiment 84; same-source GNU grep build-flags experiment 420; sed comparison {sedCells*7}. All timed outputs verified by length and SHA-256. Profiles and bug probes are separate diagnostic evidence, not extra benchmark samples.\n");
 md.AppendLine("## Sed implementations across five sizes\n\nGNU sed, BusyBox sed, uutils/sed and red run six workloads; sd runs the two replacements only. Git/MSYS2 sed binaries are byte-identical and are counted once. These are official Windows distributions, not a controlled compiler comparison. [Sed methods, provenance, compatibility and verification](results/sed/README.md). Median milliseconds; unsupported or rejected cells are shown as —.\n\n| Input bytes | Workload | GNU sed | BusyBox | uutils/sed | red | sd |\n|---:|---|---:|---:|---:|---:|---:|");
 foreach(var group in summaries.Where(s=>s.Task.StartsWith("sed-",StringComparison.Ordinal)).GroupBy(s=>(s.InputBytes,s.Task))) {
@@ -159,6 +160,7 @@ sedHtml.Append("</table><p>Median milliseconds. Head reads only through record 1
 html.Replace("2079 measured invocations • 297 warmups",$"{rows.Length} measured invocations • {expectedWarmups} warmups");
 html.Replace("<h2>New: ripgrep",sedHtml+"<h2>New: ripgrep");
 html.Replace(".bar{",".sed-gnu{background:#34d399}.sed-busybox{background:#fbbf24}.sed-uutils{background:#c084fc}.sed-red{background:#f87171}.sd{background:#60a5fa}.bar{");
+html.Replace("<h1>ripgrep, GNU text tools and PowerShell</h1>","<h1>ripgrep, GNU text tools and PowerShell</h1><p><a href='overview.html'>Open the experiment overview: methodology, findings and interactive comparisons →</a></p>");
 File.WriteAllText("results/report.html",html.ToString());
 Console.WriteLine(md.ToString());
 

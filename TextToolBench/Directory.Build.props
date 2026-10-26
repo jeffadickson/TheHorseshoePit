@@ -1,0 +1,7 @@
+<Project>
+  <!-- Overview is referenced alongside SedBench in the tests. Isolate its generated
+       assembly/apphost and restore state so independent project builds cannot race. -->
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Overview'">
+    <BaseIntermediateOutputPath>obj/Overview/</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>
