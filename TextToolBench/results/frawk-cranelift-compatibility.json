@@ -1,0 +1,38 @@
+[
+  {
+    "Task": "field",
+    "Engine": "frawk-cranelift",
+    "InputBytes": 1071,
+    "Round": -3,
+    "Milliseconds": 127.4473,
+    "OutputBytes": 0,
+    "Sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "CpuMilliseconds": 46.875,
+    "ExitCode": 101,
+    "Error": "\nthread \u0027main\u0027 (44748) panicked at src\\codegen\\clif.rs:934:44:\nno entry found for key\nnote: run with \u0060RUST_BACKTRACE=1\u0060 environment variable to display a backtrace\n"
+  },
+  {
+    "Task": "words",
+    "Engine": "frawk-cranelift",
+    "InputBytes": 1071,
+    "Round": -3,
+    "Milliseconds": 71.632,
+    "OutputBytes": 0,
+    "Sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "CpuMilliseconds": 31.25,
+    "ExitCode": 101,
+    "Error": "\nthread \u0027main\u0027 (17512) panicked at src\\codegen\\clif.rs:934:44:\nno entry found for key\nnote: run with \u0060RUST_BACKTRACE=1\u0060 environment variable to display a backtrace\n"
+  },
+  {
+    "Task": "lines",
+    "Engine": "frawk-cranelift",
+    "InputBytes": 1071,
+    "Round": -3,
+    "Milliseconds": 172.5846,
+    "OutputBytes": 0,
+    "Sha256": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+    "CpuMilliseconds": 31.25,
+    "ExitCode": 101,
+    "Error": "\nthread \u0027main\u0027 (45920) panicked at src\\codegen\\clif.rs:934:44:\nno entry found for key\nnote: run with \u0060RUST_BACKTRACE=1\u0060 environment variable to display a backtrace\n"
+  }
+]

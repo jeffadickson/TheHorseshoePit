@@ -1,0 +1,1 @@
+-O3 -march=native -mtune=native -ftree-vectorize -pipe -fopt-info-vec-all=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/vectorization.log

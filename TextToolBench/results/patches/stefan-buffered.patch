@@ -1,0 +1,25 @@
+diff --git a/tools/stefanalfbo-rawk/crates/rawk-cli/src/main.rs b/tools/variants/stefan-buffered/crates/rawk-cli/src/main.rs
+index 477acb2..6dfbb82 100644
+--- a/tools/stefanalfbo-rawk/crates/rawk-cli/src/main.rs
++++ b/tools/variants/stefan-buffered/crates/rawk-cli/src/main.rs
+@@ -1,4 +1,5 @@
+ use std::{io, path};
++use std::io::Write;
+ 
+ use clap::{CommandFactory, Parser};
+ use rawk_core::awk::Awk;
+@@ -67,9 +68,13 @@ fn execute(script: &str, path: &path::Path, field_separator: Option<String>) ->
+     let filename = display_filename(path);
+     let (output_lines, runtime_error) = awk.run(input_lines, Some(filename), field_separator);
+ 
++    // Buffer redirected output to avoid a Windows write/console check per record.
++    let stdout = io::stdout();
++    let mut output = io::BufWriter::with_capacity(64 * 1024, stdout.lock());
+     for line in output_lines {
+-        println!("{}", line);
++        writeln!(output, "{}", line)?;
+     }
++    output.flush()?;
+ 
+     if let Some(err) = runtime_error {
+         eprintln!("rawk: {err}");

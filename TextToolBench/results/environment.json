@@ -1,0 +1,27 @@
+{
+  "Seed": 20261026,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Runtime": "10.0.14",
+  "OS": "Microsoft Windows NT 10.0.26200.0",
+  "LogicalProcessors": 12,
+  "SourceSha256": "2D5BB2AD5F422765E714617E21FA31BBAF8958AA79682C86FCA6660FCC5D1B2B",
+  "Utc": "2026-10-26T15:15:23.8365084Z",
+  "Inputs": [
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\1MiB.txt",
+      "Bytes": 1048616,
+      "Sha256": "907674E1D2F1B2736F44F94A3A514498D00EA2496FB98CF2E923777D3A3C3167"
+    },
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\8MiB.txt",
+      "Bytes": 8388671,
+      "Sha256": "162DC66E63607C90AB15C740F7801AEB210B9EFA24318CECC43C95700C20AF02"
+    },
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\32MiB.txt",
+      "Bytes": 33554436,
+      "Sha256": "22E722D4DDB1F74CD43F1AAB654B9571B2E2BD5FC3A9E6F3E2CB09D57C47A1B3"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "Processor": {
+    "Name": "Intel(R) Core(TM) i5-10505 CPU @ 3.20GHz",
+    "NumberOfCores": 6,
+    "NumberOfLogicalProcessors": 12
+  },
+  "MemoryBytes": 16903114752,
+  "PowerShell": "7.6.5",
+  "Grep": "grep (GNU grep) 3.0",
+  "Sed": "/usr/bin/sed (GNU sed) 4.9",
+  "Awk": "GNU Awk 5.4.1, API 4.1, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)"
+}

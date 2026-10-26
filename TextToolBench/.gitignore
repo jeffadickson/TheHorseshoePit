@@ -1,0 +1,14 @@
+# All benchmark source, inputs and recorded results are retained. Reacquire build tools.
+/bin/
+/obj/
+/tools/
+/.dotnet/
+*.download
+*.user
+**/bin/
+**/obj/
+**/StrykerOutput/
+*.profraw
+/results/awk-tuned/user-*
+/results/frawk-bug/email-draft-metadata.json
+/results/sed/acquisition-tests/

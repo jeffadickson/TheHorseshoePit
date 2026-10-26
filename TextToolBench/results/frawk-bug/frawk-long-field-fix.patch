@@ -1,0 +1,48 @@
+diff --git a/src/runtime/splitter/chunk.rs b/src/runtime/splitter/chunk.rs
+index 8ef8568..fc3d2fa 100644
+--- a/src/runtime/splitter/chunk.rs
++++ b/src/runtime/splitter/chunk.rs
+@@ -377,6 +377,7 @@ impl<R: Read, F: FnMut(&[u8], &mut WhitespaceOffsets, u64) -> u64> ChunkProducer
+                     chunk.name = self.0.name.clone();
+                     let buf = self.0.inner.buf.clone();
+                     let bs = buf.as_bytes();
++                    let initial_whitespace = self.1;
+                     self.1 = (self.0.find_indexes)(bs, &mut chunk.off, self.1);
+                     // Find the last newline in the buffer, if there is one.
+                     let (is_partial, truncate_to, len_if_not_last) =
+@@ -420,7 +421,13 @@ impl<R: Read, F: FnMut(&[u8], &mut WhitespaceOffsets, u64) -> u64> ChunkProducer
+                         // We read an entire chunk, but we didn't find a full record. Try again
+                         // (note that the call to reset read in a larger chunk and would have kept
+                         // a prefix)
+-                        (true, false) => continue,
++                        (true, false) => {
++                            // reset() retained the entire incomplete record and grew the buffer.
++                            // Its prefix is scanned again, so preserve the state from before that
++                            // prefix, not the state computed at the previous buffer's tail.
++                            self.1 = initial_whitespace;
++                            continue;
++                        }
+                     };
+                 }
+                 ChunkState::Done => return Ok(true),
+diff --git a/src/runtime/splitter/batch.rs b/src/runtime/splitter/batch.rs
+index 41131d0..9de6d55 100644
+--- a/src/runtime/splitter/batch.rs
++++ b/src/runtime/splitter/batch.rs
+@@ -2379,6 +2379,16 @@ unquoted,commas,"as well, including some long ones", and there we have it.""#;
+         whitespace_split(k, crate::test_string_constants::PRIDE_PREJUDICE_CH2);
+         whitespace_split(k, crate::test_string_constants::VIRGIL);
+         whitespace_split(k, "   leading whitespace   \n and some    more\n");
++        // A retained incomplete record is rescanned after buffer growth. Its leading
++        // field must survive each retry, including when it begins at byte zero.
++        for length in [1023, 1024, 1025, 2047, 2048, 2049, 131072] {
++            for prefix in ["", " \t", "earlier record\n"] {
++                let input = format!("{}{} y\n", prefix, "x".repeat(length));
++                // The existing reader test helper requires a static input. The test
++                // process owns these small fixtures for its remaining lifetime.
++                whitespace_split(k, Box::leak(input.into_boxed_str()));
++            }
++        }
+         whitespace_split(
+             k,
+             r#"xxxxxxxxxxxxxxxxxxxxxxxxxxxxx  yyyyyyyyyyyyyyyyyyyyyyyyyyyy 111111

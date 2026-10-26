@@ -1,0 +1,77 @@
+Making clean in support
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+test -z "libsupport.a" || rm -f libsupport.a
+rm -f *.o
+rm -f malloc/*.o
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+Making clean in .
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+test -z "gawk.exe" || rm -f gawk.exe
+test -z "core core.* gawkbug" || rm -f core core.* gawkbug
+rm -f *.o
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+Making clean in extension
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+Making clean in po
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+rm -f *.insert-header
+rm -f remove-potcdate.sed
+rm -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/stamp-poT
+rm -f core core.* gawk-extensions.po gawk-extensions.1po gawk-extensions.2po *.new.po
+rm -fr *.o
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+rm -rf .libs _libs
+test -z "testext.la" || rm -f testext.la
+rm -f ./so_locations
+test -z "filefuncs.la fnmatch.la fork.la inplace.la intdiv.la ordchr.la readdir.la readfile.la revoutput.la revtwoway.la rwarray.la time.la" || rm -f filefuncs.la fnmatch.la fork.la inplace.la intdiv.la ordchr.la readdir.la readfile.la revoutput.la revtwoway.la rwarray.la time.la
+rm -f ./so_locations
+rm -f *.o
+rm -f *.lo
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+Making clean in extras
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extras'
+make[1]: Nothing to be done for 'clean'.
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extras'
+Making clean in doc
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/doc'
+test -z "gawk.dvi gawk.pdf gawk.ps gawk.html gawkinet.dvi gawkinet.pdf \
+  gawkinet.ps gawkinet.html gawkworkflow.dvi gawkworkflow.pdf \
+  gawkworkflow.ps gawkworkflow.html pm-gawk.dvi pm-gawk.pdf \
+  pm-gawk.ps pm-gawk.html gawknotes.dvi gawknotes.pdf \
+  gawknotes.ps gawknotes.html" \
+|| rm -rf gawk.dvi gawk.pdf gawk.ps gawk.html gawkinet.dvi gawkinet.pdf \
+  gawkinet.ps gawkinet.html gawkworkflow.dvi gawkworkflow.pdf \
+  gawkworkflow.ps gawkworkflow.html pm-gawk.dvi pm-gawk.pdf \
+  pm-gawk.ps pm-gawk.html gawknotes.dvi gawknotes.pdf \
+  gawknotes.ps gawknotes.html
+test -z "*.ps *.html *.dvi *~ awkcard.nc awkcard.tr gawk.pdf gawkinet.pdf gawkworkflow.pdf awkcard.pdf gawk.1.pdf gawkbug.1.pdf pm-gawk.1.pdf pm-gawk.pdf notes.pdf" || rm -f *.ps *.html *.dvi *~ awkcard.nc awkcard.tr gawk.pdf gawkinet.pdf gawkworkflow.pdf awkcard.pdf gawk.1.pdf gawkbug.1.pdf pm-gawk.1.pdf pm-gawk.pdf notes.pdf
+rm -rf gawk.t2d gawk.t2p gawkinet.t2d gawkinet.t2p gawkworkflow.t2d \
+  gawkworkflow.t2p pm-gawk.t2d pm-gawk.t2p gawknotes.t2d \
+  gawknotes.t2p
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/doc'
+Making clean in awklib
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/awklib'
+test -z "grcat.c pwcat.c" || rm -f grcat.c pwcat.c
+rm -f passwd.awk group.awk *.exe
+rm -fr eg.old
+rm -fr grcat.dSYM pwcat.dSYM
+test -z "pwcat.exe grcat.exe" || rm -f pwcat.exe grcat.exe
+rm -f *.o
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/awklib'
+Making clean in po
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/po'
+rm -f *.insert-header
+rm -f remove-potcdate.sed
+rm -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/po/stamp-poT
+rm -f core core.* gawk.po gawk.1po gawk.2po *.new.po
+rm -fr *.o
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/po'
+Making clean in test
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+test -z "core core.* fmtspcl.ok" || rm -f core core.* fmtspcl.ok
+rm -fr _* core core.* fmtspcl.ok junk strftime.ok test1 test2 \
+seq *~ readfile.ok fork.tmp.* testext.awk fts.ok readdir.ok \
+readdir_test.ok readdir_retest.ok profile1.ok X_* makepmafile
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'

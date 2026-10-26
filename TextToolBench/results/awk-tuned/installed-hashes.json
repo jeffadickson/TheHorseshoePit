@@ -1,0 +1,12 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6377C2BEA27EE774ED2738293BFE51DABF5A5CC8E71E3137F253C544392CBE29",
+    "Path": "C:\\Users\\jeffd\\AppData\\Local\\Programs\\TextToolBench\\native-o3\\bin\\awk.exe"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "F5C23ED3E78DB6D226EE560D13C13C835FA7F61F64377E62214D23A26FC10F93",
+    "Path": "C:\\Users\\jeffd\\AppData\\Local\\Programs\\TextToolBench\\native-o3\\bin\\grep.exe"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "Seed": 20261102,
+  "EquivalenceChecks": 96,
+  "NegativeChecks": 4,
+  "MutantsKilled": 12,
+  "MutantsTotal": 12,
+  "FixedCases": 5,
+  "RandomCases": 3
+}

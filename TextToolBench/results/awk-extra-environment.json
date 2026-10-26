@@ -1,0 +1,27 @@
+{
+  "Seed": 20261101,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-26T17:40:01.8337999Z",
+  "Tools": [
+    {
+      "Engine": "mawk",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\mawk\\bin\\mawk.exe",
+      "Sha256": "BE8C1E4ED4A86B3AED122E39FF16AC08798EA87B98CB8E4C125B57A2C67C4639"
+    },
+    {
+      "Engine": "frawk-interp",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\frawk\\target\\release\\frawk.exe",
+      "Sha256": "CDB637E6C1CF806F9BF1561A5763E39932BCC4FE9BFCFBDD1D241AAA971EF851"
+    },
+    {
+      "Engine": "awk-current",
+      "Path": "C:\\Program Files\\Git\\usr\\bin\\awk.exe",
+      "Sha256": "F123D2C120B2AD2158AA8C69D8EEEDF14C0D681E68EE76FF103E06AC49986200"
+    }
+  ],
+  "Purpose": "Official native MinGW64 mawk 1.3.4 20260302; frawk 0.4.8 release --no-default-features, explicit BYTECODE INTERPRETER backend, Windows MSVC; Cranelift JIT fails and is excluded from timings; GNU awk from Git/MSYS",
+  "FrawkCommit": "d548b159a5a76c12de508f8bf415fdc09e609f0a",
+  "FrawkLockSha256": "C7EBDC7453C7A875D83B7C737C15EE8C627EFA286BE3F073E4553491D2083EC0",
+  "Notes": "Fresh process, warm cache, sequential interleaved order, stdout hashing; no successful frawk JIT measurements"
+}

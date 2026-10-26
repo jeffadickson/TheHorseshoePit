@@ -1,0 +1,10 @@
+{
+  "Seed": 20261028,
+  "EquivalenceChecks": 64,
+  "FixedFixtures": 5,
+  "RandomFixtures": 3,
+  "NegativeChecks": 4,
+  "MutantsKilled": 3,
+  "MutantsTotal": 3,
+  "Scope": "ASCII/LF fixtures; empty, no matches, case, repeated matches, missing final newline, long line; bounded randomized fuzz; targeted literal/case/count argument mutations"
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8D54E322DFC3FAA60F0464691ABA8634197406E53367AA8942409181C0808BE8",
+    "Path": "C:\\Program Files\\Git\\usr\\bin\\sed.exe"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "8D54E322DFC3FAA60F0464691ABA8634197406E53367AA8942409181C0808BE8",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\msys64\\usr\\bin\\sed.exe"
+  }
+]

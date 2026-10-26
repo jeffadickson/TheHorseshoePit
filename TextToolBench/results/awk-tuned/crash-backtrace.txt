@@ -1,0 +1,17 @@
+[New Thread 32340.0x1084 (id 2)]
+[New Thread 32340.0xe9d0 (id 3)]
+[New Thread 32340.0x75f4 (id 4)]
+[New Thread 32340.0x6640 (id 5)]
+
+Thread 1 "gawk" received signal SIGSEGV, Segmentation fault.
+0x0000000100494351 in rep ()
+#0  0x0000000100494351 in rep ()
+#1  0x0000000100495d02 in cat ()
+#2  0x0000000100495e44 in alt ()
+#3  0x00000001004968a8 in compile.constprop ()
+#4  0x00000001004a43b3 in minrx_regncomp ()
+#5  0x000000010047a9fd in make_regexp ()
+#6  0x0000000100451760 in set_FS ()
+#7  0x0000000100460a6e in set_RS ()
+#8  0x000000010044225c in r_interpret ()
+#9  0x00000001004bde6b in main ()

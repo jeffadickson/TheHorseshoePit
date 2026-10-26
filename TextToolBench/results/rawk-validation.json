@@ -1,0 +1,10 @@
+{
+  "Seed": 20261030,
+  "EquivalenceChecks": 72,
+  "FixedFixtures": 5,
+  "RandomFixtures": 3,
+  "NegativeChecks": 7,
+  "MutantsKilled": 9,
+  "MutantsTotal": 9,
+  "Scope": "ASCII/LF; empty, whitespace, missing final newline, long line, seeded bounded fuzz; wrong field, wrong word aggregation, off-by-one line count per implementation"
+}

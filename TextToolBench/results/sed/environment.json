@@ -1,0 +1,735 @@
+{
+  "Seed": 20261107,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-26T19:14:10.5573336Z",
+  "Tools": [
+    {
+      "Engine": "sed-gnu",
+      "Path": "C:\\Program Files\\Git\\usr\\bin\\sed.exe",
+      "Version": "/usr/bin/sed (GNU sed) 4.9\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3\u002B: GNU GPL version 3 or later \u003Chttps://gnu.org/licenses/gpl.html\u003E.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Jay Fenlason, Tom Lord, Ken Pizzini,\nPaolo Bonzini, Jim Meyering, and Assaf Gordon.\n\nThis sed program was built without SELinux support.\n\nGNU sed home page: \u003Chttps://www.gnu.org/software/sed/\u003E.\nGeneral help using GNU software: \u003Chttps://www.gnu.org/gethelp/\u003E.\nE-mail bug reports to: \u003Cbug-sed@gnu.org\u003E.\n",
+      "ExecutableSha256": "8D54E322DFC3FAA60F0464691ABA8634197406E53367AA8942409181C0808BE8",
+      "Distribution": "Official Windows binary; publisher build flags are not inferred from language"
+    },
+    {
+      "Engine": "sed-busybox",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\busybox.exe",
+      "Version": "BusyBox v1.38.0-FRP-6075-g169694ebd (2026-05-06 12:57:04 UTC)\n(mingw64-gcc 15.2.1-2.fc43; mingw64-crt 13.0.0-2.fc43; glob; Unicode)\n\nBusyBox is copyrighted by many authors between 1998-2026.\nLicensed under GPLv2. See source distribution for detailed\ncopyright notices.\n\nUsage: busybox [function [arguments]...]\n   or: busybox --list[-full]\n   or: busybox --install [-s] [-u|DIR]\n   or: busybox --uninstall [-n] file\n   or: function [arguments]...\n\n\tBusyBox is a multi-call binary that combines many common Unix\n\tutilities into a single executable.  The shell in this build\n\tis configured to run built-in utilities without $PATH search.\n\tYou don\u0027t need to install a link to busybox for each utility.\n\tTo run external program, use full path (/sbin/ip instead of ip).\n\nCurrently defined functions:\n\t[, [[, ar, arch, ascii, ash, awk, base32, base64, basename, bash, bc,\n\tbunzip2, busybox, bzcat, bzip2, cal, cat, cdrop, chattr, chmod, cksum,\n\tclear, cmp, comm, cp, cpio, crc32, crond, crontab, cut, date, dc, dd,\n\tdf, diff, dirname, dos2unix, dpkg, dpkg-deb, drop, du, echo, ed, egrep,\n\tenv, expand, expr, factor, false, fgrep, find, flock, fold, free,\n\tfsync, ftpget, ftpput, getopt, grep, groups, gunzip, gzip, hd, head,\n\thexdump, httpd, iconv, id, inotifyd, install, ipcalc, jn, join, kill,\n\tkillall, lash, less, link, ln, logname, ls, lsattr, lzcat, lzma, lzop,\n\tlzopcat, make, man, md5sum, mkdir, mktemp, mv, nc, nl, nproc, od,\n\tpaste, patch, pdpmake, pdrop, pgrep, pidof, pipe_progress, pkill,\n\tprintenv, printf, ps, pwd, readlink, realpath, reset, rev, rm, rmdir,\n\trpm, rpm2cpio, sed, seq, sh, sha1sum, sha256sum, sha384sum, sha3sum,\n\tsha512sum, shred, shuf, sleep, sort, split, ssl_client, stat, strings,\n\tstty, su, sum, sync, tac, tail, tar, tee, test, time, timeout, touch,\n\ttr, true, truncate, ts, tsort, ttysize, uname, uncompress, unexpand,\n\tuniq, unix2dos, unlink, unlzma, unlzop, unxz, unzip, uptime, usleep,\n\tuudecode, uuencode, uuidgen, vi, watch, wc, wget, which, whoami, whois,\n\txargs, xxd, xz, xzcat, yes, zcat\n",
+      "ExecutableSha256": "6E263D154D8548D1EB936F65D1D8312C80DF31C45974E48D6335E4DCC0F4F34C",
+      "Distribution": "Official Windows binary; publisher build flags are not inferred from language"
+    },
+    {
+      "Engine": "sed-uutils",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\uutils-sed\\sed.exe",
+      "Version": "sed 0.3.0 (uutils)\n",
+      "ExecutableSha256": "860912CCDD213BDD35B5D559A27455C739BCCCEBFE07C285B4DBA5AC87E2AA1E",
+      "Distribution": "Official Windows binary; publisher build flags are not inferred from language"
+    },
+    {
+      "Engine": "sed-red",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\red\\red.exe",
+      "Version": "red 1.0.2\n",
+      "ExecutableSha256": "2C26B8DA2B27453BDF9AB446BF4CA784114F3BD46D835DC624D6AE078184E15E",
+      "Distribution": "Official Windows binary; publisher build flags are not inferred from language"
+    },
+    {
+      "Engine": "sd",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\sd\\sd-v1.1.0-x86_64-pc-windows-msvc\\sd.exe",
+      "Version": "sd 1.0.0\n",
+      "ExecutableSha256": "68A3BE6E02D688FF8ECAF80EF6473CF2516442F01070A4D1A5EB69DAA3DB5234",
+      "Distribution": "Official Windows binary; publisher build flags are not inferred from language"
+    }
+  ],
+  "Cells": [
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-1KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-literal",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-regex",
+      "Engine": "sd"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-nonblank",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-select",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-head",
+      "Engine": "sed-red"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-gnu"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-busybox"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-uutils"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Task": "sed-transliterate",
+      "Engine": "sed-red"
+    }
+  ],
+  "RejectedCells": [],
+  "CellCount": 130,
+  "ExpectedMeasured": 910,
+  "ExpectedWarmups": 130,
+  "Tasks": {
+    "sed-literal": "s/Prince/PRINCE/g",
+    "sed-regex": "s/[0-9][0-9]*/#/g",
+    "sed-nonblank": "/^[ \t]*$/d",
+    "sed-select": "/Prince/p",
+    "sed-head": "1,100p;100q",
+    "sed-transliterate": "y/aeiou/AEIOU/"
+  },
+  "Inputs": [
+    {
+      "Path": "data/small-1KiB.txt",
+      "Bytes": 1071,
+      "Sha256": "13CB0E6D44793250D0BA8EFAD4A402D0B9CCF7B0743A325206A900D6D5E47056"
+    },
+    {
+      "Path": "data/small-64KiB.txt",
+      "Bytes": 65580,
+      "Sha256": "0C65AD840E6EA25B167FDDDA75D00E3F78562E97246416347D7D6E952ACB648C"
+    },
+    {
+      "Path": "data/1MiB.txt",
+      "Bytes": 1048616,
+      "Sha256": "907674E1D2F1B2736F44F94A3A514498D00EA2496FB98CF2E923777D3A3C3167"
+    },
+    {
+      "Path": "data/8MiB.txt",
+      "Bytes": 8388671,
+      "Sha256": "162DC66E63607C90AB15C740F7801AEB210B9EFA24318CECC43C95700C20AF02"
+    },
+    {
+      "Path": "data/32MiB.txt",
+      "Bytes": 33554436,
+      "Sha256": "22E722D4DDB1F74CD43F1AAB654B9571B2E2BD5FC3A9E6F3E2CB09D57C47A1B3"
+    }
+  ],
+  "Notes": "GNU sed in Git and local MSYS2 is byte-identical and is counted once. sd is replacement-only, uses --preview and never edits the source. LC_ALL=C; explicit binary mode where supported; fresh processes, warm cache, startup/stdout hashing included. Missing final newline and non-ASCII/binary compatibility failures are retained separately, not normalized into passes."
+}

@@ -1,0 +1,27 @@
+{
+  "Seed": 20261104,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-26T18:02:17.2409432Z",
+  "Tools": [
+    {
+      "Engine": "grep-built-o2",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\grep-build\\generic-o2\\src\\grep.exe",
+      "Sha256": "0F76306E6F17389DB2C11A057504465E64B052D067A7097A7D92CEC5C86753A6"
+    },
+    {
+      "Engine": "grep-native-o3",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\grep-build\\native-o3\\src\\grep.exe",
+      "Sha256": "F5C23ED3E78DB6D226EE560D13C13C835FA7F61F64377E62214D23A26FC10F93"
+    },
+    {
+      "Engine": "grep-installed-fresh",
+      "Path": "C:\\Program Files\\Git\\usr\\bin\\grep.exe",
+      "Sha256": "497202418334F8A48D9F34CD2E1B2C03C4F957E02304B613E10931C0457E8D4A"
+    }
+  ],
+  "O2Flags": "-O2 -march=nocona -msahf -mtune=generic -pipe\n",
+  "O3Flags": "-O3 -march=native -mtune=native -ftree-vectorize -pipe -fopt-info-vec-all=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/grep-build/native-o3/vectorization.log\n",
+  "Compiler": "Using built-in specs.\nCOLLECT_GCC=gcc\nCOLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-cygwin/16.2.0/lto-wrapper.exe\nTarget: x86_64-pc-cygwin\nConfigured with: ../gcc-16.2.0/configure --build=x86_64-pc-cygwin --prefix=/usr --libexecdir=/usr/lib --enable-bootstrap --enable-static --enable-shared --enable-shared-libgcc --enable-version-specific-runtime-libs --with-arch=nocona --with-tune=generic --disable-multilib --enable-__cxa_atexit --with-dwarf2 --enable-languages=c,c\u002B\u002B,lto --enable-graphite --enable-threads=posix --enable-libatomic --enable-libgomp --disable-libitm --enable-libquadmath --enable-libquadmath-support --disable-libssp --disable-win32-registry --disable-symvers --with-gnu-ld --with-gnu-as --disable-isl-version-check --enable-checking=release --without-libiconv-prefix --without-libintl-prefix --with-system-zlib --enable-linker-build-id --enable-libstdcxx-filesystem-ts\nThread model: posix\nSupported LTO compression algorithms: zlib\ngcc version 16.2.0 (GCC) \n",
+  "Notes": "O2/O3 share source, compiler, configure options and local MSYS2 runtime. Installed grep has older GCC/runtime. Native build is specific to this processor. Fresh-process wall time includes runtime startup and stdout hashing."
+}

@@ -1,0 +1,100 @@
+prince 	Prince 	war 	x
+WAR 	war
+Prince 	x 	WAR 	WAR 	war
+x 	x 	WAR 	war 	war
+x 	prince 	x 	prince 	x 	war
+peace 	prince 	WAR 	x 	peace
+x
+Prince 	x 	peace 	prince 	peace 	WAR 	x
+Prince 	WAR 	Prince 	x
+war 	war 	war 	prince 	WAR 	prince
+x 	Prince 	Prince 	x
+Prince 	WAR 	prince 	war 	x 	Prince 	peace
+WAR 	WAR 	x 	Prince
+x 	x
+WAR 	x 	peace 	x 	peace 	WAR 	Prince
+prince 	peace 	WAR 	x 	war 	Prince 	Prince
+peace 	prince 	war 	Prince 	WAR 	prince
+
+war 	war 	Prince 	WAR
+prince 	x
+prince 	peace 	prince 	prince 	peace 	Prince 	war
+peace
+Prince 	prince
+WAR 	prince
+WAR 	Prince 	peace 	Prince 	war
+prince 	peace 	x 	Prince 	war 	Prince
+war 	peace 	Prince 	WAR 	x
+x 	WAR 	x 	prince 	war
+prince 	war 	prince 	Prince 	WAR 	prince
+prince 	war 	x 	prince 	WAR
+peace 	war 	prince 	peace 	prince 	peace 	WAR
+peace 	prince
+Prince 	peace 	war 	Prince 	war 	x
+x 	Prince 	prince 	Prince 	war 	Prince 	peace
+
+WAR 	x 	prince 	war 	war 	war
+war 	prince 	peace 	prince 	peace 	WAR
+peace 	WAR 	prince 	peace 	Prince
+WAR
+x 	peace 	Prince 	prince 	peace
+war 	x 	prince 	Prince 	prince
+Prince 	prince 	prince 	x 	war
+WAR 	Prince 	WAR 	WAR 	WAR
+prince 	prince
+war 	prince 	peace 	war 	x
+Prince
+peace
+Prince 	WAR
+x
+war 	Prince
+x 	WAR
+war 	war
+
+war 	peace
+Prince 	x 	WAR 	Prince 	prince 	x 	Prince
+peace 	peace 	prince 	peace 	Prince 	Prince
+peace 	war 	x 	peace 	prince
+prince 	peace
+prince 	peace 	war 	x 	WAR 	war 	prince
+peace 	Prince 	x 	WAR
+x 	war 	prince 	x
+WAR 	war 	Prince 	war
+Prince 	WAR 	x 	WAR 	prince
+war 	peace 	x 	prince 	WAR 	WAR
+peace 	Prince 	x 	prince 	war
+x 	x 	Prince 	x 	x 	war
+war 	prince 	WAR 	war
+x
+x 	prince 	Prince 	x 	WAR 	x 	WAR
+war
+
+WAR 	Prince 	WAR 	peace
+peace 	peace 	Prince 	prince 	war 	WAR
+
+x 	prince 	WAR 	war 	Prince 	WAR 	war
+
+x 	WAR 	war 	x 	Prince 	peace
+Prince 	WAR 	peace 	Prince
+Prince 	prince
+x 	war 	prince 	x 	Prince 	WAR 	peace
+prince 	prince
+war 	Prince 	war 	prince 	peace 	peace 	war
+
+x 	Prince
+peace 	Prince 	war 	Prince 	peace 	Prince
+peace 	x 	x 	WAR 	war 	peace 	peace
+x 	Prince 	prince 	war
+WAR 	Prince
+war
+peace 	Prince 	war 	x 	Prince
+
+WAR 	peace 	WAR 	x 	WAR 	peace 	Prince
+prince
+Prince 	war 	war 	x 	peace
+Prince 	war 	x 	Prince 	war 	WAR 	Prince
+x 	x 	war 	x
+
+peace 	WAR 	x 	WAR
+x 	x 	WAR 	prince
+prince 	prince 	Prince

@@ -1,0 +1,37 @@
+[
+  {
+    "Executables": [
+      {
+        "FullName": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\uutils-sed\\sed.exe"
+      }
+    ],
+    "ArchiveSha256": "6BACDBEE1A281E0BF8784B932D3665237694243C8F7D9331D6526E88FBC4C374",
+    "Name": "uutils-sed",
+    "URL": "https://github.com/uutils/sed/releases/download/0.3.0/sed-x86_64-pc-windows-msvc.zip"
+  },
+  {
+    "Executables": [
+      {
+        "FullName": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\red\\red.exe"
+      }
+    ],
+    "ArchiveSha256": "B37A95C5540DFFA2AB607E47F0D89664236D93EE76A2A348B41A5A631401A055",
+    "Name": "red",
+    "URL": "https://github.com/uutils/red/releases/download/v1.0.2/red-windows-x86_64.zip"
+  },
+  {
+    "Executables": [
+      {
+        "FullName": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\sd\\sd-v1.1.0-x86_64-pc-windows-msvc\\sd.exe"
+      }
+    ],
+    "ArchiveSha256": "59837C2E7C911099ACA1CC46B663BCDC5A949FD3E9FBBAF34FC73E5D5D71007C",
+    "Name": "sd",
+    "URL": "https://github.com/chmln/sd/releases/download/v1.1.0/sd-v1.1.0-x86_64-pc-windows-msvc.zip"
+  },
+  {
+    "Sha256": "6E263D154D8548D1EB936F65D1D8312C80DF31C45974E48D6335E4DCC0F4F34C",
+    "Name": "busybox",
+    "URL": "https://frippery.org/files/busybox/busybox64u.exe"
+  }
+]

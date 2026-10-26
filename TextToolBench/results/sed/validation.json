@@ -1,0 +1,151 @@
+{
+  "Seed": 20261107,
+  "Fixtures": 11,
+  "EquivalenceChecks": 279,
+  "CompatibilityFailures": [
+    {
+      "Fixture": "no-final-newline",
+      "Engine": "sed-busybox",
+      "Task": "sed-select",
+      "InputSha256": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "ExpectedBytes": 15,
+      "ExpectedHash": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "Actual": {
+        "Task": "sed-select",
+        "Engine": "sed-busybox",
+        "InputBytes": 15,
+        "Round": -2,
+        "Milliseconds": 51.4599,
+        "OutputBytes": 16,
+        "Sha256": "B21976F51BC58CF4FFEA7406115DDBBC66F25DCAC0860636F5EA64C24C12DDA1",
+        "CpuMilliseconds": 15.625,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    },
+    {
+      "Fixture": "no-final-newline",
+      "Engine": "sed-red",
+      "Task": "sed-select",
+      "InputSha256": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "ExpectedBytes": 15,
+      "ExpectedHash": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "Actual": {
+        "Task": "sed-select",
+        "Engine": "sed-red",
+        "InputBytes": 15,
+        "Round": -2,
+        "Milliseconds": 34.9619,
+        "OutputBytes": 16,
+        "Sha256": "B21976F51BC58CF4FFEA7406115DDBBC66F25DCAC0860636F5EA64C24C12DDA1",
+        "CpuMilliseconds": 15.625,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    },
+    {
+      "Fixture": "no-final-newline",
+      "Engine": "sed-busybox",
+      "Task": "sed-head",
+      "InputSha256": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "ExpectedBytes": 15,
+      "ExpectedHash": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "Actual": {
+        "Task": "sed-head",
+        "Engine": "sed-busybox",
+        "InputBytes": 15,
+        "Round": -2,
+        "Milliseconds": 54.5435,
+        "OutputBytes": 16,
+        "Sha256": "B21976F51BC58CF4FFEA7406115DDBBC66F25DCAC0860636F5EA64C24C12DDA1",
+        "CpuMilliseconds": 15.625,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    },
+    {
+      "Fixture": "no-final-newline",
+      "Engine": "sed-red",
+      "Task": "sed-head",
+      "InputSha256": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "ExpectedBytes": 15,
+      "ExpectedHash": "42ABB7916F8F0D999491FC9C1C965137DBA6EADDC72C607B095DD60EC0BE5F68",
+      "Actual": {
+        "Task": "sed-head",
+        "Engine": "sed-red",
+        "InputBytes": 15,
+        "Round": -2,
+        "Milliseconds": 42.3659,
+        "OutputBytes": 16,
+        "Sha256": "B21976F51BC58CF4FFEA7406115DDBBC66F25DCAC0860636F5EA64C24C12DDA1",
+        "CpuMilliseconds": 31.25,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    },
+    {
+      "Fixture": "binary",
+      "Engine": "sed-busybox",
+      "Task": "sed-nonblank",
+      "InputSha256": "412BDBB2A1707C716B739DB3E87090022DFFBD0611501CFE8C6547FB47A609A4",
+      "ExpectedBytes": 12,
+      "ExpectedHash": "412BDBB2A1707C716B739DB3E87090022DFFBD0611501CFE8C6547FB47A609A4",
+      "Actual": {
+        "Task": "sed-nonblank",
+        "Engine": "sed-busybox",
+        "InputBytes": 12,
+        "Round": -2,
+        "Milliseconds": 75.1632,
+        "OutputBytes": 11,
+        "Sha256": "3D8FB425ECDDFFE1E4AE2F04C95D8E7EF63F7972D7823433468009EFD0860543",
+        "CpuMilliseconds": 46.875,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    },
+    {
+      "Fixture": "binary",
+      "Engine": "sed-busybox",
+      "Task": "sed-select",
+      "InputSha256": "412BDBB2A1707C716B739DB3E87090022DFFBD0611501CFE8C6547FB47A609A4",
+      "ExpectedBytes": 12,
+      "ExpectedHash": "412BDBB2A1707C716B739DB3E87090022DFFBD0611501CFE8C6547FB47A609A4",
+      "Actual": {
+        "Task": "sed-select",
+        "Engine": "sed-busybox",
+        "InputBytes": 12,
+        "Round": -2,
+        "Milliseconds": 321.0557,
+        "OutputBytes": 11,
+        "Sha256": "3D8FB425ECDDFFE1E4AE2F04C95D8E7EF63F7972D7823433468009EFD0860543",
+        "CpuMilliseconds": 31.25,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    },
+    {
+      "Fixture": "binary",
+      "Engine": "sed-busybox",
+      "Task": "sed-head",
+      "InputSha256": "412BDBB2A1707C716B739DB3E87090022DFFBD0611501CFE8C6547FB47A609A4",
+      "ExpectedBytes": 12,
+      "ExpectedHash": "412BDBB2A1707C716B739DB3E87090022DFFBD0611501CFE8C6547FB47A609A4",
+      "Actual": {
+        "Task": "sed-head",
+        "Engine": "sed-busybox",
+        "InputBytes": 12,
+        "Round": -2,
+        "Milliseconds": 106.0282,
+        "OutputBytes": 12,
+        "Sha256": "082EE2E0E1800A8F599FB224FD286F1F52764EED03EEB2521713A9C32B9BFC0C",
+        "CpuMilliseconds": 31.25,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    }
+  ],
+  "NegativeChecks": 10,
+  "CommandMutantsKilled": 26,
+  "CommandMutantsTotal": 26,
+  "Notes": "Failed edge cases are not passes. Qualification checks every corpus cell independently, and every timed output must match. Semantic command mutants are distinct from Stryker.NET source mutations."
+}

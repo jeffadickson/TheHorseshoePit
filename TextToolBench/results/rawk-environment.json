@@ -1,0 +1,70 @@
+{
+  "Seed": 20261030,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-26T16:47:58.6156588Z",
+  "RustCompiler": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.1\nLLVM version: 23.1.1",
+  "Build": "cargo build --release --locked, repository release profiles, x86_64-pc-windows-msvc; no source edits",
+  "Tools": [
+    {
+      "Engine": "rawk-stefan",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\stefanalfbo-rawk\\target\\release\\rawk.exe",
+      "Version": "rawk-cli 0.1.2 (manifest; CLI --version unsupported)",
+      "Sha256": "A96A18544BA03EF35EF5DBEAACBE4CEA120DDB4028AECAECB8B14B058E395638",
+      "Commit": "bd6dfd584e2fbcbb50b2ac7239269f1ba4099313",
+      "SourceStatus": "",
+      "CargoLockSha256": "305316621E7DE93CAD398294316D34C5DD37B7030FCC2536710081EA9BB1919F"
+    },
+    {
+      "Engine": "awk-rs-quinn",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\quinnjr-rawk\\target\\release\\awk-rs.exe",
+      "Version": "awk-rs 0.2.0",
+      "Sha256": "7F195DA7FE03CC6D003B0348F0AB67CEFD600F2AB18BC7AAD5F014B3AAE32F88",
+      "Commit": "5834140f2941ef7f565e6f342bd0be8c265b8207",
+      "SourceStatus": "",
+      "CargoLockSha256": "3ECE3DB50455061BB3E4435EA39EB7F588DFA12521FA9DD42CC97CD1BE3AFC20"
+    },
+    {
+      "Engine": "awk-current",
+      "Path": "C:\\Program Files\\Git\\usr\\bin\\awk.exe",
+      "Version": "GNU Awk 5.4.1, API 4.1, PMA Avon 8-g1, (GNU MPFR 4.2.2, GNU MP 6.3.0)\nCopyright (C) 1989, 1991-2026 Free Software Foundation.\n\nThis program is free software; you can redistribute it and/or modify\nit under the terms of the GNU General Public License as published by\nthe Free Software Foundation; either version 3 of the License, or\n(at your option) any later version.\n\nThis program is distributed in the hope that it will be useful,\nbut WITHOUT ANY WARRANTY; without even the implied warranty of\nMERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\nGNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see http://www.gnu.org/licenses/.",
+      "Sha256": "F123D2C120B2AD2158AA8C69D8EEEDF14C0D681E68EE76FF103E06AC49986200",
+      "Commit": null,
+      "SourceStatus": null,
+      "CargoLockSha256": null
+    }
+  ],
+  "Inputs": [
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\1MiB.txt",
+      "Bytes": 1048616,
+      "Sha256": "907674E1D2F1B2736F44F94A3A514498D00EA2496FB98CF2E923777D3A3C3167"
+    },
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\32MiB.txt",
+      "Bytes": 33554436,
+      "Sha256": "22E722D4DDB1F74CD43F1AAB654B9571B2E2BD5FC3A9E6F3E2CB09D57C47A1B3"
+    },
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\8MiB.txt",
+      "Bytes": 8388671,
+      "Sha256": "162DC66E63607C90AB15C740F7801AEB210B9EFA24318CECC43C95700C20AF02"
+    },
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\small-1KiB.txt",
+      "Bytes": 1071,
+      "Sha256": "13CB0E6D44793250D0BA8EFAD4A402D0B9CCF7B0743A325206A900D6D5E47056"
+    },
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\small-64KiB.txt",
+      "Bytes": 65580,
+      "Sha256": "0C65AD840E6EA25B167FDDDA75D00E3F78562E97246416347D7D6E952ACB648C"
+    }
+  ],
+  "Scripts": {
+    "field": "NF {print $1}",
+    "words": "{n\u002B=NF} END {print n\u002B0}",
+    "lines": "END {print NR\u002B0}"
+  },
+  "Timing": "Sequential interleaved fresh processes, warm cache, stdout hashing included; 120-second per-process timeout"
+}

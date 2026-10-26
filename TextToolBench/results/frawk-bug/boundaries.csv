@@ -1,0 +1,97 @@
+field_length,program,exit,output_bytes,expected_bytes,pass,short_output
+1,field,0,2,2,True,x\n
+1,nf,0,2,2,True,2\n
+1,length,0,2,2,True,1\n
+1,whole,0,8,8,True,3 2 1 y\n
+31,field,0,32,32,True,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n
+31,nf,0,2,2,True,2\n
+31,length,0,3,3,True,31\n
+31,whole,0,10,10,True,33 2 31 y\n
+63,field,0,64,64,True,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n
+63,nf,0,2,2,True,2\n
+63,length,0,3,3,True,63\n
+63,whole,0,10,10,True,65 2 63 y\n
+64,field,0,65,65,True,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n
+64,nf,0,2,2,True,2\n
+64,length,0,3,3,True,64\n
+64,whole,0,10,10,True,66 2 64 y\n
+65,field,0,66,66,True,xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n
+65,nf,0,2,2,True,2\n
+65,length,0,3,3,True,65\n
+65,whole,0,10,10,True,67 2 65 y\n
+127,field,0,128,128,True,<long field>
+127,nf,0,2,2,True,2\n
+127,length,0,4,4,True,127\n
+127,whole,0,12,12,True,129 2 127 y\n
+128,field,0,129,129,True,<long field>
+128,nf,0,2,2,True,2\n
+128,length,0,4,4,True,128\n
+128,whole,0,12,12,True,130 2 128 y\n
+129,field,0,130,130,True,<long field>
+129,nf,0,2,2,True,2\n
+129,length,0,4,4,True,129\n
+129,whole,0,12,12,True,131 2 129 y\n
+511,field,0,512,512,True,<long field>
+511,nf,0,2,2,True,2\n
+511,length,0,4,4,True,511\n
+511,whole,0,12,12,True,513 2 511 y\n
+512,field,0,513,513,True,<long field>
+512,nf,0,2,2,True,2\n
+512,length,0,4,4,True,512\n
+512,whole,0,12,12,True,514 2 512 y\n
+513,field,0,514,514,True,<long field>
+513,nf,0,2,2,True,2\n
+513,length,0,4,4,True,513\n
+513,whole,0,12,12,True,515 2 513 y\n
+4095,field,0,4096,4096,True,<long field>
+4095,nf,0,2,2,True,2\n
+4095,length,0,5,5,True,4095\n
+4095,whole,0,14,14,True,4097 2 4095 y\n
+4096,field,0,4097,4097,True,<long field>
+4096,nf,0,2,2,True,2\n
+4096,length,0,5,5,True,4096\n
+4096,whole,0,14,14,True,4098 2 4096 y\n
+4097,field,0,4098,4098,True,<long field>
+4097,nf,0,2,2,True,2\n
+4097,length,0,5,5,True,4097\n
+4097,whole,0,14,14,True,4099 2 4097 y\n
+32767,field,0,2,32768,False, \n
+32767,nf,0,2,2,False,1\n
+32767,length,0,2,6,False,1\n
+32767,whole,0,11,16,False,32769 1 1 \n
+32768,field,0,2,32769,False, \n
+32768,nf,0,2,2,False,1\n
+32768,length,0,2,6,False,1\n
+32768,whole,0,11,16,False,32770 1 1 \n
+32769,field,0,2,32770,False, \n
+32769,nf,0,2,2,False,1\n
+32769,length,0,2,6,False,1\n
+32769,whole,0,11,16,False,32771 1 1 \n
+65535,field,0,2,65536,False, \n
+65535,nf,0,2,2,False,1\n
+65535,length,0,2,6,False,1\n
+65535,whole,0,11,16,False,65537 1 1 \n
+65536,field,0,2,65537,False, \n
+65536,nf,0,2,2,False,1\n
+65536,length,0,2,6,False,1\n
+65536,whole,0,11,16,False,65538 1 1 \n
+65537,field,0,2,65538,False, \n
+65537,nf,0,2,2,False,1\n
+65537,length,0,2,6,False,1\n
+65537,whole,0,11,16,False,65539 1 1 \n
+131071,field,0,2,131072,False, \n
+131071,nf,0,2,2,False,1\n
+131071,length,0,2,7,False,1\n
+131071,whole,0,12,18,False,131073 1 1 \n
+131072,field,0,2,131073,False, \n
+131072,nf,0,2,2,False,1\n
+131072,length,0,2,7,False,1\n
+131072,whole,0,12,18,False,131074 1 1 \n
+131073,field,0,2,131074,False, \n
+131073,nf,0,2,2,False,1\n
+131073,length,0,2,7,False,1\n
+131073,whole,0,12,18,False,131075 1 1 \n
+262144,field,0,2,262145,False, \n
+262144,nf,0,2,2,False,1\n
+262144,length,0,2,7,False,1\n
+262144,whole,0,12,18,False,262146 1 1 \n

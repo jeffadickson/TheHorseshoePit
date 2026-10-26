@@ -1,0 +1,853 @@
+make  check-recursive
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+Making check in support
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+Making check in .
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+make  check-local
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+Making check in extension
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+Making check in po
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+make gawk-extensions.pot-update
+make[4]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+package_gnu=""; \
+test -n "$package_gnu" || { \
+  if { if (LC_ALL=C find --version) 2>/dev/null | grep GNU >/dev/null; then \
+         LC_ALL=C find -L /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension -maxdepth 1 -type f -size -10000000c -exec grep -i 'GNU gawk-extensions' /dev/null '{}' ';' 2>/dev/null; \
+       else \
+         LC_ALL=C grep -i 'GNU gawk-extensions' /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/* 2>/dev/null; \
+       fi; \
+     } | grep -v 'libtool:' >/dev/null; then \
+     package_gnu=yes; \
+   else \
+     package_gnu=no; \
+   fi; \
+}; \
+if test "$package_gnu" = "yes"; then \
+  package_prefix='GNU '; \
+else \
+  package_prefix=''; \
+fi; \
+if test -n 'bug-gawk@gnu.org' || test 'bug-gawk@gnu.org' = '@'PACKAGE_BUGREPORT'@'; then \
+  msgid_bugs_address='bug-gawk@gnu.org'; \
+else \
+  msgid_bugs_address='bug-gawk@gnu.org'; \
+fi; \
+case `/usr/bin/xgettext --version | sed 1q | sed -e 's,^[^0-9]*,,'` in \
+  '' | 0.[0-9] | 0.[0-9].* | 0.1[0-5] | 0.1[0-5].* | 0.16 | 0.16.[0-1]*) \
+    /usr/bin/xgettext --default-domain=gawk-extensions --directory=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension \
+      --add-comments=TRANSLATORS: \
+      --files-from=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/POTFILES.in \
+      --copyright-holder='Free Software Foundation, Inc.' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --keyword=_ --keyword=N_  \
+    ;; \
+  *) \
+    /usr/bin/xgettext --default-domain=gawk-extensions --directory=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension \
+      --add-comments=TRANSLATORS: \
+      --files-from=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/POTFILES.in \
+      --copyright-holder='Free Software Foundation, Inc.' \
+      --package-name="${package_prefix}gawk-extensions" \
+      --package-version='5.4.1' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --keyword=_ --keyword=N_  \
+    ;; \
+esac
+test ! -f gawk-extensions.po || { \
+  if test -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot-header; then \
+    sed -e '1,/^#$/d' < gawk-extensions.po > gawk-extensions.1po && \
+    cat /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot-header gawk-extensions.1po > gawk-extensions.po && \
+    rm -f gawk-extensions.1po \
+    || exit 1; \
+  fi; \
+  if test -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot; then \
+    sed -f remove-potcdate.sed < /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot > gawk-extensions.1po && \
+    sed -f remove-potcdate.sed < gawk-extensions.po > gawk-extensions.2po && \
+    if cmp gawk-extensions.1po gawk-extensions.2po >/dev/null 2>&1; then \
+      rm -f gawk-extensions.1po gawk-extensions.2po gawk-extensions.po; \
+    else \
+      rm -f gawk-extensions.1po gawk-extensions.2po /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot && \
+      mv gawk-extensions.po /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot; \
+    fi; \
+  else \
+    mv gawk-extensions.po /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot; \
+  fi; \
+}
+make[4]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+test ! -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot || \
+  test -z "" || make 
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+Making check in extras
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extras'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extras'
+Making check in doc
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/doc'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/doc'
+Making check in awklib
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/awklib'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/awklib'
+Making check in po
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/po'
+make[2]: Nothing to be done for 'check'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/po'
+Making check in test
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+
+Any output from "cmp" is bad news, although some differences
+
+Locale environment:
+	LC_ALL="C" LANG="C"
+
+======== Starting basic tests ========
+in floating point values are probably benign -- in particular,
+addcomma
+some systems may omit a leading zero and the floating point
+precision may lead to slightly different output in a few cases.
+anchgsub
+anchor
+argarray
+argcasfile
+arrayind1
+arrayind2
+arrayind3
+arrayparm
+arrayprm2
+arrayprm3
+arrayref
+arrymem1
+arryref2
+arryref3
+arryref4
+arryref5
+arynasty
+arynocls
+aryprm1
+aryprm2
+aryprm3
+aryprm4
+aryprm5
+aryprm6
+aryprm7
+aryprm8
+aryprm9
+arysubnm
+aryunasgn
+asgext
+assignnumfield
+assignnumfield2
+assignnumfield3
+awkpath
+back89
+backgsub
+badassign1
+badbuild
+callparam
+case-check
+childin
+clobber
+close_status
+closebad
+clsflnam
+cmdlinefsbacknl
+cmdlinefsbacknl2
+compare
+compare2
+concat1
+concat2
+concat3
+concat4
+concat5
+convfmt
+datanonl
+defref
+delargv
+delarpm2
+delarprm
+delfunc
+dfacheck2
+dfamb1
+dfastress
+divzero
+divzero2
+dynlj
+elemnew5
+elemnew6
+eofsplit
+eofsrc1
+escapebrace
+exit2
+exitval1
+exitval2
+exitval3
+fcall_exit
+fcall_exit2
+fieldassign
+fieldindex
+fldchg
+fldchgnf
+fldterm
+fmtmix
+fnamedat
+fnarray
+fnarray2
+fnaryscl
+fnasgnm
+fnmisc
+fordel
+forref
+forsimp
+fsbs
+fscaret
+fsnul1
+fsrs
+fsspcoln
+fstabplus
+funsemnl
+funsmnam
+funstack
+getline
+getline2
+getline3
+getline4
+getline5
+getlnbuf
+getlnfa
+getnr2tb
+getnr2tm
+greek-equiv
+greek-utf
+gsubasgn
+gsubnulli18n
+gsubtest
+gsubtst2
+gsubtst3
+gsubtst4
+gsubtst5
+gsubtst6
+gsubtst7
+gsubtst8
+hex
+hex2
+hex3
+hsprint
+inpref
+inputred
+intest
+intprec
+iobug1
+leaddig
+leadnl
+litoct
+longsub
+longwrds
+manglprm
+match4
+match5
+matchbadarg1
+matchbadarg2
+matchuninitialized
+math
+membug1
+memleak
+memleak4
+messages
+minusstr
+mmap8k
+nasty
+nasty2
+negexp
+negrange
+nested
+nfldstr
+nfloop
+nfneg
+nfset
+nlfldsep
+nlinstr
+nlstrina
+noeffect
+nofile
+nofmtch
+noloop1
+noloop2
+nonl
+noparms
+nors
+nulinsrc
+nulrsend
+numindex
+numrange
+numstr1
+numsubstr
+octsub
+ofmt
+ofmta
+ofmtbig
+ofmtfidl
+ofmts
+ofmtstrnum
+ofs1
+onlynl
+opasnidx
+opasnslf
+paramasfunc1
+paramasfunc2
+paramdup
+paramres
+paramtyp
+paramuninitglobal
+parse1
+parsefld
+parseme
+pcntplus
+posix-inf
+posix2008sub
+posix_compare
+prdupval
+prec
+printf-corners
+printf0
+printf1
+printfchar
+prmarscl
+prmreuse
+prt1eval
+prtoeval
+rand
+randtest
+range1
+range2
+readbuf
+rebrackloc
+rebt8b1
+rebuild
+redfilnm
+regeq
+regex3minus
+regexpbad
+regexpbrack
+regexpbrack2
+regexpbrack3
+regexprange
+regexpuparrow
+regrange
+reindops
+reparse
+resplit
+rri1
+rs
+rscompat
+rsnul1nl
+rsnulbig
+rsnulbig2
+rsnullre
+rsnulw
+rstest1
+rstest2
+rstest3
+rstest4
+rstest5
+rswhite
+scalar
+sclforin
+sclifin
+setrec0
+setrec1
+shortest-match
+sigpipe1
+sortempty
+sortglos
+spacere
+splitany
+splitargv
+splitarr
+splitdef
+splitvar
+splitwht
+splitwht2
+status-close
+strcat1
+strfieldnum
+strnum1
+strnum2
+strsubscript
+strtod
+subamp
+subback
+subi18n
+subsepnm
+subslash
+substr
+swaplns
+synerr1
+synerr2
+synerr3
+tailrecurse
+tradanch
+trailbs
+tweakfld
+uninit2
+uninit3
+uninit4
+uninit5
+uninitialized
+unterm
+uparrfs
+uplus
+uplus2
+wideidx
+wideidx2
+widesub
+widesub2
+widesub3
+widesub4
+wjposer1
+zero2
+zeroe0
+zeroflag
+======== Done with basic tests ========
+======== Starting Unix tests ========
+fflush
+getlnhd
+localenl
+pid
+pipeio1
+pipeio2
+poundbang
+rtlen
+rtlen01
+space
+strftlng
+======== Done with Unix tests ========
+======== Starting gawk extension tests ========
+aadelete1
+aadelete2
+aarray1
+aasort
+aasorti
+ar2fn_elnew_sc
+ar2fn_elnew_sc2
+ar2fn_fmod
+ar2fn_unxptyp_aref
+ar2fn_unxptyp_val
+argtest
+arraysort
+arraysort2
+arraytype
+asortbool
+asortsymtab
+backw
+badargs
+beginfile1
+beginfile2
+binmode1
+charasbytes
+clos1way
+clos1way2
+clos1way3
+clos1way4
+clos1way5
+clos1way6
+colonwarn
+crlf
+csv1
+csv2
+csv3
+csvodd
+dbugarray1
+dbugarray2
+dbugarray3
+dbugarray4
+dbugeval
+dbugeval2
+dbugeval3
+dbugeval4
+dbugtypedre1
+dbugtypedre2
+delmessy
+delsub
+devfd
+devfd1
+devfd2
+dfacheck1
+dumpvars
+elemnew1
+elemnew2
+elemnew3
+elemnew4
+equiv
+errno
+exit
+fieldwdth
+forcenum
+fpat1
+fpat2
+fpat3
+fpat4
+fpat5
+fpat6
+fpat7
+fpat8
+fpat9
+fpatnull
+fsfwfs
+functab1
+functab2
+functab3
+functab6
+funlen
+fwtest
+fwtest2
+fwtest3
+fwtest4
+fwtest5
+fwtest6
+fwtest7
+fwtest8
+genpot
+gensub
+gensub2
+gensub3
+gensub4
+gensub5
+getlndir
+gnuops2
+gnuops3
+gnureops
+gsubind
+hexfloat
+icasefs
+icasers
+id
+igncdym
+igncfs
+ignrcas2
+ignrcas4
+ignrcase
+incdupe
+incdupe2
+incdupe3
+incdupe4
+incdupe5
+incdupe6
+incdupe7
+include
+include2
+indirectbuiltin
+indirectbuiltin3
+indirectbuiltin4
+indirectbuiltin5
+indirectbuiltin6
+indirectcall
+indirectcall2
+indirectcall3
+intarray
+iolint
+isarrayunset
+lint
+lintexp
+lintindex
+lintint
+lintlength
+lintold
+lintplus
+lintplus2
+lintplus3
+lintset
+lintsubarray
+linttypeof
+lintwarn
+manyfiles
+match1
+match2
+match3
+mdim1
+mdim2
+mdim3
+mdim4
+mdim5
+mdim6
+mdim7
+mdim8
+mdim9
+memleak2
+memleak3
+mixed1
+mktime
+modifiers
+muldimposix
+nastyparm
+negtime
+next
+nondec
+nondec2
+nonfatal1
+nonfatal2
+nonfatal3
+nsawk1a
+nsawk1b
+nsawk1c
+nsawk2a
+nsawk2b
+nsbad
+nsbad2
+nsbad3
+nsbad_cmd
+nsforloop
+nsfuncrecurse
+nsidentifier
+nsindirect1
+nsindirect2
+nsprof1
+nsprof2
+nsprof3
+octdec
+patsplit
+posix
+printfbad1
+printfbad2
+printfbad3
+printfbad4
+printhuge
+procinfs
+profile0
+profile1
+profile2
+profile3
+profile4
+profile5
+profile6
+profile7
+profile8
+profile9
+profile10
+profile11
+profile12
+profile13
+profile14
+profile15
+profile16
+profile17
+pty1
+pty2
+re_test
+rebuf
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test/pty1.ok _pty1 differ: byte 1, line 1
+make[2]: [Makefile:3150: pty1] Error 1 (ignored)
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test/pty2.ok _pty2 differ: byte 9, line 1
+make[2]: [Makefile:3158: pty2] Error 1 (ignored)
+regexsub
+reginttrad
+regnul1
+regnul2
+regx8bit
+reint
+reint2
+rsgetline
+rsglstdin
+rsstart1
+rsstart2
+rsstart3
+rstest6
+sandbox1
+shadow
+shadowbuiltin
+sortfor
+sortfor2
+sortu
+sourcesplit
+split_after_fpat
+splitarg4
+strftfld
+strftime
+strtonum
+strtonum1
+stupid1
+Notice: it took 2 loops to get the before and after strftime values to match
+stupid2
+stupid3
+stupid4
+stupid5
+switch2
+symtab1
+symtab2
+symtab3
+symtab4
+symtab5
+symtab6
+symtab7
+symtab8
+symtab9
+symtab10
+symtab11
+symtab12
+timeout
+typedregex1
+typedregex2
+typedregex3
+typedregex4
+typedregex5
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test/timeout.ok _timeout differ: byte 15, line 2
+make[2]: [Makefile:5743: timeout] Error 1 (ignored)
+typedregex6
+typeof1
+typeof2
+typeof3
+typeof5
+typeof4
+typeof6
+typeof7
+typeof8
+typeof9
+unicode1
+watchpoint1
+gawk is not compiled to support the array debug tests
+======== Done with gawk extension tests ========
+======== Starting dynamic extension tests ========
+======== Done with dynamic extension tests ========
+======== Starting MPFR tests ========
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+======== Done with MPFR tests ========
+apiterm
+======== Starting PMA tests ========
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+filefuncs
+mpfranswer42
+fnmatch
+mpfrbigint
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+x86_64-pc-cygwin-gcc /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test/makepmafile.c -o makepmafile
+%%%%%%%%%% Inadequate locale support: skipping charset tests.
+%%%%%%%%%% At least en_US.UTF-8, fr_FR.UTF-8, ru_RU.UTF-8, ja_JP.UTF-8 and el_GR.iso88597@euro are needed.
+fork
+======== Done with PMA tests ========
+mpfrbigint2
+fork2
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+pma
+mpfrcase
+mpfrcase2
+fts
+This test may fail on CYGWIN systems when run on an NFS filesystem.
+If it does, try rerunning on an ntfs filesystem.
+mpfrexprange
+======== Starting machine-specific tests ========
+If any of these tests fail, don't worry too much.
+double1
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+functab4
+mpfrfield
+mpfrieee
+mpfrmemok1
+functab5
+mpfrnegzero
+mpfrnegzero2
+mpfrnonum
+getfile
+mpfrnr
+mpfrrem
+mpfrrnd
+mpfrrndeval
+indirectbuiltin2
+inplace1
+mpfrsort
+inplace2
+double2
+mpfrsqrt
+mpfrstrtonum
+inplace2bcomp
+inf-nan-torture
+mpfruplus
+inplace3
+mpgforcenum
+intformat
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+inplace3bcomp
+======== Done with machine-specific tests ========
+ordchr
+ordchr2
+readall
+readdir
+readdir_retest
+readdir_test
+readfile
+readfile2
+revout
+revtwoway
+rwarray
+testext
+time
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+3 TESTS FAILED
+make[3]: *** [Makefile:6104: pass-fail] Error 1
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+for i in _* ; \
+do  \
+	if [ "$i" != "_*" ]; then \
+	echo ============== $i ============= ; \
+	base=`echo $i | sed 's/^_//'` ; \
+	if echo "$GAWK_TEST_ARGS" | egrep -s -e '-M|--bignum' > /dev/null && [ -r ${base}-mpfr.ok ]; then \
+	diff -u ${base}-mpfr.ok $i ; \
+	elif echo "$GAWK_TEST_ARGS" | egrep -s -e '-M|--bignum' > /dev/null && [ -r "/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test"/${base}-mpfr.ok ]; then \
+	diff -u "/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test"/${base}-mpfr.ok $i ; \
+	elif [ -r ${base}.ok ]; then \
+	diff -u ${base}.ok $i ; \
+	else \
+	diff -u "/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test"/${base}.ok  $i ; \
+	fi ; \
+	fi ; \
+done | ${PAGER:-more}
+============== _pty1 =============
+--- /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test/pty1.ok	2026-06-22 05:28:22.000000000 -0700
++++ _pty1	2026-10-26 11:49:24.423417600 -0700
+@@ -1,2 +1,2 @@
+-123
+-x is abc
++
++
+============== _pty2 =============
+--- /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test/pty2.ok	2026-06-22 05:28:22.000000000 -0700
++++ _pty2	2026-10-26 11:49:24.432265700 -0700
+@@ -1,2 +1,2 @@
+-0000000 a b c d \n
+-0000005
++0000000 \n
++0000001
+============== _timeout =============
+--- /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/test/timeout.ok	2026-06-22 05:28:22.000000000 -0700
++++ _timeout	2026-10-26 11:49:41.765491100 -0700
+@@ -1,11 +1,12 @@
+ With timeouts
+-hello
+ -1 1 1
+ 1
+ 
+ With timeouts and retries
++1 timed out; trying again
+ hello
+ 1 timed out; trying again
+ 2 timed out; trying again
++3 timed out; trying again
+ goodbye
+ 0
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+make[2]: *** [Makefile:2330: check] Error 1
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+make[1]: *** [Makefile:803: check-recursive] Error 1
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+make: *** [Makefile:1102: check] Error 2

@@ -1,0 +1,2 @@
+Passed: 338; seed: 20261106
+Line/branch coverage: not measured for native installation checks. GNU upstream make check is recorded separately.

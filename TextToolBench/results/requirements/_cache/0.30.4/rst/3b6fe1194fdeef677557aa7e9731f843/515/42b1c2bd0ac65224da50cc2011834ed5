@@ -1,0 +1,3 @@
+<div class="document">
+<p>Build GNU awk with -O3 -march=native -mtune=native -ftree-vectorize. Retain compiler flags and upstream test logs. Install the tuned GNU awk and grep in a separate user directory with their runtime dependencies. Verify deterministic long-field and randomized outputs against existing GNU references, reject malformed programs, and detect a deliberate output mutation before prepending the installation directory to the user PATH. Preserve the previous user PATH for rollback and disclose test coverage limitations.</p>
+</div>

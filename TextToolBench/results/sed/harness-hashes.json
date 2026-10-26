@@ -1,0 +1,52 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "A1BF0A96C0CCE0CE1B040174AD28CF48CB70B60FE5EEFC06D15438C0977FA054",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\SedBench.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "28C4282E25D52797A8E2B22208DC8ED26CF40A065D2BE78ED9924BBB85FFB802",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\SedSemantics.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "007A3979AF3C5751BC2B858F1079EA87015382F9C0BAE57516AE6C36E9493D29",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\SedBench.csproj"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "0A2754C923288364E3941C39982B4E6479D7FF14E30364A86009F3EBDE875AFF",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\SedBench.Tests\\UnitTest1.cs"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "2280E39371636C868D08A0556B9F97DEC6A6948D7DE2D9F47ECB249CADD17CE2",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\SedBench.Tests\\SedBench.Tests.csproj"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "588566E9167A747CBD1FF9FF307034A745610D35657315495E6D3529C6FF812B",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\SedBench.Tests\\stryker-config.json"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "C1AACAFA81D4D3FD619740E924D6C3968292B11A2CFBDCCCDEBEE154A5E174EB",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "191E51F0BC9A91AEB5609915E7FB637CD5079788D41D8A9666698AD89486A94F",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\sed-dependencies.json"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6326C9BCB7AC9BFE2A5BA8A1FFDCCF923140D0DACAF4BFD8D629EA454997E7C1",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Run-SedBench.ps1"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "6FA4DF8731110A4C9758DEB50E3DEE5B513BE988C8DD882F889884A221F60388",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\bin\\Release\\net10.0\\SedBench.dll"
+  }
+]

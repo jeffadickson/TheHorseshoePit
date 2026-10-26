@@ -1,0 +1,307 @@
+{
+    "NumberOfCommandsAnalyzed":  49,
+    "NumberOfFilesAnalyzed":  1,
+    "NumberOfCommandsExecuted":  29,
+    "NumberOfCommandsMissed":  20,
+    "MissedCommands":  [
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  4,
+                               "Function":  "",
+                               "Command":  "Split-Path $PSScriptRoot -Parent"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  5,
+                               "Function":  "",
+                               "Command":  "Join-Path $PSScriptRoot \u0027sed-dependencies.json\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  11,
+                               "Function":  "",
+                               "Command":  "New-Item -ItemType Directory -Path $tools"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  11,
+                               "Function":  "",
+                               "Command":  "Out-Null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  13,
+                               "Function":  "",
+                               "Command":  "New-Item -ItemType Directory -Path $suite"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  13,
+                               "Function":  "",
+                               "Command":  "Out-Null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  16,
+                               "Function":  "",
+                               "Command":  "Join-Path $suite $asset.Name"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  17,
+                               "Function":  "",
+                               "Command":  "New-Item -ItemType Directory -Path $folder"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  17,
+                               "Function":  "",
+                               "Command":  "Out-Null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  18,
+                               "Function":  "",
+                               "Command":  "\u0027release.zip\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  20,
+                               "Function":  "",
+                               "Command":  "$temporary=$file+\u0027.download\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  22,
+                               "Function":  "",
+                               "Command":  "Invoke-WebRequest -Uri $asset.URL -OutFile $temporary"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  23,
+                               "Function":  "",
+                               "Command":  "if((Get-FileHash -LiteralPath $temporary).Hash -ne $asset.Sha256){throw \"Digest mismatch: $($asset.Name)\"}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  23,
+                               "Function":  "",
+                               "Command":  "Get-FileHash -LiteralPath $temporary"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  23,
+                               "Function":  "",
+                               "Command":  "throw \"Digest mismatch: $($asset.Name)\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  23,
+                               "Function":  "",
+                               "Command":  "$asset.Name"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  24,
+                               "Function":  "",
+                               "Command":  "Move-Item -LiteralPath $temporary -Destination $file"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  25,
+                               "Function":  "",
+                               "Command":  "if(Test-Path -LiteralPath $temporary -PathType Leaf){Remove-Item -LiteralPath $temporary}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  25,
+                               "Function":  "",
+                               "Command":  "Remove-Item -LiteralPath $temporary"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                               "Line":  28,
+                               "Function":  "",
+                               "Command":  "Expand-Archive -LiteralPath $file -DestinationPath $folder -Force"
+                           }
+                       ],
+    "HitCommands":  [
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  7,
+                            "Function":  "",
+                            "Command":  "$ErrorActionPreference=\u0027Stop\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  8,
+                            "Function":  "",
+                            "Command":  "$root=$WorkspaceRoot"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  9,
+                            "Function":  "",
+                            "Command":  "if (!(Test-Path -LiteralPath $root -PathType Container)) { throw \u0027Missing workspace.\u0027 }"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  9,
+                            "Function":  "",
+                            "Command":  "Test-Path -LiteralPath $root -PathType Container"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  9,
+                            "Function":  "",
+                            "Command":  "throw \u0027Missing workspace.\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  10,
+                            "Function":  "",
+                            "Command":  "$tools=Join-Path $root \u0027tools\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  11,
+                            "Function":  "",
+                            "Command":  "if (!(Test-Path -LiteralPath $tools -PathType Container)) { New-Item -ItemType Directory -Path $tools | Out-Null }"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  11,
+                            "Function":  "",
+                            "Command":  "Test-Path -LiteralPath $tools -PathType Container"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  12,
+                            "Function":  "",
+                            "Command":  "$suite=Join-Path $tools \u0027sed-suite\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  13,
+                            "Function":  "",
+                            "Command":  "if (!(Test-Path -LiteralPath $suite -PathType Container)) { New-Item -ItemType Directory -Path $suite | Out-Null }"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  13,
+                            "Function":  "",
+                            "Command":  "Test-Path -LiteralPath $suite -PathType Container"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  14,
+                            "Function":  "",
+                            "Command":  "$manifest=Get-Content -LiteralPath $ManifestPath -Raw | ConvertFrom-Json"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  14,
+                            "Function":  "",
+                            "Command":  "$manifest=Get-Content -LiteralPath $ManifestPath -Raw | ConvertFrom-Json"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  15,
+                            "Function":  "",
+                            "Command":  "$manifest.Assets"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  16,
+                            "Function":  "",
+                            "Command":  "if($asset.Archive){Join-Path $suite $asset.Name}else{$suite}"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  16,
+                            "Function":  "",
+                            "Command":  "$suite"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  17,
+                            "Function":  "",
+                            "Command":  "if (!(Test-Path -LiteralPath $folder -PathType Container)) { New-Item -ItemType Directory -Path $folder | Out-Null }"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  17,
+                            "Function":  "",
+                            "Command":  "Test-Path -LiteralPath $folder -PathType Container"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  18,
+                            "Function":  "",
+                            "Command":  "$file=Join-Path $folder $(if($asset.Archive){\u0027release.zip\u0027}else{\u0027busybox.exe\u0027})"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  18,
+                            "Function":  "",
+                            "Command":  "if($asset.Archive){\u0027release.zip\u0027}else{\u0027busybox.exe\u0027}"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  18,
+                            "Function":  "",
+                            "Command":  "\u0027busybox.exe\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  19,
+                            "Function":  "",
+                            "Command":  "if (!(Test-Path -LiteralPath $file -PathType Leaf)) {\n        $temporary=$file+\u0027.download\u0027\n        try {\n            Invoke-WebRequest -Uri $asset.URL -OutFile $temporary\n            if((Get-FileHash -LiteralPath $temporary).Hash -ne $asset.Sha256){throw \"Digest mismatch: $($asset.Name)\"}\n            Move-Item -LiteralPath $temporary -Destination $file\n        } finally {if(Test-Path -LiteralPath $temporary -PathType Leaf){Remove-Item -LiteralPath $temporary}}\n    }"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  19,
+                            "Function":  "",
+                            "Command":  "Test-Path -LiteralPath $file -PathType Leaf"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  27,
+                            "Function":  "",
+                            "Command":  "if((Get-FileHash -LiteralPath $file).Hash -ne $asset.Sha256){throw \"Cached digest mismatch: $($asset.Name)\"}"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  27,
+                            "Function":  "",
+                            "Command":  "Get-FileHash -LiteralPath $file"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  27,
+                            "Function":  "",
+                            "Command":  "throw \"Cached digest mismatch: $($asset.Name)\""
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  27,
+                            "Function":  "",
+                            "Command":  "$asset.Name"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  28,
+                            "Function":  "",
+                            "Command":  "if($asset.Archive){Expand-Archive -LiteralPath $file -DestinationPath $folder -Force}"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1",
+                            "Line":  30,
+                            "Function":  "",
+                            "Command":  "Write-Output \u0027All four official sed-suite downloads match the pinned SHA-256 digests.\u0027"
+                        }
+                    ],
+    "AnalyzedFiles":  [
+                          "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\scripts\\Get-SedTools.ps1"
+                      ]
+}

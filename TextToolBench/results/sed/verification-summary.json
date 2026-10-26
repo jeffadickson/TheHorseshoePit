@@ -1,0 +1,33 @@
+{
+  "Harness": {
+    "LinePercent": 73.23,
+    "BranchPercent": 80.95,
+    "Scope": "SedBench package from the fixture-only CLI run; unrelated assemblies in the raw shared output directory have zero hits and are excluded from this package metric",
+    "RawReport": "results/coverage-sed.cobertura.xml"
+  },
+  "OracleClasses": [
+    {
+      "Name": "SedSemantics",
+      "LinePercent": 96.29,
+      "BranchPercent": 97.5
+    }
+  ],
+  "UnitTests": 24,
+  "Seed": 20261107,
+  "Stryker": {
+    "Ignored": 340,
+    "Survived": 2,
+    "CompileErrors": 20,
+    "Version": "5.0.0",
+    "Tested": 35,
+    "Score": 91.67,
+    "Killed": 33,
+    "NoCoverage": 1
+  },
+  "PowerShell": {
+    "CommandCoveragePercent": 59.18,
+    "BranchCoverage": "Unavailable in Pester 3",
+    "LineCoverage": "Unavailable in Pester 3",
+    "TestsPassed": 3
+  }
+}

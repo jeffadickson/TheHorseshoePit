@@ -1,0 +1,36 @@
+{
+  "LineCoverage": {
+    "count": 444,
+    "covered": 110,
+    "percent": 24.774774774774773
+  },
+  "Branches": {
+    "count": 0,
+    "covered": 0,
+    "notcovered": 0,
+    "percent": 0
+  },
+  "FixExecution": [
+    {
+      "Line": 380,
+      "Count": 810
+    },
+    {
+      "Line": 380,
+      "Count": 810
+    },
+    {
+      "Line": 428,
+      "Count": 600
+    },
+    {
+      "Line": 429,
+      "Count": 600
+    }
+  ],
+  "Total": {
+    "count": 33904,
+    "covered": 6203,
+    "percent": 18.295776309579992
+  }
+}

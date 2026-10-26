@@ -1,0 +1,12 @@
+{
+  "Seed": 20261028,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-26T16:32:29.2244343Z",
+  "RipgrepPath": "C:\\Users\\jeffd\\AppData\\Local\\Microsoft\\WinGet\\Packages\\BurntSushi.ripgrep.MSVC_Microsoft.Winget.Source_8wekyb3d8bbwe\\ripgrep-15.2.0-x86_64-pc-windows-msvc\\rg.exe",
+  "RipgrepVersion": "ripgrep 15.2.0 (rev e89fff89ac)\n\nfeatures:\u002Bpcre2\nsimd(compile):\u002BSSE2,-SSSE3,-AVX2\nsimd(runtime):\u002BSSE2,\u002BSSSE3,\u002BAVX2\n\nPCRE2 10.45 is available (JIT is available)",
+  "RipgrepSha256": "14231169855EC5205CF5A1B6F1DB358FF4AED4247C86B69CE8AAE647C77F6680",
+  "GrepPath": "C:\\Program Files\\Git\\usr\\bin\\grep.exe",
+  "GrepVersion": "grep (GNU grep) 3.0\nCopyright (C) 2017 Free Software Foundation, Inc.\nLicense GPLv3\u002B: GNU GPL version 3 or later \u003Chttp://gnu.org/licenses/gpl.html\u003E.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Mike Haertel and others, see \u003Chttp://git.sv.gnu.org/cgit/grep.git/tree/AUTHORS\u003E.",
+  "Timing": "Fresh process through stdout hashing and exit; warm cache; interleaved native tools; original PowerShell measurements retained"
+}

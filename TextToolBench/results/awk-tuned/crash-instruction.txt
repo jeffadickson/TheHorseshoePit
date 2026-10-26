@@ -1,0 +1,11 @@
+[New Thread 45496.0x5304 (id 2)]
+[New Thread 45496.0xd0e0 (id 3)]
+[New Thread 45496.0xde7c (id 4)]
+[New Thread 45496.0xe520 (id 5)]
+
+Thread 1 "gawk" received signal SIGSEGV, Segmentation fault.
+0x0000000100494351 in rep ()
+=> 0x100494351 <rep+689>:	vmovdqa %ymm0,0x80(%rsp)
+   0x10049435a <rep+698>:	mov    %rax,0x28(%rsp)
+   0x10049435f <rep+703>:	vzeroupper
+   0x100494362 <rep+706>:	call   0x10048d620 <mkrep>

@@ -1,0 +1,22 @@
+diff --git a/tools/quinnjr-rawk/src/main.rs b/tools/variants/quinn-buffered/src/main.rs
+index 6775002..6f7b607 100644
+--- a/tools/quinnjr-rawk/src/main.rs
++++ b/tools/variants/quinn-buffered/src/main.rs
+@@ -236,7 +236,8 @@ fn run(args: &[String]) -> Result<i32, Box<dyn std::error::Error>> {
+ 
+     // Prepare output
+     let stdout = io::stdout();
+-    let mut output = stdout.lock();
++    // Buffer redirected output while preserving explicit error propagation on flush.
++    let mut output = io::BufWriter::with_capacity(64 * 1024, stdout.lock());
+ 
+     // Prepare inputs: BEGIN/END must run exactly once for the whole run, so all
+     // input files are handed to a single run() call. FILENAME is tracked per
+@@ -261,6 +262,7 @@ fn run(args: &[String]) -> Result<i32, Box<dyn std::error::Error>> {
+ 
+     interpreter.set_filenames(filenames);
+     let exit_code = interpreter.run(inputs, &mut output)?;
++    std::io::Write::flush(&mut output)?;
+ 
+     Ok(exit_code)
+ }

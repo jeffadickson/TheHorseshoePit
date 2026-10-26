@@ -1,0 +1,9 @@
+{
+  "SourceImplementationChange": "Existing verified fix; this step combined the two patches and expanded documentation, without changing the Rust implementation",
+  "ForwardApplyCheck": "Passed on original source",
+  "VerificationEvidence": "README.md; nextest.log; property-fixed.txt; coverage/summary.json",
+  "PatchSha256": "9976CBC16CA0EAC82BC81A9CF513AB89784F69462642050C43A5E6C1650B4976",
+  "ReverseApplyCheck": "Passed on patched source",
+  "SourceCommit": "d548b159a5a76c12de508f8bf415fdc09e609f0a",
+  "Patch": "frawk-long-field-fix.patch"
+}

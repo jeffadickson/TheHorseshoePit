@@ -1,0 +1,372 @@
+ Downloading crates ...
+  Downloaded fastrand v2.0.0
+  Downloaded cc v1.0.79
+  Downloaded llvm-sys v120.3.2
+  Downloaded quote v1.0.32
+  Downloaded proc-macro2 v1.0.66
+  Downloaded semver v0.11.0
+  Downloaded semver-parser v0.10.2
+  Downloaded thiserror-impl v1.0.44
+  Downloaded tikv-jemallocator v0.6.1
+  Downloaded tempfile v3.7.0
+  Downloaded thiserror v1.0.44
+  Downloaded ucd-trie v0.1.6
+  Downloaded unicode-ident v1.0.11
+  Downloaded syn v2.0.27
+  Downloaded pest v2.7.1
+  Downloaded tikv-jemalloc-sys v0.6.1+5.3.0-1-ge13ca993e8ccb9ba9847cc330696e02839f328f7
+  Downloaded windows-sys v0.48.0
+   Compiling windows_x86_64_msvc v0.48.0
+   Compiling frawk v0.4.8 (C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\tools\variants\frawk-longline)
+   Compiling fastrand v2.0.0
+   Compiling windows-targets v0.48.1
+   Compiling windows-sys v0.48.0
+   Compiling tempfile v3.7.0
+warning: use of deprecated associated function `core::num::<impl i64>::max_value`: replaced by the `MAX` associated constant on this type
+    --> src\cfg.rs:1692:55
+     |
+1692 |                     prim_args.push(PrimVal::ILit(i64::max_value()));
+     |                                                       ^^^^^^^^^
+     |
+     = note: `#[warn(deprecated)]` on by default
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+  --> src\compile.rs:25:37
+   |
+25 | pub(crate) const UNUSED: u32 = u32::max_value();
+   |                                     ^^^^^^^^^
+
+warning: unused import: `assert_cmd::Command`
+ --> tests\sort.rs:1:5
+  |
+1 | use assert_cmd::Command;
+  |     ^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::fs::File`
+ --> tests\sort.rs:4:5
+  |
+4 | use std::fs::File;
+  |     ^^^^^^^^^^^^^
+
+warning: unused import: `std::io::Write`
+ --> tests\sort.rs:5:5
+  |
+5 | use std::io::Write;
+  |     ^^^^^^^^^^^^^^
+
+warning: unused import: `tempfile::tempdir`
+ --> tests\sort.rs:6:5
+  |
+6 | use tempfile::tempdir;
+  |     ^^^^^^^^^^^^^^^^^
+
+warning: function `numbers_str` is never used
+ --> tests\sort.rs:8:4
+  |
+8 | fn numbers_str(n: usize) -> (String, String) {
+  |    ^^^^^^^^^^^
+  |
+  = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `N` is never used
+  --> tests\sort.rs:20:7
+   |
+20 | const N: usize = 10_000;
+   |       ^
+
+warning: constant `BACKEND_ARGS` is never used
+  --> tests\sort.rs:25:7
+   |
+25 | const BACKEND_ARGS: &[&str] = &["-Binterp", "-Bcranelift"];
+   |       ^^^^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\pushdown.rs:115:18
+    |
+115 |             u32::max_value()
+    |                  ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:137:26
+    |
+137 |             rnum: usize::max_value(),
+    |                          ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:193:80
+    |
+193 |             if !fspec.leading_zeros && fspec.lnum == 0 && fspec.rnum == usize::max_value() {
+    |                                                                                ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+200 |                 match_for_spec!("", arg.to_float())
+    |                 ----------------------------------- in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+203 |         b'e' => match_for_spec!("e", arg.to_float()),
+    |                 ------------------------------------ in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+221 |         b'd' => match_for_spec!("", arg.to_int()),
+    |                 --------------------------------- in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+222 |         b'o' => match_for_spec!("o", arg.to_int()),
+    |                 ---------------------------------- in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+223 |         b'x' => match_for_spec!("x", arg.to_int()),
+    |                 ---------------------------------- in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+227 |                 Ok(ch) => match_for_spec!("", ch),
+    |                           ----------------------- in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+231 |                 _ => match_for_spec!("", "?"),
+    |                      ------------------------ in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:154:38
+    |
+154 |                 fspec.rnum == usize::max_value(),
+    |                                      ^^^^^^^^^
+...
+234 |         b's' => arg.with_bytes(|bs| match_for_spec!("", DisplayBytes(bs))),
+    |                                     ------------------------------------- in this macro invocation
+    |
+    = note: this warning originates in the macro `match_for_spec` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\printf.rs:364:50
+    |
+364 | ...                   if fs.rnum != usize::max_value() {
+    |                                            ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+    --> src\runtime\splitter\batch.rs:1512:30
+     |
+1512 |             last_len: usize::max_value(),
+     |                              ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+    --> src\runtime\splitter\batch.rs:1604:30
+     |
+1604 |             last_len: usize::max_value(),
+     |                              ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl usize>::max_value`: replaced by the `MAX` associated constant on this type
+    --> src\runtime\splitter\batch.rs:1638:34
+     |
+1638 |                 last_len: usize::max_value(),
+     |                                  ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\runtime\str_impl.rs:734:28
+    |
+734 |         let u32_max = u32::max_value() as usize;
+    |                            ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+    --> src\runtime\str_impl.rs:1351:32
+     |
+1351 |         if likely(from <= u32::max_value() as usize && to <= u32::max_value() as usize) {
+     |                                ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+    --> src\runtime\str_impl.rs:1351:67
+     |
+1351 |         if likely(from <= u32::max_value() as usize && to <= u32::max_value() as usize) {
+     |                                                                   ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl u32>::max_value`: replaced by the `MAX` associated constant on this type
+   --> src\pushdown.rs:236:64
+    |
+236 |         assert_eq!(FieldSet::singleton(1024).max_value(), u32::max_value());
+    |                                                                ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl i64>::max_value`: replaced by the `MAX` associated constant on this type
+  --> src\runtime\float_parse\mod.rs:89:39
+   |
+89 |         let imax = format!("{}", i64::max_value());
+   |                                       ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl i64>::min_value`: replaced by the `MIN` associated constant on this type
+  --> src\runtime\float_parse\mod.rs:90:39
+   |
+90 |         let imin = format!("{}", i64::min_value());
+   |                                       ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl i64>::max_value`: replaced by the `MAX` associated constant on this type
+  --> src\runtime\float_parse\mod.rs:91:50
+   |
+91 |         assert_eq!(strtod(imax.as_bytes()), i64::max_value() as f64);
+   |                                                  ^^^^^^^^^
+
+warning: use of deprecated associated function `core::num::<impl i64>::min_value`: replaced by the `MIN` associated constant on this type
+  --> src\runtime\float_parse\mod.rs:92:50
+   |
+92 |         assert_eq!(strtod(imin.as_bytes()), i64::min_value() as f64);
+   |                                                  ^^^^^^^^^
+
+warning: struct `IntoIter` is never constructed
+   --> src\common.rs:160:19
+    |
+160 | pub(crate) struct IntoIter<L, R>(pub Either<L, R>);
+    |                   ^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: field `attrs` is never read
+  --> src\codegen\mod.rs:45:9
+   |
+44 | pub(crate) struct Sig<'a, C: Backend + ?Sized> {
+   |                   --- field in this struct
+45 |     pub attrs: &'a [FunctionAttr],
+   |         ^^^^^
+
+warning: method `usize_ty` is never used
+   --> src\codegen\mod.rs:278:8
+    |
+273 | pub(crate) trait Backend {
+    |                  ------- method in this trait
+...
+278 |     fn usize_ty(&self) -> Self::Ty;
+    |        ^^^^^^^^
+
+warning: method `and` is never used
+   --> src\runtime\splitter\batch.rs:871:19
+    |
+863 |     pub trait Vector: Copy {
+    |               ------ method in this trait
+...
+871 |         unsafe fn and(self, rhs: Self) -> Self;
+    |                   ^^^
+
+warning: unnecessary transmute
+    --> src\codegen\intrinsics.rs:1092:24
+     |
+1092 |             Ty::Int => mem::transmute::<usize, Int>(arg).into(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: `#[warn(unnecessary_transmutes)]` on by default
+help: replace this with
+     |
+1092 -             Ty::Int => mem::transmute::<usize, Int>(arg).into(),
+1092 +             Ty::Int => usize::cast_signed(arg).into(),
+     |
+
+warning: transmuting an integer to a pointer creates a pointer without provenance
+    --> src\codegen\intrinsics.rs:1094:24
+     |
+1094 |             Ty::Str => mem::transmute::<usize, &Str>(arg).clone().into(),
+     |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+     |
+     = note: this is dangerous because dereferencing the resulting pointer is undefined behavior
+     = note: exposed provenance semantics can be used to create a pointer based on some previously exposed provenance
+     = help: if you truly mean to create a pointer without provenance, use `std::ptr::without_provenance_mut`
+     = help: for more information about transmute, see <https://doc.rust-lang.org/std/mem/fn.transmute.html#transmutation-between-pointers-and-integers>
+     = help: for more information about exposed provenance, see <https://doc.rust-lang.org/std/ptr/index.html#exposed-provenance>
+     = note: `#[warn(integer_to_ptr_transmutes)]` on by default
+help: use `std::ptr::with_exposed_provenance` instead to use a previously exposed provenance
+     |
+1094 -             Ty::Str => mem::transmute::<usize, &Str>(arg).clone().into(),
+1094 +             Ty::Str => &*std::ptr::with_exposed_provenance::<str_impl::Str<'_>>(arg).clone().into(),
+     |
+
+warning: panic message contains an unused formatting placeholder
+    --> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\tools/frawk/target\release\build\frawk-c2a20e49349ee913\out/syntax.rs:4696:50
+     |
+4696 |             _ => panic!("invalid reduction index {__reduce_index}",)
+     |                                                  ^^^^^^^^^^^^^^^^
+     |
+     = note: this message is not used as a format string when given without arguments, but will be in Rust 2021
+     = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2021/panic-macro-consistency.html>
+     = note: `#[warn(non_fmt_panics)]` (part of `#[warn(rust_2021_compatibility)]`) on by default
+help: add the missing argument
+     |
+4696 |             _ => panic!("invalid reduction index {__reduce_index}", ...,)
+     |                                                                   +++++
+help: or add a "{}" format string to use the message literally
+     |
+4696 |             _ => panic!("{}", "invalid reduction index {__reduce_index}",)
+     |                         +++++
+
+warning: panic message contains an unused formatting placeholder
+    --> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\tools/frawk/target\release\build\frawk-c2a20e49349ee913\out/syntax.rs:5819:46
+     |
+5819 |             _ => panic!("invalid action code {__action}")
+     |                                              ^^^^^^^^^^
+     |
+     = note: this message is not used as a format string when given without arguments, but will be in Rust 2021
+     = note: for more information, see <https://doc.rust-lang.org/edition-guide/rust-2021/panic-macro-consistency.html>
+help: add the missing argument
+     |
+5819 |             _ => panic!("invalid action code {__action}", ...)
+     |                                                         +++++
+help: or add a "{}" format string to use the message literally
+     |
+5819 |             _ => panic!("{}", "invalid action code {__action}")
+     |                         +++++
+
+warning: `frawk` (test "sort") generated 7 warnings (run `cargo fix --test "sort" -p frawk` to apply 4 suggestions)
+warning: `frawk` (bin "frawk" test) generated 33 warnings (28 duplicates)
+warning: `frawk` (bin "frawk") generated 28 warnings (run `cargo fix --bin "frawk" -p frawk` to apply 4 suggestions)
+    Finished `release` profile [optimized] target(s) in 1m 58s
+────────────
+ Nextest run ID 55f6fbd2-0c49-4a60-88a8-187413cdc6c6 with nextest profile: default
+    Starting 1 test across 4 binaries (284 tests skipped)
+        PASS [   0.077s] (1/1) frawk::bin/frawk runtime::splitter::batch::tests::whitespace_splitter
+────────────
+     Summary [   0.078s] 1 test run: 1 passed, 284 skipped

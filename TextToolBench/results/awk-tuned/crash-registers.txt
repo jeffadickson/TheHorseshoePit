@@ -1,0 +1,39 @@
+[New Thread 21300.0xdeec (id 2)]
+[New Thread 21300.0x14ac (id 3)]
+[New Thread 21300.0x689c (id 4)]
+[New Thread 21300.0x9998 (id 5)]
+
+Thread 1 "gawk" received signal SIGSEGV, Segmentation fault.
+0x0000000100494351 in rep ()
+   0x100494345 <rep+677>:	movabs 0x5824848b48000000,%al
+   0x10049434e <rep+686>:	add    (%rax),%al
+   0x100494350 <rep+688>:	add    %al,%ch
+   0x100494352 <rep+690>:	std
+   0x100494353 <rep+691>:	jg     0x1004942d9 <rep+569>
+   0x100494355 <rep+693>:	and    $0x80,%al
+   0x100494357 <rep+695>:	add    %al,(%rax)
+   0x100494359 <rep+697>:	add    %cl,-0x77(%rax)
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x7ffffba90         34359720592
+rdx            0x7ffffc5a0         34359723424
+rsi            0xa00021900         42949810432
+rdi            0x1                 1
+rbp            0x1                 0x1
+rsp            0x7ffffb9d0         0x7ffffb9d0
+r8             0x7ffffba50         34359720528
+r9             0x0                 0
+r10            0xa000184a6         42949772454
+r11            0x10048bc32         4299734066
+r12            0x0                 0
+r13            0x7ffffc5a0         34359723424
+r14            0x0                 0
+r15            0x0                 0
+rip            0x100494351         0x100494351 <rep+689>
+eflags         0x10246             [ PF ZF IF RF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x2b                43
+es             0x2b                43
+fs             0x53                83
+gs             0x2b                43

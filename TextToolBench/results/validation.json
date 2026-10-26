@@ -1,0 +1,10 @@
+{
+  "Seed": 20261026,
+  "EquivalenceChecks": 191,
+  "FixedCases": 5,
+  "RandomCases": 3,
+  "NegativeChecks": 2,
+  "MutantsKilled": 3,
+  "MutantsTotal": 3,
+  "Scope": "ASCII, LF, spaces/tabs; includes empty input, no trailing newline, long line. UTF-8/non-ASCII and CRLF performance are outside scope."
+}

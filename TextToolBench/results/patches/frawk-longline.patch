@@ -1,0 +1,27 @@
+diff --git a/src/runtime/splitter/chunk.rs b/src/runtime/splitter/chunk.rs
+index 8ef8568..fc3d2fa 100644
+--- a/src/runtime/splitter/chunk.rs
++++ b/src/runtime/splitter/chunk.rs
+@@ -377,6 +377,7 @@ impl<R: Read, F: FnMut(&[u8], &mut WhitespaceOffsets, u64) -> u64> ChunkProducer
+                     chunk.name = self.0.name.clone();
+                     let buf = self.0.inner.buf.clone();
+                     let bs = buf.as_bytes();
++                    let initial_whitespace = self.1;
+                     self.1 = (self.0.find_indexes)(bs, &mut chunk.off, self.1);
+                     // Find the last newline in the buffer, if there is one.
+                     let (is_partial, truncate_to, len_if_not_last) =
+@@ -420,7 +421,13 @@ impl<R: Read, F: FnMut(&[u8], &mut WhitespaceOffsets, u64) -> u64> ChunkProducer
+                         // We read an entire chunk, but we didn't find a full record. Try again
+                         // (note that the call to reset read in a larger chunk and would have kept
+                         // a prefix)
+-                        (true, false) => continue,
++                        (true, false) => {
++                            // reset() retained the entire incomplete record and grew the buffer.
++                            // Its prefix is scanned again, so preserve the state from before that
++                            // prefix, not the state computed at the previous buffer's tail.
++                            self.1 = initial_whitespace;
++                            continue;
++                        }
+                     };
+                 }
+                 ChunkState::Done => return Ok(true),

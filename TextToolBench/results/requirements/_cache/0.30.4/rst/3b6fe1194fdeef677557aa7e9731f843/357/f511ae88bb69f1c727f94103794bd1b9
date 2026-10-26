@@ -1,0 +1,3 @@
+<div class="document">
+<p>Retain the original frawk long-field compatibility failure. Diagnose buffer-growth state handling, provide a separate minimal source fix, and verify boundary and seeded randomized cases against independent expected output. Record targeted test, negative-control and coverage evidence; patched results must not silently replace historical benchmark results.</p>
+</div>

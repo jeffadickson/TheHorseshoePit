@@ -1,0 +1,100 @@
+x
+x 	x 	war 	peace 	WAR
+x 	x 	war 	war 	peace
+Prince 	prince
+peace 	peace
+WAR 	war 	Prince 	prince 	Prince
+peace 	Prince 	Prince 	Prince 	WAR 	peace
+x 	peace 	war 	WAR
+peace
+peace 	x
+war 	Prince
+peace 	prince 	WAR 	x 	WAR
+war 	prince 	war 	peace 	WAR 	peace 	WAR
+Prince 	peace 	peace 	x
+x
+WAR 	WAR 	WAR 	war 	Prince 	x
+Prince 	WAR
+
+prince 	war 	prince 	prince 	war
+war
+prince 	war 	war 	Prince 	peace
+
+Prince 	prince 	x 	war
+prince 	prince 	WAR 	x
+Prince 	war 	peace 	Prince
+
+
+war 	Prince 	war 	prince
+WAR 	prince
+war 	war
+war 	prince 	peace 	Prince
+peace 	x 	Prince
+war
+peace 	x 	WAR 	prince
+war 	WAR 	x 	WAR 	prince 	prince
+peace 	peace 	peace 	prince 	peace 	war 	WAR
+
+
+WAR 	war 	WAR 	x 	x
+
+
+
+x 	prince 	x 	war 	war 	peace
+
+
+peace 	peace 	WAR 	prince 	Prince 	prince
+
+x 	prince
+WAR 	war
+war 	WAR
+prince 	peace
+war 	WAR 	x 	peace 	war 	war
+peace 	Prince 	Prince 	WAR 	peace 	prince
+war 	peace 	Prince 	war 	prince 	war 	WAR
+Prince 	WAR 	WAR 	Prince
+x 	peace 	WAR 	prince
+war
+war
+WAR 	Prince 	x 	WAR 	peace 	peace 	prince
+peace 	WAR 	war 	peace 	WAR
+WAR 	x 	Prince 	prince 	Prince 	WAR
+Prince 	WAR 	prince 	x
+x 	war 	x 	peace 	Prince 	Prince
+peace 	WAR 	x
+war 	x 	prince 	war
+prince 	Prince 	WAR
+Prince 	WAR 	x 	prince 	Prince 	prince 	prince
+prince 	peace 	prince 	peace 	x
+peace 	WAR 	WAR 	Prince 	peace
+Prince 	prince
+
+war 	peace 	war 	WAR 	war 	Prince 	x
+peace 	x 	WAR 	Prince 	peace
+war 	x 	x 	WAR 	prince
+peace
+peace 	Prince 	WAR 	peace 	WAR 	Prince 	peace
+WAR 	WAR
+Prince 	x 	peace 	x 	war
+prince 	peace
+Prince 	Prince 	x 	war 	prince
+
+WAR 	war 	prince 	Prince
+prince 	peace 	Prince 	prince 	Prince 	WAR
+WAR 	Prince 	prince
+
+war 	war 	WAR 	x 	x 	war 	peace
+
+x 	x 	peace 	prince
+war 	peace
+x 	x 	peace 	WAR
+WAR 	war 	war 	peace 	war 	peace 	WAR
+peace 	WAR 	x 	x 	Prince 	WAR
+WAR 	WAR
+WAR 	x 	prince 	war 	peace 	peace 	x
+prince 	x 	prince 	prince 	prince
+Prince 	war 	WAR 	war
+prince 	Prince 	x
+WAR 	prince
+peace
+prince 	WAR

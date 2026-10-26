@@ -1,0 +1,82 @@
+[DOCUMENT]
+TITLE: Text tool benchmark requirements
+
+[REQUIREMENT]
+UID: BENCH-001
+TITLE: Provenance
+STATEMENT: >>>
+Download a public-domain network corpus and retain its SHA-256 and source URL. Use deterministic ASCII/LF derivatives of approximately 1, 8 and 32 MiB.
+<<<
+COMMENT: Program.Main; results/environment.json; source.txt; https://www.gutenberg.org/cache/epub/2600/pg2600.txt
+
+[REQUIREMENT]
+UID: BENCH-002
+TITLE: Equivalent implementations
+STATEMENT: >>>
+Compare eight documented operations using GNU utilities, idiomatic PowerShell pipelines and PowerShell StreamReader loops. Validate output length and SHA-256 against an independent reference for every run.
+<<<
+COMMENT: Program.Oracle, Program.Run, worker.ps1, Supplement.cs, select-string.ps1; results/validation.json; results/select-string-validation.json; results/runs.jsonl; results/select-string-runs.jsonl
+
+[REQUIREMENT]
+UID: BENCH-003
+TITLE: Repeatable timing
+STATEMENT: >>>
+Run sequentially with one warmup and seven measured repeats per cell, seeded random order and process-startup-inclusive wall time. Retain raw measurements and report medians and dispersion.
+<<<
+COMMENT: Program.Main, Program.Run; results/runs.jsonl; results/report.html
+
+[REQUIREMENT]
+UID: BENCH-004
+TITLE: Verification evidence
+STATEMENT: >>>
+Run edge cases, reproducible randomized equivalence checks, negative cases and deliberate worker mutations. Collect line and branch coverage where tooling supports it and disclose gaps.
+<<<
+COMMENT: Program.Test; results/validation.json; results/coverage-tests.cobertura.xml; README.md
+
+[REQUIREMENT]
+UID: BENCH-005
+TITLE: Installed ripgrep comparison
+STATEMENT: >>>
+Install BurntSushi.ripgrep.MSVC with winget. Compare four equivalent search operations against contemporaneous GNU grep, interleaving sequential runs across all three existing inputs with one warmup and seven measured repetitions. Record the installed executable version, path and SHA-256, verify outputs, and retain seeded fuzz, negative, mutation and coverage evidence.
+<<<
+COMMENT: RipgrepBench.cs; results/ripgrep-environment.json; results/ripgrep-runs.jsonl; results/ripgrep-validation.json; results/coverage-ripgrep.cobertura.xml; Analyze.cs; results/report.html
+
+[REQUIREMENT]
+UID: BENCH-006
+TITLE: Small-file latency
+STATEMENT: >>>
+Compare literal search, regex search and matching-line counts on contiguous corpus slices near 1 KiB and 64 KiB using ripgrep, GNU grep, PowerShell pipeline, PowerShell reader and Select-String. Interleave all five engines, include process startup, verify every output, and retain seven measured repetitions plus one warmup per cell. Verify fixed and seeded randomized fixtures and record input provenance, match counts and coverage limitations.
+<<<
+COMMENT: RipgrepBench.Small, RipgrepBench.Run, RipgrepBench.Oracle; results/small-runs.jsonl; results/small-environment.json; results/small-validation.json; results/coverage-ripgrep.cobertura.xml; Analyze.cs; results/report.html
+
+[REQUIREMENT]
+UID: BENCH-007
+TITLE: Both rawk implementations
+STATEMENT: >>>
+Build stefanalfbo/rawk and quinnjr/rawk (awk-rs) from unmodified pinned commits in release mode with locked dependencies. Compare identical field extraction, word count and line count programs against contemporaneous GNU awk at all five existing file sizes, with sequential interleaved order, one warmup and seven measured repetitions. Verify each output against an independent reference; retain compiler, source and executable provenance, bounded fuzz, malformed-input, negative, mutation and coverage evidence.
+<<<
+COMMENT: RawkBench.Main, RawkBench.Run, RawkBench.Oracle, RawkBench.Validate; results/rawk-environment.json; results/rawk-runs.jsonl; results/rawk-validation.json; results/coverage-rawk.cobertura.xml; Analyze.cs; results/report.html
+
+[REQUIREMENT]
+UID: BENCH-008
+TITLE: Long-field scanner correctness
+STATEMENT: >>>
+Retain the original frawk long-field compatibility failure. Diagnose buffer-growth state handling, provide a separate minimal source fix, and verify boundary and seeded randomized cases against independent expected output. Record targeted test, negative-control and coverage evidence; patched results must not silently replace historical benchmark results.
+<<<
+COMMENT: tools/variants/frawk-longline/src/runtime/splitter/chunk.rs; tools/variants/frawk-longline/src/runtime/splitter/batch.rs; scripts/FrawkProbe.cs; scripts/FrawkRegression.cs; results/patches/frawk-longline.patch; results/frawk-bug/frawk-long-field-fix.patch; results/frawk-bug/patch-application.json; results/frawk-bug/README.md; results/frawk-bug/coverage/summary.json
+
+[REQUIREMENT]
+UID: BENCH-009
+TITLE: Tuned GNU tools as user defaults
+STATEMENT: >>>
+Build GNU awk with -O3 -march=native -mtune=native -ftree-vectorize. Retain compiler flags and upstream test logs. Install the tuned GNU awk and grep in a separate user directory with their runtime dependencies. Verify deterministic long-field and randomized outputs against existing GNU references, reject malformed programs, and detect a deliberate output mutation before prepending the installation directory to the user PATH. Preserve the previous user PATH for rollback and disclose test coverage limitations.
+<<<
+COMMENT: scripts/build-awk.sh; scripts/VerifyTunedTools.cs; scripts/InstallTunedTools.ps1; results/awk-tuned/flags.txt; results/awk-tuned/check.log; results/awk-tuned/installation-verification.txt; results/awk-tuned/installed-hashes.json
+
+[REQUIREMENT]
+UID: BENCH-010
+TITLE: Sed implementations and replacement alternatives
+STATEMENT: >>>
+Compare GNU sed, BusyBox sed, uutils/sed and red on six equivalent operations across the existing five corpus sizes. Compare sd only for literal and numeric-regex replacements using non-mutating preview mode. Deduplicate byte-identical GNU binaries. Qualify each corpus cell, use one warmup and seven seeded shuffled sequential repeats, verify every timed output by length and SHA-256, and preserve input hashes. Retain edge/binary compatibility failures separately from passes. Record pinned acquisitions, independent oracle tests, seeded random cases, malformed input, command and Stryker.NET source mutations, line/branch coverage and tooling limitations. Add results to the existing report without combining historical sessions.
+<<<
+COMMENT: SedBench.cs; SedSemantics.cs; SedBench.Tests/UnitTest1.cs; SedBench.Tests/stryker-config.json; scripts/Get-SedTools.ps1; scripts/Get-SedTools.Tests.ps1; scripts/sed-dependencies.json; results/sed/environment.json; results/sed/runs.jsonl; results/sed/validation.json; results/sed/verification-summary.json; results/sed/README.md; Analyze.cs; results/report.html

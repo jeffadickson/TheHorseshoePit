@@ -1,0 +1,18 @@
+{
+  "dotnetSdk": "10.0.403",
+  "rustToolchain": "1.99.1-x86_64-pc-windows-msvc",
+  "coverlet": "10.1.0",
+  "strictdoc": "0.30.4",
+  "source": {"url":"https://www.gutenberg.org/cache/epub/2600/pg2600.txt","path":"source.txt","sha256":"2D5BB2AD5F422765E714617E21FA31BBAF8958AA79682C86FCA6660FCC5D1B2B"},
+  "archives": [
+    {"url":"https://ftp.gnu.org/gnu/gawk/gawk-5.4.1.tar.xz","path":"upstream/gawk-5.4.1.tar.xz","sha256":"07F6F7342B7FEBE4313FC2C2542AD93D64FE20AD8717200109F105A826F5FD37"},
+    {"url":"https://ftp.gnu.org/gnu/grep/grep-3.0.tar.xz","path":"upstream/grep-3.0.tar.xz","sha256":"E2C81DB5056E3E8C5995F0BB5D0D0E1CAD1F6F45C3B2FC77B6E81435AED48AB5"},
+    {"url":"https://repo.msys2.org/distrib/x86_64/msys2-base-x86_64-20260927.tar.xz","path":"tools/downloads/msys2-base-x86_64-20260927.tar.xz","sha256":"EA2F31A0B6ADE63914CE441FFB022F0F6AA96982BFEFA2326460A26D5FB01322"},
+    {"url":"https://invisible-island.net/datafiles/release/mawk-mingw64.zip","path":"tools/mawk/mawk.zip","sha256":"F60B4FFEF57099B2BC882B634F4ED0E563249972CC79FF5C685853E22FB39D62"}
+  ],
+  "repositories": [
+    {"url":"https://github.com/stefanalfbo/rawk.git","path":"tools/stefanalfbo-rawk","commit":"bd6dfd584e2fbcbb50b2ac7239269f1ba4099313"},
+    {"url":"https://github.com/quinnjr/rawk.git","path":"tools/quinnjr-rawk","commit":"5834140f2941ef7f565e6f342bd0be8c265b8207"},
+    {"url":"https://github.com/ezrosent/frawk.git","path":"tools/frawk","commit":"d548b159a5a76c12de508f8bf415fdc09e609f0a"}
+  ]
+}

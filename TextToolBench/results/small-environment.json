@@ -1,0 +1,25 @@
+{
+  "Seed": 20261029,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-26T16:39:19.3390685Z",
+  "Source": "data/1MiB.txt",
+  "SourceOffset": 7285,
+  "Inputs": [
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\small-1KiB.txt",
+      "Bytes": 1071,
+      "Sha256": "13CB0E6D44793250D0BA8EFAD4A402D0B9CCF7B0743A325206A900D6D5E47056",
+      "MatchingLines": 2,
+      "RegexMatchingLines": 1
+    },
+    {
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\data\\small-64KiB.txt",
+      "Bytes": 65580,
+      "Sha256": "0C65AD840E6EA25B167FDDDA75D00E3F78562E97246416347D7D6E952ACB648C",
+      "MatchingLines": 105,
+      "RegexMatchingLines": 23
+    }
+  ],
+  "Timing": "Sequential, shuffled; fresh processes including startup and stdout hashing; warm cache; all five engines interleaved"
+}

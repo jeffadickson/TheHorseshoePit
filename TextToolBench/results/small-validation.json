@@ -1,0 +1,7 @@
+{
+  "Seed": 20261029,
+  "EquivalenceChecks": 60,
+  "FixedFixtures": 3,
+  "RandomFixtures": 1,
+  "NativeNegativeAndMutationEvidence": "ripgrep-validation.json"
+}

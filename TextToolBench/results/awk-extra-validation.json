@@ -1,0 +1,50 @@
+{
+  "Seed": 20261101,
+  "EquivalenceChecks": 70,
+  "CompatibilityFailures": [
+    {
+      "Engine": "frawk-interp",
+      "Task": "field",
+      "InputBytes": 131075,
+      "ExpectedBytes": 131073,
+      "ExpectedHash": "D8208358468E3B4CD6EDC571C86CB89BCA470F745D6C905E920D31054ABB90F8",
+      "Actual": {
+        "Task": "field",
+        "Engine": "frawk-interp",
+        "InputBytes": 131075,
+        "Round": -2,
+        "Milliseconds": 111.8096,
+        "OutputBytes": 2,
+        "Sha256": "E16F1596201850FD4A63680B27F603CB64E67176159BE3D8ED78A4403FDB1700",
+        "CpuMilliseconds": 15.625,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    },
+    {
+      "Engine": "frawk-interp",
+      "Task": "words",
+      "InputBytes": 131075,
+      "ExpectedBytes": 2,
+      "ExpectedHash": "53C234E5E8472B6AC51C1AE1CAB3FE06FAD053BEB8EBFD8977B010655BFDD3C3",
+      "Actual": {
+        "Task": "words",
+        "Engine": "frawk-interp",
+        "InputBytes": 131075,
+        "Round": -2,
+        "Milliseconds": 114.9517,
+        "OutputBytes": 2,
+        "Sha256": "4355A46B19D348DC2F57C046F8EF63D4538EBB936000F3C9EE954A27460DD865",
+        "CpuMilliseconds": 31.25,
+        "ExitCode": 0,
+        "Error": ""
+      }
+    }
+  ],
+  "NegativeChecks": 3,
+  "MutantsKilled": 9,
+  "MutantsTotal": 9,
+  "FixedCases": 5,
+  "RandomCases": 3,
+  "Note": "Known frawk fixture failures are retained, not counted as passes. Every timed corpus output must still match exactly."
+}

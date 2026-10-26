@@ -1,0 +1,20 @@
+<p>Hi Eli,</p>
+<p>While benchmarking frawk, I found a field-splitting correctness bug when an incomplete record causes the input buffer to grow. I reproduced it at commit <code>d548b159a5a76c12de508f8bf415fdc09e609f0a</code> (0.4.8), using a Windows x86_64 MSVC release build with <code>--no-default-features</code> and <code>-B interp</code>.</p>
+<p>A small reproducer, using a reference awk to generate the file:</p>
+<pre>awk 'BEGIN { for (i = 0; i &lt; 8190; ++i) printf "x"; print " y" }' &gt; long-field.txt
+frawk -B interp 'NF {print $1}' long-field.txt
+frawk -B interp '{print NF}' long-field.txt</pre>
+<p>The first command should emit 8,190 x characters followed by LF, but emits a space followed by LF. NF is 1 rather than 2. A field length of 8,189 passes; 8,190 makes the complete record 8,193 bytes and crosses the initial 8 KiB buffer boundary. I originally encountered it with a 131,072-byte field. The complete record in $0 is preserved.</p>
+<p>The issue appears to be in <code>WhitespaceChunkProducer::get_chunk</code>, in <code>src/runtime/splitter/chunk.rs</code>. Scanning updates <code>self.1</code> to the whitespace state at the buffer's tail. When <code>(is_partial, is_eof) == (true, false)</code>, the reader retains the whole prefix and retries, but the next scan starts with that tail state rather than the state before the prefix. This loses the first field's opening boundary.</p>
+<p>The attached patch saves the state before scanning and restores it on that retry path:</p>
+<pre>let initial_whitespace = self.1;
+self.1 = (self.0.find_indexes)(bs, &amp;mut chunk.off, self.1);
+// ...
+(true, false) =&gt; {
+    self.1 = initial_whitespace;
+    continue;
+}</pre>
+<p>It also adds growth-boundary regression cases to the existing whitespace splitter test. Local validation of the patched build passed 96 boundary checks and 144 seeded property checks; the original passed only 10 of those 144 property checks. The targeted cargo-nextest whitespace-splitter test passed; 284 unrelated tests were skipped. I have not run the full upstream suite or confirmed this on Linux.</p>
+<p>The combined patch applies cleanly to the recorded revision. I've attached the patch, a detailed write-up with verification scope, and the 8,193-byte input. The dependency-lock resolution used for the local build is separate from the two-file source patch.</p>
+<p>Please let me know if this looks right or if you'd prefer a pull request.</p>
+<p>Thanks,<br>Jeff Dickson</p>

@@ -1,0 +1,31 @@
+{
+  "Seed": 20261102,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-26T17:30:28.4215412Z",
+  "Tools": [
+    {
+      "Engine": "rawk-stefan",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\stefanalfbo-rawk\\target\\release\\rawk.exe",
+      "Sha256": "A96A18544BA03EF35EF5DBEAACBE4CEA120DDB4028AECAECB8B14B058E395638"
+    },
+    {
+      "Engine": "rawk-stefan-buffered",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\variants\\stefan-buffered\\target\\release\\rawk.exe",
+      "Sha256": "1ADFC45AC050D2CEA50CBDF7F7DED2A24D5A25EE6B8B13A6CAA4B8DFDBCA58FE"
+    },
+    {
+      "Engine": "awk-rs-quinn",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\quinnjr-rawk\\target\\release\\awk-rs.exe",
+      "Sha256": "7F195DA7FE03CC6D003B0348F0AB67CEFD600F2AB18BC7AAD5F014B3AAE32F88"
+    },
+    {
+      "Engine": "awk-rs-quinn-buffered",
+      "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\variants\\quinn-buffered\\target\\release\\awk-rs.exe",
+      "Sha256": "F442EF40390267D42FA183B284697CB47AA30E97C8DC980F7EEDFCAD7B56E4B8"
+    }
+  ],
+  "Purpose": "Only CLI stdout buffering changed; 64 KiB BufWriter; same compiler and release profiles; original source trees untouched",
+  "FrawkLockSha256": null,
+  "Notes": "Fresh process, warm cache, sequential interleaved order, stdout hashing; includes JIT compilation for frawk"
+}

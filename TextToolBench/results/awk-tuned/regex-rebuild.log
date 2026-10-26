@@ -1,0 +1,117 @@
+make: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+depbase=`echo minrx.o | sed 's|[^/]*$|.deps/&|;s|\.o$||'`;\
+gcc -DGAWK -DHAVE_CONFIG_H -I"/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/support/.." -I. -I/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/support -I..    -O3 -march=native -mtune=native -ftree-vectorize -pipe -fopt-info-vec-all=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/vectorization.log -mprefer-vector-width=128 -O3 -march=native -mtune=native -ftree-vectorize -pipe -fopt-info-vec-all=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/vectorization.log -mprefer-vector-width=128 -MT minrx.o -MD -MP -MF $depbase.Tpo -c -o minrx.o /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/support/minrx.c &&\
+mv -f $depbase.Tpo $depbase.Po
+make: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+make  all-recursive
+make[1]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+Making all in support
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+rm -f libsupport.a
+ar cru libsupport.a dfa.o getopt.o getopt1.o localeinfo.o minrx.o random.o regex.o malloc/dynarray_at_failure.o malloc/dynarray_emplace_enlarge.o malloc/dynarray_finalize.o malloc/dynarray_resize.o malloc/dynarray_resize_clear.o  
+ranlib libsupport.a
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/support'
+Making all in .
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+gcc -O3 -march=native -mtune=native -ftree-vectorize -pipe -fopt-info-vec-all=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/vectorization.log -O3 -march=native -mtune=native -ftree-vectorize -pipe -fopt-info-vec-all=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/vectorization.log   -o gawk.exe array.o awkgram.o builtin.o cint_array.o command.o debug.o eval.o ext.o field.o floatcomp.o gawkapi.o gawkmisc.o int_array.o io.o main.o mpfr.o msg.o node.o printf.o profile.o re.o replace.o str_array.o symbol.o version.o support/libsupport.a  -lintl  -lreadline -lmpfr -lgmp  
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'
+Making all in extension
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+make  all-recursive
+make[3]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+Making all in po
+make[4]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+make gawk-extensions.pot-update
+make[5]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+package_gnu=""; \
+test -n "$package_gnu" || { \
+  if { if (LC_ALL=C find --version) 2>/dev/null | grep GNU >/dev/null; then \
+         LC_ALL=C find -L /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension -maxdepth 1 -type f -size -10000000c -exec grep -i 'GNU gawk-extensions' /dev/null '{}' ';' 2>/dev/null; \
+       else \
+         LC_ALL=C grep -i 'GNU gawk-extensions' /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/* 2>/dev/null; \
+       fi; \
+     } | grep -v 'libtool:' >/dev/null; then \
+     package_gnu=yes; \
+   else \
+     package_gnu=no; \
+   fi; \
+}; \
+if test "$package_gnu" = "yes"; then \
+  package_prefix='GNU '; \
+else \
+  package_prefix=''; \
+fi; \
+if test -n 'bug-gawk@gnu.org' || test 'bug-gawk@gnu.org' = '@'PACKAGE_BUGREPORT'@'; then \
+  msgid_bugs_address='bug-gawk@gnu.org'; \
+else \
+  msgid_bugs_address='bug-gawk@gnu.org'; \
+fi; \
+case `/usr/bin/xgettext --version | sed 1q | sed -e 's,^[^0-9]*,,'` in \
+  '' | 0.[0-9] | 0.[0-9].* | 0.1[0-5] | 0.1[0-5].* | 0.16 | 0.16.[0-1]*) \
+    /usr/bin/xgettext --default-domain=gawk-extensions --directory=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension \
+      --add-comments=TRANSLATORS: \
+      --files-from=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/POTFILES.in \
+      --copyright-holder='Free Software Foundation, Inc.' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --keyword=_ --keyword=N_  \
+    ;; \
+  *) \
+    /usr/bin/xgettext --default-domain=gawk-extensions --directory=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension \
+      --add-comments=TRANSLATORS: \
+      --files-from=/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/POTFILES.in \
+      --copyright-holder='Free Software Foundation, Inc.' \
+      --package-name="${package_prefix}gawk-extensions" \
+      --package-version='5.4.1' \
+      --msgid-bugs-address="$msgid_bugs_address" \
+      --keyword=_ --keyword=N_  \
+    ;; \
+esac
+test ! -f gawk-extensions.po || { \
+  if test -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot-header; then \
+    sed -e '1,/^#$/d' < gawk-extensions.po > gawk-extensions.1po && \
+    cat /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot-header gawk-extensions.1po > gawk-extensions.po && \
+    rm -f gawk-extensions.1po \
+    || exit 1; \
+  fi; \
+  if test -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot; then \
+    sed -f remove-potcdate.sed < /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot > gawk-extensions.1po && \
+    sed -f remove-potcdate.sed < gawk-extensions.po > gawk-extensions.2po && \
+    if cmp gawk-extensions.1po gawk-extensions.2po >/dev/null 2>&1; then \
+      rm -f gawk-extensions.1po gawk-extensions.2po gawk-extensions.po; \
+    else \
+      rm -f gawk-extensions.1po gawk-extensions.2po /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot && \
+      mv gawk-extensions.po /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot; \
+    fi; \
+  else \
+    mv gawk-extensions.po /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot; \
+  fi; \
+}
+make[5]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+test ! -f /c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/gnu-source/extracted/gawk-5.4.1/extension/po/gawk-extensions.pot || \
+  test -z "" || make 
+make[4]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension/po'
+make[4]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+make[4]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+make[3]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extension'
+Making all in extras
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extras'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/extras'
+Making all in doc
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/doc'
+Making all in awklib
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/awklib'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/awklib'
+Making all in po
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/po'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/po'
+Making all in test
+make[2]: Entering directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3/test'
+make[1]: Leaving directory '/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/awk-build/native-o3'

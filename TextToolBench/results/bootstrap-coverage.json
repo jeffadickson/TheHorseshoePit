@@ -1,0 +1,1333 @@
+{
+    "NumberOfCommandsAnalyzed":  220,
+    "NumberOfFilesAnalyzed":  1,
+    "NumberOfCommandsExecuted":  14,
+    "NumberOfCommandsMissed":  206,
+    "MissedCommands":  [
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  23,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "$path=Join-Path $script:Root $Item.path"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  24,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "if (Test-Path -LiteralPath $path) { Assert-Digest $path $Item.sha256; return }"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  24,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "Assert-Digest $path $Item.sha256"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  25,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "New-Item -ItemType Directory -Path ([IO.Path]::GetDirectoryName($path)) -Force"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  25,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "[IO.Path]::GetDirectoryName($path)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  25,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "Out-Null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  26,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "$temporary=\"$path.$PID.download\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  28,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "[Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  29,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "Invoke-WebRequest -UseBasicParsing -Uri $Item.url -OutFile $temporary"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  30,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "Assert-Digest $temporary $Item.sha256"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  31,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "Move-Item -LiteralPath $temporary -Destination $path"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  32,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "if(Test-Path -LiteralPath $temporary){Remove-Item -LiteralPath $temporary}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  32,
+                               "Function":  "Get-VerifiedFile",
+                               "Command":  "Remove-Item -LiteralPath $temporary"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  36,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$env:RUSTUP_HOME=Join-Path $script:Root \u0027tools/rustup\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  37,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$env:RUSTUP_TOOLCHAIN=$script:Lock.rustToolchain"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  38,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$env:CARGO_HOME=Join-Path $script:Root \u0027tools/cargo\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  39,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$env:PATH=\"$env:CARGO_HOME\\bin;$env:PATH\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  40,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$pwsh=Get-Command pwsh.exe -ErrorAction SilentlyContinue"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  41,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "if($pwsh){$env:BENCH_PWSH=$pwsh.Source}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  41,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$env:BENCH_PWSH=$pwsh.Source"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  42,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$git=Get-Command git.exe -ErrorAction SilentlyContinue"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  43,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "if($git){\n        $gitRoot=Split-Path (Split-Path $git.Source)\n        $gnu=Join-Path $gitRoot \u0027usr/bin\u0027\n        if(Test-Path (Join-Path $gnu \u0027awk.exe\u0027)){$env:BENCH_GNU_BIN=$gnu}\n    }"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  44,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$gitRoot=Split-Path (Split-Path $git.Source)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  44,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "Split-Path $git.Source"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  45,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$gnu=Join-Path $gitRoot \u0027usr/bin\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  46,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "if(Test-Path (Join-Path $gnu \u0027awk.exe\u0027)){$env:BENCH_GNU_BIN=$gnu}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  46,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "Join-Path $gnu \u0027awk.exe\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  46,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$env:BENCH_GNU_BIN=$gnu"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  48,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$rgRoot=Join-Path $env:LOCALAPPDATA \u0027Microsoft/WinGet/Packages/BurntSushi.ripgrep.MSVC_Microsoft.Winget.Source_8wekyb3d8bbwe\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  49,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "if(Test-Path $rgRoot){$rg=@(Get-ChildItem -LiteralPath $rgRoot -Recurse -Filter rg.exe);if($rg.Count -eq 1){$env:BENCH_RG=$rg[0].FullName}}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  49,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$rg=@(Get-ChildItem -LiteralPath $rgRoot -Recurse -Filter rg.exe)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  49,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "Get-ChildItem -LiteralPath $rgRoot -Recurse -Filter rg.exe"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  49,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "if($rg.Count -eq 1){$env:BENCH_RG=$rg[0].FullName}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  49,
+                               "Function":  "Set-BenchEnvironment",
+                               "Command":  "$env:BENCH_RG=$rg[0].FullName"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  53,
+                               "Function":  "Install-WingetPackage",
+                               "Command":  "Invoke-Checked winget.exe (@(\u0027install\u0027,\u0027--id\u0027,$Id,\u0027--exact\u0027,\u0027--accept-source-agreements\u0027,\u0027--accept-package-agreements\u0027,\u0027--disable-interactivity\u0027)+$Extra)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  53,
+                               "Function":  "Install-WingetPackage",
+                               "Command":  "@(\u0027install\u0027,\u0027--id\u0027,$Id,\u0027--exact\u0027,\u0027--accept-source-agreements\u0027,\u0027--accept-package-agreements\u0027,\u0027--disable-interactivity\u0027)+$Extra"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  53,
+                               "Function":  "Install-WingetPackage",
+                               "Command":  "\u0027install\u0027,\u0027--id\u0027,$Id,\u0027--exact\u0027,\u0027--accept-source-agreements\u0027,\u0027--accept-package-agreements\u0027,\u0027--disable-interactivity\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  56,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(-not(Get-Command dotnet.exe -ErrorAction SilentlyContinue)){Install-WingetPackage Microsoft.DotNet.SDK.10}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  56,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Get-Command dotnet.exe -ErrorAction SilentlyContinue"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  56,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Install-WingetPackage Microsoft.DotNet.SDK.10"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  57,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(-not(Get-Command git.exe -ErrorAction SilentlyContinue)){Install-WingetPackage Git.Git}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  57,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Get-Command git.exe -ErrorAction SilentlyContinue"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  57,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Install-WingetPackage Git.Git"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  58,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(-not(Get-Command pwsh.exe -ErrorAction SilentlyContinue)){Install-WingetPackage Microsoft.PowerShell}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  58,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Get-Command pwsh.exe -ErrorAction SilentlyContinue"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  58,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Install-WingetPackage Microsoft.PowerShell"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  59,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "$rgRoot=Join-Path $env:LOCALAPPDATA \u0027Microsoft/WinGet/Packages/BurntSushi.ripgrep.MSVC_Microsoft.Winget.Source_8wekyb3d8bbwe\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  60,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(-not(Test-Path $rgRoot)){Install-WingetPackage BurntSushi.ripgrep.MSVC}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  60,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Test-Path $rgRoot"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  60,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Install-WingetPackage BurntSushi.ripgrep.MSVC"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  61,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(-not(Get-Command python.exe -ErrorAction SilentlyContinue)){Install-WingetPackage Python.Python.3.13}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  61,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Get-Command python.exe -ErrorAction SilentlyContinue"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  61,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Install-WingetPackage Python.Python.3.13"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  63,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "@(\"$env:ProgramFiles\\dotnet\",\"$env:ProgramFiles\\Git\\cmd\",\"$env:ProgramFiles\\PowerShell\\7\",\"$env:LOCALAPPDATA\\Programs\\Python\\Python313\")"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  63,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\"$env:ProgramFiles\\dotnet\",\"$env:ProgramFiles\\Git\\cmd\",\"$env:ProgramFiles\\PowerShell\\7\",\"$env:LOCALAPPDATA\\Programs\\Python\\Python313\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  63,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(Test-Path $p){$env:PATH=\"$p;$env:PATH\"}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  63,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "$env:PATH=\"$p;$env:PATH\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  64,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Set-BenchEnvironment"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  65,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "$vswhere=\"${env:ProgramFiles(x86)}\\Microsoft Visual Studio\\Installer\\vswhere.exe\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  66,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "$vs=@()"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  66,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(Test-Path $vswhere){$vs=@(\u0026 $vswhere -products \u0027*\u0027 -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath)}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  66,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "$vs=@(\u0026 $vswhere -products \u0027*\u0027 -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  66,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\u0026 $vswhere -products \u0027*\u0027 -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  67,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if($vs.Count -eq 0){Install-WingetPackage Microsoft.VisualStudio.2022.BuildTools @(\u0027--override\u0027,\u0027--wait --passive --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended\u0027)}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  67,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Install-WingetPackage Microsoft.VisualStudio.2022.BuildTools @(\u0027--override\u0027,\u0027--wait --passive --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  67,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\u0027--override\u0027,\u0027--wait --passive --add Microsoft.VisualStudio.Workload.VCTools --includeRecommended\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  68,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(-not(Test-Path \"$env:CARGO_HOME\\bin\\rustup.exe\")){\n        New-Item -ItemType Directory -Path \"$script:Root/tools/downloads\" -Force | Out-Null\n        Invoke-WebRequest -UseBasicParsing \u0027https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe\u0027 -OutFile \"$script:Root/tools/downloads/rustup-init.exe\"\n        Invoke-Checked \"$script:Root/tools/downloads/rustup-init.exe\" @(\u0027-y\u0027,\u0027--no-modify-path\u0027,\u0027--profile\u0027,\u0027minimal\u0027,\u0027--default-toolchain\u0027,$script:Lock.rustToolchain)\n    }"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  68,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Test-Path \"$env:CARGO_HOME\\bin\\rustup.exe\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  69,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "New-Item -ItemType Directory -Path \"$script:Root/tools/downloads\" -Force"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  69,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Out-Null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  70,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Invoke-WebRequest -UseBasicParsing \u0027https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe\u0027 -OutFile \"$script:Root/tools/downloads/rustup-init.exe\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  71,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Invoke-Checked \"$script:Root/tools/downloads/rustup-init.exe\" @(\u0027-y\u0027,\u0027--no-modify-path\u0027,\u0027--profile\u0027,\u0027minimal\u0027,\u0027--default-toolchain\u0027,$script:Lock.rustToolchain)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  71,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\u0027-y\u0027,\u0027--no-modify-path\u0027,\u0027--profile\u0027,\u0027minimal\u0027,\u0027--default-toolchain\u0027,$script:Lock.rustToolchain"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  73,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Invoke-Checked \"$env:CARGO_HOME/bin/rustup.exe\" @(\u0027toolchain\u0027,\u0027install\u0027,$script:Lock.rustToolchain,\u0027--profile\u0027,\u0027minimal\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  73,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\u0027toolchain\u0027,\u0027install\u0027,$script:Lock.rustToolchain,\u0027--profile\u0027,\u0027minimal\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  74,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if(-not(Test-Path \"$script:Root/tools/dotnet-tools/coverlet.exe\")){Invoke-Checked dotnet.exe @(\u0027tool\u0027,\u0027install\u0027,\u0027coverlet.console\u0027,\u0027--version\u0027,$script:Lock.coverlet,\u0027--tool-path\u0027,\"$script:Root/tools/dotnet-tools\")}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  74,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Test-Path \"$script:Root/tools/dotnet-tools/coverlet.exe\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  74,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Invoke-Checked dotnet.exe @(\u0027tool\u0027,\u0027install\u0027,\u0027coverlet.console\u0027,\u0027--version\u0027,$script:Lock.coverlet,\u0027--tool-path\u0027,\"$script:Root/tools/dotnet-tools\")"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  74,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\u0027tool\u0027,\u0027install\u0027,\u0027coverlet.console\u0027,\u0027--version\u0027,$script:Lock.coverlet,\u0027--tool-path\u0027,\"$script:Root/tools/dotnet-tools\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  75,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\u0026 python.exe -c \u0027import strictdoc\u0027 2\u003e$null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  76,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "if($LASTEXITCODE -ne 0){Invoke-Checked python.exe @(\u0027-m\u0027,\u0027pip\u0027,\u0027install\u0027,\u0027--user\u0027,\"strictdoc==$($script:Lock.strictdoc)\")}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  76,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "Invoke-Checked python.exe @(\u0027-m\u0027,\u0027pip\u0027,\u0027install\u0027,\u0027--user\u0027,\"strictdoc==$($script:Lock.strictdoc)\")"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  76,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "\u0027-m\u0027,\u0027pip\u0027,\u0027install\u0027,\u0027--user\u0027,\"strictdoc==$($script:Lock.strictdoc)\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  76,
+                               "Function":  "Ensure-Dependencies",
+                               "Command":  "$script:Lock.strictdoc"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  79,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "$script:Lock.repositories"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  80,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "$path=Join-Path $script:Root $repo.path"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  81,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "if(-not(Test-Path (Join-Path $path \u0027.git\u0027))){Invoke-Checked git.exe @(\u0027clone\u0027,$repo.url,$path);Invoke-Checked git.exe @(\u0027-C\u0027,$path,\u0027checkout\u0027,\u0027--detach\u0027,$repo.commit)}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  81,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "Test-Path (Join-Path $path \u0027.git\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  81,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "Join-Path $path \u0027.git\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  81,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "Invoke-Checked git.exe @(\u0027clone\u0027,$repo.url,$path)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  81,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "\u0027clone\u0027,$repo.url,$path"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  81,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "Invoke-Checked git.exe @(\u0027-C\u0027,$path,\u0027checkout\u0027,\u0027--detach\u0027,$repo.commit)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  81,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "\u0027-C\u0027,$path,\u0027checkout\u0027,\u0027--detach\u0027,$repo.commit"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  82,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "$head=(\u0026 git.exe -C $path rev-parse HEAD).Trim()"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  82,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "\u0026 git.exe -C $path rev-parse HEAD"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  82,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "if($head -ne $repo.commit){throw \"Unexpected source commit in $path; refusing to reset it\"}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  82,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "throw \"Unexpected source commit in $path; refusing to reset it\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  85,
+                               "Function":  "Get-NativeSources",
+                               "Command":  "Copy-Item -LiteralPath \"$script:Root/dependency-locks/frawk.Cargo.lock\" -Destination \"$script:Root/tools/frawk/Cargo.lock\" -Force"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  88,
+                               "Function":  "Build-Native",
+                               "Command":  "Get-NativeSources"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  89,
+                               "Function":  "Build-Native",
+                               "Command":  "$cargo=\"$env:CARGO_HOME/bin/cargo.exe\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  90,
+                               "Function":  "Build-Native",
+                               "Command":  "Invoke-Checked $cargo @(\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/stefanalfbo-rawk/Cargo.toml\u0027,\u0027-p\u0027,\u0027rawk-cli\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  90,
+                               "Function":  "Build-Native",
+                               "Command":  "\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/stefanalfbo-rawk/Cargo.toml\u0027,\u0027-p\u0027,\u0027rawk-cli\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  91,
+                               "Function":  "Build-Native",
+                               "Command":  "Invoke-Checked $cargo @(\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/quinnjr-rawk/Cargo.toml\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  91,
+                               "Function":  "Build-Native",
+                               "Command":  "\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/quinnjr-rawk/Cargo.toml\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  92,
+                               "Function":  "Build-Native",
+                               "Command":  "Invoke-Checked $cargo @(\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--no-default-features\u0027,\u0027--manifest-path\u0027,\u0027tools/frawk/Cargo.toml\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  92,
+                               "Function":  "Build-Native",
+                               "Command":  "\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--no-default-features\u0027,\u0027--manifest-path\u0027,\u0027tools/frawk/Cargo.toml\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  93,
+                               "Function":  "Build-Native",
+                               "Command":  "if(-not(Test-Path tools/mawk/bin/mawk.exe)){\n        if(!(Test-Path -LiteralPath tools/mawk -PathType Container)){New-Item -ItemType Directory -Path tools/mawk -Force | Out-Null}\n        # Refuse a silently updated release from the author\u0027s mutable download URL.\n        Get-VerifiedFile ($script:Lock.archives | Where-Object path -eq \u0027tools/mawk/mawk.zip\u0027)\n        Expand-Archive -LiteralPath tools/mawk/mawk.zip -DestinationPath tools/mawk -Force\n    }"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  93,
+                               "Function":  "Build-Native",
+                               "Command":  "Test-Path tools/mawk/bin/mawk.exe"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  94,
+                               "Function":  "Build-Native",
+                               "Command":  "if(!(Test-Path -LiteralPath tools/mawk -PathType Container)){New-Item -ItemType Directory -Path tools/mawk -Force | Out-Null}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  94,
+                               "Function":  "Build-Native",
+                               "Command":  "Test-Path -LiteralPath tools/mawk -PathType Container"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  94,
+                               "Function":  "Build-Native",
+                               "Command":  "New-Item -ItemType Directory -Path tools/mawk -Force"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  94,
+                               "Function":  "Build-Native",
+                               "Command":  "Out-Null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  96,
+                               "Function":  "Build-Native",
+                               "Command":  "Get-VerifiedFile ($script:Lock.archives | Where-Object path -eq \u0027tools/mawk/mawk.zip\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  96,
+                               "Function":  "Build-Native",
+                               "Command":  "$script:Lock.archives"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  96,
+                               "Function":  "Build-Native",
+                               "Command":  "Where-Object path -eq \u0027tools/mawk/mawk.zip\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  97,
+                               "Function":  "Build-Native",
+                               "Command":  "Expand-Archive -LiteralPath tools/mawk/mawk.zip -DestinationPath tools/mawk -Force"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  99,
+                               "Function":  "Build-Native",
+                               "Command":  "Invoke-Checked powershell.exe @(\u0027-NoProfile\u0027,\u0027-ExecutionPolicy\u0027,\u0027Bypass\u0027,\u0027-File\u0027,\u0027scripts/prepare-variants.ps1\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  99,
+                               "Function":  "Build-Native",
+                               "Command":  "\u0027-NoProfile\u0027,\u0027-ExecutionPolicy\u0027,\u0027Bypass\u0027,\u0027-File\u0027,\u0027scripts/prepare-variants.ps1\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  100,
+                               "Function":  "Build-Native",
+                               "Command":  "Invoke-Checked $cargo @(\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/variants/stefan-buffered/Cargo.toml\u0027,\u0027-p\u0027,\u0027rawk-cli\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  100,
+                               "Function":  "Build-Native",
+                               "Command":  "\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/variants/stefan-buffered/Cargo.toml\u0027,\u0027-p\u0027,\u0027rawk-cli\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  101,
+                               "Function":  "Build-Native",
+                               "Command":  "Invoke-Checked $cargo @(\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/variants/quinn-buffered/Cargo.toml\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  101,
+                               "Function":  "Build-Native",
+                               "Command":  "\u0027build\u0027,\u0027--release\u0027,\u0027--locked\u0027,\u0027--manifest-path\u0027,\u0027tools/variants/quinn-buffered/Cargo.toml\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  104,
+                               "Function":  "Build-Harnesses",
+                               "Command":  "Get-ChildItem -LiteralPath $script:Root -Filter \u0027*.csproj\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  104,
+                               "Function":  "Build-Harnesses",
+                               "Command":  "Invoke-Checked dotnet.exe @(\u0027build\u0027,$project.FullName,\u0027-c\u0027,\u0027Release\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  104,
+                               "Function":  "Build-Harnesses",
+                               "Command":  "\u0027build\u0027,$project.FullName,\u0027-c\u0027,\u0027Release\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  108,
+                               "Function":  "Run-Dll",
+                               "Command":  "Invoke-Checked dotnet.exe (@(\"bin/Release/net10.0/$Name.dll\")+$Arguments)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  108,
+                               "Function":  "Run-Dll",
+                               "Command":  "@(\"bin/Release/net10.0/$Name.dll\")+$Arguments"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  108,
+                               "Function":  "Run-Dll",
+                               "Command":  "\"bin/Release/net10.0/$Name.dll\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "@(@(\u0027Bench\u0027,\u0027--test\u0027),@(\u0027Supplement\u0027,\u0027--test\u0027),@(\u0027RipgrepBench\u0027,\u0027--small\u0027,\u0027--test\u0027),@(\u0027RawkBench\u0027,\u0027--test\u0027),@(\u0027AwkExtra\u0027,\u0027--test\u0027),@(\u0027AwkExtra\u0027,\u0027--buffering\u0027,\u0027--test\u0027))"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "@(\u0027Bench\u0027,\u0027--test\u0027),@(\u0027Supplement\u0027,\u0027--test\u0027),@(\u0027RipgrepBench\u0027,\u0027--small\u0027,\u0027--test\u0027),@(\u0027RawkBench\u0027,\u0027--test\u0027),@(\u0027AwkExtra\u0027,\u0027--test\u0027),@(\u0027AwkExtra\u0027,\u0027--buffering\u0027,\u0027--test\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "\u0027Bench\u0027,\u0027--test\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "\u0027Supplement\u0027,\u0027--test\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "\u0027RipgrepBench\u0027,\u0027--small\u0027,\u0027--test\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "\u0027RawkBench\u0027,\u0027--test\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "\u0027AwkExtra\u0027,\u0027--test\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  112,
+                               "Function":  "Run-Verification",
+                               "Command":  "\u0027AwkExtra\u0027,\u0027--buffering\u0027,\u0027--test\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  113,
+                               "Function":  "Run-Verification",
+                               "Command":  "$name=$case[0]"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  113,
+                               "Function":  "Run-Verification",
+                               "Command":  "$arguments=@($case | Select-Object -Skip 1)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  113,
+                               "Function":  "Run-Verification",
+                               "Command":  "$case"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  113,
+                               "Function":  "Run-Verification",
+                               "Command":  "Select-Object -Skip 1"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  114,
+                               "Function":  "Run-Verification",
+                               "Command":  "if($Coverage){\n            New-Item -ItemType Directory -Path results/package-coverage -Force | Out-Null\n            $assembly=\"bin/Release/net10.0/$name.dll\"\n            Invoke-Checked \"$script:Root/tools/dotnet-tools/coverlet.exe\" @($assembly,\u0027--target\u0027,\u0027dotnet\u0027,\u0027--targetargs\u0027,(\"$assembly \"+($arguments -join \u0027 \u0027)),\u0027--include-test-assembly\u0027,\u0027--include\u0027,\"[$name]*\",\u0027--format\u0027,\u0027cobertura\u0027,\u0027--output\u0027,\"results/package-coverage/$name-$($arguments -join \u0027-\u0027).xml\")\n        }else{Run-Dll $name $arguments}"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  115,
+                               "Function":  "Run-Verification",
+                               "Command":  "New-Item -ItemType Directory -Path results/package-coverage -Force"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  115,
+                               "Function":  "Run-Verification",
+                               "Command":  "Out-Null"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  116,
+                               "Function":  "Run-Verification",
+                               "Command":  "$assembly=\"bin/Release/net10.0/$name.dll\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  117,
+                               "Function":  "Run-Verification",
+                               "Command":  "Invoke-Checked \"$script:Root/tools/dotnet-tools/coverlet.exe\" @($assembly,\u0027--target\u0027,\u0027dotnet\u0027,\u0027--targetargs\u0027,(\"$assembly \"+($arguments -join \u0027 \u0027)),\u0027--include-test-assembly\u0027,\u0027--include\u0027,\"[$name]*\",\u0027--format\u0027,\u0027cobertura\u0027,\u0027--output\u0027,\"results/package-coverage/$name-$($arguments -join \u0027-\u0027).xml\")"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  117,
+                               "Function":  "Run-Verification",
+                               "Command":  "$assembly,\u0027--target\u0027,\u0027dotnet\u0027,\u0027--targetargs\u0027,(\"$assembly \"+($arguments -join \u0027 \u0027)),\u0027--include-test-assembly\u0027,\u0027--include\u0027,\"[$name]*\",\u0027--format\u0027,\u0027cobertura\u0027,\u0027--output\u0027,\"results/package-coverage/$name-$($arguments -join \u0027-\u0027).xml\""
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  117,
+                               "Function":  "Run-Verification",
+                               "Command":  "\"$assembly \"+($arguments -join \u0027 \u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  117,
+                               "Function":  "Run-Verification",
+                               "Command":  "$arguments -join \u0027 \u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  117,
+                               "Function":  "Run-Verification",
+                               "Command":  "$arguments -join \u0027-\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  118,
+                               "Function":  "Run-Verification",
+                               "Command":  "Run-Dll $name $arguments"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  122,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "if(-not(Test-Path tools/msys64/usr/bin/bash.exe)){\n        Get-VerifiedFile $script:Lock.archives[2]\n        Invoke-Checked \"$env:SystemRoot/System32/tar.exe\" @(\u0027-xf\u0027,$script:Lock.archives[2].path,\u0027-C\u0027,\u0027tools\u0027)\n    }"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  122,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "Test-Path tools/msys64/usr/bin/bash.exe"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  123,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "Get-VerifiedFile $script:Lock.archives[2]"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  124,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "Invoke-Checked \"$env:SystemRoot/System32/tar.exe\" @(\u0027-xf\u0027,$script:Lock.archives[2].path,\u0027-C\u0027,\u0027tools\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  124,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "\u0027-xf\u0027,$script:Lock.archives[2].path,\u0027-C\u0027,\u0027tools\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  126,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "$env:MSYSTEM=\u0027MSYS\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  126,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "$env:CHERE_INVOKING=\u00271\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  126,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "$env:PROJECT_ROOT=$script:Root"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  127,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "Invoke-Checked tools/msys64/usr/bin/bash.exe @(\u0027-lc\u0027,\u0027pacman --noconfirm -Sy \u0026\u0026 pacman --noconfirm -S --needed gcc make autoconf automake libtool gettext-devel libiconv-devel pcre-devel diffutils patch pkgconf\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  127,
+                               "Function":  "Prepare-Msys",
+                               "Command":  "\u0027-lc\u0027,\u0027pacman --noconfirm -Sy \u0026\u0026 pacman --noconfirm -S --needed gcc make autoconf automake libtool gettext-devel libiconv-devel pcre-devel diffutils patch pkgconf\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  130,
+                               "Function":  "",
+                               "Command":  "Push-Location $script:Root"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  132,
+                               "Function":  "",
+                               "Command":  "Set-BenchEnvironment"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  133,
+                               "Function":  "",
+                               "Command":  "$Action"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  134,
+                               "Function":  "",
+                               "Command":  "Write-Output \u0027make deps source native build test coverage profile grep-tuned benchmark report requirements all\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  134,
+                               "Function":  "",
+                               "Command":  "Write-Output \u0027Windows x64; install GNU make first with: powershell -File scripts/manage.ps1 -Action bootstrap\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  134,
+                               "Function":  "",
+                               "Command":  "Write-Output \u0027make all reruns the full benchmark and can take tens of minutes. make report uses retained measurements.\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  135,
+                               "Function":  "",
+                               "Command":  "Install-WingetPackage GnuWin32.Make"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  135,
+                               "Function":  "",
+                               "Command":  "Write-Output \u0027Restart your shell or invoke C:\\Program Files (x86)\\GnuWin32\\bin\\make.exe\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  136,
+                               "Function":  "",
+                               "Command":  "Ensure-Dependencies"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  137,
+                               "Function":  "",
+                               "Command":  "Get-VerifiedFile $script:Lock.source"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  137,
+                               "Function":  "",
+                               "Command":  "$script:Lock.archives"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  137,
+                               "Function":  "",
+                               "Command":  "Select-Object -First 2"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  137,
+                               "Function":  "",
+                               "Command":  "Get-VerifiedFile $item"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  138,
+                               "Function":  "",
+                               "Command":  "Build-Harnesses"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  140,
+                               "Function":  "",
+                               "Command":  "Run-Dll Bench @(\u0027--prepare\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  140,
+                               "Function":  "",
+                               "Command":  "\u0027--prepare\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  141,
+                               "Function":  "",
+                               "Command":  "$text=[IO.File]::ReadAllText(\"$script:Root/data/1MiB.txt\")"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  141,
+                               "Function":  "",
+                               "Command":  "$first=$text.IndexOf(\u0027Prince\u0027,[StringComparison]::Ordinal)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  141,
+                               "Function":  "",
+                               "Command":  "$offset=$text.LastIndexOf(\"`n\",[Math]::Max(0,$first-256))+1"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  142,
+                               "Function":  "",
+                               "Command":  "@(1,64)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  142,
+                               "Function":  "",
+                               "Command":  "1,64"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  142,
+                               "Function":  "",
+                               "Command":  "$end=$text.IndexOf(\"`n\",$offset+$kib*1024)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  142,
+                               "Function":  "",
+                               "Command":  "[IO.File]::WriteAllText(\"$script:Root/data/small-${kib}KiB.txt\",$text.Substring($offset,$end+1-$offset),[Text.UTF8Encoding]::new($false))"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  144,
+                               "Function":  "",
+                               "Command":  "Build-Native"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  145,
+                               "Function":  "",
+                               "Command":  "Run-Verification"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  146,
+                               "Function":  "",
+                               "Command":  "Run-Verification -Coverage"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  147,
+                               "Function":  "",
+                               "Command":  "Invoke-Checked powershell.exe @(\u0027-NoProfile\u0027,\u0027-ExecutionPolicy\u0027,\u0027Bypass\u0027,\u0027-File\u0027,\u0027scripts/profile.ps1\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  147,
+                               "Function":  "",
+                               "Command":  "\u0027-NoProfile\u0027,\u0027-ExecutionPolicy\u0027,\u0027Bypass\u0027,\u0027-File\u0027,\u0027scripts/profile.ps1\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  147,
+                               "Function":  "",
+                               "Command":  "Run-Dll NativeProfile"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  148,
+                               "Function":  "",
+                               "Command":  "Prepare-Msys"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  148,
+                               "Function":  "",
+                               "Command":  "Invoke-Checked tools/msys64/usr/bin/bash.exe @(\u0027-lc\u0027,\u0027bash \"$(cygpath -u \"$PROJECT_ROOT\")/scripts/build-grep.sh\"\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  148,
+                               "Function":  "",
+                               "Command":  "\u0027-lc\u0027,\u0027bash \"$(cygpath -u \"$PROJECT_ROOT\")/scripts/build-grep.sh\"\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "@(\u0027Bench\u0027,\u0027Supplement\u0027,\u0027RipgrepBench\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "\u0027Bench\u0027,\u0027Supplement\u0027,\u0027RipgrepBench\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "Run-Dll $name"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "Run-Dll RipgrepBench @(\u0027--small\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "\u0027--small\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "Run-Dll RawkBench"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "Run-Dll AwkExtra"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "Run-Dll AwkExtra @(\u0027--buffering\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "\u0027--buffering\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  149,
+                               "Function":  "",
+                               "Command":  "Run-Dll GrepBuildBench"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  150,
+                               "Function":  "",
+                               "Command":  "Run-Dll Analyze"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  151,
+                               "Function":  "",
+                               "Command":  "Invoke-Checked python.exe @(\u0027-c\u0027,\u0027from strictdoc.cli.main import main; main()\u0027,\u0027export\u0027,\u0027requirements.sdoc\u0027,\u0027--output-dir\u0027,\u0027results/requirements\u0027)"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  151,
+                               "Function":  "",
+                               "Command":  "\u0027-c\u0027,\u0027from strictdoc.cli.main import main; main()\u0027,\u0027export\u0027,\u0027requirements.sdoc\u0027,\u0027--output-dir\u0027,\u0027results/requirements\u0027"
+                           },
+                           {
+                               "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                               "Line":  153,
+                               "Function":  "",
+                               "Command":  "Pop-Location"
+                           }
+                       ],
+    "HitCommands":  [
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  6,
+                            "Function":  "",
+                            "Command":  "Set-StrictMode -Version Latest"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  7,
+                            "Function":  "",
+                            "Command":  "$ErrorActionPreference=\u0027Stop\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  8,
+                            "Function":  "",
+                            "Command":  "$script:Root=[IO.Path]::GetFullPath((Join-Path $PSScriptRoot \u0027..\u0027))"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  8,
+                            "Function":  "",
+                            "Command":  "Join-Path $PSScriptRoot \u0027..\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  9,
+                            "Function":  "",
+                            "Command":  "$script:Lock=Get-Content -LiteralPath (Join-Path $script:Root \u0027dependencies.json\u0027) -Raw | ConvertFrom-Json"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  9,
+                            "Function":  "",
+                            "Command":  "Join-Path $script:Root \u0027dependencies.json\u0027"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  9,
+                            "Function":  "",
+                            "Command":  "$script:Lock=Get-Content -LiteralPath (Join-Path $script:Root \u0027dependencies.json\u0027) -Raw | ConvertFrom-Json"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  14,
+                            "Function":  "Invoke-Checked",
+                            "Command":  "\u0026 $Program @Arguments"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  15,
+                            "Function":  "Invoke-Checked",
+                            "Command":  "if ($LASTEXITCODE -ne 0) { throw \"$Program failed with exit code $LASTEXITCODE\" }"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  15,
+                            "Function":  "Invoke-Checked",
+                            "Command":  "throw \"$Program failed with exit code $LASTEXITCODE\""
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  19,
+                            "Function":  "Assert-Digest",
+                            "Command":  "if ((Get-FileHash -LiteralPath $Path -Algorithm SHA256).Hash -ne $Sha256) { throw \"SHA-256 mismatch: $Path\" }"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  19,
+                            "Function":  "Assert-Digest",
+                            "Command":  "Get-FileHash -LiteralPath $Path -Algorithm SHA256"
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  19,
+                            "Function":  "Assert-Digest",
+                            "Command":  "throw \"SHA-256 mismatch: $Path\""
+                        },
+                        {
+                            "File":  "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1",
+                            "Line":  129,
+                            "Function":  "",
+                            "Command":  "if($LibraryOnly){return}"
+                        }
+                    ],
+    "AnalyzedFiles":  [
+                          "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\publish\\TheHorseshoePit\\TextToolBench\\scripts\\manage.ps1"
+                      ]
+}

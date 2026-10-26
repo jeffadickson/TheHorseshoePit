@@ -1,0 +1,2 @@
+# Preserve source, corpus and evidence byte hashes across Windows/Linux checkouts.
+* -text

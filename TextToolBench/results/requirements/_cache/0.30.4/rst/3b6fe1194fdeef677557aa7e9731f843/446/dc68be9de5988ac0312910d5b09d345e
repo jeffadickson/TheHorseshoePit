@@ -1,0 +1,3 @@
+<div class="document">
+<p>Compare literal search, regex search and matching-line counts on contiguous corpus slices near 1 KiB and 64 KiB using ripgrep, GNU grep, PowerShell pipeline, PowerShell reader and Select-String. Interleave all five engines, include process startup, verify every output, and retain seven measured repetitions plus one warmup per cell. Verify fixed and seeded randomized fixtures and record input provenance, match counts and coverage limitations.</p>
+</div>

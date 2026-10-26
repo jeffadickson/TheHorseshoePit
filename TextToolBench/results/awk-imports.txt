@@ -1,0 +1,362 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35229.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Program Files\Git\usr\bin\awk.exe
+
+File Type: EXECUTABLE IMAGE
+
+  Section contains the following imports:
+
+    msys-gmp-10.dll
+             10052AA10 Import Address Table
+             10052A090 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          35 __gmp_randinit_mt
+                          3B __gmp_randseed
+                          3F __gmp_set_memory_functions
+                          4C __gmp_version
+                         2E0 __gmpz_add
+                         2E1 __gmpz_add_ui
+                         2E3 __gmpz_addmul_ui
+                         2E4 __gmpz_and
+                         2F2 __gmpz_clear
+                         2F5 __gmpz_cmp
+                         2FC __gmpz_com
+                         301 __gmpz_divexact
+                         305 __gmpz_divisible_p
+                         30B __gmpz_fdiv_q_2exp
+                         30C __gmpz_fdiv_q_ui
+                         31E __gmpz_get_d
+                         320 __gmpz_get_si
+                         326 __gmpz_init
+                         332 __gmpz_ior
+                         343 __gmpz_mul
+                         344 __gmpz_mul_2exp
+                         350 __gmpz_pow_ui
+                         362 __gmpz_scan1
+                         363 __gmpz_set
+                         364 __gmpz_set_d
+                         367 __gmpz_set_si
+                         368 __gmpz_set_str
+                         369 __gmpz_set_ui
+                         36D __gmpz_sizeinbase
+                         371 __gmpz_sub
+                         372 __gmpz_sub_ui
+                         37B __gmpz_tdiv_r
+                         385 __gmpz_xor
+
+    msys-intl-8.dll
+             10052AB20 Import Address Table
+             10052A1A0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          3C libintl_bindtextdomain
+                          3D libintl_dcgettext
+                          3F libintl_dcngettext
+                          40 libintl_dgettext
+                          42 libintl_gettext
+                          4B libintl_setlocale
+                          4C libintl_textdomain
+
+    msys-mpfr-6.dll
+             10052AB60 Import Address Table
+             10052A1E0 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                          12 __gmpfr_fprintf
+                          19 __gmpfr_mpfr_get_uj
+                          23 __gmpfr_vasprintf
+                          2E mpfr_add
+                          33 mpfr_add_si
+                          35 mpfr_add_z
+                          40 mpfr_atan2
+                          57 mpfr_check_range
+                          58 mpfr_clear
+                          64 mpfr_cmp3
+                          6D mpfr_cmp_z
+                          7A mpfr_cos
+                          8D mpfr_div
+                          A2 mpfr_exp
+                          AD mpfr_fits_intmax_p
+                          BE mpfr_fmod
+                          C7 mpfr_free_str
+                          CC mpfr_get_d
+                          E2 mpfr_get_si
+                          E6 mpfr_get_version
+                          E7 mpfr_get_z
+                          EF mpfr_init
+                          F0 mpfr_init2
+                          F4 mpfr_integer_p
+                          FE mpfr_log
+                         10E mpfr_mul
+                         116 mpfr_mul_z
+                         11C mpfr_neg
+                         123 mpfr_number_p
+                         127 mpfr_pow
+                         12B mpfr_pow_z
+                         157 mpfr_set4
+                         159 mpfr_set_d
+                         15C mpfr_set_default_prec
+                         15D mpfr_set_default_rounding_mode
+                         15F mpfr_set_emax
+                         160 mpfr_set_emin
+                         161 mpfr_set_erangeflag
+                         16C mpfr_set_prec
+                         176 mpfr_set_z
+                         180 mpfr_sin
+                         187 mpfr_snprintf
+                         18B mpfr_sqrt
+                         18D mpfr_strtofr
+                         18E mpfr_sub
+                         195 mpfr_sub_z
+                         196 mpfr_subnormalize
+                         1AD mpfr_urandomb
+                         1B2 mpfr_z_sub
+
+    msys-2.0.dll
+             10052ACF0 Import Address Table
+             10052A370 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                           6 __assert_func
+                          10 __cxa_atexit
+                          17 __errno
+                          24 __getreent
+                          2C __locale_ctype_ptr
+                          2E __locale_mb_cur_max
+                          2F __main
+                          6D _dll_crt0
+                          6E _exit
+                          74 _impure_ptr
+                          7A _setmode
+                          80 abort
+                          82 accept
+                          84 access
+                          E2 atan2
+                          EB atof
+                          F3 bind
+                          F6 bsearch
+                          F7 btowc
+                          FA c32rtomb
+                         105 calloc
+                         122 ceil
+                         12F chmod
+                         13B clock_gettime
+                         145 close
+                         153 connect
+                         157 cos
+                         177 ctime
+                         17F cygwin_internal
+                         198 dlerror
+                         19B dll_dllcrt0
+                         19D dlopen
+                         19E dlsym
+                         1A7 dup
+                         1A8 dup2
+                         1B8 environ
+                         1CE execl
+                         1D3 execvp
+                         1D5 exit
+                         1D6 exp
+                         1EE fclose
+                         1F0 fcntl
+                         1F9 fdopen
+                         210 fflush
+                         218 fgets
+                         21F fileno
+                         228 floor
+                         22A floorl
+                         238 fmod
+                         23C fopen
+                         23E fork
+                         241 fprintf
+                         243 fputc
+                         245 fputs
+                         24D free
+                         24E freeaddrinfo
+                         25B fstat
+                         276 fwrite
+                         277 fwrite_unlocked
+                         279 gai_strerror
+                         285 getaddrinfo
+                         28E getdtablesize
+                         28F getegid
+                         291 getenv
+                         292 geteuid
+                         293 getgid
+                         29A getgroups
+                         2B3 getpgrp
+                         2B4 getpid
+                         2B5 getppid
+                         2CD getuid
+                         2DF gmtime
+                         2E1 grantpt
+                         309 ioctl
+                         30D isalnum
+                         30F isalpha
+                         313 isatty
+                         314 isblank
+                         316 iscntrl
+                         318 isdigit
+                         31A isgraph
+                         31F islower
+                         324 isprint
+                         326 ispunct
+                         329 isspace
+                         32B isupper
+                         32D iswalnum
+                         335 iswctype
+                         33B iswlower
+                         33D iswprint
+                         341 iswspace
+                         343 iswupper
+                         347 isxdigit
+                         350 kill
+                         365 listen
+                         370 localeconv
+                         371 localtime
+                         374 log
+                         387 longjmp
+                         391 lseek
+                         393 lstat
+                         398 malloc
+                         39E mbrlen
+                         3A0 mbrtoc32
+                         3A2 mbsinit
+                         3A9 memchr
+                         3AA memcmp
+                         3AB memcpy
+                         3AD memmove
+                         3B0 memset
+                         3BD mktime
+                         3BF mmap
+                         3D5 msys_detach_dll
+                         3DE munmap
+                         3EF nl_langinfo
+                         3F5 open
+                         403 pclose
+                         405 pipe
+                         408 popen
+                         40E posix_memalign
+                         40F posix_openpt
+                         429 pow
+                         431 printf
+                         4AA ptsname
+                         4AC putc
+                         4AE putchar
+                         4B1 puts
+                         4BA qsort
+                         4C5 read
+                         4CB realloc
+                         4D0 recvfrom
+                         51C select
+                         52E setbuf
+                         533 setenv
+                         53B setjmp
+                         53D setlocale
+                         54C setsid
+                         54D setsockopt
+                         55C shutdown
+                         55E sigaction
+                         55F sigaddset
+                         562 sigemptyset
+                         569 signal
+                         56F sigprocmask
+                         578 sin
+                         583 snprintf
+                         585 socket
+                         58F sprintf
+                         590 sqrt
+                         596 sscanf
+                         597 stat
+                         59B stpcpy
+                         59E strcasecmp
+                         5A1 strcat
+                         5A2 strchr
+                         5A4 strcmp
+                         5A5 strcoll
+                         5A7 strcpy
+                         5AA strerror
+                         5AF strftime
+                         5B3 strlen
+                         5B5 strncasecmp
+                         5B8 strncmp
+                         5C0 strrchr
+                         5C2 strsignal
+                         5C4 strstr
+                         5C5 strtod
+                         5CC strtol
+                         5D3 strtoul
+                         5E7 sysconf
+                         5F4 tcgetattr
+                         5F9 tcsetattr
+                         60C time
+                         60D timegm
+                         620 tolower
+                         622 toupper
+                         626 towlower
+                         628 towupper
+                         641 unlockpt
+                         642 unsetenv
+                         646 usleep
+                         655 vfprintf
+                         65C vsnprintf
+                         669 waitpid
+                         66E wcrtomb
+                         684 wcsnrtombs
+                         69F wctob
+                         6A3 wctype
+
+    msys-readline8.dll
+             10052B2D8 Import Address Table
+             10052A958 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         137 add_history
+                         14E history_expand
+                         156 history_length
+                         159 history_list
+                         169 history_truncate_file
+                         171 previous_history
+                         172 read_history
+                         174 readline
+                         185 rl_attempted_completion_function
+                         186 rl_attempted_completion_over
+                         1C0 rl_completion_matches
+                         21D rl_get_screen_size
+                         228 rl_inhibit_completion
+                         23E rl_line_buffer
+                         25D rl_outstream
+                         273 rl_readline_name
+                         280 rl_reset_terminal
+                         305 using_history
+                         309 write_history
+
+    KERNEL32.dll
+             10052B378 Import Address Table
+             10052A9F8 Import Name Table
+                     0 time date stamp
+                     0 Index of first forwarder reference
+
+                         29E GetModuleHandleA
+                         2A1 GetModuleHandleW
+
+  Summary
+
+        7000 .bss
+        1000 .buildid
+        2000 .data
+        3000 .idata
+        3000 .pdata
+       7E000 .rdata
+        1000 .reloc
+        1000 .rsrc
+       9A000 .text
+        4000 .xdata
