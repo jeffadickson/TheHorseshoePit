@@ -7,6 +7,7 @@
 #include <cstring>
 #include <sys/mman.h>
 #include <unistd.h>
+#include <utility>
 #include <vector>
 
 // Test-only stand-in for the unchanged gnulib fallback linked by real grep.
@@ -41,24 +42,41 @@ void vector_properties(const unsigned char *data, size_t size) {
         verify(bytes.data() + 32 + offset, n, a + 256, b - 256);
     }
 }
-void vector_regressions() {
-    std::array<unsigned char, 256> bytes {};
+std::pair<size_t, size_t> vector_regressions() {
+    size_t references = 0, guards = 0;
+    std::array<unsigned char, 1024> bytes {};
     for (size_t i = 0; i < bytes.size(); ++i) bytes[i] = static_cast<unsigned char>(i * 37);
-    for (size_t length : {0U,1U,7U,15U,16U,17U,31U,32U,33U,63U,64U,65U,127U,128U,129U})
+    for (size_t length : {0U,1U,7U,15U,16U,17U,31U,32U,33U,63U,64U,65U,127U,128U,129U,255U,256U,257U,511U,512U,513U})
         for (size_t offset = 0; offset < 32; ++offset)
             for (int a = 0; a < 256; ++a) {
                 verify(bytes.data() + offset, length, a, (a * 73 + 17) % 256);
                 verify(bytes.data() + offset, length, a, a);
+                references += 2;
             }
+    // Exercise matches in every lane, including a skipped first 256-byte block,
+    // and competing matches whose lane order must be preserved.
+    for (size_t position = 0; position < 512; ++position) {
+        bytes.fill(0x11);
+        bytes[position] = 0x7f;
+        verify(bytes.data(), 512, 0x7f, 0xe3);
+        bytes[511 - position] = 0xe3;
+        verify(bytes.data(), 512, 0x7f, 0xe3);
+        references += 2;
+    }
     const auto page = static_cast<size_t>(::sysconf(_SC_PAGESIZE));
     auto *memory = static_cast<unsigned char *>(::mmap(nullptr, page * 2,
         PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0));
     if (memory == MAP_FAILED || ::mprotect(memory + page, page, PROT_NONE) != 0) std::abort();
     std::memset(memory, 'x', page);
-    for (size_t length = 0; length <= 129; ++length)
+    for (size_t length = 0; length <= 513; ++length) {
         verify(memory + page - length, length, 'q', 'z');
+        ++guards;
+    }
     memory[page - 1] = 'z';
-    for (size_t length = 0; length <= 129; ++length)
+    for (size_t length = 0; length <= 513; ++length) {
         verify(memory + page - length, length, 'q', 'z');
+        ++guards;
+    }
     if (::munmap(memory, page * 2) != 0) std::abort();
+    return {references, guards};
 }

@@ -1,0 +1,38 @@
+
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/vector.o:     file format pe-x86-64
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         00000600  0000000000000000  0000000000000000  0000012c  2**6
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  0000000000000000  0000000000000000  00000000  2**4
+                  ALLOC, LOAD, DATA
+  2 .bss          00000010  0000000000000000  0000000000000000  00000000  2**4
+                  ALLOC
+  3 .rdata        00000020  0000000000000000  0000000000000000  0000072c  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .xdata        00000018  0000000000000000  0000000000000000  0000074c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .pdata        00000018  0000000000000000  0000000000000000  00000764  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+  6 .rdata$zzz    00000020  0000000000000000  0000000000000000  0000077c  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/vector-256.o:     file format pe-x86-64
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         00000be0  0000000000000000  0000000000000000  0000012c  2**4
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, CODE
+  1 .data         00000000  0000000000000000  0000000000000000  00000000  2**4
+                  ALLOC, LOAD, DATA
+  2 .bss          00000010  0000000000000000  0000000000000000  00000000  2**4
+                  ALLOC
+  3 .rdata        00000020  0000000000000000  0000000000000000  00000d0c  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 .xdata        00000044  0000000000000000  0000000000000000  00000d2c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .pdata        00000018  0000000000000000  0000000000000000  00000d70  2**2
+                  CONTENTS, ALLOC, LOAD, RELOC, READONLY, DATA
+  6 .rdata$zzz    00000020  0000000000000000  0000000000000000  00000d88  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA

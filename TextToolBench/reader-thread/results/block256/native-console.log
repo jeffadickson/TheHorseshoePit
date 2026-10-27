@@ -1,0 +1,4 @@
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/verify-block256.sh: line 40: 1221072 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s ./mutant ) > "$out/$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/verify-block256.sh: line 40: 1221085 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s ./mutant ) > "$out/$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/verify-block256.sh: line 40: 1221096 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s ./mutant ) > "$out/$mutation.log" 2>&1
+32/256 regression, guard-page, sanitizer, fuzz, mutation and Memcheck checks passed.

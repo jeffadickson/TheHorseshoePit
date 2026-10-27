@@ -72,3 +72,11 @@ STATEMENT: >>>
 Reuse the exact previous corpus. Interleave original grep, the preserved previous queue executable, optimized queue with library searches, vector search without the queue, and optimized queue with vector search. Use O3, loop/SLP vectorization and native processor targeting; retain two warmups, fifteen measured rounds, exact source/tool/executable provenance and independent output validation. Preserve earlier timing evidence separately.
 <<<
 COMMENT: build.sh; Experiment.cs; results/optimized; results/profile; README.rst. Warm-cache process-inclusive timings on a shared Windows host; finite experiments do not establish universal gains.
+
+[REQUIREMENT]
+UID: READAHEAD-010
+TITLE: Compare 256-byte AVX2 search blocks
+STATEMENT: >>>
+Implement a compile-time 256-byte search variant using eight 32-byte comparisons and a combined rejection mask. On a match, preserve first-byte ordering across all lanes. Retain 32-byte and scalar tails without reading beyond the supplied region. Compare preserved 32-byte and new 256-byte binaries on the original corpus with and without the queue, using independent output validation, two warmups and fifteen measured rounds. Additionally measure both kernels interleaved in one process with file loading excluded from timing. Record executable code size, flags, coverage and finite verification evidence without claiming universal speedup.
+<<<
+COMMENT: vector-search.cpp GREP_VECTOR_BLOCK; vector-check.cpp; vector-kernel.cpp; build-block256.sh; verify-block256.sh; Experiment.cs --block256; results/block256. The 256 bytes denote input handled per loop, not hardware vector width or code size. Runtime CPU portability remains outside the native-build contract.

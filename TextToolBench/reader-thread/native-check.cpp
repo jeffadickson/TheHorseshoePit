@@ -13,8 +13,9 @@
 #include <string>
 #include <unistd.h>
 #include <vector>
+#include <utility>
 void vector_properties(const unsigned char *, size_t);
-void vector_regressions();
+std::pair<size_t, size_t> vector_regressions();
 
 extern "C" size_t safe_read(int fd, void *buffer, size_t count) {
     ssize_t result;
@@ -128,7 +129,7 @@ extern "C" int LLVMFuzzerTestOneInput(const unsigned char *data, size_t size) {
 
 #ifndef LIBFUZZER
 int main() {
-    vector_regressions();
+    const auto [references, guards] = vector_regressions();
     negative_cases();
     int cases = 0;
     for (const size_t size : {0U, 1U, 4095U, 4096U, 4097U, 65535U, 65536U, 65537U, 1048577U}) {
@@ -140,6 +141,6 @@ int main() {
             ++cases;
         }
     }
-    std::printf("PASS %d queue properties, negative API cases and 245760 vector reference cases plus 260 guard-page cases\n", cases);
+    std::printf("PASS %d queue properties, negative API cases and %zu vector reference cases plus %zu guard-page cases\n", cases, references, guards);
 }
 #endif

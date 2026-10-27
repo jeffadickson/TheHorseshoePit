@@ -234,3 +234,6 @@ The [C++20 reader-thread experiment](reader-thread/README.rst) retains GNU grep'
 
 The later [AVX2 and queue profiling experiment](reader-thread/OPTIMIZATIONS.rst) records the implemented vector searches, reduced queue overhead, current timing comparisons, and producer/consumer profiling. Keep its measurements separate from the first session.
 
+
+The [256-byte block experiment](reader-thread/BLOCK256.rst) compares eight-vector search blocks with the preserved 32-byte build, including in-memory kernel timings and code size.
+

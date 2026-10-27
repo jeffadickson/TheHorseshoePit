@@ -37,7 +37,8 @@ internal static class Experiment
             Require(Directory.Exists(Root) && Directory.Exists(Bench), "Missing experiment or benchmark directory");
             if (args.Contains("--profile-summary")) { ProfileReport.Write(Root); return 0; }
             bool profile = args.Contains("--profile");
-            string results = Path.Combine(Root, "results", profile ? "profile" : "optimized");
+            bool block256 = args.Contains("--block256");
+            string results = Path.Combine(Root, "results", profile ? "profile" : block256 ? "block256" : "optimized");
             Require(Directory.Exists(results), "Build before verification");
             Engine[] engines = [
                 new("original", "baseline.exe", null),
@@ -45,6 +46,11 @@ internal static class Experiment
                 new("optimized-queue", "threaded.exe", "1"),
                 new("vector-only", "threaded.exe", null, Vectors: true),
                 new("optimized-vector-queue", "threaded.exe", "1", Vectors: true)];
+            if (block256) engines = [
+                new("vector32-noqueue", "threaded.exe", null, Vectors: true),
+                new("vector256-noqueue", "threaded-256.exe", null, Vectors: true),
+                new("vector32-queue", "threaded.exe", "1", Vectors: true),
+                new("vector256-queue", "threaded-256.exe", "1", Vectors: true)];
             if (profile) engines = [
                 new("profile-queue", "profile.exe", "1"),
                 new("profile-vector-queue", "profile.exe", "1", Vectors: true)];

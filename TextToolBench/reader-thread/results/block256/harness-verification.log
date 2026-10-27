@@ -1,0 +1,80 @@
+  Determining projects to restore...
+  Restored C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\Experiment.csproj (in 268 ms).
+  1 of 2 projects are up-to-date for restore.
+  Experiment -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\bin\Experiment\Release\net10.0\Experiment.dll
+  Experiment.Tests -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll
+Test run for C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\results\block256\harness-tests\harness.trx
+
+Passed!  - Failed:     0, Passed:    28, Skipped:     0, Total:    28, Duration: 538 ms - Experiment.Tests.dll (net10.0)
+
+Attachments:
+  C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\results\block256\harness-tests\28e09a14-5274-45f4-ae08-7afe4287b18f\coverage.cobertura.xml
+PASS 120 independent oracle checks; 145 differential checks; 24 negatives
+
+Calculating coverage result...
+  Generating report 'C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\results\block256\harness-integration.cobertura.xml'
++------------+--------+--------+--------+
+| Module     | Line   | Branch | Method |
++------------+--------+--------+--------+
+| Experiment | 19.98% | 29.86% | 34.06% |
++------------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 19.98% | 29.86% | 34.06% |
++---------+--------+--------+--------+
+| Average | 19.98% | 29.86% | 34.06% |
++---------+--------+--------+--------+
+
+
+   _____ _              _               _   _ ______ _______  
+  / ____| |            | |             | \ | |  ____|__   __| 
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |    
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |    
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |    
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|    
+                   __/ |                                      
+                  |___/                                       
+
+
+Version: 5.0.0
+
+[18:30:02 INF] Stryker will use a max of 3 parallel testsessions.
+[18:30:03 INF] Analysis starting.
+[18:30:03 INF] Analyzing 1 test project(s).
+[18:30:24 INF] Picking net10.0 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\Experiment.csproj. 
+[18:30:26 INF] Found project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\Experiment.csproj to mutate.
+[18:30:26 INF] Analysis complete.
+[18:30:26 INF] Building test project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\Experiment.Tests.csproj (1/1)
+[18:30:30 INF] Building project Experiment.Tests.csproj using dotnet build Experiment.Tests.csproj -c Debug --property:Platform=AnyCPU (directory C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread.)
+[18:31:18 INF] Number of tests found: 28 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\Experiment.csproj. Initial test run started.
+[18:31:40 INF] 487 mutants created
+[18:31:40 INF] Capture mutant coverage using 'CoverageBasedTest' mode.
+Hint: by passing "--open-report or -o" the report will open automatically and 
+update the report in real-time.
+[18:31:42 INF] 11    mutants got status CompileError. Reason: Mutant caused compile errors
+[18:31:42 INF] 6     mutants got status Ignored.      Reason: Removed by block already covered filter
+[18:31:43 INF] 379   mutants got status Ignored.      Reason: Removed by mutate filter
+[18:31:43 INF] 396   total mutants are skipped for the above mentioned reasons
+[18:31:43 INF] 91    total mutants will be tested
+
+Killed:   83
+Survived:  8
+Timeout:   0
+Errors:   0
+
+Your json report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/
+publish/TheHorseshoePit/TextToolBench/reader-thread/results/block256/stryker/rep
+orts/mutation-report.json
+
+Your html report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/
+publish/TheHorseshoePit/TextToolBench/reader-thread/results/block256/stryker/rep
+orts/mutation-report.html
+You can open it in your browser of choice.
+[18:32:42 INF] Time Elapsed 00:02:40.2439945
+[18:32:42 INF] The final mutation score is 91.21 %

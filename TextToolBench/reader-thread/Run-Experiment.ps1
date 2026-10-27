@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)][string]$BenchmarkRoot,
-    [ValidateSet('Build','Test','Benchmark','Profile','NativeVerify','Requirements')][string]$Mode='Benchmark'
+    [ValidateSet('Build','Test','Benchmark','Profile','NativeVerify','Requirements','Block256Build','Block256Test','Block256Benchmark','Block256Verify','Block256Kernel')][string]$Mode='Benchmark'
 )
 $ErrorActionPreference='Stop'
 if (!(Test-Path -LiteralPath $PSScriptRoot -PathType Container)) {throw 'Missing extension directory'}
@@ -8,12 +8,40 @@ if (!(Test-Path -LiteralPath $BenchmarkRoot -PathType Container)) {throw 'Missin
 $BenchmarkRoot=(Resolve-Path -LiteralPath $BenchmarkRoot).Path
 $results=Join-Path $PSScriptRoot 'results'
 if (!(Test-Path -LiteralPath $results -PathType Container)) {New-Item -ItemType Directory -Path $results | Out-Null}
-foreach($name in @('optimized','profile')){
+foreach($name in @('optimized','profile','block256')){
     $directory=Join-Path $results $name
     if (!(Test-Path -LiteralPath $directory -PathType Container)){New-Item -ItemType Directory -Path $directory|Out-Null}
 }
 function Check-Exit {if($LASTEXITCODE -ne 0){throw "Command failed: exit $LASTEXITCODE"}}
 switch($Mode){
+    Block256Build {
+        $env:BENCH_ROOT=$BenchmarkRoot; $env:EXPERIMENT_ROOT=$PSScriptRoot
+        & (Join-Path $BenchmarkRoot 'tools/msys64/usr/bin/bash.exe') -lc 'bash "$(cygpath -u "$EXPERIMENT_ROOT")/build-block256.sh"'; Check-Exit
+        dotnet publish (Join-Path $PSScriptRoot 'Experiment.csproj') -c Release -r win-x64 -p:PublishAot=true -o (Join-Path $results 'native-harness'); Check-Exit
+    }
+    {$_ -in 'Block256Test','Block256Benchmark'} {
+        $harness=Join-Path $results 'native-harness/Experiment.exe'
+        if (!(Test-Path -LiteralPath $harness -PathType Leaf)){throw 'Run Block256Build first'}
+        $arguments=@($PSScriptRoot,$BenchmarkRoot,'--block256')
+        if($Mode -eq 'Block256Test'){$arguments+='--test'}
+        & $harness @arguments; Check-Exit
+    }
+    Block256Kernel {
+        $savedPath=$env:PATH
+        $savedVector=$env:GREP_VECTOR_SEARCH
+        try {
+            $env:PATH=(Join-Path $BenchmarkRoot 'tools/msys64/usr/bin')+';'+$savedPath
+            $env:GREP_VECTOR_SEARCH='1'
+            & (Join-Path $PSScriptRoot 'kernel.exe') (Join-Path $BenchmarkRoot 'data/32MiB.txt') > (Join-Path $results 'block256/kernel-runs.csv'); Check-Exit
+        } finally {
+            $env:PATH=$savedPath
+            $env:GREP_VECTOR_SEARCH=$savedVector
+        }
+    }
+    Block256Verify {
+        $linux=(& wsl -d Ubuntu-24.04 -- wslpath -u $PSScriptRoot.Replace('\','/')).Trim(); Check-Exit
+        & wsl -d Ubuntu-24.04 -- bash "$linux/verify-block256.sh"; Check-Exit
+    }
     Build {
         # Source is the existing prepared release with this reviewed patch applied.
         $source=Join-Path $PSScriptRoot 'source'

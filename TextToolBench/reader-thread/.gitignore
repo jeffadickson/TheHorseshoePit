@@ -15,4 +15,7 @@
 /results/optimized/requirements/
 /results/optimized/harness-tests/
 /results/optimized/stryker/
+/results/block256/harness-tests/
+/results/block256/stryker/
+/results/block256/requirements/
 /docs/_build/
