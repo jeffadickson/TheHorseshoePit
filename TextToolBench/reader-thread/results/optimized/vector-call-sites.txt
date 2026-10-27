@@ -1,0 +1,12 @@
+grep-vector.o
+			19e: IMAGE_REL_AMD64_REL32	grep_vector_memchr
+			1002: IMAGE_REL_AMD64_REL32	grep_vector_memchr
+			1889: IMAGE_REL_AMD64_REL32	grep_vector_memchr
+			1acc: IMAGE_REL_AMD64_REL32	grep_vector_memchr
+			1c73: IMAGE_REL_AMD64_REL32	grep_vector_memchr
+			2712: IMAGE_REL_AMD64_REL32	grep_vector_memchr
+kwset-vector.o
+			2aca: IMAGE_REL_AMD64_REL32	grep_vector_memchr2
+			307b: IMAGE_REL_AMD64_REL32	grep_vector_memchr2
+			356c: IMAGE_REL_AMD64_REL32	grep_vector_memchr2
+			35a6: IMAGE_REL_AMD64_REL32	grep_vector_memchr2

@@ -40,3 +40,35 @@ STATEMENT: >>>
 Reuse the original 32 MiB corpus and retain its exact size and hash. Run original, adapter-disabled and three queue sizes sequentially in seeded shuffled order, with two warmups and fifteen measured runs per cell. Record raw wall and CPU time, medians and quartiles. Collect source coverage, sanitizer, libFuzzer, negative and mutation evidence, and disclose scope limitations and background workload interference.
 <<<
 COMMENT: Experiment.cs Main; native-verify.sh; results/summary.csv; results/environment.json; results/gcov.log; results/fuzz.log; results/mutations.csv; results/stryker. Warm-cache Windows/MSYS2 measurement only; no cold-storage or CPU-cache-residency conclusion.
+
+[REQUIREMENT]
+UID: READAHEAD-006
+TITLE: Explicit vector byte comparisons
+STATEMENT: >>>
+Provide opt-in AVX2 first-match searches for one or two unsigned byte values, including equal needles, unaligned input and scalar tails. Never load beyond the supplied byte count. Retain original library behavior when GREP_VECTOR_SEARCH is disabled. Connect the helpers to GNU grep's driver and kwset searches without changing regex or matching-line semantics.
+<<<
+COMMENT: vector-search.cpp; vector-search.h; build.sh; vector-check.cpp; native-check.cpp; results/optimized/native. Test reference cases, guard pages, fuzz inputs, scalar fallback and deliberately faulty source variants. Whole release binaries target this processor; the helper fallback does not make them portable.
+
+[REQUIREMENT]
+UID: READAHEAD-007
+TITLE: Reduce queue overhead while preserving slot ownership
+STATEMENT: >>>
+Allocate overwrite-only queue buffers, exposing only published initialized bytes. Allow copying without holding the queue mutex while keeping the slot unavailable to the producer until the copy completes. Preserve bounded backpressure, early shutdown, errors and offsets. Replace variable-modulo index updates with bounded increment-and-reset.
+<<<
+COMMENT: read-ahead.cpp Reader::produce, Reader::read and Reader constructor; native-check.cpp; native-verify.sh ASan/UBSan, Memcheck and fault-injection checks. Optimization choices are inferred implementation details.
+
+[REQUIREMENT]
+UID: READAHEAD-008
+TITLE: Separate diagnostic profiling from timing
+STATEMENT: >>>
+Build an O3/native/vectorized profiling executable that records read, copy, lock, queue-full, queue-empty and shutdown wall intervals, byte/call counts, queue high-water mark and per-thread CPU clocks when supported. Emit diagnostics only after joining the producer. Validate profiled output and byte/queue invariants. Keep all profiling code absent from timing builds and retain raw records for three repetitions of each task with vector search both disabled and enabled.
+<<<
+COMMENT: queue-profile.h; read-ahead.cpp; build.sh; Experiment.cs --profile; results/profile. Overlapping thread wall intervals are not additive CPU shares. Unsupported CPU clocks remain JSON null. Instrumented timings are diagnostic only; no instruction-sampling or hardware-counter claim.
+
+[REQUIREMENT]
+UID: READAHEAD-009
+TITLE: Contemporaneous optimization comparison
+STATEMENT: >>>
+Reuse the exact previous corpus. Interleave original grep, the preserved previous queue executable, optimized queue with library searches, vector search without the queue, and optimized queue with vector search. Use O3, loop/SLP vectorization and native processor targeting; retain two warmups, fifteen measured rounds, exact source/tool/executable provenance and independent output validation. Preserve earlier timing evidence separately.
+<<<
+COMMENT: build.sh; Experiment.cs; results/optimized; results/profile; README.rst. Warm-cache process-inclusive timings on a shared Windows host; finite experiments do not establish universal gains.

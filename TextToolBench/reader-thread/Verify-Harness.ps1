@@ -2,7 +2,7 @@ param([Parameter(Mandatory=$true)][string]$BenchmarkRoot,[switch]$Mutation)
 $ErrorActionPreference='Stop'
 if (!(Test-Path -LiteralPath $PSScriptRoot -PathType Container)) {throw 'Missing extension directory'}
 if (!(Test-Path -LiteralPath $BenchmarkRoot -PathType Container)) {throw 'Missing benchmark directory'}
-$results=Join-Path $PSScriptRoot 'results'
+$results=Join-Path $PSScriptRoot 'results/optimized'
 if (!(Test-Path -LiteralPath $results -PathType Container)) {throw 'Build the extension first'}
 function Check-Exit {if($LASTEXITCODE -ne 0){throw "Verification command failed: $LASTEXITCODE"}}
 dotnet test (Join-Path $PSScriptRoot 'Experiment.Tests.csproj') -c Release '--collect:XPlat Code Coverage' --results-directory (Join-Path $results 'harness-tests') --logger 'trx;LogFileName=harness.trx'; Check-Exit
@@ -21,9 +21,13 @@ if($Mutation){
     if($first -lt 0 -or $end -lt $first -or $quantile -lt 0 -or $quantileEnd -lt $quantile){throw 'Mutation spans not found'}
     $configPath=Join-Path $PSScriptRoot 'stryker-config.json'
     $config=Get-Content -LiteralPath $configPath -Raw | ConvertFrom-Json
-    $config.'stryker-config'.mutate=@("Experiment.cs{${first}..${end}}","Experiment.cs{${quantile}..${quantileEnd}}")
+    $reportCode=[IO.File]::ReadAllText((Join-Path $PSScriptRoot 'ProfileReport.cs'))
+    $aggregate=$reportCode.IndexOf('    internal static double? AggregateMetric')
+    $aggregateEnd=$reportCode.IndexOf('    internal static void Write')
+    if($aggregate -lt 0 -or $aggregateEnd -lt $aggregate){throw 'Profile aggregation span missing'}
+    $config.'stryker-config'.mutate=@("Experiment.cs{${first}..${end}}","Experiment.cs{${quantile}..${quantileEnd}}","ProfileReport.cs{${aggregate}..${aggregateEnd}}")
     $config|ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $configPath
     Push-Location -LiteralPath $PSScriptRoot
-    try { & (Join-Path $BenchmarkRoot 'tools/stryker/dotnet-stryker.exe') --config-file stryker-config.json --output results/stryker; Check-Exit }
+    try { & (Join-Path $BenchmarkRoot 'tools/stryker/dotnet-stryker.exe') --config-file stryker-config.json --output results/optimized/stryker; Check-Exit }
     finally {Pop-Location}
 }

@@ -1,0 +1,30 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Experiment -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\bin\Experiment\Release\net10.0\Experiment.dll
+  Experiment.Tests -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll
+Test run for C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\results\optimized\harness-tests\harness.trx
+
+Passed!  - Failed:     0, Passed:    28, Skipped:     0, Total:    28, Duration: 268 ms - Experiment.Tests.dll (net10.0)
+
+Attachments:
+  C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\results\optimized\harness-tests\5045f142-3876-4ee7-a7bb-3654ea9988fb\coverage.cobertura.xml
+PASS 150 independent oracle checks; 193 differential checks; 30 negatives
+
+Calculating coverage result...
+  Generating report 'C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\results\optimized\harness-integration.cobertura.xml'
++------------+--------+--------+--------+
+| Module     | Line   | Branch | Method |
++------------+--------+--------+--------+
+| Experiment | 19.71% | 29.57% | 34.06% |
++------------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 19.71% | 29.57% | 34.06% |
++---------+--------+--------+--------+
+| Average | 19.71% | 29.57% | 34.06% |
++---------+--------+--------+--------+
+

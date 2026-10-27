@@ -231,3 +231,6 @@ GNU executables are expected in C:\Program Files\Git\usr\bin. Set BENCH_PWSH to 
 ## GNU grep reader-thread experiment
 
 The [C++20 reader-thread experiment](reader-thread/README.rst) retains GNU grep's matcher and compares the original executable, an adapter-disabled control, and three bounded queue sizes on the same 32 MiB corpus. All 425 timed outputs passed validation. Default-queue medians improved modestly against original grep, but broad variation and mixed results against the disabled control do not justify enabling it by default. Source, StrictDoc requirements, reproduction scripts, raw timings, coverage and fuzz/mutation evidence are in `reader-thread/`.
+
+The later [AVX2 and queue profiling experiment](reader-thread/OPTIMIZATIONS.rst) records the implemented vector searches, reduced queue overhead, current timing comparisons, and producer/consumer profiling. Keep its measurements separate from the first session.
+

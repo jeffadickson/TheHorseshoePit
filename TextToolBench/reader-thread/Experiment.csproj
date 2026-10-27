@@ -8,5 +8,5 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AnalysisLevel>latest</AnalysisLevel>
   </PropertyGroup>
-  <ItemGroup><Compile Include="Experiment.cs" /><Compile Include="AssemblyInfo.cs" /></ItemGroup>
+  <ItemGroup><Compile Include="Experiment.cs" /><Compile Include="ProfileReport.cs" /><Compile Include="AssemblyInfo.cs" /></ItemGroup>
 </Project>

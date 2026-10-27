@@ -1,0 +1,18 @@
+Summarized 30 validated profiling observations.
+
+Calculating coverage result...
+  Generating report 'C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\publish\TheHorseshoePit\TextToolBench\reader-thread\results\profile\harness-report.cobertura.xml'
++------------+-------+--------+--------+
+| Module     | Line  | Branch | Method |
++------------+-------+--------+--------+
+| Experiment | 2.83% | 9.85%  | 8.79%  |
++------------+-------+--------+--------+
+
++---------+-------+--------+--------+
+|         | Line  | Branch | Method |
++---------+-------+--------+--------+
+| Total   | 2.83% | 9.85%  | 8.79%  |
++---------+-------+--------+--------+
+| Average | 2.83% | 9.85%  | 8.78%  |
++---------+-------+--------+--------+
+

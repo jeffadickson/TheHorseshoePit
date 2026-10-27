@@ -1,0 +1,37 @@
+[
+  {
+    "Role": "Shared original object",
+    "Path": "tools/grep-build/native-o3/src/dfasearch.o",
+    "Sha256": "8F68BB54D7C40165FD1E41A57F473FF02C3BFB63602B85102BA561F3B6CCFDCA"
+  },
+  {
+    "Role": "Shared original object",
+    "Path": "tools/grep-build/native-o3/src/kwsearch.o",
+    "Sha256": "EBF234E33BF6527E4E7173EBBC0CBF1BCC1E432AF2920C5F61EA897F475661FD"
+  },
+  {
+    "Role": "Shared original object",
+    "Path": "tools/grep-build/native-o3/src/pcresearch.o",
+    "Sha256": "AA9F8EDE09143D94C338A87766E9D179A9AA20F14A6EA87A1FA2CBAE6EBE4F1C"
+  },
+  {
+    "Role": "Shared original object",
+    "Path": "tools/grep-build/native-o3/src/searchutils.o",
+    "Sha256": "F8B3F8AB153509A004C1ED83044F96F1F039F6CE137EAF2E57EAEDDEA2A64169"
+  },
+  {
+    "Role": "Shared original object",
+    "Path": "tools/grep-build/native-o3/lib/libgreputils.a",
+    "Sha256": "64F2F2B04B7F03EB75B739D82FB8788EBD5C0AD6F1EAAE9E35D6D287AA0BC248"
+  },
+  {
+    "Role": "Recompiled vector-call object",
+    "Path": "build/grep-vector.o",
+    "Sha256": "4DEDEB552D8028A02ABBC60919A97C28FEECFD6A7AA0C5F2758AC66B71093BD4"
+  },
+  {
+    "Role": "Recompiled vector-call object",
+    "Path": "build/kwset-vector.o",
+    "Sha256": "BFDE1BBAE830618612009F46DBB444DD8BA7CB40A10DA65009E834861062E07D"
+  }
+]

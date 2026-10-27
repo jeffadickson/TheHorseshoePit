@@ -13,6 +13,8 @@
 #include <string>
 #include <unistd.h>
 #include <vector>
+void vector_properties(const unsigned char *, size_t);
+void vector_regressions();
 
 extern "C" size_t safe_read(int fd, void *buffer, size_t count) {
     ssize_t result;
@@ -120,18 +122,24 @@ void property(const unsigned char *data, size_t size, unsigned control) {
 extern "C" int LLVMFuzzerTestOneInput(const unsigned char *data, size_t size) {
     const unsigned control = size ? data[0] : 0;
     property(data, size, control);
+    vector_properties(data, size);
     return 0;
 }
 
 #ifndef LIBFUZZER
 int main() {
+    vector_regressions();
     negative_cases();
     int cases = 0;
     for (const size_t size : {0U, 1U, 4095U, 4096U, 4097U, 65535U, 65536U, 65537U, 1048577U}) {
         std::vector<unsigned char> bytes(size);
         for (size_t i = 0; i < size; ++i) bytes[i] = static_cast<unsigned char>((i * 131 + i / 17) % 256);
-        for (unsigned control = 0; control < 16; ++control) { property(bytes.data(), bytes.size(), control); ++cases; }
+        for (unsigned control = 0; control < 16; ++control) {
+            property(bytes.data(), bytes.size(), control);
+            vector_properties(bytes.data(), bytes.size());
+            ++cases;
+        }
     }
-    std::printf("PASS %d byte/offset properties plus negative API cases\n", cases);
+    std::printf("PASS %d queue properties, negative API cases and 245760 vector reference cases plus 260 guard-page cases\n", cases);
 }
 #endif

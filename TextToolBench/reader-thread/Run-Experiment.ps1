@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)][string]$BenchmarkRoot,
-    [ValidateSet('Build','Test','Benchmark','NativeVerify','Requirements')][string]$Mode='Benchmark'
+    [ValidateSet('Build','Test','Benchmark','Profile','NativeVerify','Requirements')][string]$Mode='Benchmark'
 )
 $ErrorActionPreference='Stop'
 if (!(Test-Path -LiteralPath $PSScriptRoot -PathType Container)) {throw 'Missing extension directory'}
@@ -8,6 +8,10 @@ if (!(Test-Path -LiteralPath $BenchmarkRoot -PathType Container)) {throw 'Missin
 $BenchmarkRoot=(Resolve-Path -LiteralPath $BenchmarkRoot).Path
 $results=Join-Path $PSScriptRoot 'results'
 if (!(Test-Path -LiteralPath $results -PathType Container)) {New-Item -ItemType Directory -Path $results | Out-Null}
+foreach($name in @('optimized','profile')){
+    $directory=Join-Path $results $name
+    if (!(Test-Path -LiteralPath $directory -PathType Container)){New-Item -ItemType Directory -Path $directory|Out-Null}
+}
 function Check-Exit {if($LASTEXITCODE -ne 0){throw "Command failed: exit $LASTEXITCODE"}}
 switch($Mode){
     Build {
@@ -32,11 +36,12 @@ switch($Mode){
         & (Join-Path $BenchmarkRoot 'tools/msys64/usr/bin/bash.exe') -lc 'bash "$(cygpath -u "$EXPERIMENT_ROOT")/build.sh"'; Check-Exit
         dotnet publish (Join-Path $PSScriptRoot 'Experiment.csproj') -c Release -r win-x64 -p:PublishAot=true -o (Join-Path $results 'native-harness'); Check-Exit
     }
-    {$_ -in 'Test','Benchmark'} {
+    {$_ -in 'Test','Benchmark','Profile'} {
         $harness=Join-Path $results 'native-harness/Experiment.exe'
         if (!(Test-Path -LiteralPath $harness -PathType Leaf)) {throw 'Run Build first'}
-        $arguments=@($PSScriptRoot,$BenchmarkRoot)
+        $arguments=@($PSScriptRoot,$BenchmarkRoot,'--optimized')
         if($Mode -eq 'Test'){$arguments+='--test'}
+        if($Mode -eq 'Profile'){$arguments+='--profile'}
         & $harness @arguments; Check-Exit
     }
     NativeVerify {
@@ -44,6 +49,6 @@ switch($Mode){
         & wsl -d Ubuntu-24.04 -- bash "$linux/native-verify.sh"; Check-Exit
     }
     Requirements {
-        python -c 'from strictdoc.cli.main import main; main()' export (Join-Path $PSScriptRoot 'requirements.sdoc') --output-dir (Join-Path $results 'requirements'); Check-Exit
+        python -c 'from strictdoc.cli.main import main; main()' export (Join-Path $PSScriptRoot 'requirements.sdoc') --output-dir (Join-Path $results 'optimized/requirements'); Check-Exit
     }
 }

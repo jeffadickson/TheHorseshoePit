@@ -12,4 +12,7 @@
 /results/stryker/**/obj/
 /results/stryker/**/logs/
 /results/stryker/**/stryker.log
+/results/optimized/requirements/
+/results/optimized/harness-tests/
+/results/optimized/stryker/
 /docs/_build/

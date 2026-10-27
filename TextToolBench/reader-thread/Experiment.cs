@@ -10,11 +10,12 @@ internal static class Experiment
 {
     private const int Seed = 20261026;
     private static string Root = "", Bench = "";
-    private sealed record Engine(string Name, string File, string? Enabled, int Chunk = 262144, int Slots = 3);
+    private sealed record Engine(string Name, string File, string? Enabled, int Chunk = 262144, int Slots = 3, bool Vectors = false);
     internal sealed record TaskSpec(string Name, string[] Flags, string Pattern);
     internal sealed record Result(string Task, string Engine, int Round, double Milliseconds,
         double CpuMilliseconds, int ExitCode, long OutputBytes, string Sha256, string Error);
-    internal sealed record ExecutableInfo(string Name, string? Enabled, int Chunk, int Slots, string Sha256);
+    internal sealed record ExecutableInfo(string Name, string? Enabled, int Chunk, int Slots, bool Vectors, string Sha256);
+    internal sealed record ProfileObservation(Result Observation, string[] QueueRecords);
     internal sealed record EnvironmentInfo(int Seed, int Repeats, int Warmups, DateTime Utc,
         string Input, long InputBytes, string InputSha256, ExecutableInfo[] Executables,
         string Runtime, string Os, string Notes);
@@ -27,35 +28,63 @@ internal static class Experiment
         new("count", ["-Fc"], "Prince"), new("nonblank", ["-E"], "[^ \t]"),
         new("absent", ["-Fc"], "TEXTTOOL_NO_SUCH_TOKEN_20261026")];
 
-    /// <summary>Arguments: extension directory, prior benchmark directory, optional --test.</summary>
+    /// <summary>Arguments: extension directory, prior benchmark directory, optional --test or --profile.</summary>
     public static async Task<int> Main(string[] args)
     {
         try
         {
             Root = Path.GetFullPath(args[0]); Bench = Path.GetFullPath(args[1]);
             Require(Directory.Exists(Root) && Directory.Exists(Bench), "Missing experiment or benchmark directory");
-            string results = Path.Combine(Root, "results");
+            if (args.Contains("--profile-summary")) { ProfileReport.Write(Root); return 0; }
+            bool profile = args.Contains("--profile");
+            string results = Path.Combine(Root, "results", profile ? "profile" : "optimized");
             Require(Directory.Exists(results), "Build before verification");
-            Engine[] engines = [new("original", "baseline.exe", null),
-                new("adapter-disabled", "threaded.exe", null),
-                new("queue-64KiB", "threaded.exe", "1", 65536),
-                new("queue-256KiB", "threaded.exe", "1"),
-                new("queue-1MiB", "threaded.exe", "1", 1048576)];
+            Engine[] engines = [
+                new("original", "baseline.exe", null),
+                new("previous-queue", "old-queue.exe", "1"),
+                new("optimized-queue", "threaded.exe", "1"),
+                new("vector-only", "threaded.exe", null, Vectors: true),
+                new("optimized-vector-queue", "threaded.exe", "1", Vectors: true)];
+            if (profile) engines = [
+                new("profile-queue", "profile.exe", "1"),
+                new("profile-vector-queue", "profile.exe", "1", Vectors: true)];
             await Validate(engines, results);
             if (args.Contains("--test")) return 0;
             string input = Path.Combine(Bench, "data", "32MiB.txt");
             Require(File.Exists(input), "Missing original large corpus");
             var expected = Tasks.ToDictionary(t => t.Name, t => Oracle(File.ReadAllBytes(input), t));
-            var environment = new EnvironmentInfo(Seed, 15, 2, DateTime.UtcNow,
+            var environment = new EnvironmentInfo(Seed, profile ? 3 : 15, profile ? 0 : 2, DateTime.UtcNow,
                 input, new FileInfo(input).Length, Hash(File.ReadAllBytes(input)),
                 engines.Select(e => new ExecutableInfo(e.Name, e.Enabled, e.Chunk, e.Slots,
+                    e.Vectors,
                     Hash(File.ReadAllBytes(Path.Combine(Root, e.File))))).ToArray(),
                 Environment.Version.ToString(), Environment.OSVersion.ToString(),
                 "Warm-cache process wall time including startup and stdout SHA256; no cache eviction. " +
                     "Host has other active work; shuffled sequential runs reduce but cannot eliminate interference. " +
-                    "Queue uses pread and an extra buffer copy; no CPU-cache residency claim.");
+                    "Queue uses pread and an extra buffer copy; no CPU-cache residency claim." +
+                    (profile ? " Diagnostic instrumentation active; these are not benchmark timings." : ""));
             await File.WriteAllTextAsync(Path.Combine(results, "environment.json"),
                 JsonSerializer.Serialize(environment, ExperimentJson.Default.EnvironmentInfo));
+            if (profile) {
+                using var profiles = new StreamWriter(Path.Combine(results, "observations.jsonl"), false, new UTF8Encoding(false));
+                for (int round = 0; round < 3; round++)
+                    foreach (Engine engine in engines)
+                        foreach (TaskSpec task in Tasks) {
+                            var r = await Run(engine, task, [input], round);
+                            var oracle = expected[task.Name];
+                            Require(r.OutputBytes == oracle.Bytes && r.Sha256 == oracle.Hash && r.ExitCode == oracle.Exit,
+                                "Profile output mismatch");
+                            string[] records = r.Error.Split('\n').Where(l => l.StartsWith("QUEUE_PROFILE ", StringComparison.Ordinal)).ToArray();
+                            string[] json = records.Select(l => l["QUEUE_PROFILE ".Length..]).ToArray();
+                            ValidateProfileRecords(json, new FileInfo(input).Length, engine.Slots);
+                            await profiles.WriteLineAsync(JsonSerializer.Serialize(new ProfileObservation(r, json),
+                                ExperimentJson.Default.ProfileObservation));
+                            await profiles.FlushAsync();
+                            Console.WriteLine($"Profile {engine.Name}/{task.Name}/{round}: validated");
+                        }
+                ProfileReport.Write(Root);
+                return 0;
+            }
             var random = new Random(Seed);
             var cells = engines.SelectMany(e => Tasks.Select(t => (e, t))).ToArray();
             var measured = new List<Result>();
@@ -99,6 +128,7 @@ internal static class Experiment
         start.Environment["PATH"] = Path.Combine(Bench, "tools", "msys64", "usr", "bin")
             + Path.PathSeparator + start.Environment["PATH"];
         start.Environment["LC_ALL"] = "C";
+        start.Environment["GREP_VECTOR_SEARCH"] = engine.Vectors ? "1" : "0";
         start.Environment.Remove("GREP_OPTIONS");
         start.Environment.Remove("GREP_READ_AHEAD");
         if (engine.Enabled != null) start.Environment["GREP_READ_AHEAD"] = engine.Enabled;
@@ -213,6 +243,26 @@ internal static class Experiment
         && actual.Sha256 == expected.Sha256 && actual.OutputBytes == expected.OutputBytes, message);
     private static string Hash(byte[] bytes) => Convert.ToHexString(SHA256.HashData(bytes));
     internal static double Quantile(IEnumerable<double> values, double p) { var a = values.Order().ToArray(); double index = p * (a.Length - 1); int lo = (int)index; return a[lo] + (a[(int)Math.Ceiling(index)] - a[lo]) * (index - lo); }
+
+    /// <summary>Validate all queue lifetimes: grep may seek and recreate a reader
+    /// several times while checking whether one input file is sparse or binary.</summary>
+    internal static void ValidateProfileRecords(string[] records, long expectedBytes, int slots)
+    {
+        Require(records.Length > 0 && expectedBytes >= 0 && slots > 0, "Invalid profile envelope");
+        long copied = 0;
+        foreach (string record in records) {
+            using var parsed = JsonDocument.Parse(record);
+            var data = parsed.RootElement;
+            long bytes = data.GetProperty("copy_bytes").GetInt64();
+            long read = data.GetProperty("read_bytes").GetInt64();
+            long highWater = data.GetProperty("max_ready").GetInt64();
+            long calls = data.GetProperty("copy_calls").GetInt64();
+            Require(bytes >= 0 && read >= bytes && highWater >= 0 && highWater <= slots
+                && calls >= 0 && (bytes == 0 || calls > 0), "Queue profile invariants failed");
+            copied = checked(copied + bytes);
+        }
+        Require(copied == expectedBytes, "Profile byte total differs from input");
+    }
     private static void Require(bool condition, string message) { if (!condition) throw new InvalidOperationException(message); }
 }
 
@@ -221,4 +271,5 @@ internal static class Experiment
 [JsonSerializable(typeof(Experiment.EnvironmentInfo))]
 [JsonSerializable(typeof(Experiment.Summary[]))]
 [JsonSerializable(typeof(Experiment.Validation))]
+[JsonSerializable(typeof(Experiment.ProfileObservation))]
 internal partial class ExperimentJson : JsonSerializerContext { }

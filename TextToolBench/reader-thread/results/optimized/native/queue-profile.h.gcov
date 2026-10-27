@@ -1,0 +1,116 @@
+        -:    0:Source:queue-profile.h
+        -:    0:Graph:profile-covered-read-ahead.gcno
+        -:    0:Data:profile-covered-read-ahead.gcda
+        -:    0:Runs:1
+        -:    1:// SPDX-License-Identifier: GPL-3.0-or-later
+        -:    2:// Diagnostic stage wall clocks and per-thread CPU clocks. Completely absent
+        -:    3:// from timing builds. Inter-thread wall intervals overlap and are not additive.
+        -:    4:#ifndef GREP_QUEUE_PROFILE_H
+        -:    5:#define GREP_QUEUE_PROFILE_H
+        -:    6:#ifdef QUEUE_PROFILE
+        -:    7:#include <chrono>
+        -:    8:#include <cstdint>
+        -:    9:#include <cstdio>
+        -:   10:#include <time.h>
+        -:   11:namespace queue_profile {
+function _ZN13queue_profile3nowEv called 68930 returned 100% blocks executed 100%
+    68930:   12:inline std::uint64_t now() {
+    68930:   13:    return static_cast<std::uint64_t>(std::chrono::duration_cast<std::chrono::nanoseconds>(
+call    0 returned 68930
+   137860:   14:        std::chrono::steady_clock::now().time_since_epoch()).count());
+call    0 returned 68930
+call    1 returned 68930
+call    2 returned 68930
+        -:   15:}
+function _ZN13queue_profile3cpuEv called 1668 returned 100% blocks executed 83%
+     1668:   16:inline std::int64_t cpu() {
+     1668:   17:    timespec t {};
+    1668*:   18:    if (::clock_gettime(CLOCK_THREAD_CPUTIME_ID, &t) != 0) return -1;
+call    0 returned 1668
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1668
+     1668:   19:    return static_cast<std::int64_t>(t.tv_sec) * 1000000000LL + t.tv_nsec;
+        -:   20:}
+        -:   21:struct Data {
+        -:   22:    std::uint64_t started = now(), producer_read_ns = 0, producer_wait_ns = 0,
+        -:   23:        producer_lock_ns = 0, consumer_wait_ns = 0, consumer_lock_ns = 0,
+        -:   24:        copy_ns = 0, stop_ns = 0, read_calls = 0, copy_calls = 0,
+        -:   25:        read_bytes = 0, copy_bytes = 0, full_waits = 0, empty_waits = 0, max_ready = 0;
+        -:   26:    std::int64_t main_started = cpu(), producer_cpu_ns = -1;
+        -:   27:    // Called only after join; producer writes are synchronized by that join.
+function _ZNK13queue_profile4Data4emitEv called 417 returned 100% blocks executed 81%
+      417:   28:    void emit() const {
+      417:   29:        const auto end_cpu = cpu();
+call    0 returned 417
+     417*:   30:        const auto main_cpu = main_started >= 0 && end_cpu >= 0 ? end_cpu - main_started : -1;
+branch  0 taken 417 (fallthrough)
+branch  1 taken 0
+branch  2 taken 417 (fallthrough)
+branch  3 taken 0
+      417:   31:        std::fprintf(stderr,
+        -:   32:            "QUEUE_PROFILE {\"wall_ns\":%llu,\"producer_read_ns\":%llu,\"producer_wait_ns\":%llu,"
+        -:   33:            "\"producer_lock_ns\":%llu,\"consumer_wait_ns\":%llu,\"consumer_lock_ns\":%llu,"
+        -:   34:            "\"copy_ns\":%llu,\"stop_ns\":%llu,\"read_calls\":%llu,\"copy_calls\":%llu,"
+        -:   35:            "\"read_bytes\":%llu,\"copy_bytes\":%llu,\"full_waits\":%llu,\"empty_waits\":%llu,"
+        -:   36:            "\"max_ready\":%llu,\"producer_cpu_ns\":",
+      417:   37:            static_cast<unsigned long long>(now() - started),
+call    0 returned 417
+      417:   38:            static_cast<unsigned long long>(producer_read_ns),
+      417:   39:            static_cast<unsigned long long>(producer_wait_ns),
+      417:   40:            static_cast<unsigned long long>(producer_lock_ns),
+      417:   41:            static_cast<unsigned long long>(consumer_wait_ns),
+      417:   42:            static_cast<unsigned long long>(consumer_lock_ns),
+      417:   43:            static_cast<unsigned long long>(copy_ns),
+      417:   44:            static_cast<unsigned long long>(stop_ns),
+      417:   45:            static_cast<unsigned long long>(read_calls),
+      417:   46:            static_cast<unsigned long long>(copy_calls),
+      417:   47:            static_cast<unsigned long long>(read_bytes),
+      417:   48:            static_cast<unsigned long long>(copy_bytes),
+      417:   49:            static_cast<unsigned long long>(full_waits),
+      417:   50:            static_cast<unsigned long long>(empty_waits),
+      417:   51:            static_cast<unsigned long long>(max_ready));
+call    0 returned 417
+     417*:   52:        if (producer_cpu_ns < 0) std::fputs("null", stderr);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 417
+call    2 never executed
+      417:   53:        else std::fprintf(stderr, "%lld", static_cast<long long>(producer_cpu_ns));
+call    0 returned 417
+      417:   54:        std::fputs(",\"main_cpu_ns\":", stderr);
+call    0 returned 417
+     417*:   55:        if (main_cpu < 0) std::fputs("null", stderr);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 417
+call    2 never executed
+      417:   56:        else std::fprintf(stderr, "%lld", static_cast<long long>(main_cpu));
+call    0 returned 417
+      417:   57:        std::fputs("}\n", stderr);
+call    0 returned 417
+      417:   58:    }
+        -:   59:};
+        -:   60:struct ProducerCpu {
+        -:   61:    Data &data;
+        -:   62:    const std::int64_t start = cpu();
+function _ZN13queue_profile11ProducerCpuD2Ev called 417 returned 100% blocks executed 83%
+      417:   63:    ~ProducerCpu() {
+      417:   64:        const auto end = cpu();
+call    0 returned 417
+     417*:   65:        data.producer_cpu_ns = start >= 0 && end >= 0 ? end - start : -1;
+branch  0 taken 417 (fallthrough)
+branch  1 taken 0
+branch  2 taken 417 (fallthrough)
+branch  3 taken 0
+      417:   66:    }
+        -:   67:};
+        -:   68:}
+        -:   69:#define QP_STAMP(name) const auto name = queue_profile::now()
+        -:   70:#define QP_ADD(field, start) profile_.field += queue_profile::now() - start
+        -:   71:#define QP_INC(field) ++profile_.field
+        -:   72:#define QP_BYTES(field, count) profile_.field += count
+        -:   73:#else
+        -:   74:#define QP_STAMP(name)
+        -:   75:#define QP_ADD(field, start)
+        -:   76:#define QP_INC(field)
+        -:   77:#define QP_BYTES(field, count)
+        -:   78:#endif
+        -:   79:#endif

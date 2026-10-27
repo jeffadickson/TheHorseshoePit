@@ -1,0 +1,470 @@
+        -:    0:Source:read-ahead.cpp
+        -:    1:// SPDX-License-Identifier: GPL-3.0-or-later
+        -:    2:// A bounded, single-producer/single-consumer queue for named regular inputs.
+        -:    3:// Requirements: READAHEAD-001..004. Matcher and line framing remain GNU grep's.
+        -:    4:#include "read-ahead.h"
+        -:    5:#include "queue-profile.h"
+        -:    6:#include <algorithm>
+        -:    7:#include <cerrno>
+        -:    8:#include <condition_variable>
+        -:    9:#include <cstdlib>
+        -:   10:#include <cstring>
+        -:   11:#include <limits>
+        -:   12:#include <memory>
+        -:   13:#include <mutex>
+        -:   14:#include <thread>
+        -:   15:#include <vector>
+        -:   16:#include <sys/stat.h>
+        -:   17:#include <unistd.h>
+        -:   18:
+        -:   19:extern "C" size_t safe_read(int, void *, size_t);
+        -:   20:
+        -:   21:namespace {
+        -:   22:// An invalid tuning value disables the experiment rather than risking an
+        -:   23:// unbounded allocation. Defaults reserve 768 KiB, excluding library overhead.
+function _ZN12_GLOBAL__N_17settingEPKcmmm called 1676 returned 100% blocks executed 88%
+     1676:   24:size_t setting(const char *name, size_t fallback, size_t low, size_t high) {
+     1676:   25:    const char *text = std::getenv(name);
+call    0 returned 1676
+     1676:   26:    if (!text) return fallback;
+branch  0 taken 12 (fallthrough)
+branch  1 taken 1664
+    1664*:   27:    if (!*text || *text == '-' || *text == '+') return 0;
+branch  0 taken 1664 (fallthrough)
+branch  1 taken 0
+branch  2 taken 1664 (fallthrough)
+branch  3 taken 0
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1664
+     1664:   28:    char *end = nullptr;
+     1664:   29:    errno = 0;
+     1664:   30:    const auto value = std::strtoull(text, &end, 10);
+call    0 returned 1664
+     1664:   31:    return errno || *end || value < low || value > high
+branch  0 taken 1664 (fallthrough)
+branch  1 taken 0
+branch  2 taken 1664 (fallthrough)
+branch  3 taken 0
+branch  4 taken 1664 (fallthrough)
+branch  5 taken 0
+    3328*:   32:        ? 0 : static_cast<size_t>(value);
+branch  0 taken 1664 (fallthrough)
+branch  1 taken 0
+        -:   33:}
+        -:   34:
+        -:   35:struct Slot {
+        -:   36:    std::unique_ptr<char[]> bytes;
+        -:   37:    size_t capacity = 0;
+        -:   38:    size_t size = 0;
+        -:   39:    int error = 0;
+        -:   40:};
+        -:   41:
+        -:   42:class Reader final {
+        -:   43:    int fd_;
+        -:   44:    off_t delivered_;
+        -:   45:    std::vector<Slot> slots_;
+        -:   46:    std::mutex mutex_;
+        -:   47:    std::condition_variable changed_;
+        -:   48:    size_t head_ = 0, tail_ = 0, ready_ = 0, consumed_ = 0;
+        -:   49:    bool stopping_ = false;
+        -:   50:#ifdef QUEUE_PROFILE
+        -:   51:    queue_profile::Data profile_;
+        -:   52:#endif
+        -:   53:    // Declared last so all state exists before the thread starts. Shutdown
+        -:   54:    // explicitly wakes the condition variable before joining this jthread.
+        -:   55:    std::jthread producer_;
+        -:   56:
+function _ZN12_GLOBAL__N_16Reader7produceEv called 834 returned 100% blocks executed 95%
+      834:   57:    void produce() {
+        -:   58:#ifdef QUEUE_PROFILE
+        -:   59:        queue_profile::ProducerCpu cpu_scope {profile_};
+        -:   60:#endif
+      834:   61:        off_t offset = delivered_;
+        -:   62:        for (;;) {
+        -:   63:            QP_STAMP(lock_start);
+     5267:   64:            std::unique_lock lock(mutex_);
+call    0 returned 5267
+branch  1 taken 5267 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   65:            QP_ADD(producer_lock_ns, lock_start);
+     5267:   66:            if (!stopping_ && ready_ == slots_.size()) {
+branch  0 taken 4976 (fallthrough)
+branch  1 taken 291
+call    2 returned 4976
+branch  3 taken 2882 (fallthrough)
+branch  4 taken 2094
+branch  5 taken 2882 (fallthrough)
+branch  6 taken 2385
+        -:   67:                QP_INC(full_waits);
+        -:   68:                QP_STAMP(wait_start);
+function _ZZN12_GLOBAL__N_16Reader7produceEvENKUlvE_clEv called 5764 returned 100% blocks executed 100%
+     8646:   69:                changed_.wait(lock, [this] { return stopping_ || ready_ < slots_.size(); });
+call    0 returned 2882
+branch  1 taken 2882 (fallthrough)
+branch  2 taken 0 (throw)
+branch  3 taken 5535 (fallthrough)
+branch  4 taken 229
+call    5 returned 5535
+branch  6 taken 2653 (fallthrough)
+branch  7 taken 2882
+        -:   70:                QP_ADD(producer_wait_ns, wait_start);
+        -:   71:            }
+     5267:   72:            if (stopping_) return;
+branch  0 taken 520 (fallthrough)
+branch  1 taken 4747
+     4747:   73:            auto &slot = slots_[tail_];
+call    0 returned 4747
+        -:   74:            // This slot is producer-owned until published under the mutex.
+        -:   75:            // pread leaves the public descriptor's offset untouched, so queued
+        -:   76:            // bytes cannot change grep's observable logical position.
+     4747:   77:            lock.unlock();
+call    0 returned 4747
+branch  1 taken 4747 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   78:            ssize_t bytes;
+        -:   79:            QP_STAMP(read_start);
+        -:   80:            do {
+     4747:   81:                bytes = ::pread(fd_, slot.bytes.get(), slot.capacity, offset);
+call    0 returned 4747
+call    1 returned 4747
+branch  2 taken 4747 (fallthrough)
+branch  3 taken 0 (throw)
+     4747:   82:            } while (bytes < 0 && errno == EINTR);
+branch  0 taken 2 (fallthrough)
+branch  1 taken 4745
+branch  2 taken 0
+branch  3 taken 2 (fallthrough)
+     4747:   83:            const int error = bytes < 0 ? errno : 0;
+branch  0 taken 2 (fallthrough)
+branch  1 taken 4745
+        -:   84:            QP_ADD(producer_read_ns, read_start);
+        -:   85:            QP_INC(read_calls);
+        -:   86:            if (bytes > 0) { QP_BYTES(read_bytes, static_cast<size_t>(bytes)); }
+        -:   87:            QP_STAMP(publish_start);
+     4747:   88:            lock.lock();
+call    0 returned 4747
+branch  1 taken 4747 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   89:            QP_ADD(producer_lock_ns, publish_start);
+     4747:   90:            if (stopping_) return;
+branch  0 taken 11 (fallthrough)
+branch  1 taken 4736
+     4736:   91:            slot.size = bytes > 0 ? static_cast<size_t>(bytes) : 0;
+     4736:   92:            slot.error = error;
+     4736:   93:            if (++tail_ == slots_.size()) tail_ = 0;
+call    0 returned 4736
+branch  1 taken 2963 (fallthrough)
+branch  2 taken 1773
+     4736:   94:            ++ready_;
+        -:   95:#ifdef QUEUE_PROFILE
+        -:   96:            profile_.max_ready = std::max(profile_.max_ready, static_cast<std::uint64_t>(ready_));
+        -:   97:#endif
+     4736:   98:            lock.unlock();
+call    0 returned 4736
+branch  1 taken 4736 (fallthrough)
+branch  2 taken 0 (throw)
+     4736:   99:            changed_.notify_one();
+call    0 returned 4736
+     4736:  100:            if (bytes <= 0) return; // Publish exactly one sticky terminal slot.
+branch  0 taken 303 (fallthrough)
+branch  1 taken 4433
+     4433:  101:            offset += bytes;
+     9700:  102:        }
+call    0 returned 5267
+branch  1 taken 4433 (fallthrough)
+branch  2 taken 834
+call    3 never executed
+        -:  103:    }
+        -:  104:public:
+function _ZN12_GLOBAL__N_16ReaderC2Eilmm called 834 returned 100% blocks executed 64%
+      834:  105:    Reader(int fd, off_t offset, size_t chunk, size_t depth)
+     2502:  106:        : fd_(fd), delivered_(offset), slots_(depth) {
+call    0 returned 834
+branch  1 taken 834 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 834
+call    4 returned 834
+call    5 returned 834
+call    6 never executed
+        -:  107:        // The producer overwrites the allocation. Only slot.size published
+        -:  108:        // bytes are readable; zero initialization would be redundant traffic.
+     2504:  109:        for (auto &slot : slots_) {
+call    0 returned 834
+call    1 returned 834
+call    2 returned 1670
+call    3 returned 2504
+branch  4 taken 1670
+branch  5 taken 834 (fallthrough)
+     1670:  110:            slot.bytes = std::make_unique_for_overwrite<char[]>(chunk);
+call    0 returned 1670
+branch  1 taken 1670 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 1670
+call    4 returned 1670
+     1670:  111:            slot.capacity = chunk;
+call    0 returned 1670
+        -:  112:        }
+function _ZZN12_GLOBAL__N_16ReaderC4EilmmENKUlvE_clEv called 834 returned 100% blocks executed 100%
+     1668:  113:        producer_ = std::jthread([this] { produce(); });
+call    0 returned 834
+branch  1 taken 834 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 834
+call    4 returned 834
+call    5 returned 834
+      834:  114:    }
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  115:    Reader(const Reader &) = delete;
+        -:  116:    Reader &operator=(const Reader &) = delete;
+function _ZN12_GLOBAL__N_16ReaderD2Ev called 834 returned 100% blocks executed 100%
+      834:  117:    ~Reader() { stop(); }
+call    0 returned 834
+call    1 returned 834
+call    2 returned 834
+call    3 returned 834
+function _ZNK12_GLOBAL__N_16Reader10descriptorEv called 17316 returned 100% blocks executed 100%
+    17316:  118:    int descriptor() const { return fd_; }
+function _ZNK12_GLOBAL__N_16Reader8positionEv called 834 returned 100% blocks executed 100%
+      834:  119:    off_t position() const { return delivered_; }
+function _ZN12_GLOBAL__N_16Reader4stopEv called 1668 returned 100% blocks executed 100%
+     1668:  120:    void stop() {
+        -:  121:        QP_STAMP(stop_start);
+        -:  122:        {
+     1668:  123:            std::lock_guard lock(mutex_);
+call    0 returned 1668
+branch  1 taken 1668 (fallthrough)
+branch  2 taken 0 (throw)
+     1668:  124:            stopping_ = true;
+     1668:  125:        }
+call    0 returned 1668
+     1668:  126:        changed_.notify_all();
+call    0 returned 1668
+     1668:  127:        if (producer_.joinable()) producer_.join();
+call    0 returned 1668
+branch  1 taken 834 (fallthrough)
+branch  2 taken 834
+call    3 returned 834
+        -:  128:        QP_ADD(stop_ns, stop_start);
+     1668:  129:    }
+        -:  130:#ifdef QUEUE_PROFILE
+        -:  131:    void emit_profile() const { profile_.emit(); }
+        -:  132:#endif
+function _ZN12_GLOBAL__N_16Reader4readEPvm called 15810 returned 100% blocks executed 93%
+    15810:  133:    size_t read(void *buffer, size_t count) {
+    15810:  134:        if (!count) return 0;
+branch  0 taken 288 (fallthrough)
+branch  1 taken 15522
+        -:  135:        QP_STAMP(lock_start);
+    15522:  136:        std::unique_lock lock(mutex_);
+call    0 returned 15522
+branch  1 taken 15522 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  137:        QP_ADD(consumer_lock_ns, lock_start);
+    15522:  138:        if (!ready_) {
+branch  0 taken 3008 (fallthrough)
+branch  1 taken 12514
+        -:  139:            QP_INC(empty_waits);
+        -:  140:            QP_STAMP(wait_start);
+function _ZZN12_GLOBAL__N_16Reader4readEPvmENKUlvE_clEv called 6016 returned 100% blocks executed 100%
+     9024:  141:            changed_.wait(lock, [this] { return ready_ != 0; });
+call    0 returned 3008
+branch  1 taken 3008 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  142:            QP_ADD(consumer_wait_ns, wait_start);
+        -:  143:        }
+    15522:  144:        auto &slot = slots_[head_];
+call    0 returned 15522
+    15522:  145:        if (!slot.size) {
+branch  0 taken 356 (fallthrough)
+branch  1 taken 15166
+      356:  146:            if (slot.error) { errno = slot.error; return static_cast<size_t>(-1); }
+branch  0 taken 4 (fallthrough)
+branch  1 taken 352
+      352:  147:            return 0;
+        -:  148:        }
+    15166:  149:        const auto bytes = std::min(count, slot.size - consumed_);
+call    0 returned 15166
+        -:  150:        // The extra copy keeps grep's alignment, sentinels and partial-line
+        -:  151:        // retention unchanged. Its cost is deliberately included in timings.
+        -:  152:        // Keep the published slot reserved until copying finishes. The producer
+        -:  153:        // can fill other free slots while this consumer owns these bytes.
+    15166:  154:        lock.unlock();
+call    0 returned 15166
+branch  1 taken 15166 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  155:        QP_STAMP(copy_start);
+    15166:  156:        std::memcpy(buffer, slot.bytes.get() + consumed_, bytes);
+call    0 returned 15166
+        -:  157:        QP_ADD(copy_ns, copy_start);
+        -:  158:        QP_INC(copy_calls);
+        -:  159:        QP_BYTES(copy_bytes, bytes);
+        -:  160:        QP_STAMP(release_start);
+    15166:  161:        lock.lock();
+call    0 returned 15166
+branch  1 taken 15166 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  162:        QP_ADD(consumer_lock_ns, release_start);
+    15166:  163:        consumed_ += bytes;
+    15166:  164:        delivered_ += static_cast<off_t>(bytes);
+    15166:  165:        if (consumed_ == slot.size) {
+branch  0 taken 4176 (fallthrough)
+branch  1 taken 10990
+     4176:  166:            consumed_ = 0;
+     4176:  167:            if (++head_ == slots_.size()) head_ = 0;
+call    0 returned 4176
+branch  1 taken 2708 (fallthrough)
+branch  2 taken 1468
+     4176:  168:            --ready_;
+     4176:  169:            lock.unlock();
+call    0 returned 4176
+branch  1 taken 4176 (fallthrough)
+branch  2 taken 0 (throw)
+     4176:  170:            changed_.notify_one();
+call    0 returned 4176
+        -:  171:        }
+    15166:  172:        return bytes;
+    15522:  173:    }
+call    0 returned 15522
+call    1 never executed
+        -:  174:};
+        -:  175:
+        -:  176:// GNU grep processes descriptors serially. Only its main thread calls this ABI;
+        -:  177:// the producer accesses its Reader's state and never this owning pointer.
+        -:  178:std::unique_ptr<Reader> active;
+        -:  179:}
+        -:  180:
+function read_ahead_begin called 862 returned 100% blocks executed 88%
+      862:  181:extern "C" void read_ahead_begin(int fd) {
+      862:  182:    const int saved_errno = errno;
+      862:  183:    const char *enabled = std::getenv("GREP_READ_AHEAD");
+call    0 returned 862
+      862:  184:    if (!active && enabled && std::strcmp(enabled, "1") == 0) {
+call    0 returned 862
+branch  1 taken 862 (fallthrough)
+branch  2 taken 0
+branch  3 taken 838 (fallthrough)
+branch  4 taken 24
+branch  5 taken 838 (fallthrough)
+branch  6 taken 0
+branch  7 taken 838 (fallthrough)
+branch  8 taken 24
+      838:  185:        struct stat status {};
+      838:  186:        const auto chunk = setting("GREP_READ_CHUNK", 262144, 4096, 8388608);
+call    0 returned 838
+      838:  187:        const auto depth = setting("GREP_READ_SLOTS", 3, 1, 16);
+call    0 returned 838
+      838:  188:        const auto offset = ::lseek(fd, 0, SEEK_CUR);
+call    0 returned 838
+      838:  189:        if (chunk && depth && fd != STDIN_FILENO && offset >= 0
+branch  0 taken 838 (fallthrough)
+branch  1 taken 0
+branch  2 taken 838 (fallthrough)
+branch  3 taken 0
+branch  4 taken 834 (fallthrough)
+branch  5 taken 4
+     1676:  190:            && ::fstat(fd, &status) == 0 && S_ISREG(status.st_mode)) {
+branch  0 taken 838 (fallthrough)
+branch  1 taken 0
+call    2 returned 834
+branch  3 taken 834 (fallthrough)
+branch  4 taken 0
+branch  5 taken 834 (fallthrough)
+branch  6 taken 0
+branch  7 taken 834 (fallthrough)
+branch  8 taken 4
+        -:  191:            // Allocation/thread creation failure keeps the original reader.
+        -:  192:            // No C++ exception is allowed across the C ABI.
+      834:  193:            try { active = std::make_unique<Reader>(fd, offset, chunk, depth); }
+call    0 returned 834
+branch  1 taken 834 (fallthrough)
+branch  2 taken 0 (throw)
+call    3 returned 834
+call    4 returned 834
+    =====:  194:            catch (...) { }
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+        -:  195:        }
+        -:  196:    }
+      862:  197:    errno = saved_errno;
+      862:  198:}
+        -:  199:
+function read_ahead_end called 1566 returned 100% blocks executed 89%
+     1566:  200:extern "C" int read_ahead_end(void) {
+     1566:  201:    if (!active) return 0;
+call    0 returned 1566
+branch  1 taken 732 (fallthrough)
+branch  2 taken 834
+      834:  202:    const int saved_errno = errno;
+      834:  203:    active->stop();
+call    0 returned 834
+call    1 returned 834
+        -:  204:#ifdef QUEUE_PROFILE
+        -:  205:    active->emit_profile();
+        -:  206:#endif
+      834:  207:    const auto result = ::lseek(active->descriptor(), active->position(), SEEK_SET);
+call    0 returned 834
+call    1 returned 834
+call    2 returned 834
+call    3 returned 834
+call    4 returned 834
+      834:  208:    const int seek_errno = errno;
+      834:  209:    active.reset();
+call    0 returned 834
+     834*:  210:    errno = result < 0 ? seek_errno : saved_errno;
+branch  0 taken 0 (fallthrough)
+branch  1 taken 834
+     834*:  211:    return result < 0 ? -1 : 0;
+branch  0 taken 0 (fallthrough)
+branch  1 taken 834
+        -:  212:}
+        -:  213:
+function read_ahead_read called 15832 returned 100% blocks executed 100%
+    15832:  214:extern "C" size_t read_ahead_read(int fd, void *buffer, size_t count) {
+    31642:  215:    return active && active->descriptor() == fd
+call    0 returned 15832
+call    1 returned 15810
+call    2 returned 15810
+branch  3 taken 15810 (fallthrough)
+branch  4 taken 0
+    31642:  216:        ? active->read(buffer, count) : safe_read(fd, buffer, count);
+branch  0 taken 15810 (fallthrough)
+branch  1 taken 22
+call    2 returned 15810
+call    3 returned 15810
+call    4 returned 22
+        -:  217:}
+        -:  218:
+function read_ahead_seek called 672 returned 100% blocks executed 85%
+      672:  219:extern "C" off_t read_ahead_seek(int fd, off_t offset, int whence) {
+     672*:  220:    const bool restart = active && active->descriptor() == fd;
+call    0 returned 672
+branch  1 taken 672 (fallthrough)
+branch  2 taken 0
+call    3 returned 672
+call    4 returned 672
+branch  5 taken 672 (fallthrough)
+branch  6 taken 0
+     672*:  221:    if (restart && read_ahead_end() != 0) return -1;
+branch  0 taken 672 (fallthrough)
+branch  1 taken 0
+call    2 returned 672
+branch  3 taken 0 (fallthrough)
+branch  4 taken 672
+branch  5 taken 0 (fallthrough)
+branch  6 taken 672
+      672:  222:    const auto result = ::lseek(fd, offset, whence);
+call    0 returned 672
+      672:  223:    const int saved_errno = errno;
+      672:  224:    if (restart && result >= 0) read_ahead_begin(fd);
+branch  0 taken 672 (fallthrough)
+branch  1 taken 0
+branch  2 taken 544 (fallthrough)
+branch  3 taken 128
+call    4 returned 544
+      672:  225:    errno = saved_errno;
+      672:  226:    return result;
+        -:  227:}

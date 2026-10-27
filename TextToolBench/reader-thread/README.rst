@@ -1,6 +1,11 @@
 GNU grep C++20 reader-thread experiment
 =======================================
 
+This page retains the first experiment at commit f430570. Current optimization
+and profiling results are described in OPTIMIZATIONS.rst. The first experiment's
+raw evidence remains in results/; new evidence is in results/optimized/ and
+results/profile/.
+
 This experiment retains GNU grep 3.0's matcher and line buffering and adds a
 C++20 producer feeding a bounded queue. ``grep.patch`` contains the integration;
 ``read-ahead.cpp`` contains the queue. This is experimental GPL-3.0-or-later

@@ -1,0 +1,80 @@
+[
+  {
+    "Report": "results/optimized/harness-unit.cobertura.xml",
+    "Source": "Experiment.cs",
+    "LinesCovered": 30,
+    "LinesValid": 198,
+    "LinePercent": 15.151515151515152,
+    "BranchesCovered": 40.0,
+    "BranchesValid": 120.0,
+    "BranchPercent": 33.333333333333336,
+    "WholeModuleLine": "0.023700000000000002",
+    "WholeModuleBranch": "0.1818",
+    "Scope": "Unique handwritten source lines; maximum branch outcomes per source line; separate unmerged scopes"
+  },
+  {
+    "Report": "results/optimized/harness-unit.cobertura.xml",
+    "Source": "ProfileReport.cs",
+    "LinesCovered": 12,
+    "LinesValid": 39,
+    "LinePercent": 30.76923076923077,
+    "BranchesCovered": 12.0,
+    "BranchesValid": 30.0,
+    "BranchPercent": 40.0,
+    "WholeModuleLine": "0.023700000000000002",
+    "WholeModuleBranch": "0.1818",
+    "Scope": "Unique handwritten source lines; maximum branch outcomes per source line; separate unmerged scopes"
+  },
+  {
+    "Report": "results/optimized/harness-integration.cobertura.xml",
+    "Source": "Experiment.cs",
+    "LinesCovered": 123,
+    "LinesValid": 198,
+    "LinePercent": 62.121212121212125,
+    "BranchesCovered": 61.0,
+    "BranchesValid": 118.0,
+    "BranchPercent": 51.69491525423729,
+    "WholeModuleLine": "0.1971",
+    "WholeModuleBranch": "0.2957",
+    "Scope": "Unique handwritten source lines; maximum branch outcomes per source line; separate unmerged scopes"
+  },
+  {
+    "Report": "results/optimized/harness-integration.cobertura.xml",
+    "Source": "ProfileReport.cs",
+    "LinesCovered": 0,
+    "LinesValid": 39,
+    "LinePercent": 0,
+    "BranchesCovered": 0.0,
+    "BranchesValid": 30.0,
+    "BranchPercent": 0.0,
+    "WholeModuleLine": "0.1971",
+    "WholeModuleBranch": "0.2957",
+    "Scope": "Unique handwritten source lines; maximum branch outcomes per source line; separate unmerged scopes"
+  },
+  {
+    "Report": "results/profile/harness-report.cobertura.xml",
+    "Source": "Experiment.cs",
+    "LinesCovered": 12,
+    "LinesValid": 198,
+    "LinePercent": 6.0606060606060606,
+    "BranchesCovered": 3.0,
+    "BranchesValid": 118.0,
+    "BranchPercent": 2.542372881355932,
+    "WholeModuleLine": "0.028300000000000002",
+    "WholeModuleBranch": "0.09849999999999999",
+    "Scope": "Unique handwritten source lines; maximum branch outcomes per source line; separate unmerged scopes"
+  },
+  {
+    "Report": "results/profile/harness-report.cobertura.xml",
+    "Source": "ProfileReport.cs",
+    "LinesCovered": 38,
+    "LinesValid": 39,
+    "LinePercent": 97.43589743589743,
+    "BranchesCovered": 25.0,
+    "BranchesValid": 30.0,
+    "BranchPercent": 83.33333333333333,
+    "WholeModuleLine": "0.028300000000000002",
+    "WholeModuleBranch": "0.09849999999999999",
+    "Scope": "Unique handwritten source lines; maximum branch outcomes per source line; separate unmerged scopes"
+  }
+]

@@ -1,0 +1,178 @@
+        -:    0:Source:vector-search.cpp
+        -:    1:// SPDX-License-Identifier: GPL-3.0-or-later
+        -:    2:// READAHEAD-006: explicit 32-byte comparisons, with the original library paths
+        -:    3:// retained as an opt-out control. Whole binaries remain processor-specific.
+        -:    4:#include "vector-search.h"
+        -:    5:#include <bit>
+        -:    6:#include <cstdint>
+        -:    7:#include <cstdlib>
+        -:    8:#include <cstring>
+        -:    9:#if defined(__AVX2__)
+        -:   10:#include <immintrin.h>
+        -:   11:#endif
+        -:   12:extern "C" void *memchr2(const void *, int, int, size_t);
+        -:   13:
+        -:   14:namespace {
+function _ZN12_GLOBAL__N_17enabledEv called 986384 returned 100% blocks executed 100%
+   986384:   15:bool enabled() {
+function _ZZN12_GLOBAL__N_17enabledEvENKUlvE_clEv called 2 returned 100% blocks executed 100%
+        2:   16:    static const bool use_vectors = [] {
+        2:   17:        const char *value = std::getenv("GREP_VECTOR_SEARCH");
+call    0 returned 2
+        2:   18:        return value && std::strcmp(value, "1") == 0;
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+branch  2 taken 1 (fallthrough)
+branch  3 taken 1
+   986384:   19:    }();
+branch  0 taken 2 (fallthrough)
+branch  1 taken 986382
+call    2 returned 2
+branch  3 taken 2 (fallthrough)
+branch  4 taken 0
+call    5 returned 2
+call    6 returned 2
+   986384:   20:    return use_vectors;
+        -:   21:}
+        -:   22:
+        -:   23:template<bool Two>
+   986384:   24:void *find(const void *buffer, int first, int second, size_t count) {
+   986384:   25:    if (!enabled()) {
+   246596:   26:        if constexpr (Two) return memchr2(buffer, first, second, count);
+   246596:   27:        else return const_cast<void *>(std::memchr(buffer, first, count));
+        -:   28:    }
+   493192:   29:    auto *p = static_cast<const unsigned char *>(buffer);
+   493192:   30:    const auto a = static_cast<unsigned char>(first);
+   493192:   31:    const auto b = static_cast<unsigned char>(second);
+        -:   32:#if defined(__AVX2__)
+   493192:   33:    const auto va = _mm256_set1_epi8(static_cast<char>(a));
+   493192:   34:    const auto vb = _mm256_set1_epi8(static_cast<char>(b));
+   916644:   35:    while (count >= 32) {
+        -:   36:        // Unaligned loads are intentional. The count guard, not padding or
+        -:   37:        // page layout, guarantees that every loaded byte belongs to the input.
+   509856:   38:        const auto bytes = _mm256_loadu_si256(reinterpret_cast<const __m256i_u *>(p));
+   509856:   39:        auto equal = _mm256_cmpeq_epi8(bytes, va);
+   496704:   40:        if constexpr (Two) equal = _mm256_or_si256(equal, _mm256_cmpeq_epi8(bytes, vb));
+   509856:   41:        const auto mask = static_cast<std::uint32_t>(_mm256_movemask_epi8(equal));
+   509856:   42:        if (mask) return const_cast<unsigned char *>(p + std::countr_zero(mask));
+   423452:   43:        p += 32;
+   423452:   44:        count -= 32;
+        -:   45:    }
+        -:   46:#endif
+        -:   47:    // This also provides a build-time fallback for non-AVX2 verification builds.
+  4478678:   48:    while (count) {
+  4094857:   49:        if (*p == a || (Two && *p == b)) return const_cast<unsigned char *>(p);
+  4071890:   50:        ++p;
+  4071890:   51:        --count;
+        -:   52:    }
+   383821:   53:    return nullptr;
+        -:   54:}
+------------------
+_ZN12_GLOBAL__N_14findILb1EEEPvPKviim:
+function _ZN12_GLOBAL__N_14findILb1EEEPvPKviim called 493192 returned 100% blocks executed 100%
+   493192:   24:void *find(const void *buffer, int first, int second, size_t count) {
+   493192:   25:    if (!enabled()) {
+call    0 returned 493192
+branch  1 taken 246596 (fallthrough)
+branch  2 taken 246596
+   246596:   26:        if constexpr (Two) return memchr2(buffer, first, second, count);
+call    0 returned 246596
+        -:   27:        else return const_cast<void *>(std::memchr(buffer, first, count));
+        -:   28:    }
+   246596:   29:    auto *p = static_cast<const unsigned char *>(buffer);
+   246596:   30:    const auto a = static_cast<unsigned char>(first);
+   246596:   31:    const auto b = static_cast<unsigned char>(second);
+        -:   32:#if defined(__AVX2__)
+   246596:   33:    const auto va = _mm256_set1_epi8(static_cast<char>(a));
+   246596:   34:    const auto vb = _mm256_set1_epi8(static_cast<char>(b));
+   445856:   35:    while (count >= 32) {
+branch  0 taken 248352
+branch  1 taken 197504 (fallthrough)
+        -:   36:        // Unaligned loads are intentional. The count guard, not padding or
+        -:   37:        // page layout, guarantees that every loaded byte belongs to the input.
+   248352:   38:        const auto bytes = _mm256_loadu_si256(reinterpret_cast<const __m256i_u *>(p));
+   248352:   39:        auto equal = _mm256_cmpeq_epi8(bytes, va);
+   496704:   40:        if constexpr (Two) equal = _mm256_or_si256(equal, _mm256_cmpeq_epi8(bytes, vb));
+call    0 returned 248352
+   248352:   41:        const auto mask = static_cast<std::uint32_t>(_mm256_movemask_epi8(equal));
+   248352:   42:        if (mask) return const_cast<unsigned char *>(p + std::countr_zero(mask));
+branch  0 taken 49092 (fallthrough)
+branch  1 taken 199260
+call    2 returned 49092
+   199260:   43:        p += 32;
+   199260:   44:        count -= 32;
+        -:   45:    }
+        -:   46:#endif
+        -:   47:    // This also provides a build-time fallback for non-AVX2 verification builds.
+  2166800:   48:    while (count) {
+branch  0 taken 1982519
+branch  1 taken 184281 (fallthrough)
+  1982519:   49:        if (*p == a || (Two && *p == b)) return const_cast<unsigned char *>(p);
+branch  0 taken 1973549 (fallthrough)
+branch  1 taken 8970
+branch  2 taken 4253 (fallthrough)
+branch  3 taken 1969296
+  1969296:   50:        ++p;
+  1969296:   51:        --count;
+        -:   52:    }
+   184281:   53:    return nullptr;
+        -:   54:}
+------------------
+_ZN12_GLOBAL__N_14findILb0EEEPvPKviim:
+function _ZN12_GLOBAL__N_14findILb0EEEPvPKviim called 493192 returned 100% blocks executed 100%
+   493192:   24:void *find(const void *buffer, int first, int second, size_t count) {
+   493192:   25:    if (!enabled()) {
+call    0 returned 493192
+branch  1 taken 246596 (fallthrough)
+branch  2 taken 246596
+        -:   26:        if constexpr (Two) return memchr2(buffer, first, second, count);
+   246596:   27:        else return const_cast<void *>(std::memchr(buffer, first, count));
+        -:   28:    }
+   246596:   29:    auto *p = static_cast<const unsigned char *>(buffer);
+   246596:   30:    const auto a = static_cast<unsigned char>(first);
+   246596:   31:    const auto b = static_cast<unsigned char>(second);
+        -:   32:#if defined(__AVX2__)
+   246596:   33:    const auto va = _mm256_set1_epi8(static_cast<char>(a));
+   246596:   34:    const auto vb = _mm256_set1_epi8(static_cast<char>(b));
+   470788:   35:    while (count >= 32) {
+branch  0 taken 261504
+branch  1 taken 209284 (fallthrough)
+        -:   36:        // Unaligned loads are intentional. The count guard, not padding or
+        -:   37:        // page layout, guarantees that every loaded byte belongs to the input.
+   261504:   38:        const auto bytes = _mm256_loadu_si256(reinterpret_cast<const __m256i_u *>(p));
+   261504:   39:        auto equal = _mm256_cmpeq_epi8(bytes, va);
+call    0 returned 261504
+        -:   40:        if constexpr (Two) equal = _mm256_or_si256(equal, _mm256_cmpeq_epi8(bytes, vb));
+   261504:   41:        const auto mask = static_cast<std::uint32_t>(_mm256_movemask_epi8(equal));
+   261504:   42:        if (mask) return const_cast<unsigned char *>(p + std::countr_zero(mask));
+branch  0 taken 37312 (fallthrough)
+branch  1 taken 224192
+call    2 returned 37312
+   224192:   43:        p += 32;
+   224192:   44:        count -= 32;
+        -:   45:    }
+        -:   46:#endif
+        -:   47:    // This also provides a build-time fallback for non-AVX2 verification builds.
+  2311878:   48:    while (count) {
+branch  0 taken 2112338
+branch  1 taken 199540 (fallthrough)
+  2112338:   49:        if (*p == a || (Two && *p == b)) return const_cast<unsigned char *>(p);
+branch  0 taken 9744 (fallthrough)
+branch  1 taken 2102594
+  2102594:   50:        ++p;
+  2102594:   51:        --count;
+        -:   52:    }
+   199540:   53:    return nullptr;
+        -:   54:}
+------------------
+        -:   55:}
+function grep_vector_memchr called 493192 returned 100% blocks executed 100%
+   493192:   56:extern "C" void *grep_vector_memchr(const void *buffer, int byte, size_t count) {
+   493192:   57:    return find<false>(buffer, byte, byte, count);
+call    0 returned 493192
+        -:   58:}
+function grep_vector_memchr2 called 493192 returned 100% blocks executed 100%
+   493192:   59:extern "C" void *grep_vector_memchr2(const void *buffer, int first, int second, size_t count) {
+   493192:   60:    return find<true>(buffer, first, second, count);
+call    0 returned 493192
+        -:   61:}

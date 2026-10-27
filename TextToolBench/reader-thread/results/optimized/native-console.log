@@ -1,0 +1,13 @@
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 40: 1196241 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 40: 1196336 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 40: 1196384 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 40: 1196399 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 40: 1196415 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 60: 1196464 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 60: 1196477 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+vector-search.cpp:34:16: warning: unused variable 'vb' [-Wunused-variable]
+   34 |     const auto vb = _mm256_set1_epi8(static_cast<char>(b));
+      |                ^~
+1 warning generated.
+/mnt/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/publish/TheHorseshoePit/TextToolBench/reader-thread/native-verify.sh: line 60: 1196490 Aborted                 ( ulimit -c 0; GREP_VECTOR_SEARCH=1 timeout 20s "./mutant-$mutation" ) > "$evidence/mutant-$mutation.log" 2>&1
+Native properties, sanitizers, Memcheck, fuzzing, coverage and eight source faults completed.

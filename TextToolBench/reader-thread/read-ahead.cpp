@@ -2,6 +2,7 @@
 // A bounded, single-producer/single-consumer queue for named regular inputs.
 // Requirements: READAHEAD-001..004. Matcher and line framing remain GNU grep's.
 #include "read-ahead.h"
+#include "queue-profile.h"
 #include <algorithm>
 #include <cerrno>
 #include <condition_variable>
@@ -32,7 +33,8 @@ size_t setting(const char *name, size_t fallback, size_t low, size_t high) {
 }
 
 struct Slot {
-    std::vector<char> bytes;
+    std::unique_ptr<char[]> bytes;
+    size_t capacity = 0;
     size_t size = 0;
     int error = 0;
 };
@@ -45,15 +47,28 @@ class Reader final {
     std::condition_variable changed_;
     size_t head_ = 0, tail_ = 0, ready_ = 0, consumed_ = 0;
     bool stopping_ = false;
+#ifdef QUEUE_PROFILE
+    queue_profile::Data profile_;
+#endif
     // Declared last so all state exists before the thread starts. Shutdown
     // explicitly wakes the condition variable before joining this jthread.
     std::jthread producer_;
 
     void produce() {
+#ifdef QUEUE_PROFILE
+        queue_profile::ProducerCpu cpu_scope {profile_};
+#endif
         off_t offset = delivered_;
         for (;;) {
+            QP_STAMP(lock_start);
             std::unique_lock lock(mutex_);
-            changed_.wait(lock, [this] { return stopping_ || ready_ < slots_.size(); });
+            QP_ADD(producer_lock_ns, lock_start);
+            if (!stopping_ && ready_ == slots_.size()) {
+                QP_INC(full_waits);
+                QP_STAMP(wait_start);
+                changed_.wait(lock, [this] { return stopping_ || ready_ < slots_.size(); });
+                QP_ADD(producer_wait_ns, wait_start);
+            }
             if (stopping_) return;
             auto &slot = slots_[tail_];
             // This slot is producer-owned until published under the mutex.
@@ -61,17 +76,27 @@ class Reader final {
             // bytes cannot change grep's observable logical position.
             lock.unlock();
             ssize_t bytes;
+            QP_STAMP(read_start);
             do {
-                bytes = ::pread(fd_, slot.bytes.data(), slot.bytes.size(), offset);
+                bytes = ::pread(fd_, slot.bytes.get(), slot.capacity, offset);
             } while (bytes < 0 && errno == EINTR);
             const int error = bytes < 0 ? errno : 0;
+            QP_ADD(producer_read_ns, read_start);
+            QP_INC(read_calls);
+            if (bytes > 0) { QP_BYTES(read_bytes, static_cast<size_t>(bytes)); }
+            QP_STAMP(publish_start);
             lock.lock();
+            QP_ADD(producer_lock_ns, publish_start);
             if (stopping_) return;
             slot.size = bytes > 0 ? static_cast<size_t>(bytes) : 0;
             slot.error = error;
-            tail_ = (tail_ + 1) % slots_.size();
+            if (++tail_ == slots_.size()) tail_ = 0;
             ++ready_;
-            changed_.notify_all();
+#ifdef QUEUE_PROFILE
+            profile_.max_ready = std::max(profile_.max_ready, static_cast<std::uint64_t>(ready_));
+#endif
+            lock.unlock();
+            changed_.notify_one();
             if (bytes <= 0) return; // Publish exactly one sticky terminal slot.
             offset += bytes;
         }
@@ -79,7 +104,12 @@ class Reader final {
 public:
     Reader(int fd, off_t offset, size_t chunk, size_t depth)
         : fd_(fd), delivered_(offset), slots_(depth) {
-        for (auto &slot : slots_) slot.bytes.resize(chunk);
+        // The producer overwrites the allocation. Only slot.size published
+        // bytes are readable; zero initialization would be redundant traffic.
+        for (auto &slot : slots_) {
+            slot.bytes = std::make_unique_for_overwrite<char[]>(chunk);
+            slot.capacity = chunk;
+        }
         producer_ = std::jthread([this] { produce(); });
     }
     Reader(const Reader &) = delete;
@@ -88,17 +118,29 @@ public:
     int descriptor() const { return fd_; }
     off_t position() const { return delivered_; }
     void stop() {
+        QP_STAMP(stop_start);
         {
             std::lock_guard lock(mutex_);
             stopping_ = true;
         }
         changed_.notify_all();
         if (producer_.joinable()) producer_.join();
+        QP_ADD(stop_ns, stop_start);
     }
+#ifdef QUEUE_PROFILE
+    void emit_profile() const { profile_.emit(); }
+#endif
     size_t read(void *buffer, size_t count) {
         if (!count) return 0;
+        QP_STAMP(lock_start);
         std::unique_lock lock(mutex_);
-        changed_.wait(lock, [this] { return ready_ != 0; });
+        QP_ADD(consumer_lock_ns, lock_start);
+        if (!ready_) {
+            QP_INC(empty_waits);
+            QP_STAMP(wait_start);
+            changed_.wait(lock, [this] { return ready_ != 0; });
+            QP_ADD(consumer_wait_ns, wait_start);
+        }
         auto &slot = slots_[head_];
         if (!slot.size) {
             if (slot.error) { errno = slot.error; return static_cast<size_t>(-1); }
@@ -107,14 +149,25 @@ public:
         const auto bytes = std::min(count, slot.size - consumed_);
         // The extra copy keeps grep's alignment, sentinels and partial-line
         // retention unchanged. Its cost is deliberately included in timings.
-        std::memcpy(buffer, slot.bytes.data() + consumed_, bytes);
+        // Keep the published slot reserved until copying finishes. The producer
+        // can fill other free slots while this consumer owns these bytes.
+        lock.unlock();
+        QP_STAMP(copy_start);
+        std::memcpy(buffer, slot.bytes.get() + consumed_, bytes);
+        QP_ADD(copy_ns, copy_start);
+        QP_INC(copy_calls);
+        QP_BYTES(copy_bytes, bytes);
+        QP_STAMP(release_start);
+        lock.lock();
+        QP_ADD(consumer_lock_ns, release_start);
         consumed_ += bytes;
         delivered_ += static_cast<off_t>(bytes);
         if (consumed_ == slot.size) {
             consumed_ = 0;
-            head_ = (head_ + 1) % slots_.size();
+            if (++head_ == slots_.size()) head_ = 0;
             --ready_;
-            changed_.notify_all();
+            lock.unlock();
+            changed_.notify_one();
         }
         return bytes;
     }
@@ -148,6 +201,9 @@ extern "C" int read_ahead_end(void) {
     if (!active) return 0;
     const int saved_errno = errno;
     active->stop();
+#ifdef QUEUE_PROFILE
+    active->emit_profile();
+#endif
     const auto result = ::lseek(active->descriptor(), active->position(), SEEK_SET);
     const int seek_errno = errno;
     active.reset();
