@@ -5,3 +5,4 @@
 
    optimized
    block256
+   copy

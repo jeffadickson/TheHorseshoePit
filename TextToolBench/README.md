@@ -237,3 +237,5 @@ The later [AVX2 and queue profiling experiment](reader-thread/OPTIMIZATIONS.rst)
 
 The [256-byte block experiment](reader-thread/BLOCK256.rst) compares eight-vector search blocks with the preserved 32-byte build, including in-memory kernel timings and code size.
 
+The [queue memory-copy experiment](reader-thread/COPY.rst) compares runtime memcpy, cached AVX2 and rep movsb on the same corpus. Small isolated-copy median differences did not establish a consistent whole-grep improvement; memcpy remains the default.
+

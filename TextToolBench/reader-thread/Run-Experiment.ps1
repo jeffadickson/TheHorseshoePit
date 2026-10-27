@@ -1,6 +1,6 @@
 param(
     [Parameter(Mandatory=$true)][string]$BenchmarkRoot,
-    [ValidateSet('Build','Test','Benchmark','Profile','NativeVerify','Requirements','Block256Build','Block256Test','Block256Benchmark','Block256Verify','Block256Kernel')][string]$Mode='Benchmark'
+    [ValidateSet('Build','Test','Benchmark','Profile','NativeVerify','Requirements','Block256Build','Block256Test','Block256Benchmark','Block256Verify','Block256Kernel','CopyBuild','CopyTest','CopyBenchmark','CopyProfile','CopyVerify','CopyKernel')][string]$Mode='Benchmark'
 )
 $ErrorActionPreference='Stop'
 if (!(Test-Path -LiteralPath $PSScriptRoot -PathType Container)) {throw 'Missing extension directory'}
@@ -8,12 +8,38 @@ if (!(Test-Path -LiteralPath $BenchmarkRoot -PathType Container)) {throw 'Missin
 $BenchmarkRoot=(Resolve-Path -LiteralPath $BenchmarkRoot).Path
 $results=Join-Path $PSScriptRoot 'results'
 if (!(Test-Path -LiteralPath $results -PathType Container)) {New-Item -ItemType Directory -Path $results | Out-Null}
-foreach($name in @('optimized','profile','block256')){
+foreach($name in @('optimized','profile','block256','copy')){
     $directory=Join-Path $results $name
     if (!(Test-Path -LiteralPath $directory -PathType Container)){New-Item -ItemType Directory -Path $directory|Out-Null}
 }
 function Check-Exit {if($LASTEXITCODE -ne 0){throw "Command failed: exit $LASTEXITCODE"}}
 switch($Mode){
+    CopyBuild {
+        $env:BENCH_ROOT=$BenchmarkRoot; $env:EXPERIMENT_ROOT=$PSScriptRoot
+        & (Join-Path $BenchmarkRoot 'tools/msys64/usr/bin/bash.exe') -lc 'bash "$(cygpath -u "$EXPERIMENT_ROOT")/build-copy.sh"'; Check-Exit
+        $profile=Join-Path $results 'copy/profile'
+        if (!(Test-Path -LiteralPath $profile -PathType Container)){New-Item -ItemType Directory -Path $profile|Out-Null}
+        dotnet publish (Join-Path $PSScriptRoot 'Experiment.csproj') -c Release -r win-x64 -p:PublishAot=true -o (Join-Path $results 'native-harness'); Check-Exit
+    }
+    {$_ -in 'CopyTest','CopyBenchmark','CopyProfile'} {
+        $harness=Join-Path $results 'native-harness/Experiment.exe'
+        if (!(Test-Path -LiteralPath $harness -PathType Leaf)){throw 'Run CopyBuild first'}
+        $arguments=@($PSScriptRoot,$BenchmarkRoot,'--copy')
+        if($Mode -eq 'CopyTest'){$arguments+='--test'}
+        if($Mode -eq 'CopyProfile'){$arguments+='--profile'}
+        & $harness @arguments; Check-Exit
+    }
+    CopyKernel {
+        $savedPath=$env:PATH
+        try {
+            $env:PATH=(Join-Path $BenchmarkRoot 'tools/msys64/usr/bin')+';'+$savedPath
+            & (Join-Path $PSScriptRoot 'copy-kernel.exe') (Join-Path $BenchmarkRoot 'data/32MiB.txt') (Join-Path $results 'copy/kernel-summary.csv') > (Join-Path $results 'copy/kernel-runs.csv'); Check-Exit
+        } finally {$env:PATH=$savedPath}
+    }
+    CopyVerify {
+        $linux=(& wsl -d Ubuntu-24.04 -- wslpath -u $PSScriptRoot.Replace('\','/')).Trim(); Check-Exit
+        & wsl -d Ubuntu-24.04 -- bash "$linux/verify-copy.sh"; Check-Exit
+    }
     Block256Build {
         $env:BENCH_ROOT=$BenchmarkRoot; $env:EXPERIMENT_ROOT=$PSScriptRoot
         & (Join-Path $BenchmarkRoot 'tools/msys64/usr/bin/bash.exe') -lc 'bash "$(cygpath -u "$EXPERIMENT_ROOT")/build-block256.sh"'; Check-Exit

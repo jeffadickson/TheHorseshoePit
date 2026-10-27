@@ -1,0 +1,1 @@
+-std=c++20 -O3 -march=native -mtune=native -ftree-vectorize -pipe; search block=32; queue slots=3; chunk=262144

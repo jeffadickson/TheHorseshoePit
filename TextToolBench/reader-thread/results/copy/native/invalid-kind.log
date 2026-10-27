@@ -1,0 +1,233 @@
+memory-copy.cpp:10:2: error: #error QUEUE_COPY_KIND must be 0 (memcpy), 1 (AVX2), or 2 (rep movsb)
+   10 | #error QUEUE_COPY_KIND must be 0 (memcpy), 1 (AVX2), or 2 (rep movsb)
+      |  ^~~~~
+memory-copy.cpp: In function ‘void queue_memory_copy(void*, const void*, std::size_t)’:
+memory-copy.cpp:30:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   30 |         const auto a = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:30:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:30:66: error: expected ‘(’ before ‘__m256i’
+   30 |         const auto a = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:30:66: error: ‘__m256i’ was not declared in this scope
+   30 |         const auto a = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:30:75: error: expected primary-expression before ‘>’ token
+   30 |         const auto a = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s));
+      |                                                                           ^
+memory-copy.cpp:31:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   31 |         const auto b = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 32));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:31:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:31:66: error: expected ‘(’ before ‘__m256i’
+   31 |         const auto b = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 32));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:31:75: error: expected primary-expression before ‘>’ token
+   31 |         const auto b = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 32));
+      |                                                                           ^
+memory-copy.cpp:32:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   32 |         const auto c = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 64));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:32:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:32:66: error: expected ‘(’ before ‘__m256i’
+   32 |         const auto c = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 64));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:32:75: error: expected primary-expression before ‘>’ token
+   32 |         const auto c = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 64));
+      |                                                                           ^
+memory-copy.cpp:33:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   33 |         const auto e = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 96));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:33:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:33:66: error: expected ‘(’ before ‘__m256i’
+   33 |         const auto e = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 96));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:33:75: error: expected primary-expression before ‘>’ token
+   33 |         const auto e = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 96));
+      |                                                                           ^
+memory-copy.cpp:34:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   34 |         const auto f = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 128));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:34:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:34:66: error: expected ‘(’ before ‘__m256i’
+   34 |         const auto f = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 128));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:34:75: error: expected primary-expression before ‘>’ token
+   34 |         const auto f = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 128));
+      |                                                                           ^
+memory-copy.cpp:35:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   35 |         const auto g = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 160));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:35:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:35:66: error: expected ‘(’ before ‘__m256i’
+   35 |         const auto g = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 160));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:35:75: error: expected primary-expression before ‘>’ token
+   35 |         const auto g = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 160));
+      |                                                                           ^
+memory-copy.cpp:36:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   36 |         const auto h = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 192));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:36:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:36:66: error: expected ‘(’ before ‘__m256i’
+   36 |         const auto h = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 192));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:36:75: error: expected primary-expression before ‘>’ token
+   36 |         const auto h = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 192));
+      |                                                                           ^
+memory-copy.cpp:37:66: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   37 |         const auto i = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 224));
+      |                                                                  ^~~~~~~
+memory-copy.cpp:37:66: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:37:66: error: expected ‘(’ before ‘__m256i’
+   37 |         const auto i = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 224));
+      |                                                                  ^~~~~~~
+      |                                                                  (
+memory-copy.cpp:37:75: error: expected primary-expression before ‘>’ token
+   37 |         const auto i = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 224));
+      |                                                                           ^
+memory-copy.cpp:38:46: error: ‘__m256i’ does not name a type
+   38 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d), a);
+      |                                              ^~~~~~~
+memory-copy.cpp:38:54: error: expected ‘>’ before ‘*’ token
+   38 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d), a);
+      |                                                      ^
+memory-copy.cpp:38:54: error: expected ‘(’ before ‘*’ token
+   38 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d), a);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:38:55: error: expected primary-expression before ‘>’ token
+   38 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d), a);
+      |                                                       ^
+memory-copy.cpp:39:46: error: ‘__m256i’ does not name a type
+   39 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 32), b);
+      |                                              ^~~~~~~
+memory-copy.cpp:39:54: error: expected ‘>’ before ‘*’ token
+   39 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 32), b);
+      |                                                      ^
+memory-copy.cpp:39:54: error: expected ‘(’ before ‘*’ token
+   39 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 32), b);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:39:55: error: expected primary-expression before ‘>’ token
+   39 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 32), b);
+      |                                                       ^
+memory-copy.cpp:40:46: error: ‘__m256i’ does not name a type
+   40 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 64), c);
+      |                                              ^~~~~~~
+memory-copy.cpp:40:54: error: expected ‘>’ before ‘*’ token
+   40 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 64), c);
+      |                                                      ^
+memory-copy.cpp:40:54: error: expected ‘(’ before ‘*’ token
+   40 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 64), c);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:40:55: error: expected primary-expression before ‘>’ token
+   40 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 64), c);
+      |                                                       ^
+memory-copy.cpp:41:46: error: ‘__m256i’ does not name a type
+   41 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 96), e);
+      |                                              ^~~~~~~
+memory-copy.cpp:41:54: error: expected ‘>’ before ‘*’ token
+   41 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 96), e);
+      |                                                      ^
+memory-copy.cpp:41:54: error: expected ‘(’ before ‘*’ token
+   41 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 96), e);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:41:55: error: expected primary-expression before ‘>’ token
+   41 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 96), e);
+      |                                                       ^
+memory-copy.cpp:42:46: error: ‘__m256i’ does not name a type
+   42 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 128), f);
+      |                                              ^~~~~~~
+memory-copy.cpp:42:54: error: expected ‘>’ before ‘*’ token
+   42 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 128), f);
+      |                                                      ^
+memory-copy.cpp:42:54: error: expected ‘(’ before ‘*’ token
+   42 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 128), f);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:42:55: error: expected primary-expression before ‘>’ token
+   42 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 128), f);
+      |                                                       ^
+memory-copy.cpp:43:46: error: ‘__m256i’ does not name a type
+   43 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 160), g);
+      |                                              ^~~~~~~
+memory-copy.cpp:43:54: error: expected ‘>’ before ‘*’ token
+   43 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 160), g);
+      |                                                      ^
+memory-copy.cpp:43:54: error: expected ‘(’ before ‘*’ token
+   43 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 160), g);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:43:55: error: expected primary-expression before ‘>’ token
+   43 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 160), g);
+      |                                                       ^
+memory-copy.cpp:44:46: error: ‘__m256i’ does not name a type
+   44 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 192), h);
+      |                                              ^~~~~~~
+memory-copy.cpp:44:54: error: expected ‘>’ before ‘*’ token
+   44 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 192), h);
+      |                                                      ^
+memory-copy.cpp:44:54: error: expected ‘(’ before ‘*’ token
+   44 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 192), h);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:44:55: error: expected primary-expression before ‘>’ token
+   44 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 192), h);
+      |                                                       ^
+memory-copy.cpp:45:46: error: ‘__m256i’ does not name a type
+   45 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 224), i);
+      |                                              ^~~~~~~
+memory-copy.cpp:45:54: error: expected ‘>’ before ‘*’ token
+   45 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 224), i);
+      |                                                      ^
+memory-copy.cpp:45:54: error: expected ‘(’ before ‘*’ token
+   45 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 224), i);
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:45:55: error: expected primary-expression before ‘>’ token
+   45 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 224), i);
+      |                                                       ^
+memory-copy.cpp:49:46: error: ‘__m256i’ does not name a type
+   49 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d),
+      |                                              ^~~~~~~
+memory-copy.cpp:49:54: error: expected ‘>’ before ‘*’ token
+   49 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d),
+      |                                                      ^
+memory-copy.cpp:49:54: error: expected ‘(’ before ‘*’ token
+   49 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d),
+      |                                                      ^
+      |                                                      (
+memory-copy.cpp:49:55: error: expected primary-expression before ‘>’ token
+   49 |         _mm256_storeu_si256(reinterpret_cast<__m256i *>(d),
+      |                                                       ^
+memory-copy.cpp:50:55: error: ISO C++ forbids declaration of ‘type name’ with no type [-fpermissive]
+   50 |             _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s)));
+      |                                                       ^~~~~~~
+memory-copy.cpp:50:55: error: expected ‘>’ before ‘__m256i’
+memory-copy.cpp:50:55: error: expected ‘(’ before ‘__m256i’
+   50 |             _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s)));
+      |                                                       ^~~~~~~
+      |                                                       (
+memory-copy.cpp:50:55: error: ‘__m256i’ was not declared in this scope
+   50 |             _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s)));
+      |                                                       ^~~~~~~
+memory-copy.cpp:50:64: error: expected primary-expression before ‘>’ token
+   50 |             _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s)));
+      |                                                                ^
+memory-copy.cpp:50:13: error: ‘_mm256_loadu_si256’ was not declared in this scope
+   50 |             _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s)));
+      |             ^~~~~~~~~~~~~~~~~~
+memory-copy.cpp:50:70: error: expected ‘)’ before ‘;’ token
+   50 |             _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s)));
+      |                                                                      ^
+      |                                                                      )

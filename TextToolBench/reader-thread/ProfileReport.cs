@@ -31,9 +31,9 @@ internal static class ProfileReport
 
     /// <summary>Write medians for each task/engine/metric without combining
     /// diagnostic intervals into an invalid total CPU-time percentage.</summary>
-    internal static void Write(string root)
+    internal static void Write(string root, string cohort = "profile")
     {
-        string directory = Path.Combine(root, "results", "profile");
+        string directory = Path.Combine(root, "results", cohort);
         if (!Directory.Exists(directory)) throw new DirectoryNotFoundException(directory);
         var samples = new List<(string Engine, string Task, string Metric, double? Value)>();
         foreach (string line in File.ReadLines(Path.Combine(directory, "observations.jsonl"))) {

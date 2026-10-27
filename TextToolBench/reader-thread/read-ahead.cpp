@@ -3,6 +3,9 @@
 // Requirements: READAHEAD-001..004. Matcher and line framing remain GNU grep's.
 #include "read-ahead.h"
 #include "queue-profile.h"
+#if defined(QUEUE_COPY_KIND) && QUEUE_COPY_KIND != 0
+#include "memory-copy.h"
+#endif
 #include <algorithm>
 #include <cerrno>
 #include <condition_variable>
@@ -153,7 +156,11 @@ public:
         // can fill other free slots while this consumer owns these bytes.
         lock.unlock();
         QP_STAMP(copy_start);
+#if defined(QUEUE_COPY_KIND) && QUEUE_COPY_KIND != 0
+        queue_memory_copy(buffer, slot.bytes.get() + consumed_, bytes);
+#else
         std::memcpy(buffer, slot.bytes.get() + consumed_, bytes);
+#endif
         QP_ADD(copy_ns, copy_start);
         QP_INC(copy_calls);
         QP_BYTES(copy_bytes, bytes);

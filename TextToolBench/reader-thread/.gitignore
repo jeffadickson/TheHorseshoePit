@@ -19,3 +19,6 @@
 /results/block256/stryker/
 /results/block256/requirements/
 /docs/_build/
+/results/copy/harness-tests/
+/results/copy/stryker/
+/results/copy/requirements/

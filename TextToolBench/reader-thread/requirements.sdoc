@@ -80,3 +80,11 @@ STATEMENT: >>>
 Implement a compile-time 256-byte search variant using eight 32-byte comparisons and a combined rejection mask. On a match, preserve first-byte ordering across all lanes. Retain 32-byte and scalar tails without reading beyond the supplied region. Compare preserved 32-byte and new 256-byte binaries on the original corpus with and without the queue, using independent output validation, two warmups and fifteen measured rounds. Additionally measure both kernels interleaved in one process with file loading excluded from timing. Record executable code size, flags, coverage and finite verification evidence without claiming universal speedup.
 <<<
 COMMENT: vector-search.cpp GREP_VECTOR_BLOCK; vector-check.cpp; vector-kernel.cpp; build-block256.sh; verify-block256.sh; Experiment.cs --block256; results/block256. The 256 bytes denote input handled per loop, not hardware vector width or code size. Runtime CPU portability remains outside the native-build contract.
+
+[REQUIREMENT]
+UID: READAHEAD-011
+TITLE: Isolate queue copy instruction choices
+STATEMENT: >>>
+Compare the existing library memcpy with explicit cached AVX2 copying and rep movsb in separate O3/native/vectorized binaries. Retain identical 32-byte search objects, queue settings, input corpus and output semantics. Copy only nonoverlapping initialized regions without alignment requirements or access beyond the supplied count. Preserve the current memcpy default. Record interleaved end-to-end timings, separate diagnostic profiles, and copy/consume kernel timings. Verify byte content, boundary sentinels, protected pages, negative settings, randomized fuzz inputs and deliberate mutations; report coverage and tooling limitations.
+<<<
+COMMENT: memory-copy.cpp and memory-copy.h; read-ahead.cpp Reader::read; copy-check.cpp; copy-kernel.cpp; build-copy.sh; verify-copy.sh; Experiment.cs --copy; Run-Experiment.ps1 Copy modes; results/copy; COPY.rst. Copy variants are processor-specific experiments, not replacements for overlap-safe memmove or portable runtime libraries. No cold-storage or hardware-counter claim.

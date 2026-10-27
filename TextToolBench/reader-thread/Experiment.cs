@@ -35,10 +35,15 @@ internal static class Experiment
         {
             Root = Path.GetFullPath(args[0]); Bench = Path.GetFullPath(args[1]);
             Require(Directory.Exists(Root) && Directory.Exists(Bench), "Missing experiment or benchmark directory");
-            if (args.Contains("--profile-summary")) { ProfileReport.Write(Root); return 0; }
+            if (args.Contains("--profile-summary")) {
+                ProfileReport.Write(Root, args.Contains("--copy") ? "copy/profile" : "profile");
+                return 0;
+            }
             bool profile = args.Contains("--profile");
             bool block256 = args.Contains("--block256");
-            string results = Path.Combine(Root, "results", profile ? "profile" : block256 ? "block256" : "optimized");
+            bool copy = args.Contains("--copy");
+            int profileRepeats = copy ? 7 : 3;
+            string results = Path.Combine(Root, "results", copy ? (profile ? "copy/profile" : "copy") : profile ? "profile" : block256 ? "block256" : "optimized");
             Require(Directory.Exists(results), "Build before verification");
             Engine[] engines = [
                 new("original", "baseline.exe", null),
@@ -54,12 +59,16 @@ internal static class Experiment
             if (profile) engines = [
                 new("profile-queue", "profile.exe", "1"),
                 new("profile-vector-queue", "profile.exe", "1", Vectors: true)];
+            // Compile-time copy choices share the preserved 32-byte search
+            // objects; no per-read environment lookup biases one variant.
+            if (copy) engines = new[] { "memcpy", "avx2", "rep" }.Select(kind =>
+                new Engine(kind, $"copy-{kind}{(profile ? "-profile" : "")}.exe", "1", Vectors: true)).ToArray();
             await Validate(engines, results);
             if (args.Contains("--test")) return 0;
             string input = Path.Combine(Bench, "data", "32MiB.txt");
             Require(File.Exists(input), "Missing original large corpus");
             var expected = Tasks.ToDictionary(t => t.Name, t => Oracle(File.ReadAllBytes(input), t));
-            var environment = new EnvironmentInfo(Seed, profile ? 3 : 15, profile ? 0 : 2, DateTime.UtcNow,
+            var environment = new EnvironmentInfo(Seed, profile ? profileRepeats : 15, profile ? 0 : 2, DateTime.UtcNow,
                 input, new FileInfo(input).Length, Hash(File.ReadAllBytes(input)),
                 engines.Select(e => new ExecutableInfo(e.Name, e.Enabled, e.Chunk, e.Slots,
                     e.Vectors,
@@ -72,10 +81,13 @@ internal static class Experiment
             await File.WriteAllTextAsync(Path.Combine(results, "environment.json"),
                 JsonSerializer.Serialize(environment, ExperimentJson.Default.EnvironmentInfo));
             if (profile) {
-                using var profiles = new StreamWriter(Path.Combine(results, "observations.jsonl"), false, new UTF8Encoding(false));
-                for (int round = 0; round < 3; round++)
-                    foreach (Engine engine in engines)
-                        foreach (TaskSpec task in Tasks) {
+                // Close the writer before the summary opens the same log.
+                // Windows sharing rules reject that read while a writer is open.
+                using (var profiles = new StreamWriter(Path.Combine(results, "observations.jsonl"), false, new UTF8Encoding(false))) {
+                    var profileRandom = new Random(Seed);
+                    var profileCells = engines.SelectMany(e => Tasks.Select(t => (Engine: e, Task: t))).ToArray();
+                    for (int round = 0; round < profileRepeats; round++)
+                        foreach (var (engine, task) in copy ? profileCells.OrderBy(_ => profileRandom.Next()) : profileCells.AsEnumerable()) {
                             var r = await Run(engine, task, [input], round);
                             var oracle = expected[task.Name];
                             Require(r.OutputBytes == oracle.Bytes && r.Sha256 == oracle.Hash && r.ExitCode == oracle.Exit,
@@ -88,7 +100,8 @@ internal static class Experiment
                             await profiles.FlushAsync();
                             Console.WriteLine($"Profile {engine.Name}/{task.Name}/{round}: validated");
                         }
-                ProfileReport.Write(Root);
+                }
+                ProfileReport.Write(Root, copy ? "copy/profile" : "profile");
                 return 0;
             }
             var random = new Random(Seed);

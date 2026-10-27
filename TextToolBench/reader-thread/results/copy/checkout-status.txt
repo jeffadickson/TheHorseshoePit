@@ -1,0 +1,56 @@
+ M TextToolBench/.gitignore
+ M TextToolBench/Directory.Build.props
+ M TextToolBench/Makefile
+ M TextToolBench/Overview.template.html
+ M TextToolBench/README.md
+ M TextToolBench/SETUP.md
+ M TextToolBench/reader-thread/.gitignore
+ M TextToolBench/reader-thread/Experiment.cs
+ M TextToolBench/reader-thread/ExperimentTests.cs
+ M TextToolBench/reader-thread/ProfileReport.cs
+ M TextToolBench/reader-thread/README.rst
+ M TextToolBench/reader-thread/Run-Experiment.ps1
+ M TextToolBench/reader-thread/Verify-Harness.ps1
+ M TextToolBench/reader-thread/docs/index.rst
+ M TextToolBench/reader-thread/read-ahead.cpp
+ M TextToolBench/reader-thread/requirements.sdoc
+ M TextToolBench/reader-thread/stryker-config.json
+ M TextToolBench/requirements.sdoc
+ M TextToolBench/results/overview-verification/determinism.json
+ M TextToolBench/results/overview-verification/dom-tests.log
+ M TextToolBench/results/overview.html
+ M TextToolBench/results/requirements/html/_static/project_map.js
+ M TextToolBench/results/requirements/html/_static/static_html_search_index.js
+ M TextToolBench/results/requirements/html/benchmark-sed-and-grep-and-awk/requirements-DEEP-TRACE.html
+ M TextToolBench/results/requirements/html/benchmark-sed-and-grep-and-awk/requirements-TABLE.html
+ M TextToolBench/results/requirements/html/benchmark-sed-and-grep-and-awk/requirements-TRACE.html
+ M TextToolBench/results/requirements/html/benchmark-sed-and-grep-and-awk/requirements.html
+ M TextToolBench/results/requirements/html/index.html
+ M TextToolBench/scripts/manage.ps1
+?? TextToolBench/DiffBench.Tests/
+?? TextToolBench/DiffBench.cs
+?? TextToolBench/DiffBench.csproj
+?? TextToolBench/DiffModel.cs
+?? TextToolBench/dependency-locks/uutils-diffutils.Cargo.lock
+?? TextToolBench/reader-thread/COPY.rst
+?? TextToolBench/reader-thread/Collect-CopyEvidence.ps1
+?? TextToolBench/reader-thread/build-copy.sh
+?? TextToolBench/reader-thread/copy-check.cpp
+?? TextToolBench/reader-thread/copy-kernel.cpp
+?? TextToolBench/reader-thread/docs/copy.rst
+?? TextToolBench/reader-thread/memory-copy.cpp
+?? TextToolBench/reader-thread/memory-copy.h
+?? TextToolBench/reader-thread/results/copy/
+?? TextToolBench/reader-thread/verify-copy.sh
+?? TextToolBench/results/diff/
+?? TextToolBench/scripts/Collect-DiffEvidence.ps1
+?? TextToolBench/scripts/Get-DiffTools.ps1
+?? TextToolBench/scripts/Run-DiffBench.ps1
+?? TextToolBench/scripts/Test-DiffReport.cjs
+?? TextToolBench/scripts/build-diff.sh
+?? TextToolBench/scripts/diff-stddef-wint.patch
+?? TextToolBench/upstream/diffutils-3.12.tar.xz
+?? TextToolBench/upstream/uutils-diffutils-x86_64-pc-windows-msvc.zip
+?? TextToolBench/upstream/uutils-diffutils-x86_64-pc-windows-msvc.zip.sha256
+?? TextToolBench/upstream/uutils-source.tar.gz
+?? TextToolBench/upstream/uutils-source.tar.gz.sha256

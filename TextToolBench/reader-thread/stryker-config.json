@@ -5,8 +5,8 @@
       "Experiment.Tests.csproj"
     ],
     "mutate": [
-      "Experiment.cs{11533..12642}",
-      "Experiment.cs{16805..18195}",
+      "Experiment.cs{12563..13672}",
+      "Experiment.cs{17835..19225}",
       "ProfileReport.cs{801..1718}"
     ],
     "reporters": [

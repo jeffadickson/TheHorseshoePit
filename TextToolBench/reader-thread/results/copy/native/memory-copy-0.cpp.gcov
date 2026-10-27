@@ -1,0 +1,64 @@
+        -:    0:Source:memory-copy.cpp
+        -:    0:Graph:covered-0-memory-copy.gcno
+        -:    0:Data:covered-0-memory-copy.gcda
+        -:    0:Runs:1
+        -:    1:// SPDX-License-Identifier: GPL-3.0-or-later
+        -:    2:// Cached stores suit grep's immediate consumption of the destination. These
+        -:    3:// native-CPU experiments deliberately do not add portable runtime dispatch.
+        -:    4:#include "memory-copy.h"
+        -:    5:#include <cstring>
+        -:    6:#ifndef QUEUE_COPY_KIND
+        -:    7:#define QUEUE_COPY_KIND 0
+        -:    8:#endif
+        -:    9:#if QUEUE_COPY_KIND < 0 || QUEUE_COPY_KIND > 2
+        -:   10:#error QUEUE_COPY_KIND must be 0 (memcpy), 1 (AVX2), or 2 (rep movsb)
+        -:   11:#endif
+        -:   12:#if QUEUE_COPY_KIND == 1
+        -:   13:#include <immintrin.h>
+        -:   14:#endif
+        -:   15:
+function queue_memory_copy called 105131 returned 100% blocks executed 100%
+   105131:   16:extern "C" void queue_memory_copy(void *destination, const void *source, std::size_t count) {
+   105131:   17:    if (!count) return;
+branch  0 taken 4102 (fallthrough)
+branch  1 taken 101029
+        -:   18:#if QUEUE_COPY_KIND == 0
+   101029:   19:    std::memcpy(destination, source, count);
+        -:   20:#elif QUEUE_COPY_KIND == 2
+        -:   21:    // The x86-64 ABI requires DF clear on entry. The compiler must see all
+        -:   22:    // pointer/count updates and arbitrary memory effects of the string copy.
+        -:   23:    asm volatile ("rep movsb" : "+D"(destination), "+S"(source), "+c"(count) : : "memory");
+        -:   24:#else
+        -:   25:    auto *d = static_cast<unsigned char *>(destination);
+        -:   26:    const auto *s = static_cast<const unsigned char *>(source);
+        -:   27:    // Each hardware operation moves 32 bytes; the loop handles 256 bytes.
+        -:   28:    // No load/store touches an unrequested byte, even on the final page.
+        -:   29:    while (count >= 256) {
+        -:   30:        const auto a = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s));
+        -:   31:        const auto b = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 32));
+        -:   32:        const auto c = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 64));
+        -:   33:        const auto e = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 96));
+        -:   34:        const auto f = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 128));
+        -:   35:        const auto g = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 160));
+        -:   36:        const auto h = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 192));
+        -:   37:        const auto i = _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s + 224));
+        -:   38:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d), a);
+        -:   39:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 32), b);
+        -:   40:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 64), c);
+        -:   41:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 96), e);
+        -:   42:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 128), f);
+        -:   43:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 160), g);
+        -:   44:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 192), h);
+        -:   45:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d + 224), i);
+        -:   46:        s += 256; d += 256; count -= 256;
+        -:   47:    }
+        -:   48:    while (count >= 32) {
+        -:   49:        _mm256_storeu_si256(reinterpret_cast<__m256i *>(d),
+        -:   50:            _mm256_loadu_si256(reinterpret_cast<const __m256i *>(s)));
+        -:   51:        s += 32; d += 32; count -= 32;
+        -:   52:    }
+        -:   53:    // The standard library handles only the remaining 0..31 bytes. Keeping
+        -:   54:    // this bounded tail avoids duplicated unaligned scalar type-punning code.
+        -:   55:    if (count) std::memcpy(d, s, count);
+        -:   56:#endif
+        -:   57:}

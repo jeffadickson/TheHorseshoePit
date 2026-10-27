@@ -6,6 +6,45 @@ using NUnit.Framework;
 public sealed class ExperimentTests
 {
     [Test]
+    public void ProfileSummaryReadsClosedLogInSelectedCohort()
+    {
+        string temp = Path.GetTempPath();
+        Assert.That(Directory.Exists(temp), Is.True);
+        string root = Path.Combine(temp, "texttool-profile-" + Guid.NewGuid().ToString("N"));
+        Assert.That(Directory.Exists(root), Is.False);
+        Directory.CreateDirectory(root);
+        try {
+            string directory = root;
+            foreach (string part in new[] { "results", "copy", "profile" }) {
+                directory = Path.Combine(directory, part);
+                if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+            }
+            var counters = new Dictionary<string, long?>();
+            foreach (string metric in new[] { "wall_ns", "producer_read_ns", "producer_wait_ns", "producer_lock_ns",
+                "consumer_wait_ns", "consumer_lock_ns", "copy_ns", "stop_ns", "read_calls", "copy_calls", "read_bytes",
+                "copy_bytes", "full_waits", "empty_waits", "max_ready", "producer_cpu_ns", "main_cpu_ns" })
+                counters[metric] = metric.EndsWith("_ns", StringComparison.Ordinal) ? 1000000 : 3;
+            counters["producer_cpu_ns"] = null;
+            string record = System.Text.Json.JsonSerializer.Serialize(counters);
+            string line = System.Text.Json.JsonSerializer.Serialize(new {
+                Observation = new { Engine = "avx2", Task = "count" }, QueueRecords = new[] { record }
+            });
+            // Deliberately close the writer before invoking the report, matching
+            // the production lifecycle that Windows file-sharing rules require.
+            using (var writer = new StreamWriter(Path.Combine(directory, "observations.jsonl"))) writer.WriteLine(line);
+            ProfileReport.Write(root, "copy/profile");
+            string summary = File.ReadAllText(Path.Combine(directory, "summary.csv")).Replace("\r\n", "\n");
+            Assert.That(summary, Does.Contain("avx2,count,copy_ms,ms,1,1,1.000000\n"));
+            Assert.That(summary, Does.Contain("avx2,count,producer_cpu_ms,ms,1,0,NA\n"));
+            Assert.That(summary, Does.Contain("avx2,count,lifetimes,count,1,1,1.000000\n"));
+            Assert.That(File.ReadAllLines(Path.Combine(directory, "summary.csv")), Has.Length.EqualTo(19));
+            Assert.Throws<DirectoryNotFoundException>(() => ProfileReport.Write(root));
+        } finally {
+            if (Directory.Exists(root)) Directory.Delete(root, recursive: true);
+        }
+    }
+
+    [Test]
     public void DiagnosticAggregationPreservesMissingClocksAndHighWaterMark()
     {
         string[] records = ["{\"copy_bytes\":4,\"max_ready\":2,\"producer_cpu_ns\":5}",
