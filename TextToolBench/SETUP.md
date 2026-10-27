@@ -32,5 +32,7 @@ A clean-machine make all bootstrap has not been exercised end to end. The retain
 
 The separate [diff laboratory](results/diff/report.html) compares GNU, Rust uutils, BusyBox and four Git algorithms. It verifies patches by independent application, rather than requiring identical patch text. See [methods and verification](results/diff/README.md).
 
+The HTML artifacts also contain the detailed methods directly: [search/transform methods](results/overview.html#test-methods), [ripgrep arguments and sample counts](results/overview.html#ripgrep-methods), and [diff fixture, command and timing methods](results/diff/report.html#test-methods). The argument listings use validated-path placeholders, not shell-ready setup commands. Report regeneration preserves the recorded measurements; `results/methods-data-integrity.json` records the checked byte identities.
+
 After the existing dependency bootstrap, run `make diff-build` to acquire hash-pinned sources and build generic/native variants; `make diff-test`, `make diff-coverage` and `make diff-mutation` verify the helper separately. `make diff` runs the uninstrumented campaign and generates its standalone report. Do not overlap timing with builds or other benchmark suites. Existing result files are overwritten on an explicit rerun; archive a session first. These targets do not change installed defaults.
 

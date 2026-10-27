@@ -29,4 +29,6 @@ test('offline evidence links resolve and page contains no executable client or e
   for(const a of doc.querySelectorAll('a[href]'))assert.ok(fs.existsSync(path.resolve(folder,a.getAttribute('href'))));
   assert.ok(doc.querySelector('meta[name=viewport]'));assert.match(html,/@media print/);
   assert.match(doc.body.textContent,/not a confidence interval/);assert.match(doc.body.textContent,/not been visually verified/);
+  const methods=doc.getElementById('test-methods');assert.ok(methods);assert.ok(methods.querySelectorAll('h3').length>=5);
+  for(const term of ['ProcessStartInfo.ArgumentList','--fuzz=0','Round=-1','256 MiB','20-second','launcher-only','1,000 cases','outside the measured interval'])assert.ok(methods.textContent.includes(term),term);
 });

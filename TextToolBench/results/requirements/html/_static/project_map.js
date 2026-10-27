@@ -29,5 +29,7 @@ window.StrictDoc.project.map = {
 
   {"UID":"BENCH-011","_LINK":"BENCH-011" },
 
-  {"UID":"BENCH-012","_LINK":"BENCH-012" }, ],
+  {"UID":"BENCH-012","_LINK":"BENCH-012" },
+
+  {"UID":"BENCH-013","_LINK":"BENCH-013" }, ],
 };

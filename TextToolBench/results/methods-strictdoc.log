@@ -1,0 +1,37 @@
+Parallelization: Enabled
+Step 'Parse SDoc project tree' start.
+Step 'Find and read SDoc files' start.
+Completed finding SDoc and assets ........................... 0.00s
+Reading SDOC: 1 tasks
+.
+Completed parsing all documents ............................ 10.77s
+Completed building document tree ........................... 10.77s
+Step 'Find and read SDoc files' took: 10.78 sec.
+Step 'Build traceability graph' start.
+Step 'Build traceability graph' took: 0.04 sec.
+Step 'Parse SDoc project tree' took: 11.46 sec.
+Step 'Export SDoc' start.
+Copying StrictDoc's assets: 47 files (47 files skipped as non-modified).
+Copying StrictDoc's assets: 2 files (2 files skipped as non-modified).
+Copying StrictDoc's assets: 1 files (1 files skipped as non-modified).
+Copying StrictDoc's assets: 26 files (26 files skipped as non-modified).
+Copying StrictDoc's assets: 1 files (1 files skipped as non-modified).
+Copying StrictDoc's assets: 1 files (1 files skipped as non-modified).
+Copying StrictDoc's assets: 4 files (4 files skipped as non-modified).
+Copying StrictDoc's assets: 3 files (3 files skipped as non-modified).
+Copying StrictDoc's assets: 2 files (2 files skipped as non-modified).
+Copying StrictDoc's assets: 2 files (2 files skipped as non-modified).
+Copying StrictDoc's assets: 2 files (2 files skipped as non-modified).
+Copying StrictDoc's assets: 3 files (3 files skipped as non-modified).
+Step 'Export static HTML search index' start.
+Build search index .......................................... 0.01s
+Serialize search index to JS ................................ 0.01s
+Serialize lookup map {MID => node} to JS .................... 0.00s
+Step 'Export static HTML search index' took: 0.02 sec.
+Skip: 1 tasks
+Export to HTML: 1 tasks
+.
+Export completed. Documentation tree can be found at:
+C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\results/requirements\html
+Step 'Export SDoc' took: 14.47 sec.
+Total execution time ....................................... 36.55s

@@ -1,0 +1,60 @@
+{
+  "Requirement": "BENCH-013",
+  "Scope": "HTML methodology only; no timing or third-party implementation rerun",
+  "NUnitPassed": 30,
+  "NUnitFailed": 0,
+  "FsCheckCases": 1000,
+  "FsCheckReplay": [
+    20261027,
+    17
+  ],
+  "DiffDomPassed": 3,
+  "OverviewDomPassed": 4,
+  "OverviewViews": 134,
+  "ClientMutationControlsDetected": 2,
+  "Coverage": {
+    "Scope": "Current helper under report/model unit tests; includes static HTML literal lines. Different scope from historical CLI conformance coverage; no improvement comparison.",
+    "LinePercent": 53.839999999999996,
+    "BranchPercent": 45.94,
+    "ModelLinePercent": 100.0,
+    "ModelBranchPercent": 100.0,
+    "Evidence": "results/diff/methods-unit-tests/4e13339a-dab0-4333-8daa-fddc7e7bd3aa/coverage.cobertura.xml"
+  },
+  "Integrity": {
+    "ArtifactsChecked": 14,
+    "AllUnchanged": true,
+    "Evidence": "results/methods-data-integrity.json"
+  },
+  "NativeManagedOverviewMatch": true,
+  "Sources": [
+    {
+      "Path": "Overview.template.html",
+      "Sha256": "8F7F97E40C01C7FC1DE650BC3F5B53A997E456ED21F2B26C7232272E1E5274CA"
+    },
+    {
+      "Path": "DiffBench.cs",
+      "Sha256": "EED8DBBB759805E30749DBDE066120565F6C64E0A198DBDD8572A7B54DFD6E3E"
+    },
+    {
+      "Path": "DiffBench.Tests/ReportTests.cs",
+      "Sha256": "E7E4F8ACA5BAADDD6B8D877AA966DF66FB912869684D6027BCE2BC4C8F101A76"
+    },
+    {
+      "Path": "scripts/Test-OverviewDom.cjs",
+      "Sha256": "D7C5FE52B62D4CEEE29FC47F966A30E998E1147DB858466A08B13C7423E2D34A"
+    },
+    {
+      "Path": "scripts/Test-DiffReport.cjs",
+      "Sha256": "F2ACA96B710DC2C131BBB382C68A6BE816B9892E446CD00138E13A8571986483"
+    },
+    {
+      "Path": "requirements.sdoc",
+      "Sha256": "420E5D0F0DBE9126CF0F4801730B05F0702E16EE9035AF2C88E2A23CBBFC8A9E"
+    }
+  ],
+  "Limitations": [
+    "DOM tests do not render CSS",
+    "No browser preview, mobile layout or print appearance verification",
+    "Historical benchmark verification remains in its original artifacts"
+  ]
+}

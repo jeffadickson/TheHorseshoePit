@@ -2,6 +2,8 @@
 
 `results/overview.html` is a self-contained, responsive narrative and data explorer. It embeds all 427 seven-repeat summaries, keeps nine cohorts separate, and includes methods, experimental design, profiling/tuning evidence, correctness failures, coverage scope and limitations. It does not run new text-tool measurements.
 
+The later BENCH-013 documentation update adds the detailed in-page test contract, ripgrep argument vectors and sample counts, workload semantics, statistics and the search/diff stopwatch distinction. Its verification is in `../methods-documentation-verification.json` and `methods-dom-tests.log`: four current DOM checks cover 134 views and cross-file methods fragments, and native/managed overview generation remains byte-identical. Earlier unit, mutation and source-hash artifacts below describe the original generator verification; they are historical evidence, not a new unit/mutation run for this HTML-only extension. No browser rendering was performed.
+
 ## Executed checks
 
 - .NET 10 builds passed. The Windows x64 Native AOT generator was published and run. Its HTML SHA-256 matches the managed generator exactly; see `determinism.json`. Source-generated System.Text.Json metadata supports native compilation without reflective serialization.

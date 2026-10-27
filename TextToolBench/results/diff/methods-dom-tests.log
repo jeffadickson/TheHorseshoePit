@@ -1,0 +1,11 @@
+✔ all qualified summaries appear with matching numerical values (198.829ms)
+✔ each table ranks one fixture and size without crossing groups (10.4187ms)
+✔ offline evidence links resolve and page contains no executable client or external assets (143.6091ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8733.679

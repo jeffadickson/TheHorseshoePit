@@ -1,0 +1,86 @@
+[
+  {
+    "Path": "results/runs.jsonl",
+    "GitBlob": "47498e54658e9321b407003ed811eccd820131e5",
+    "Sha256": "ACFF5C8F1F548078B974DD1571974033093E400E1EDB3B3F163ABD397A29CCEF",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/select-string-runs.jsonl",
+    "GitBlob": "d89b1e502b91fabd684ae8bd5cd703b397ca47b5",
+    "Sha256": "1DB5B46A54C32790FDCAFB50AF93A13C2DA90BCDD972234C5F521BF9DBCEF53D",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/ripgrep-runs.jsonl",
+    "GitBlob": "462d54b12bc6017adf4e57ba16990977efc73c2d",
+    "Sha256": "22449DBFE5584A3534AD31A8A8C8F131D3C1BF296552851A94564F3ABAF81E3A",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/small-runs.jsonl",
+    "GitBlob": "e5c9fcc47d96e0475a1ac61c6ce53c46acd62f76",
+    "Sha256": "64D6CF0630E0EEA6470DDFEBFD8B01092EA299C8CB40BF2181D72C329387D91D",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/rawk-runs.jsonl",
+    "GitBlob": "025d30fb00757613f6d8a4e3c42f99b9e0061ddd",
+    "Sha256": "89AF9351C52926035AA4C54548670E29C3919434422D32A46B693885BD74922E",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/awk-extra-runs.jsonl",
+    "GitBlob": "0ae01eeab794ed4033e4aa59cf2b5e943fda9116",
+    "Sha256": "439CE3CC1542A3547BA56E9EE165D5207B87C8F512B27125D3C7555C8DED6F89",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/buffering-runs.jsonl",
+    "GitBlob": "632996dc06915af6b98e375644751653fed41aba",
+    "Sha256": "8AA89E0BBB43ADB4372B1F6AF175679F55BB2C27918C297E3E1856E1A1AECF7E",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/grep-tuned/runs.jsonl",
+    "GitBlob": "a7f34d371f22c48dadd65a0850075df30eb56f9a",
+    "Sha256": "4194E1BAAF3CE59BBD6C52F930F62B0B8F504312EEB9E886BD90784F29CF6C0F",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/sed/runs.jsonl",
+    "GitBlob": "f025f088d9a24379f98e9aa921b48cadb3e9f067",
+    "Sha256": "44B35AE41EA0EADA1259AFBF017C3E8E60106591A1A29E01EF86BDB837C555F0",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/diff/runs.jsonl",
+    "GitBlob": "ba426ec5d1d8a5183dde01afc952e64531b723ef",
+    "Sha256": "08F396F3E286B9342173891ABE99702BB53DB7E8E3534182B515D15F724014B7",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/summary.json",
+    "GitBlob": "518e8203ae284e07da58ef7866c55b3601706b34",
+    "Sha256": "C3E60A72D518C1A663A10A325701132298F2E75401D9F4A12C65EEA7AC19521F",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/summary.csv",
+    "GitBlob": "57925a83ec3e78de6bb911677c02734d7bbb6b85",
+    "Sha256": "F343CD69E01327BEDCBE092B96140D47D992BB0768F3BFACDF84B540D2D951F5",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/diff/summary.json",
+    "GitBlob": "d7e7a31c8a955bede810c3ff9b927ffa3bf0b6f9",
+    "Sha256": "AAF2750207C238E38CE781E1E61D181C619EA5601A66316AB53F52CD48BDF1D2",
+    "Unchanged": true
+  },
+  {
+    "Path": "results/diff/environment.json",
+    "GitBlob": "8ec1fadf5192f7cd4021d3cc1aee01d7426154dd",
+    "Sha256": "3776958816BF57CDBE9027A16B0FD31E011FD0EC1BAE9A9B9F6F7131D2D14E69",
+    "Unchanged": true
+  }
+]

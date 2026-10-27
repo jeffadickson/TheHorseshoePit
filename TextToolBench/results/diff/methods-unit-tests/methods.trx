@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8e15a026-574e-4752-91fe-0294e57ff409" name="jeffd@OPTIPLEX7090 2026-10-26 19:49:01" runUser="OPTIPLEX7090\jeffd" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-26T19:49:01.9979670-07:00" queuing="2026-10-26T19:49:01.9979679-07:00" start="2026-10-26T19:48:57.4505886-07:00" finish="2026-10-26T19:49:03.2595990-07:00" />
+  <TestSettings name="default" id="1fde982c-f822-4ac2-9a0c-b20fe9122576">
+    <Deployment runDeploymentRoot="jeffd_OPTIPLEX7090_2026-10-26_19_49_01" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a0b105ae-0560-4c59-808a-d1a4c8e8de72" testId="282c92fd-6d4b-c534-7f2b-a4e8f2194bf7" testName="FixturesAreDeterministicAndRespectIdentity(&quot;long-line&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0035120" startTime="2026-10-26T19:49:01.9029413-07:00" endTime="2026-10-26T19:49:01.9064546-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0b105ae-0560-4c59-808a-d1a4c8e8de72" />
+    <UnitTestResult executionId="2d6fcb2d-42b7-4a96-9574-18db3ffbb036" testId="558b2456-fabe-0161-be60-93937fa8edbf" testName="InvalidFixtureInputsAreRejected(1,&quot;&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0001160" startTime="2026-10-26T19:49:01.9931513-07:00" endTime="2026-10-26T19:49:01.9932679-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d6fcb2d-42b7-4a96-9574-18db3ffbb036" />
+    <UnitTestResult executionId="ee1c9268-4ba9-4cb3-b1c0-9b23884b1cf5" testId="2958d1d4-fa46-fa04-1c19-22a25ffd6dd3" testName="IncompleteCampaignDoesNotPublish(&quot;duplicate-round&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0253369" startTime="2026-10-26T19:49:02.2964096-07:00" endTime="2026-10-26T19:49:02.3217460-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee1c9268-4ba9-4cb3-b1c0-9b23884b1cf5">
+      <Output>
+        <StdErr>System.IO.InvalidDataException: Incomplete seven-repeat cell&#xD;
+   at DiffBench.&lt;&gt;c.&lt;Report&gt;b__22_5(IGrouping`2 g) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 198&#xD;
+   at System.Linq.Enumerable.IteratorSelectIterator`2.ToArrayNoPresizing()&#xD;
+   at System.Linq.Enumerable.IteratorSelectIterator`2.ToArray()&#xD;
+   at System.Linq.Enumerable.OrderedIterator`1.ToArray()&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 197&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0626957b-777b-4d40-93e4-0046684c1bda" testId="bfdad7e4-953b-98fc-9f47-447b4360ebf7" testName="IncompleteCampaignDoesNotPublish(&quot;missing-cell&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0280450" startTime="2026-10-26T19:49:02.3394480-07:00" endTime="2026-10-26T19:49:02.3674921-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0626957b-777b-4d40-93e4-0046684c1bda">
+      <Output>
+        <StdErr>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c46e4f2a-f454-4d06-8e53-7a59bdb3ec01" testId="4ef90480-4777-e228-2691-11bbdbae07d5" testName="ProducerClosesItsWriterBeforeReportReadsTheLog" computerName="OPTIPLEX7090" duration="00:00:00.0407300" startTime="2026-10-26T19:49:02.4349372-07:00" endTime="2026-10-26T19:49:02.4756678-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c46e4f2a-f454-4d06-8e53-7a59bdb3ec01">
+      <Output>
+        <StdOut>Diff report: 1 cells</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="47068b06-239c-423c-95cc-a1fa51b7939a" testId="8b3eeb6f-3485-5806-4f47-13094fd30283" testName="MalformedJsonDoesNotPublish" computerName="OPTIPLEX7090" duration="00:00:00.0333900" startTime="2026-10-26T19:49:02.3956693-07:00" endTime="2026-10-26T19:49:02.4290586-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47068b06-239c-423c-95cc-a1fa51b7939a">
+      <Output>
+        <StdErr>System.Text.Json.JsonException: 'm' is an invalid start of a property name. Expected a '"'. Path: $ | LineNumber: 0 | BytePositionInLine: 2.&#xD;
+ ---&gt; System.Text.Json.JsonReaderException: 'm' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.&#xD;
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader&amp; json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)&#xD;
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()&#xD;
+   at System.Text.Json.Utf8JsonReader.Read()&#xD;
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader&amp; reader, Type typeToConvert, JsonSerializerOptions options, ReadStack&amp; state, T&amp; value)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader&amp; reader, Type typeToConvert, JsonSerializerOptions options, ReadStack&amp; state, T&amp; value, Boolean&amp; isPopulatedValue)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+   --- End of inner exception stack trace ---&#xD;
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack&amp; state, JsonReaderException ex)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader&amp; reader, ReadStack&amp; state)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)&#xD;
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)&#xD;
+   at DiffBench.&lt;&gt;c.&lt;Report&gt;b__22_0(String x) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 192&#xD;
+   at System.Linq.Enumerable.IEnumerableSelectIterator`2.ToArray()&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 192&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="052c2eb6-ffa3-4323-aeb8-836c1f47231e" testId="5e5ee925-8203-bfd7-ca1f-383456674166" testName="IncompleteCampaignDoesNotPublish(&quot;empty&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0279340" startTime="2026-10-26T19:49:02.3676256-07:00" endTime="2026-10-26T19:49:02.3955609-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="052c2eb6-ffa3-4323-aeb8-836c1f47231e">
+      <Output>
+        <StdErr>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="006534f5-31d9-4826-b571-2f3980bad573" testId="f4d8f799-def2-8940-3f5d-894d2014b406" testName="PatchStatisticsCountContentThatResemblesHeaders" computerName="OPTIPLEX7090" duration="00:00:00.0031120" startTime="2026-10-26T19:49:01.9955534-07:00" endTime="2026-10-26T19:49:01.9986656-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="006534f5-31d9-4826-b571-2f3980bad573" />
+    <UnitTestResult executionId="123f902c-a194-48f1-a9a3-e7dc9097aedd" testId="5191d4d5-d9b0-46f6-4eb6-c0837602f6c2" testName="TinyFixturesRemainValid(3)" computerName="OPTIPLEX7090" duration="00:00:00.0001630" startTime="2026-10-26T19:49:02.0050718-07:00" endTime="2026-10-26T19:49:02.0052353-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="123f902c-a194-48f1-a9a3-e7dc9097aedd" />
+    <UnitTestResult executionId="ec196f41-028f-449d-a437-4d65960db4b4" testId="c87c5fc0-d958-7a1c-257f-f41b8e186abe" testName="EditDistanceAgreesWithIndependentLongestCommonSubsequence" computerName="OPTIPLEX7090" duration="00:00:00.7371130" startTime="2026-10-26T19:49:01.0565676-07:00" endTime="2026-10-26T19:49:01.7935495-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ec196f41-028f-449d-a437-4d65960db4b4">
+      <Output>
+        <StdOut>Ok, passed 1000 tests.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b4f92790-0d29-4021-a998-f9a9278cb448" testId="ab072779-24ab-f30b-7952-a355bb8f20c9" testName="FixturesAreDeterministicAndRespectIdentity(&quot;repeated&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0077140" startTime="2026-10-26T19:49:01.8900266-07:00" endTime="2026-10-26T19:49:01.8977388-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b4f92790-0d29-4021-a998-f9a9278cb448" />
+    <UnitTestResult executionId="4c0ab906-3cb6-4075-8b5b-5ddd3f080470" testId="24661f43-4b46-3935-d239-0f546dbacbb4" testName="UnknownWorkloadIsRejected" computerName="OPTIPLEX7090" duration="00:00:00.0012650" startTime="2026-10-26T19:49:02.0052982-07:00" endTime="2026-10-26T19:49:02.0065630-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c0ab906-3cb6-4075-8b5b-5ddd3f080470" />
+    <UnitTestResult executionId="e893b8cb-8c24-4a25-93f9-da8c05578406" testId="3c675643-ca4c-8cbe-fbb4-4f95a7bb6d1a" testName="IncompleteCampaignDoesNotPublish(&quot;missing&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0315920" startTime="2026-10-26T19:49:02.2381645-07:00" endTime="2026-10-26T19:49:02.2697554-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e893b8cb-8c24-4a25-93f9-da8c05578406">
+      <Output>
+        <StdErr>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ad87bfe2-6fb7-4752-b6c5-d04830d28e78" testId="19d53be2-c4c7-2dce-eb79-f35a5cf7c5dc" testName="InvalidFixtureInputsAreRejected(0,&quot;x&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0083780" startTime="2026-10-26T19:49:01.9836597-07:00" endTime="2026-10-26T19:49:01.9920373-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad87bfe2-6fb7-4752-b6c5-d04830d28e78" />
+    <UnitTestResult executionId="11038902-ee4d-4f29-b962-c0c304cf56ac" testId="93ac7cb3-4105-0931-ba67-11142421c41e" testName="FixturesRepresentTheirNamedEdits" computerName="OPTIPLEX7090" duration="00:00:00.0687320" startTime="2026-10-26T19:49:01.9121235-07:00" endTime="2026-10-26T19:49:01.9808560-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="11038902-ee4d-4f29-b962-c0c304cf56ac" />
+    <UnitTestResult executionId="bcab0c2d-e714-4fc9-82f7-c9ad4b74093a" testId="f06dc65c-eff1-faf6-4e19-9eea3f4a3cd4" testName="TinyFixturesRemainValid(1)" computerName="OPTIPLEX7090" duration="00:00:00.0011570" startTime="2026-10-26T19:49:02.0028822-07:00" endTime="2026-10-26T19:49:02.0040379-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bcab0c2d-e714-4fc9-82f7-c9ad4b74093a" />
+    <UnitTestResult executionId="0caddd57-5599-42d4-b4a0-60541f1e516f" testId="befe4ca3-306d-ee11-44ec-328b911fae2c" testName="FixturesAreDeterministicAndRespectIdentity(&quot;insert-delete&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0042270" startTime="2026-10-26T19:49:01.8809330-07:00" endTime="2026-10-26T19:49:01.8851583-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0caddd57-5599-42d4-b4a0-60541f1e516f" />
+    <UnitTestResult executionId="6f98c358-af4d-494e-9163-d02e0ae9ff66" testId="5d2911cf-b574-b096-13d3-ffee308a7b31" testName="FixturesAreDeterministicAndRespectIdentity(&quot;moved&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0034570" startTime="2026-10-26T19:49:01.8865195-07:00" endTime="2026-10-26T19:49:01.8899767-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f98c358-af4d-494e-9163-d02e0ae9ff66" />
+    <UnitTestResult executionId="bb2e784a-ab93-41b5-8b82-444dc653fb0e" testId="c3066d7e-dad6-7625-4137-7a3d02476a28" testName="FixturesAreDeterministicAndRespectIdentity(&quot;different&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0039540" startTime="2026-10-26T19:49:01.8978917-07:00" endTime="2026-10-26T19:49:01.9018447-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb2e784a-ab93-41b5-8b82-444dc653fb0e" />
+    <UnitTestResult executionId="f9b56efa-07b7-4c78-a228-106cad483a06" testId="8983ca02-d4d6-e5e9-38cf-a10961b94e8e" testName="FixturesAreDeterministicAndRespectIdentity(&quot;scattered&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0051750" startTime="2026-10-26T19:49:01.8756973-07:00" endTime="2026-10-26T19:49:01.8808723-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9b56efa-07b7-4c78-a228-106cad483a06" />
+    <UnitTestResult executionId="39fa3b2b-00e4-4ee5-a645-d0833d4a91d4" testId="c623a8e3-2c87-8e69-dae4-417e15ad5d4a" testName="CompleteCampaignProducesCorrectStatisticsAndOfflineHtml(&quot;example-engine&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.1895180" startTime="2026-10-26T19:49:02.0117962-07:00" endTime="2026-10-26T19:49:02.2013158-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="39fa3b2b-00e4-4ee5-a645-d0833d4a91d4">
+      <Output>
+        <StdOut>Diff report: 1 cells</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0961f408-4fe7-44f9-bf51-71e5b1da544b" testId="e9dc2726-ee33-e17f-f5a1-1fa0947d2351" testName="InvalidFixtureInputsAreRejected(-1,&quot;x&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0007690" startTime="2026-10-26T19:49:01.9921056-07:00" endTime="2026-10-26T19:49:01.9928741-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0961f408-4fe7-44f9-bf51-71e5b1da544b" />
+    <UnitTestResult executionId="cd1d714d-7529-4ce5-8649-21928debd2d9" testId="8631411b-c77a-01af-015c-8f412e242f9e" testName="IncompleteCampaignDoesNotPublish(&quot;out-of-range&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0163720" startTime="2026-10-26T19:49:02.3218528-07:00" endTime="2026-10-26T19:49:02.3382245-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd1d714d-7529-4ce5-8649-21928debd2d9">
+      <Output>
+        <StdErr>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="78d6cae2-3f22-4281-a766-3efc47be5430" testId="92b428e8-2ae9-77c4-cc15-2400d00c891d" testName="TinyFixturesRemainValid(2)" computerName="OPTIPLEX7090" duration="00:00:00.0005599" startTime="2026-10-26T19:49:02.0042310-07:00" endTime="2026-10-26T19:49:02.0047903-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="78d6cae2-3f22-4281-a766-3efc47be5430" />
+    <UnitTestResult executionId="e3d1de4d-1e46-4001-8926-5fca8aa6d26d" testId="329bea5d-dfea-215a-34e4-64574e7f846b" testName="InvalidFixtureInputsAreRejected(1,&quot;\n\r\n&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0001120" startTime="2026-10-26T19:49:01.9932926-07:00" endTime="2026-10-26T19:49:01.9934040-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3d1de4d-1e46-4001-8926-5fca8aa6d26d" />
+    <UnitTestResult executionId="107c206a-5ac1-4130-96be-1b69d035a769" testId="f8d34c3d-efbc-e321-31ba-6f050ae54c48" testName="IncompleteCampaignDoesNotPublish(&quot;no-warmup&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0264700" startTime="2026-10-26T19:49:02.2698629-07:00" endTime="2026-10-26T19:49:02.2963330-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="107c206a-5ac1-4130-96be-1b69d035a769">
+      <Output>
+        <StdErr>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</StdErr>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e40b6835-5966-4f68-be3d-5155a6a45eeb" testId="62b2e368-a98d-b5d8-d7a5-f0c0a1d4351a" testName="ExactDistanceExamples" computerName="OPTIPLEX7090" duration="00:00:00.0356830" startTime="2026-10-26T19:49:01.8060695-07:00" endTime="2026-10-26T19:49:01.8417531-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e40b6835-5966-4f68-be3d-5155a6a45eeb" />
+    <UnitTestResult executionId="87af19e7-8b77-4784-8cde-9f01b2d79a8e" testId="a1f34d29-92f4-77b4-00e1-f1ad4ac763f1" testName="CompleteCampaignProducesCorrectStatisticsAndOfflineHtml(&quot;git-myers&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0364030" startTime="2026-10-26T19:49:02.2014048-07:00" endTime="2026-10-26T19:49:02.2378067-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87af19e7-8b77-4784-8cde-9f01b2d79a8e">
+      <Output>
+        <StdOut>Diff report: 1 cells</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0e5ff415-d9f5-463b-92f8-089ad29f7ae7" testId="2525f510-76ca-4be6-bf04-038122b42dbf" testName="QuadraticEstimateTrimsEqualEndsAndCountsEmptyLines" computerName="OPTIPLEX7090" duration="00:00:00.0036950" startTime="2026-10-26T19:49:01.9989811-07:00" endTime="2026-10-26T19:49:02.0026765-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e5ff415-d9f5-463b-92f8-089ad29f7ae7" />
+    <UnitTestResult executionId="913e8e20-d21a-47ad-a375-57759d6292fc" testId="84af98bc-65f2-d093-f570-718e7e12604d" testName="FixturesAreDeterministicAndRespectIdentity(&quot;identical&quot;)" computerName="OPTIPLEX7090" duration="00:00:00.0232610" startTime="2026-10-26T19:49:01.8485014-07:00" endTime="2026-10-26T19:49:01.8717641-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="913e8e20-d21a-47ad-a375-57759d6292fc" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="FixturesRepresentTheirNamedEdits" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="93ac7cb3-4105-0931-ba67-11142421c41e">
+      <Execution id="11038902-ee4d-4f29-b962-c0c304cf56ac" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesRepresentTheirNamedEdits" />
+    </UnitTest>
+    <UnitTest name="QuadraticEstimateTrimsEqualEndsAndCountsEmptyLines" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="2525f510-76ca-4be6-bf04-038122b42dbf">
+      <Execution id="0e5ff415-d9f5-463b-92f8-089ad29f7ae7" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="QuadraticEstimateTrimsEqualEndsAndCountsEmptyLines" />
+    </UnitTest>
+    <UnitTest name="EditDistanceAgreesWithIndependentLongestCommonSubsequence" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="c87c5fc0-d958-7a1c-257f-f41b8e186abe">
+      <Execution id="ec196f41-028f-449d-a437-4d65960db4b4" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="EditDistanceAgreesWithIndependentLongestCommonSubsequence" />
+    </UnitTest>
+    <UnitTest name="IncompleteCampaignDoesNotPublish(&quot;duplicate-round&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="2958d1d4-fa46-fa04-1c19-22a25ffd6dd3">
+      <Execution id="ee1c9268-4ba9-4cb3-b1c0-9b23884b1cf5" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="IncompleteCampaignDoesNotPublish(&quot;duplicate-round&quot;)" />
+    </UnitTest>
+    <UnitTest name="InvalidFixtureInputsAreRejected(-1,&quot;x&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="e9dc2726-ee33-e17f-f5a1-1fa0947d2351">
+      <Execution id="0961f408-4fe7-44f9-bf51-71e5b1da544b" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="InvalidFixtureInputsAreRejected(-1,&quot;x&quot;)" />
+    </UnitTest>
+    <UnitTest name="FixturesAreDeterministicAndRespectIdentity(&quot;long-line&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="282c92fd-6d4b-c534-7f2b-a4e8f2194bf7">
+      <Execution id="a0b105ae-0560-4c59-808a-d1a4c8e8de72" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesAreDeterministicAndRespectIdentity(&quot;long-line&quot;)" />
+    </UnitTest>
+    <UnitTest name="IncompleteCampaignDoesNotPublish(&quot;missing-cell&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="bfdad7e4-953b-98fc-9f47-447b4360ebf7">
+      <Execution id="0626957b-777b-4d40-93e4-0046684c1bda" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="IncompleteCampaignDoesNotPublish(&quot;missing-cell&quot;)" />
+    </UnitTest>
+    <UnitTest name="IncompleteCampaignDoesNotPublish(&quot;missing&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="3c675643-ca4c-8cbe-fbb4-4f95a7bb6d1a">
+      <Execution id="e893b8cb-8c24-4a25-93f9-da8c05578406" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="IncompleteCampaignDoesNotPublish(&quot;missing&quot;)" />
+    </UnitTest>
+    <UnitTest name="FixturesAreDeterministicAndRespectIdentity(&quot;scattered&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="8983ca02-d4d6-e5e9-38cf-a10961b94e8e">
+      <Execution id="f9b56efa-07b7-4c78-a228-106cad483a06" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesAreDeterministicAndRespectIdentity(&quot;scattered&quot;)" />
+    </UnitTest>
+    <UnitTest name="FixturesAreDeterministicAndRespectIdentity(&quot;different&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="c3066d7e-dad6-7625-4137-7a3d02476a28">
+      <Execution id="bb2e784a-ab93-41b5-8b82-444dc653fb0e" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesAreDeterministicAndRespectIdentity(&quot;different&quot;)" />
+    </UnitTest>
+    <UnitTest name="FixturesAreDeterministicAndRespectIdentity(&quot;identical&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="84af98bc-65f2-d093-f570-718e7e12604d">
+      <Execution id="913e8e20-d21a-47ad-a375-57759d6292fc" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesAreDeterministicAndRespectIdentity(&quot;identical&quot;)" />
+    </UnitTest>
+    <UnitTest name="IncompleteCampaignDoesNotPublish(&quot;no-warmup&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="f8d34c3d-efbc-e321-31ba-6f050ae54c48">
+      <Execution id="107c206a-5ac1-4130-96be-1b69d035a769" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="IncompleteCampaignDoesNotPublish(&quot;no-warmup&quot;)" />
+    </UnitTest>
+    <UnitTest name="InvalidFixtureInputsAreRejected(1,&quot;\n\r\n&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="329bea5d-dfea-215a-34e4-64574e7f846b">
+      <Execution id="e3d1de4d-1e46-4001-8926-5fca8aa6d26d" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="InvalidFixtureInputsAreRejected(1,&quot;\n\r\n&quot;)" />
+    </UnitTest>
+    <UnitTest name="UnknownWorkloadIsRejected" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="24661f43-4b46-3935-d239-0f546dbacbb4">
+      <Execution id="4c0ab906-3cb6-4075-8b5b-5ddd3f080470" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="UnknownWorkloadIsRejected" />
+    </UnitTest>
+    <UnitTest name="TinyFixturesRemainValid(2)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="92b428e8-2ae9-77c4-cc15-2400d00c891d">
+      <Execution id="78d6cae2-3f22-4281-a766-3efc47be5430" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="TinyFixturesRemainValid(2)" />
+    </UnitTest>
+    <UnitTest name="MalformedJsonDoesNotPublish" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="8b3eeb6f-3485-5806-4f47-13094fd30283">
+      <Execution id="47068b06-239c-423c-95cc-a1fa51b7939a" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="MalformedJsonDoesNotPublish" />
+    </UnitTest>
+    <UnitTest name="TinyFixturesRemainValid(1)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="f06dc65c-eff1-faf6-4e19-9eea3f4a3cd4">
+      <Execution id="bcab0c2d-e714-4fc9-82f7-c9ad4b74093a" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="TinyFixturesRemainValid(1)" />
+    </UnitTest>
+    <UnitTest name="ExactDistanceExamples" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="62b2e368-a98d-b5d8-d7a5-f0c0a1d4351a">
+      <Execution id="e40b6835-5966-4f68-be3d-5155a6a45eeb" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="ExactDistanceExamples" />
+    </UnitTest>
+    <UnitTest name="InvalidFixtureInputsAreRejected(0,&quot;x&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="19d53be2-c4c7-2dce-eb79-f35a5cf7c5dc">
+      <Execution id="ad87bfe2-6fb7-4752-b6c5-d04830d28e78" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="InvalidFixtureInputsAreRejected(0,&quot;x&quot;)" />
+    </UnitTest>
+    <UnitTest name="CompleteCampaignProducesCorrectStatisticsAndOfflineHtml(&quot;git-myers&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="a1f34d29-92f4-77b4-00e1-f1ad4ac763f1">
+      <Execution id="87af19e7-8b77-4784-8cde-9f01b2d79a8e" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="CompleteCampaignProducesCorrectStatisticsAndOfflineHtml(&quot;git-myers&quot;)" />
+    </UnitTest>
+    <UnitTest name="FixturesAreDeterministicAndRespectIdentity(&quot;insert-delete&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="befe4ca3-306d-ee11-44ec-328b911fae2c">
+      <Execution id="0caddd57-5599-42d4-b4a0-60541f1e516f" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesAreDeterministicAndRespectIdentity(&quot;insert-delete&quot;)" />
+    </UnitTest>
+    <UnitTest name="PatchStatisticsCountContentThatResemblesHeaders" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="f4d8f799-def2-8940-3f5d-894d2014b406">
+      <Execution id="006534f5-31d9-4826-b571-2f3980bad573" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="PatchStatisticsCountContentThatResemblesHeaders" />
+    </UnitTest>
+    <UnitTest name="FixturesAreDeterministicAndRespectIdentity(&quot;moved&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="5d2911cf-b574-b096-13d3-ffee308a7b31">
+      <Execution id="6f98c358-af4d-494e-9163-d02e0ae9ff66" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesAreDeterministicAndRespectIdentity(&quot;moved&quot;)" />
+    </UnitTest>
+    <UnitTest name="FixturesAreDeterministicAndRespectIdentity(&quot;repeated&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="ab072779-24ab-f30b-7952-a355bb8f20c9">
+      <Execution id="b4f92790-0d29-4021-a998-f9a9278cb448" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="FixturesAreDeterministicAndRespectIdentity(&quot;repeated&quot;)" />
+    </UnitTest>
+    <UnitTest name="IncompleteCampaignDoesNotPublish(&quot;empty&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="5e5ee925-8203-bfd7-ca1f-383456674166">
+      <Execution id="052c2eb6-ffa3-4323-aeb8-836c1f47231e" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="IncompleteCampaignDoesNotPublish(&quot;empty&quot;)" />
+    </UnitTest>
+    <UnitTest name="IncompleteCampaignDoesNotPublish(&quot;out-of-range&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="8631411b-c77a-01af-015c-8f412e242f9e">
+      <Execution id="cd1d714d-7529-4ce5-8649-21928debd2d9" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="IncompleteCampaignDoesNotPublish(&quot;out-of-range&quot;)" />
+    </UnitTest>
+    <UnitTest name="InvalidFixtureInputsAreRejected(1,&quot;&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="558b2456-fabe-0161-be60-93937fa8edbf">
+      <Execution id="2d6fcb2d-42b7-4a96-9574-18db3ffbb036" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="InvalidFixtureInputsAreRejected(1,&quot;&quot;)" />
+    </UnitTest>
+    <UnitTest name="ProducerClosesItsWriterBeforeReportReadsTheLog" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="4ef90480-4777-e228-2691-11bbdbae07d5">
+      <Execution id="c46e4f2a-f454-4d06-8e53-7a59bdb3ec01" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="ProducerClosesItsWriterBeforeReportReadsTheLog" />
+    </UnitTest>
+    <UnitTest name="CompleteCampaignProducesCorrectStatisticsAndOfflineHtml(&quot;example-engine&quot;)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="c623a8e3-2c87-8e69-dae4-417e15ad5d4a">
+      <Execution id="39fa3b2b-00e4-4ee5-a645-d0833d4a91d4" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ReportTests" name="CompleteCampaignProducesCorrectStatisticsAndOfflineHtml(&quot;example-engine&quot;)" />
+    </UnitTest>
+    <UnitTest name="TinyFixturesRemainValid(3)" storage="c:\users\jeffd\documents\codex\2026-10-26\benchmark-sed-and-grep-and-awk\diffbench.tests\bin\release\net10.0\diffbench.tests.dll" id="5191d4d5-d9b0-46f6-4eb6-c0837602f6c2">
+      <Execution id="123f902c-a194-48f1-a9a3-e7dc9097aedd" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ModelTests" name="TinyFixturesRemainValid(3)" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="282c92fd-6d4b-c534-7f2b-a4e8f2194bf7" executionId="a0b105ae-0560-4c59-808a-d1a4c8e8de72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="558b2456-fabe-0161-be60-93937fa8edbf" executionId="2d6fcb2d-42b7-4a96-9574-18db3ffbb036" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2958d1d4-fa46-fa04-1c19-22a25ffd6dd3" executionId="ee1c9268-4ba9-4cb3-b1c0-9b23884b1cf5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bfdad7e4-953b-98fc-9f47-447b4360ebf7" executionId="0626957b-777b-4d40-93e4-0046684c1bda" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4ef90480-4777-e228-2691-11bbdbae07d5" executionId="c46e4f2a-f454-4d06-8e53-7a59bdb3ec01" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8b3eeb6f-3485-5806-4f47-13094fd30283" executionId="47068b06-239c-423c-95cc-a1fa51b7939a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e5ee925-8203-bfd7-ca1f-383456674166" executionId="052c2eb6-ffa3-4323-aeb8-836c1f47231e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f4d8f799-def2-8940-3f5d-894d2014b406" executionId="006534f5-31d9-4826-b571-2f3980bad573" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5191d4d5-d9b0-46f6-4eb6-c0837602f6c2" executionId="123f902c-a194-48f1-a9a3-e7dc9097aedd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c87c5fc0-d958-7a1c-257f-f41b8e186abe" executionId="ec196f41-028f-449d-a437-4d65960db4b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ab072779-24ab-f30b-7952-a355bb8f20c9" executionId="b4f92790-0d29-4021-a998-f9a9278cb448" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="24661f43-4b46-3935-d239-0f546dbacbb4" executionId="4c0ab906-3cb6-4075-8b5b-5ddd3f080470" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3c675643-ca4c-8cbe-fbb4-4f95a7bb6d1a" executionId="e893b8cb-8c24-4a25-93f9-da8c05578406" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19d53be2-c4c7-2dce-eb79-f35a5cf7c5dc" executionId="ad87bfe2-6fb7-4752-b6c5-d04830d28e78" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93ac7cb3-4105-0931-ba67-11142421c41e" executionId="11038902-ee4d-4f29-b962-c0c304cf56ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f06dc65c-eff1-faf6-4e19-9eea3f4a3cd4" executionId="bcab0c2d-e714-4fc9-82f7-c9ad4b74093a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="befe4ca3-306d-ee11-44ec-328b911fae2c" executionId="0caddd57-5599-42d4-b4a0-60541f1e516f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5d2911cf-b574-b096-13d3-ffee308a7b31" executionId="6f98c358-af4d-494e-9163-d02e0ae9ff66" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3066d7e-dad6-7625-4137-7a3d02476a28" executionId="bb2e784a-ab93-41b5-8b82-444dc653fb0e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8983ca02-d4d6-e5e9-38cf-a10961b94e8e" executionId="f9b56efa-07b7-4c78-a228-106cad483a06" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c623a8e3-2c87-8e69-dae4-417e15ad5d4a" executionId="39fa3b2b-00e4-4ee5-a645-d0833d4a91d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9dc2726-ee33-e17f-f5a1-1fa0947d2351" executionId="0961f408-4fe7-44f9-bf51-71e5b1da544b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8631411b-c77a-01af-015c-8f412e242f9e" executionId="cd1d714d-7529-4ce5-8649-21928debd2d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92b428e8-2ae9-77c4-cc15-2400d00c891d" executionId="78d6cae2-3f22-4281-a766-3efc47be5430" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="329bea5d-dfea-215a-34e4-64574e7f846b" executionId="e3d1de4d-1e46-4001-8926-5fca8aa6d26d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f8d34c3d-efbc-e321-31ba-6f050ae54c48" executionId="107c206a-5ac1-4130-96be-1b69d035a769" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="62b2e368-a98d-b5d8-d7a5-f0c0a1d4351a" executionId="e40b6835-5966-4f68-be3d-5155a6a45eeb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a1f34d29-92f4-77b4-00e1-f1ad4ac763f1" executionId="87af19e7-8b77-4784-8cde-9f01b2d79a8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2525f510-76ca-4be6-bf04-038122b42dbf" executionId="0e5ff415-d9f5-463b-92f8-089ad29f7ae7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84af98bc-65f2-d093-f570-718e7e12604d" executionId="913e8e20-d21a-47ad-a375-57759d6292fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="30" executed="30" passed="30" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 5.0.0.0: Test execution started&#xD;
+Running all tests in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll&#xD;
+   NUnit3TestExecutor discovered 30 of 30 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+Ok, passed 1000 tests.&#xD;
+&#xD;
+Diff report: 1 cells&#xD;
+&#xD;
+Diff report: 1 cells&#xD;
+&#xD;
+Diff report: 1 cells&#xD;
+&#xD;
+NUnit Adapter 5.0.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T19:49:02.2691594-07:00">
+        <Text>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T19:49:02.2940760-07:00">
+        <Text>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T19:49:02.3191120-07:00">
+        <Text>System.IO.InvalidDataException: Incomplete seven-repeat cell&#xD;
+   at DiffBench.&lt;&gt;c.&lt;Report&gt;b__22_5(IGrouping`2 g) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 198&#xD;
+   at System.Linq.Enumerable.IteratorSelectIterator`2.ToArrayNoPresizing()&#xD;
+   at System.Linq.Enumerable.IteratorSelectIterator`2.ToArray()&#xD;
+   at System.Linq.Enumerable.OrderedIterator`1.ToArray()&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 197&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T19:49:02.3335132-07:00">
+        <Text>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T19:49:02.3630472-07:00">
+        <Text>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T19:49:02.3932358-07:00">
+        <Text>System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</Text>
+      </RunInfo>
+      <RunInfo computerName="OPTIPLEX7090" outcome="Warning" timestamp="2026-10-26T19:49:02.4263074-07:00">
+        <Text>System.Text.Json.JsonException: 'm' is an invalid start of a property name. Expected a '"'. Path: $ | LineNumber: 0 | BytePositionInLine: 2.&#xD;
+ ---&gt; System.Text.Json.JsonReaderException: 'm' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.&#xD;
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader&amp; json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)&#xD;
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()&#xD;
+   at System.Text.Json.Utf8JsonReader.Read()&#xD;
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader&amp; reader, Type typeToConvert, JsonSerializerOptions options, ReadStack&amp; state, T&amp; value)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader&amp; reader, Type typeToConvert, JsonSerializerOptions options, ReadStack&amp; state, T&amp; value, Boolean&amp; isPopulatedValue)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+   --- End of inner exception stack trace ---&#xD;
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack&amp; state, JsonReaderException ex)&#xD;
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader&amp; reader, T&amp; value, JsonSerializerOptions options, ReadStack&amp; state)&#xD;
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader&amp; reader, ReadStack&amp; state)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)&#xD;
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)&#xD;
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)&#xD;
+   at DiffBench.&lt;&gt;c.&lt;Report&gt;b__22_0(String x) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 192&#xD;
+   at System.Linq.Enumerable.IEnumerableSelectIterator`2.ToArray()&#xD;
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 192&#xD;
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52</Text>
+      </RunInfo>
+    </RunInfos>
+    <CollectorDataEntries>
+      <Collector agentName="OPTIPLEX7090" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="OPTIPLEX7090\coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

@@ -49,6 +49,7 @@ public class ReportTests
             Assert.That(cell.GetProperty("Q1").GetDouble(),Is.EqualTo(2));Assert.That(cell.GetProperty("Q3").GetDouble(),Is.EqualTo(6));
             Assert.That(File.ReadAllText("results/diff/report.html"),Does.Contain(engine).And.Contain("4.00").And.Not.Contain("<script"));
             Assert.That(cell.GetProperty("PeakWorkingSetBytes").ValueKind,Is.EqualTo(engine.StartsWith("git-")?JsonValueKind.Null:JsonValueKind.Number));
+            Assert.That(File.ReadAllText("results/diff/report.html"),Does.Contain("id=\"test-methods\"").And.Contain("--fuzz=0").And.Contain("outside the measured interval"));
         });
     }
     [Test]

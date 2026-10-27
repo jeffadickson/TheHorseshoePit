@@ -1,0 +1,23 @@
+✔ all cohort/workload/size views preserve session boundaries and sorted measured values (9159.5657ms)
+✔ static artifact is offline, complete, accessible and has valid local evidence links (1250.0258ms)
+✔ deliberate descending-rank mutation is detected (540.1577ms)
+✔ deliberate cross-cohort row-filter mutation is detected (1452.7346ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 20115.6525
+ℹ start of coverage report
+ℹ ------------------------------------------------------------------------
+ℹ file                    | line % | branch % | funcs % | uncovered lines
+ℹ ------------------------------------------------------------------------
+ℹ results                 |        |          |         | 
+ℹ  overview-verification  |        |          |         | 
+ℹ   overview-client.js    | 100.00 |    93.75 |  100.00 | 
+ℹ ------------------------------------------------------------------------
+ℹ all files               | 100.00 |    93.75 |  100.00 | 
+ℹ ------------------------------------------------------------------------
+ℹ end of coverage report

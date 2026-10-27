@@ -64,8 +64,16 @@ test('static artifact is offline, complete, accessible and has valid local evide
     for(const link of d.querySelectorAll('a[href]')){
       const href=link.getAttribute('href');
       if(href.startsWith('#'))assert.ok(d.getElementById(href.slice(1)),href);
-      else if(!/^https?:/.test(href))assert.ok(fs.existsSync(path.resolve(root,'results',href)),href);
+      else if(!/^https?:/.test(href)){
+        const [file,fragment]=href.split('#'),target=path.resolve(root,'results',file);
+        assert.ok(fs.existsSync(target),href);
+        if(fragment){const linked=new JSDOM(fs.readFileSync(target,'utf8'));try{assert.ok(linked.window.document.getElementById(fragment),href);}finally{linked.window.close();}}
+      }
     }
+    const methods=d.getElementById('test-methods');assert.ok(methods);
+    const text=methods.textContent;
+    for(const term of ['126 measured invocations','18 warmups','--include-zero','-E','Round=-1','confidence intervals','PCRE2'])assert.ok(text.includes(term),term);
+    assert.ok(d.getElementById('ripgrep-methods'));
   }finally{dom.window.close();}
 });
 test('deliberate descending-rank mutation is detected',()=>{
