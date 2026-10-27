@@ -1,0 +1,279 @@
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/basename-lgpl.c:58:38: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/basename.c:56:12: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:535:20: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:263:17: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:137:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:137:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:137:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:137:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:137:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:137:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/exclude.c:137:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/malloc/dynarray_resize.c:65:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:836:29: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:434:11: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:554:25: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:601:24: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:606:25: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:872:21: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:900:21: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:902:24: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:1013:24: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/hash.c:1013:24: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/strftime.c:889:8: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:627:48: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:191:10: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:998:13: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/quotearg.c:998:13: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:263:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:954:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:444:17: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:420:21: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:420:21: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:420:21: optimized: epilogue loop vectorized using 16 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:420:21: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:420:21: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:420:21: optimized: epilogue loop vectorized using 16 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:412:18: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:357:23: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1048:19: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:908:32: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:641:16: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:639:20: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:715:16: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:583:25: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:671:24: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:627:21: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:559:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:541:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/stackvma.c:169:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/stackvma.c:172:21: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/stackvma.c:2213:22: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/stackvma.c:2213:22: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/stackvma.c:570:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/stackvma.c:2238:22: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:774:37: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:774:37: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3704:21: optimized: loop vectorized using 32 byte vectors and unroll factor 16
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:774:37: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:559:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:541:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1431:18: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1431:18: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1431:18: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:954:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:762:31: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:762:31: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:742:31: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1431:18: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1431:18: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3258:40: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:755:20: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:755:20: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:954:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:998:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:755:20: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3546:34: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3556:35: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3555:33: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3546:19: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3555:19: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3556:21: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3546:34: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3556:35: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3555:33: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3546:19: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3555:19: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:3556:21: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1431:18: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/time_rz.c:93:21: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/time_rz.c:93:21: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/time_rz.c:290:23: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/time_rz.c:294:23: optimized: basic block part vectorized using 8 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:867:33: optimized: loop vectorized using 32 byte vectors and unroll factor 2
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:829:33: optimized: loop vectorized using 32 byte vectors and unroll factor 2
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:178:17: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:186:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:66:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:636:23: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:783:26: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:830:24: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:580:1: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:580:1: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:580:1: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:580:1: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:1322:22: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/malloc/dynarray-skeleton.c:199:32: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:1002:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/malloc/dynarray-skeleton.c:199:32: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/malloc/dynarray-skeleton.c:199:32: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/malloc/dynarray-skeleton.c:199:32: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/malloc/dynarray-skeleton.c:199:32: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:864:28: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:869:35: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/malloc/dynarray-skeleton.c:233:32: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:954:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:954:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:762:31: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:762:31: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.h:742:31: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:909:22: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3694:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3694:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3694:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:1146:21: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:1143:21: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:178:17: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:186:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:121:24: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:559:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:541:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3693:16: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:3699:15: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:949:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:954:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regex_internal.c:954:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:1034:26: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:953:17: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:953:17: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:507:17: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:507:17: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regcomp.c:446:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:507:17: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:507:17: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:507:17: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:507:17: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/unistr/u32-chr.c:29:12: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/regexec.c:546:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/version-etc.c:189:23: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/version-etc.c:208:10: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/version-etc.c:208:10: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/fnmatch_loop.c:190:41: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/mktime.c:315:7: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/mktime.c:315:7: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/fnmatch_loop.c:190:41: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/cmp.c:697:18: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/cmp.c:697:18: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/cmp.c:697:18: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:362:37: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:362:37: optimized:  loop versioned for vectorization to enhance alignment
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:323:37: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:323:37: optimized:  loop versioned for vectorization to enhance alignment
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:269:37: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:269:37: optimized:  loop versioned for vectorization to enhance alignment
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:236:37: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:236:37: optimized:  loop versioned for vectorization to enhance alignment
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:482:41: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/lib/diffseq.h:482:41: optimized:  loop versioned for vectorization to enhance alignment
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/context.c:164:26: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/context.c:164:26: optimized:  loop versioned for vectorization to enhance alignment
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/context.c:233:38: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/analyze.c:143:28: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/analyze.c:544:17: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff.c:918:26: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff.c:1303:16: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/dir.c:80:18: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/ifdef.c:103:4: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/ifdef.c:103:4: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/ifdef.c:103:4: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/ifdef.c:103:4: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/io.c:1294:21: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/io.c:1294:21: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/io.c:1289:26: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/io.c:1289:26: optimized:  loop versioned for vectorization because of possible aliasing
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/io.c:1193:17: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/io.c:1193:17: optimized:  loop versioned for vectorization to enhance alignment
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/io.c:1339:26: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/util.c:827:19: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:1118:9: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:1122:9: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:919:22: optimized: basic block part vectorized using 32 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:580:26: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:581:26: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:580:26: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:581:26: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/diff3.c:841:29: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/sdiff.c:358:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/sdiff.c:358:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/src/sdiff.c:358:14: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/str-two-way.h:347:17: optimized: loop vectorized using 32 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/random_r.c:227:13: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/random_r.c:289:18: optimized: basic block part vectorized using 8 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/random_r.c:346:18: optimized: basic block part vectorized using 8 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/unistr/u-set.h:37:20: optimized: loop vectorized using 32 byte vectors and unroll factor 8
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/unistr/u-set.h:37:20: optimized: epilogue loop vectorized using 16 byte vectors and unroll factor 4
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/unlinkat.c:72:22: optimized: loop vectorized using 32 byte vectors and unroll factor 32
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/xstrtol-error.c:80:24: optimized: basic block part vectorized using 2 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/printf-parse.c:136:27: optimized: basic block part vectorized using 16 byte vectors
+/c/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/tools/diff-suite/diffutils-3.12/gnulib-tests/printf-parse.c:139:31: optimized: basic block part vectorized using 16 byte vectors

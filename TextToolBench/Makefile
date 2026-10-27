@@ -26,7 +26,7 @@ profile: build native data
 	$(RUN) -Action profile
 grep-tuned: deps source
 	$(RUN) -Action grep-tuned
-benchmark: build native data grep-tuned sed
+benchmark: build native data grep-tuned sed diff
 	$(RUN) -Action benchmark
 report: build
 	$(RUN) -Action report
@@ -52,3 +52,18 @@ sed-coverage:
 	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Run-SedBench.ps1 -Mode Coverage
 sed-mutation:
 	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Run-SedBench.ps1 -Mode Mutation
+
+# Diff reuses the shared GNU/MSYS compiler and Rust toolchain bootstrap.
+.PHONY: diff-build diff diff-test diff-coverage diff-mutation diff-report
+diff-build: deps source
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Get-DiffTools.ps1 -Build
+diff: diff-build
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Run-DiffBench.ps1
+diff-test: diff-build
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Run-DiffBench.ps1 -Mode Test
+diff-coverage:
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Run-DiffBench.ps1 -Mode Coverage
+diff-mutation:
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Run-DiffBench.ps1 -Mode Mutation
+diff-report:
+	powershell.exe -NoLogo -NoProfile -ExecutionPolicy Bypass -File scripts/Run-DiffBench.ps1 -Mode Report

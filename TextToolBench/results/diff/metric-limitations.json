@@ -1,0 +1,5 @@
+{
+  "Git": "Wall time includes Git launcher and child; raw process CPU and peak-working-set counters are launcher-only. Summary engine memory is null, never zero.",
+  "OtherEngines": "OS peak working set and CPU time of directly launched process; not allocations and not a whole-process-tree counter.",
+  "Unavailable": "Git child-process CPU/memory, native binary coverage, PowerShell/shell line and branch coverage, Linux runtime validation, rendered layout, coverage-guided fuzzing."
+}

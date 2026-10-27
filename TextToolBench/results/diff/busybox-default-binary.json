@@ -1,0 +1,13 @@
+{
+  "Scope": "Exploratory default BusyBox diff -U3, before forcing text consistently",
+  "Failure": [
+    {
+      "Fixture": "binary",
+      "Engine": "busybox",
+      "Reason": "Patch reconstruction failed: /usr/bin/patch: **** Only garbage was found in the patch input.\n",
+      "Before": "AP8KQQo=",
+      "After": "AP4KQgo="
+    }
+  ],
+  "Disposition": "Binary files differ is expected default behavior, not evidence of a BusyBox defect. Final commands use -a for a patch-producing text comparison."
+}

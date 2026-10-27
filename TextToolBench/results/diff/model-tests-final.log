@@ -1,0 +1,55 @@
+  Determining projects to restore...
+  Restored C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj (in 232 ms).
+  Restored C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\DiffBench.Tests.csproj (in 612 ms).
+  DiffBench -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\bin\Release\net10.0\DiffBench.dll
+  DiffBench.Tests -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll
+Test run for C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52
+System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52
+System.IO.InvalidDataException: Incomplete seven-repeat cell
+   at DiffBench.<>c.<Report>b__22_5(IGrouping`2 g) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 198
+   at System.Linq.Enumerable.IteratorSelectIterator`2.ToArrayNoPresizing()
+   at System.Linq.Enumerable.IteratorSelectIterator`2.ToArray()
+   at System.Linq.Enumerable.OrderedIterator`1.ToArray()
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 197
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52
+System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52
+System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52
+System.IO.InvalidDataException: Incomplete or invalid campaign; keep every qualified cell and warmup.
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 196
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52
+System.Text.Json.JsonException: 'm' is an invalid start of a property name. Expected a '"'. Path: $ | LineNumber: 0 | BytePositionInLine: 2.
+ ---> System.Text.Json.JsonReaderException: 'm' is an invalid start of a property name. Expected a '"'. LineNumber: 0 | BytePositionInLine: 2.
+   at System.Text.Json.ThrowHelper.ThrowJsonReaderException(Utf8JsonReader& json, ExceptionResource resource, Byte nextByte, ReadOnlySpan`1 bytes)
+   at System.Text.Json.Utf8JsonReader.ReadSingleSegment()
+   at System.Text.Json.Utf8JsonReader.Read()
+   at System.Text.Json.Serialization.Converters.ObjectWithParameterizedConstructorConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   --- End of inner exception stack trace ---
+   at System.Text.Json.ThrowHelper.ReThrowWithPath(ReadStack& state, JsonReaderException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, T& value, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Deserialize(Utf8JsonReader& reader, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at DiffBench.<>c.<Report>b__22_0(String x) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 192
+   at System.Linq.Enumerable.IEnumerableSelectIterator`2.ToArray()
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 192
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 52
+WARNING: Overwriting results file: C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\results\diff\unit-tests\model.trx
+Results File: C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\results\diff\unit-tests\model.trx
+
+Passed!  - Failed:     0, Passed:    30, Skipped:     0, Total:    30, Duration: 635 ms - DiffBench.Tests.dll (net10.0)
+
+Attachments:
+  C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\results\diff\unit-tests\38ca23d0-6753-4447-ad47-e46e6a19575e\coverage.cobertura.xml

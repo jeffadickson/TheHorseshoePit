@@ -1,0 +1,18 @@
+diff validation: 351 reconstructed, 0 incompatibilities, 26 negatives, 13 patch mutants
+
+Calculating coverage result...
+  Generating report 'results\diff\harness.cobertura.xml'
++-----------+--------+--------+--------+
+| Module    | Line   | Branch | Method |
++-----------+--------+--------+--------+
+| DiffBench | 60.71% | 48.4%  | 80.95% |
++-----------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 60.71% | 48.4%  | 80.95% |
++---------+--------+--------+--------+
+| Average | 60.71% | 48.4%  | 80.95% |
++---------+--------+--------+--------+
+

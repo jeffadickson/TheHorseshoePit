@@ -1,0 +1,25 @@
+{
+  "Seed": 20261027,
+  "Engines": [
+    "gnu-installed",
+    "gnu-minimal",
+    "gnu-speed",
+    "gnu-generic",
+    "gnu-native",
+    "uutils-official",
+    "uutils-generic",
+    "uutils-native",
+    "busybox",
+    "git-myers",
+    "git-minimal",
+    "git-patience",
+    "git-histogram"
+  ],
+  "Fixtures": 27,
+  "Passed": 351,
+  "Failures": [],
+  "NegativeChecks": 26,
+  "PatchCorruptionMutantsKilled": 13,
+  "MinimalReferenceChecks": 8,
+  "Notes": "Randomized CLI campaign is a bounded seeded generator, not coverage-guided fuzzing. Counterexamples retain exact base64 bytes. Stryker source mutation is separate."
+}

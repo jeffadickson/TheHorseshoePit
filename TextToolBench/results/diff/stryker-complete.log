@@ -1,0 +1,48 @@
+
+   _____ _              _               _   _ ______ _______  
+  / ____| |            | |             | \ | |  ____|__   __| 
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |    
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |    
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |    
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|    
+                   __/ |                                      
+                  |___/                                       
+
+
+Version: 5.0.0
+
+[18:43:55 INF] Stryker will use a max of 4 parallel testsessions.
+[18:43:55 INF] Analysis starting.
+[18:43:55 INF] Analyzing 1 test project(s).
+[18:44:37 INF] Picking net10.0 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj. 
+[18:44:37 INF] Found project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj to mutate.
+[18:44:37 INF] Analysis complete.
+[18:44:37 INF] Building test project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\DiffBench.Tests.csproj (1/1)
+[18:44:39 INF] Building project DiffBench.Tests.csproj using dotnet build DiffBench.Tests.csproj -c Debug --property:Platform=AnyCPU (directory C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests.)
+[18:45:28 INF] Number of tests found: 20 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj. Initial test run started.
+[18:45:42 INF] 567 mutants created
+[18:45:42 INF] Capture mutant coverage using 'CoverageBasedTest' mode.
+Hint: by passing "--open-report or -o" the report will open automatically and 
+update the report in real-time.
+[18:45:45 INF] 47    mutants got status CompileError. Reason: Mutant caused compile errors
+[18:45:45 INF] 9     mutants got status Ignored.      Reason: Removed by block already covered filter
+[18:45:45 INF] 395   mutants got status Ignored.      Reason: Removed by mutate filter
+[18:45:45 INF] 451   total mutants are skipped for the above mentioned reasons
+[18:45:45 INF] 116   total mutants will be tested
+[18:46:34 INF] Runner 1: Retrying the test session.
+
+Killed:   103
+Survived:   5
+Timeout:    8
+Errors:    0
+
+Your json report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/
+DiffBench.Tests/StrykerOutput/2026-10-26.18-43-54/reports/mutation-report.json
+
+Your html report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/
+DiffBench.Tests/StrykerOutput/2026-10-26.18-43-54/reports/mutation-report.html
+You can open it in your browser of choice.
+[18:47:40 INF] Time Elapsed 00:03:45.2739994
+[18:47:40 INF] The final mutation score is 95.69 %

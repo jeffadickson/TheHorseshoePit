@@ -1,0 +1,17 @@
+[
+  {
+    "Algorithm": "SHA256",
+    "Hash": "08F396F3E286B9342173891ABE99702BB53DB7E8E3534182B515D15F724014B7",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\results\\diff\\runs.jsonl"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "3776958816BF57CDBE9027A16B0FD31E011FD0EC1BAE9A9B9F6F7131D2D14E69",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\results\\diff\\environment.json"
+  },
+  {
+    "Algorithm": "SHA256",
+    "Hash": "EE765154DBF90CD871FFFEE2387DB2B84044767E5915B2177BAE2A5F0D23FCE4",
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\results\\diff\\system-utilization.jsonl"
+  }
+]

@@ -1,0 +1,16 @@
+  Determining projects to restore...
+  Restored C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\Overview.csproj (in 968 ms).
+  Overview -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\bin\Release\net10.0\Overview.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:15.93
+Overview: 9 cohorts, 2989 measured commands, 427 warmups.
+  Determining projects to restore...
+  Restored C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\Overview.csproj (in 737 ms).
+  Overview -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\bin\Release\net10.0\win-x64\Overview.dll
+  Generating native code
+  Overview -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\tools\overview-native\
+Overview: 9 cohorts, 2989 measured commands, 427 warmups.

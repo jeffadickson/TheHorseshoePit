@@ -1,0 +1,9 @@
+{
+  "stryker-config": {
+    "project": "DiffBench.csproj",
+    "mutate": ["**/DiffModel.cs"],
+    "reporters": ["html", "json", "progress"],
+    "concurrency": 4,
+    "thresholds": {"high":90,"low":70,"break":0}
+  }
+}

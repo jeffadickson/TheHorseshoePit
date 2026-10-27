@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DiffBench</name>
+    </assembly>
+    <members>
+        <member name="T:DiffBench">
+            <summary>Fresh-process unified-diff benchmark. Patch application is outside the measured interval.</summary>
+        </member>
+        <member name="M:DiffBench.Main(System.String[])">
+            <summary>Generate reproducible cases, retain every rejection, and never mix instrumented and timed sessions.</summary>
+        </member>
+        <member name="M:DiffBench.Execute(System.String,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <summary>Drain both pipes concurrently, enforce a bounded wall timeout, and preserve raw output bytes.</summary>
+        </member>
+        <member name="M:DiffBench.Check(DiffBench.Fixture,System.Byte[],System.Int32)">
+            <summary>Apply the patch with GNU patch independently, then compare exact bytes (including final newline).</summary>
+        </member>
+        <member name="M:DiffBench.Validate(DiffBench.Engine[])">
+            <summary>Retain edge incompatibilities and seeded randomized counterexamples separately from benchmark eligibility.</summary>
+        </member>
+        <member name="M:DiffBench.SaveAndReport(System.Func{System.IO.StreamWriter,System.Threading.Tasks.Task})">
+            <summary>Own the producer's file lease; the consumer must only run after the writer has closed.</summary>
+        </member>
+        <member name="M:DiffBench.Report">
+            <summary>Generate a standalone, script-free HTML report from this session only.</summary>
+        </member>
+        <member name="T:DiffModel">
+            <summary>Deterministic line fixtures and independent edit-distance and patch statistics references.</summary>
+        </member>
+        <member name="M:DiffModel.Pair(System.String,System.Int32,System.String)">
+            <summary>Create a pair with LF delimiters. The size is a lower bound, not an invented exact byte count.</summary>
+        </member>
+        <member name="M:DiffModel.Statistics(System.Byte[])">
+            <summary>Count unified patch additions/deletions, excluding headers and no-newline markers.</summary>
+        </member>
+        <member name="M:DiffModel.MinimumEdits(System.String[],System.String[])">
+            <summary>Exact insertion/deletion distance for bounded fixtures, using independent dynamic programming.</summary>
+        </member>
+        <member name="M:DiffModel.QuadraticTableBytes(System.Byte[],System.Byte[])">
+            <summary>Conservative LCS-table estimate after equal-end trimming; exact for benchmark LF-terminated pairs.</summary>
+        </member>
+    </members>
+</doc>

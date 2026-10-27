@@ -1,0 +1,1992 @@
+{
+  "DiffBench.dll": {
+    "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\DiffBench.cs": {
+      "DiffBench": {
+        "System.ValueTuple`2<System.Int64,System.Int64> DiffBench::CpuSnapshot()": {
+          "Lines": {
+            "22": 0,
+            "23": 0
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 22,
+              "Offset": 11,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "DiffBench/Engine[] DiffBench::Engines()": {
+          "Lines": {
+            "35": 1,
+            "36": 1,
+            "37": 1,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "41": 1,
+            "42": 1,
+            "43": 4,
+            "44": 1
+          },
+          "Branches": []
+        },
+        "System.String DiffBench::Hash(System.Byte[])": {
+          "Lines": {
+            "180": 364
+          },
+          "Branches": []
+        },
+        "System.Void DiffBench::Report()": {
+          "Lines": {
+            "192": 2977,
+            "193": 1,
+            "194": 1,
+            "195": 5953,
+            "196": 0,
+            "197": 5581,
+            "198": 5952,
+            "199": 2136,
+            "200": 1117,
+            "201": 1,
+            "202": 1,
+            "203": 1,
+            "204": 5953,
+            "205": 1,
+            "206": 1,
+            "207": 138800,
+            "208": 39,
+            "209": 3,
+            "211": 1,
+            "212": 1,
+            "213": 434,
+            "214": 30,
+            "215": 804,
+            "216": 372,
+            "217": 372,
+            "219": 30,
+            "221": 1,
+            "222": 2,
+            "223": 2
+          },
+          "Branches": [
+            {
+              "Line": 195,
+              "Offset": 136,
+              "EndOffset": 138,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2977
+            },
+            {
+              "Line": 195,
+              "Offset": 144,
+              "EndOffset": 146,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 195,
+              "Offset": 183,
+              "EndOffset": 185,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 195,
+              "Offset": 136,
+              "EndOffset": 225,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 195,
+              "Offset": 144,
+              "EndOffset": 225,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2976
+            },
+            {
+              "Line": 195,
+              "Offset": 183,
+              "EndOffset": 225,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 195,
+              "Offset": 223,
+              "EndOffset": 225,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 195,
+              "Offset": 223,
+              "EndOffset": 236,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 201,
+              "Offset": 473,
+              "EndOffset": 475,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 201,
+              "Offset": 473,
+              "EndOffset": 486,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 207,
+              "Offset": 763,
+              "EndOffset": 765,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 207,
+              "Offset": 763,
+              "EndOffset": 789,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 1
+            },
+            {
+              "Line": 207,
+              "Offset": 1018,
+              "EndOffset": 842,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 3
+            },
+            {
+              "Line": 207,
+              "Offset": 1018,
+              "EndOffset": 1023,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 213,
+              "Offset": 1650,
+              "EndOffset": 1117,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 30
+            },
+            {
+              "Line": 215,
+              "Offset": 1611,
+              "EndOffset": 1325,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 372
+            },
+            {
+              "Line": 216,
+              "Offset": 1350,
+              "EndOffset": 1352,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 120
+            },
+            {
+              "Line": 216,
+              "Offset": 1350,
+              "EndOffset": 1359,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 252
+            },
+            {
+              "Line": 215,
+              "Offset": 1611,
+              "EndOffset": 1616,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 30
+            },
+            {
+              "Line": 213,
+              "Offset": 1650,
+              "EndOffset": 1655,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 1
+            },
+            {
+              "Line": 198,
+              "Offset": 47,
+              "EndOffset": 49,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 372
+            },
+            {
+              "Line": 198,
+              "Offset": 47,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 198,
+              "Offset": 97,
+              "EndOffset": 99,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 198,
+              "Offset": 97,
+              "EndOffset": 110,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 372
+            },
+            {
+              "Line": 199,
+              "Offset": 212,
+              "EndOffset": 214,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 252
+            },
+            {
+              "Line": 199,
+              "Offset": 212,
+              "EndOffset": 269,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 120
+            },
+            {
+              "Line": 199,
+              "Offset": 300,
+              "EndOffset": 302,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 252
+            },
+            {
+              "Line": 199,
+              "Offset": 300,
+              "EndOffset": 309,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 120
+            }
+          ]
+        },
+        "System.String[] DiffBench::<Validate>g__Lines|19_2(System.Byte[])": {
+          "Lines": {
+            "160": 16
+          },
+          "Branches": []
+        },
+        "System.Void DiffBench::.cctor()": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 2,
+            "29": 2,
+            "30": 2
+          },
+          "Branches": []
+        }
+      },
+      "DiffBench/Engine": {
+        "System.String DiffBench/Engine::get_Name()": {
+          "Lines": {
+            "31": 2787
+          },
+          "Branches": []
+        }
+      },
+      "DiffBench/Fixture": {
+        "System.String DiffBench/Fixture::get_Name()": {
+          "Lines": {
+            "32": 3911
+          },
+          "Branches": []
+        }
+      },
+      "DiffBench/Run": {
+        "System.String DiffBench/Run::get_Fixture()": {
+          "Lines": {
+            "33": 37364
+          },
+          "Branches": []
+        }
+      },
+      "DiffBench/Execution": {
+        "System.Byte[] DiffBench/Execution::get_Output()": {
+          "Lines": {
+            "34": 4420
+          },
+          "Branches": []
+        }
+      },
+      "DiffBench/<>c__DisplayClass15_0/<<Main>b__2>d": {
+        "System.Void DiffBench/<>c__DisplayClass15_0/<<Main>b__2>d::MoveNext()": {
+          "Lines": {
+            "86": 0,
+            "87": 0,
+            "88": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0,
+            "93": 0,
+            "95": 0
+          },
+          "Branches": [
+            {
+              "Line": 88,
+              "Offset": 836,
+              "EndOffset": 114,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 90,
+              "Offset": 155,
+              "EndOffset": 157,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 90,
+              "Offset": 155,
+              "EndOffset": 189,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 90,
+              "Offset": 485,
+              "EndOffset": 220,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 90,
+              "Offset": 485,
+              "EndOffset": 490,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 88,
+              "Offset": 836,
+              "EndOffset": 841,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "DiffBench/<>c__DisplayClass19_0": {
+        "System.String DiffBench/<>c__DisplayClass19_0::<Validate>b__1(System.Int32)": {
+          "Lines": {
+            "152": 343
+          },
+          "Branches": []
+        }
+      },
+      "DiffBench/<Check>d__17": {
+        "System.Void DiffBench/<Check>d__17::MoveNext()": {
+          "Lines": {
+            "120": 377,
+            "121": 377,
+            "122": 455,
+            "123": 338,
+            "124": 1014,
+            "125": 338,
+            "126": 338,
+            "127": 351,
+            "128": 364
+          },
+          "Branches": [
+            {
+              "Line": 121,
+              "Offset": 66,
+              "EndOffset": 68,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 121,
+              "Offset": 66,
+              "EndOffset": 138,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 377
+            },
+            {
+              "Line": 122,
+              "Offset": 139,
+              "EndOffset": 141,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 39
+            },
+            {
+              "Line": 122,
+              "Offset": 148,
+              "EndOffset": 150,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 122,
+              "Offset": 148,
+              "EndOffset": 161,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 39
+            },
+            {
+              "Line": 122,
+              "Offset": 139,
+              "EndOffset": 166,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 338
+            },
+            {
+              "Line": 123,
+              "Offset": 173,
+              "EndOffset": 175,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 123,
+              "Offset": 173,
+              "EndOffset": 186,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 338
+            },
+            {
+              "Line": 124,
+              "Offset": 223,
+              "EndOffset": 225,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 338
+            },
+            {
+              "Line": 124,
+              "Offset": 223,
+              "EndOffset": 236,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 338
+            },
+            {
+              "Line": 127,
+              "Offset": 475,
+              "EndOffset": 477,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 338
+            },
+            {
+              "Line": 127,
+              "Offset": 488,
+              "EndOffset": 490,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 338
+            },
+            {
+              "Line": 127,
+              "Offset": 475,
+              "EndOffset": 534,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 13
+            },
+            {
+              "Line": 127,
+              "Offset": 488,
+              "EndOffset": 534,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 13
+            },
+            {
+              "Line": 127,
+              "Offset": 532,
+              "EndOffset": 534,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 13
+            },
+            {
+              "Line": 127,
+              "Offset": 532,
+              "EndOffset": 572,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 325
+            }
+          ]
+        }
+      },
+      "DiffBench/<Execute>d__16": {
+        "System.Void DiffBench/<Execute>d__16::MoveNext()": {
+          "Lines": {
+            "102": 728,
+            "103": 20149,
+            "104": 2184,
+            "106": 728,
+            "107": 398,
+            "108": 2184,
+            "109": 2912,
+            "111": 2184,
+            "112": 728,
+            "113": 728,
+            "114": 0,
+            "115": 728
+          },
+          "Branches": [
+            {
+              "Line": 103,
+              "Offset": 95,
+              "EndOffset": 68,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 6231
+            },
+            {
+              "Line": 103,
+              "Offset": 95,
+              "EndOffset": 97,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 728
+            },
+            {
+              "Line": 106,
+              "Offset": 207,
+              "EndOffset": 209,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 390
+            },
+            {
+              "Line": 106,
+              "Offset": 207,
+              "EndOffset": 233,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 398
+            },
+            {
+              "Line": 106,
+              "Offset": 231,
+              "EndOffset": 233,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 398
+            },
+            {
+              "Line": 106,
+              "Offset": 231,
+              "EndOffset": 298,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 728
+            },
+            {
+              "Line": 112,
+              "Offset": 736,
+              "EndOffset": 738,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 112,
+              "Offset": 736,
+              "EndOffset": 754,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 728
+            },
+            {
+              "Line": 114,
+              "Offset": 986,
+              "EndOffset": 988,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 114,
+              "Offset": 986,
+              "EndOffset": 1000,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "DiffBench/<Main>d__15": {
+        "System.Void DiffBench/<Main>d__15::MoveNext()": {
+          "Lines": {
+            "50": 2,
+            "51": 4,
+            "52": 4,
+            "53": 1,
+            "55": 41,
+            "56": 1,
+            "57": 1,
+            "58": 2,
+            "59": 0,
+            "61": 0,
+            "62": 0,
+            "63": 0,
+            "64": 0,
+            "66": 0,
+            "67": 0,
+            "70": 0,
+            "71": 0,
+            "72": 0,
+            "74": 0,
+            "75": 0,
+            "76": 0,
+            "77": 0,
+            "78": 0,
+            "79": 0,
+            "80": 0,
+            "81": 0,
+            "82": 0,
+            "83": 0,
+            "85": 0,
+            "94": 0,
+            "96": 0,
+            "97": 2
+          },
+          "Branches": [
+            {
+              "Line": 50,
+              "Offset": 55,
+              "EndOffset": 57,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 50,
+              "Offset": 55,
+              "EndOffset": 69,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 67,
+              "EndOffset": 69,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 50,
+              "Offset": 67,
+              "EndOffset": 80,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 52,
+              "Offset": 133,
+              "EndOffset": 135,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 52,
+              "Offset": 133,
+              "EndOffset": 147,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 179,
+              "EndOffset": 181,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 54,
+              "Offset": 202,
+              "EndOffset": 204,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 54,
+              "Offset": 179,
+              "EndOffset": 257,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 202,
+              "EndOffset": 257,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            },
+            {
+              "Line": 55,
+              "Offset": 316,
+              "EndOffset": 270,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 13
+            },
+            {
+              "Line": 55,
+              "Offset": 289,
+              "EndOffset": 291,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 55,
+              "Offset": 289,
+              "EndOffset": 304,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 13
+            },
+            {
+              "Line": 55,
+              "Offset": 316,
+              "EndOffset": 318,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 1
+            },
+            {
+              "Line": 56,
+              "Offset": 328,
+              "EndOffset": 330,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 56,
+              "Offset": 328,
+              "EndOffset": 341,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 1
+            },
+            {
+              "Line": 58,
+              "Offset": 461,
+              "EndOffset": 463,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 1
+            },
+            {
+              "Line": 58,
+              "Offset": 461,
+              "EndOffset": 470,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 61,
+              "Offset": 501,
+              "EndOffset": 503,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 61,
+              "Offset": 501,
+              "EndOffset": 510,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 724,
+              "EndOffset": 569,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 710,
+              "EndOffset": 645,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 710,
+              "EndOffset": 712,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 63,
+              "Offset": 724,
+              "EndOffset": 729,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 881,
+              "EndOffset": 758,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 867,
+              "EndOffset": 802,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 867,
+              "EndOffset": 869,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 66,
+              "Offset": 881,
+              "EndOffset": 883,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 71,
+              "Offset": 1028,
+              "EndOffset": 947,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 71,
+              "Offset": 1028,
+              "EndOffset": 1030,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 1558,
+              "EndOffset": 1084,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 1528,
+              "EndOffset": 1125,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 1528,
+              "EndOffset": 1533,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 75,
+              "Offset": 1558,
+              "EndOffset": 1563,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 2028,
+              "EndOffset": 1634,
+              "Path": 1,
+              "Ordinal": 41,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 1674,
+              "EndOffset": 1676,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 1697,
+              "EndOffset": 1699,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 1720,
+              "EndOffset": 1722,
+              "Path": 0,
+              "Ordinal": 38,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 1720,
+              "EndOffset": 1738,
+              "Path": 1,
+              "Ordinal": 39,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 1697,
+              "EndOffset": 1745,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 0
+            },
+            {
+              "Line": 80,
+              "Offset": 1674,
+              "EndOffset": 1752,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 0
+            },
+            {
+              "Line": 79,
+              "Offset": 2028,
+              "EndOffset": 2033,
+              "Path": 0,
+              "Ordinal": 40,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "DiffBench/<Measure>d__18": {
+        "System.Void DiffBench/<Measure>d__18::MoveNext()": {
+          "Lines": {
+            "133": 364,
+            "134": 84,
+            "135": 84,
+            "137": 728,
+            "138": 364,
+            "139": 476,
+            "140": 252,
+            "141": 1092,
+            "142": 728,
+            "143": 364,
+            "144": 364,
+            "145": 364
+          },
+          "Branches": [
+            {
+              "Line": 133,
+              "Offset": 41,
+              "EndOffset": 43,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 84
+            },
+            {
+              "Line": 135,
+              "Offset": 80,
+              "EndOffset": 82,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 133,
+              "Offset": 41,
+              "EndOffset": 138,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 364
+            },
+            {
+              "Line": 135,
+              "Offset": 80,
+              "EndOffset": 138,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 364
+            },
+            {
+              "Line": 139,
+              "Offset": 238,
+              "EndOffset": 240,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 112
+            },
+            {
+              "Line": 139,
+              "Offset": 238,
+              "EndOffset": 275,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 252
+            },
+            {
+              "Line": 140,
+              "Offset": 297,
+              "EndOffset": 299,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 112
+            },
+            {
+              "Line": 140,
+              "Offset": 297,
+              "EndOffset": 315,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 140
+            }
+          ]
+        }
+      },
+      "DiffBench/<SaveAndReport>d__21": {
+        "System.Void DiffBench/<SaveAndReport>d__21::MoveNext()": {
+          "Lines": {
+            "185": 0,
+            "186": 0,
+            "187": 0
+          },
+          "Branches": []
+        }
+      },
+      "DiffBench/<Validate>d__19": {
+        "System.Void DiffBench/<Validate>d__19::MoveNext()": {
+          "Lines": {
+            "150": 1,
+            "151": 43,
+            "153": 20,
+            "155": 5,
+            "156": 812,
+            "158": 351,
+            "159": 351,
+            "162": 56,
+            "164": 351,
+            "165": 351,
+            "166": 351,
+            "167": 28,
+            "168": 39,
+            "169": 13,
+            "171": 26,
+            "172": 26,
+            "173": 65,
+            "174": 26,
+            "175": 13,
+            "177": 1,
+            "178": 1
+          },
+          "Branches": [
+            {
+              "Line": 151,
+              "Offset": 650,
+              "EndOffset": 393,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 20
+            },
+            {
+              "Line": 152,
+              "Offset": 420,
+              "EndOffset": 422,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 152,
+              "Offset": 420,
+              "EndOffset": 446,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 20
+            },
+            {
+              "Line": 153,
+              "Offset": 564,
+              "EndOffset": 566,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 10
+            },
+            {
+              "Line": 153,
+              "Offset": 564,
+              "EndOffset": 573,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 10
+            },
+            {
+              "Line": 153,
+              "Offset": 606,
+              "EndOffset": 608,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 13
+            },
+            {
+              "Line": 153,
+              "Offset": 606,
+              "EndOffset": 615,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 7
+            },
+            {
+              "Line": 151,
+              "Offset": 650,
+              "EndOffset": 655,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 156,
+              "Offset": 1268,
+              "EndOffset": 720,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 27
+            },
+            {
+              "Line": 156,
+              "Offset": 1238,
+              "EndOffset": 761,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 351
+            },
+            {
+              "Line": 159,
+              "Offset": 918,
+              "EndOffset": 920,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 260
+            },
+            {
+              "Line": 159,
+              "Offset": 945,
+              "EndOffset": 947,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 240
+            },
+            {
+              "Line": 159,
+              "Offset": 945,
+              "EndOffset": 961,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 40
+            },
+            {
+              "Line": 159,
+              "Offset": 959,
+              "EndOffset": 961,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 40
+            },
+            {
+              "Line": 159,
+              "Offset": 959,
+              "EndOffset": 966,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 220
+            },
+            {
+              "Line": 159,
+              "Offset": 918,
+              "EndOffset": 973,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 351
+            },
+            {
+              "Line": 159,
+              "Offset": 975,
+              "EndOffset": 977,
+              "Path": 0,
+              "Ordinal": 14,
+              "Hits": 40
+            },
+            {
+              "Line": 162,
+              "Offset": 996,
+              "EndOffset": 998,
+              "Path": 0,
+              "Ordinal": 16,
+              "Hits": 20
+            },
+            {
+              "Line": 162,
+              "Offset": 1017,
+              "EndOffset": 1019,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 8
+            },
+            {
+              "Line": 162,
+              "Offset": 1071,
+              "EndOffset": 1073,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 162,
+              "Offset": 1071,
+              "EndOffset": 1084,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 8
+            },
+            {
+              "Line": 159,
+              "Offset": 975,
+              "EndOffset": 1102,
+              "Path": 1,
+              "Ordinal": 15,
+              "Hits": 351
+            },
+            {
+              "Line": 162,
+              "Offset": 996,
+              "EndOffset": 1102,
+              "Path": 1,
+              "Ordinal": 17,
+              "Hits": 351
+            },
+            {
+              "Line": 162,
+              "Offset": 1017,
+              "EndOffset": 1102,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 351
+            },
+            {
+              "Line": 156,
+              "Offset": 1238,
+              "EndOffset": 1243,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 27
+            },
+            {
+              "Line": 156,
+              "Offset": 1268,
+              "EndOffset": 1273,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 1
+            },
+            {
+              "Line": 167,
+              "Offset": 2171,
+              "EndOffset": 1333,
+              "Path": 1,
+              "Ordinal": 37,
+              "Hits": 13
+            },
+            {
+              "Line": 168,
+              "Offset": 1489,
+              "EndOffset": 1491,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 168,
+              "Offset": 1489,
+              "EndOffset": 1518,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 13
+            },
+            {
+              "Line": 171,
+              "Offset": 1714,
+              "EndOffset": 1716,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 13
+            },
+            {
+              "Line": 171,
+              "Offset": 1724,
+              "EndOffset": 1726,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 13
+            },
+            {
+              "Line": 171,
+              "Offset": 1714,
+              "EndOffset": 1740,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 171,
+              "Offset": 1724,
+              "EndOffset": 1740,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 171,
+              "Offset": 1738,
+              "EndOffset": 1740,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            },
+            {
+              "Line": 171,
+              "Offset": 1738,
+              "EndOffset": 1767,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 13
+            },
+            {
+              "Line": 174,
+              "Offset": 2098,
+              "EndOffset": 2100,
+              "Path": 0,
+              "Ordinal": 34,
+              "Hits": 0
+            },
+            {
+              "Line": 174,
+              "Offset": 2098,
+              "EndOffset": 2111,
+              "Path": 1,
+              "Ordinal": 35,
+              "Hits": 13
+            },
+            {
+              "Line": 167,
+              "Offset": 2171,
+              "EndOffset": 2176,
+              "Path": 0,
+              "Ordinal": 36,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\DiffModel.cs": {
+      "DiffModel": {
+        "System.ValueTuple`2<System.Byte[],System.Byte[]> DiffModel::Pair(System.String,System.Int32,System.String)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "15": 0,
+            "16": 0,
+            "18": 0,
+            "21": 0,
+            "23": 0,
+            "24": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "32": 0
+          },
+          "Branches": [
+            {
+              "Line": 9,
+              "Offset": 2,
+              "EndOffset": 4,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 2,
+              "EndOffset": 12,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 10,
+              "EndOffset": 12,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 9,
+              "Offset": 10,
+              "EndOffset": 23,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 91,
+              "EndOffset": 93,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 91,
+              "EndOffset": 104,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 266,
+              "EndOffset": 120,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 131,
+              "EndOffset": 133,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 131,
+              "EndOffset": 192,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 0
+            },
+            {
+              "Line": 13,
+              "Offset": 266,
+              "EndOffset": 271,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 279,
+              "EndOffset": 284,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 296,
+              "EndOffset": 321,
+              "Path": 0,
+              "Ordinal": 12,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 296,
+              "EndOffset": 335,
+              "Path": 5,
+              "Ordinal": 17,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 348,
+              "EndOffset": 350,
+              "Path": 0,
+              "Ordinal": 20,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 354,
+              "EndOffset": 356,
+              "Path": 0,
+              "Ordinal": 22,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 348,
+              "EndOffset": 367,
+              "Path": 1,
+              "Ordinal": 21,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 371,
+              "EndOffset": 373,
+              "Path": 0,
+              "Ordinal": 26,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 360,
+              "EndOffset": 384,
+              "Path": 1,
+              "Ordinal": 25,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 377,
+              "EndOffset": 405,
+              "Path": 1,
+              "Ordinal": 29,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 354,
+              "EndOffset": 423,
+              "Path": 1,
+              "Ordinal": 23,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 371,
+              "EndOffset": 444,
+              "Path": 1,
+              "Ordinal": 27,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 325,
+              "EndOffset": 465,
+              "Path": 1,
+              "Ordinal": 19,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 296,
+              "EndOffset": 483,
+              "Path": 1,
+              "Ordinal": 13,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 296,
+              "EndOffset": 504,
+              "Path": 4,
+              "Ordinal": 16,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 593,
+              "EndOffset": 530,
+              "Path": 1,
+              "Ordinal": 31,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 857,
+              "EndOffset": 792,
+              "Path": 1,
+              "Ordinal": 33,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 279,
+              "EndOffset": 944,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 296,
+              "EndOffset": 944,
+              "Path": 2,
+              "Ordinal": 14,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 296,
+              "EndOffset": 944,
+              "Path": 3,
+              "Ordinal": 15,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 325,
+              "EndOffset": 944,
+              "Path": 0,
+              "Ordinal": 18,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 360,
+              "EndOffset": 944,
+              "Path": 0,
+              "Ordinal": 24,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 377,
+              "EndOffset": 944,
+              "Path": 0,
+              "Ordinal": 28,
+              "Hits": 0
+            },
+            {
+              "Line": 21,
+              "Offset": 593,
+              "EndOffset": 960,
+              "Path": 0,
+              "Ordinal": 30,
+              "Hits": 0
+            },
+            {
+              "Line": 28,
+              "Offset": 857,
+              "EndOffset": 960,
+              "Path": 0,
+              "Ordinal": 32,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.ValueTuple`3<System.Int32,System.Int32,System.Int32> DiffModel::Statistics(System.Byte[])": {
+          "Lines": {
+            "38": 1456,
+            "39": 9322,
+            "40": 5389,
+            "41": 3933,
+            "42": 3486,
+            "43": 3044,
+            "45": 364
+          },
+          "Branches": [
+            {
+              "Line": 39,
+              "Offset": 111,
+              "EndOffset": 34,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4297
+            },
+            {
+              "Line": 40,
+              "Offset": 54,
+              "EndOffset": 56,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 364
+            },
+            {
+              "Line": 40,
+              "Offset": 54,
+              "EndOffset": 64,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3933
+            },
+            {
+              "Line": 41,
+              "Offset": 65,
+              "EndOffset": 67,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 3044
+            },
+            {
+              "Line": 42,
+              "Offset": 76,
+              "EndOffset": 78,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 442
+            },
+            {
+              "Line": 42,
+              "Offset": 76,
+              "EndOffset": 84,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 2602
+            },
+            {
+              "Line": 43,
+              "Offset": 93,
+              "EndOffset": 95,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 442
+            },
+            {
+              "Line": 41,
+              "Offset": 65,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 889
+            },
+            {
+              "Line": 43,
+              "Offset": 93,
+              "EndOffset": 99,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 2160
+            },
+            {
+              "Line": 39,
+              "Offset": 111,
+              "EndOffset": 113,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 364
+            }
+          ]
+        },
+        "System.Int32 DiffModel::MinimumEdits(System.String[],System.String[])": {
+          "Lines": {
+            "51": 8,
+            "52": 188,
+            "53": 172,
+            "54": 2752,
+            "55": 3870,
+            "58": 8
+          },
+          "Branches": [
+            {
+              "Line": 52,
+              "Offset": 95,
+              "EndOffset": 21,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 86
+            },
+            {
+              "Line": 54,
+              "Offset": 85,
+              "EndOffset": 33,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1290
+            },
+            {
+              "Line": 55,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1068
+            },
+            {
+              "Line": 55,
+              "Offset": 53,
+              "EndOffset": 74,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 222
+            },
+            {
+              "Line": 54,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 86
+            },
+            {
+              "Line": 52,
+              "Offset": 95,
+              "EndOffset": 97,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 8
+            }
+          ]
+        },
+        "System.Int64 DiffModel::QuadraticTableBytes(System.Byte[],System.Byte[])": {
+          "Lines": {
+            "64": 168,
+            "65": 168,
+            "66": 792,
+            "67": 372,
+            "68": 84
+          },
+          "Branches": [
+            {
+              "Line": 66,
+              "Offset": 62,
+              "EndOffset": 64,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 429
+            },
+            {
+              "Line": 67,
+              "Offset": 122,
+              "EndOffset": 79,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 144
+            },
+            {
+              "Line": 66,
+              "Offset": 62,
+              "EndOffset": 83,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 9
+            },
+            {
+              "Line": 67,
+              "Offset": 97,
+              "EndOffset": 99,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 213
+            },
+            {
+              "Line": 67,
+              "Offset": 97,
+              "EndOffset": 124,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 15
+            },
+            {
+              "Line": 67,
+              "Offset": 122,
+              "EndOffset": 124,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 84
+            }
+          ]
+        }
+      }
+    }
+  }
+}

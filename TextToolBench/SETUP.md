@@ -28,3 +28,9 @@ Optional non-rendering interaction tests require Node.js compatible with jsdom 3
 
 A clean-machine make all bootstrap has not been exercised end to end. The retained campaigns ran on this Windows host. The MSYS2 base is pinned but later pacman packages may advance; record actual compiler/runtime metadata for any new run.
 
+## Diff extension
+
+The separate [diff laboratory](results/diff/report.html) compares GNU, Rust uutils, BusyBox and four Git algorithms. It verifies patches by independent application, rather than requiring identical patch text. See [methods and verification](results/diff/README.md).
+
+After the existing dependency bootstrap, run `make diff-build` to acquire hash-pinned sources and build generic/native variants; `make diff-test`, `make diff-coverage` and `make diff-mutation` verify the helper separately. `make diff` runs the uninstrumented campaign and generates its standalone report. Do not overlap timing with builds or other benchmark suites. Existing result files are overwritten on an explicit rerun; archive a session first. These targets do not change installed defaults.
+

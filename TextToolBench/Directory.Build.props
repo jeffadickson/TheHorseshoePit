@@ -4,4 +4,7 @@
   <PropertyGroup Condition="'$(MSBuildProjectName)' == 'Overview'">
     <BaseIntermediateOutputPath>obj/Overview/</BaseIntermediateOutputPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'DiffBench'">
+    <BaseIntermediateOutputPath>obj/DiffBench/</BaseIntermediateOutputPath>
+  </PropertyGroup>
 </Project>

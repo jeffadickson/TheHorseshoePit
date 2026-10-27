@@ -1,0 +1,565 @@
+{
+  "Seed": 20261027,
+  "Repeats": 7,
+  "Warmups": 1,
+  "Utc": "2026-10-27T01:53:41.4532057Z",
+  "OS": "Microsoft Windows NT 10.0.26200.0",
+  "LogicalProcessors": 12,
+  "Runtime": "10.0.14",
+  "Tools": [
+    {
+      "Name": "gnu-installed",
+      "Exe": "C:\\Program Files\\Git/usr/bin/diff.exe",
+      "Prefix": [],
+      "Flags": [],
+      "Sha256": "D64621F766D8910A92CB3D99BD7F23C0B1C736EECE0E19DCCBCCEAD93AA81854",
+      "Version": "diff (GNU diffutils) 3.12",
+      "VersionError": ""
+    },
+    {
+      "Name": "gnu-minimal",
+      "Exe": "C:\\Program Files\\Git/usr/bin/diff.exe",
+      "Prefix": [],
+      "Flags": [
+        "--minimal"
+      ],
+      "Sha256": "D64621F766D8910A92CB3D99BD7F23C0B1C736EECE0E19DCCBCCEAD93AA81854",
+      "Version": "diff (GNU diffutils) 3.12",
+      "VersionError": ""
+    },
+    {
+      "Name": "gnu-speed",
+      "Exe": "C:\\Program Files\\Git/usr/bin/diff.exe",
+      "Prefix": [],
+      "Flags": [
+        "--speed-large-files"
+      ],
+      "Sha256": "D64621F766D8910A92CB3D99BD7F23C0B1C736EECE0E19DCCBCCEAD93AA81854",
+      "Version": "diff (GNU diffutils) 3.12",
+      "VersionError": ""
+    },
+    {
+      "Name": "gnu-generic",
+      "Exe": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\diff-suite\\gnu-generic\\bin\\diff.exe",
+      "Prefix": [],
+      "Flags": [],
+      "Sha256": "640A4DE13DE37680E494BFEE335C849408D04421A92A0784B37E16E6E5D6D05B",
+      "Version": "diff (GNU diffutils) 3.12",
+      "VersionError": ""
+    },
+    {
+      "Name": "gnu-native",
+      "Exe": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\diff-suite\\gnu-native\\src\\diff.exe",
+      "Prefix": [],
+      "Flags": [],
+      "Sha256": "EC940161D8780F4CB839C783686BEA641653B91FBBB32FEBEADFB7B1AC3FC2C2",
+      "Version": "diff (GNU diffutils) 3.12",
+      "VersionError": ""
+    },
+    {
+      "Name": "uutils-official",
+      "Exe": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\diff-suite\\uutils-official\\diffutils.exe",
+      "Prefix": [
+        "diff"
+      ],
+      "Flags": [],
+      "Sha256": "088ACE6EA5DD971C6E2C81ED568397D2DBEB06E69A3750E5DF2E838EB0D06C1E",
+      "Version": "diffutils 0.6.0 (multi-call binary)",
+      "VersionError": "Expected utility name as second argument, got nothing.\n"
+    },
+    {
+      "Name": "uutils-generic",
+      "Exe": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\diff-suite\\rust-generic\\release\\diffutils.exe",
+      "Prefix": [
+        "diff"
+      ],
+      "Flags": [],
+      "Sha256": "11326FC16BC36912B785F090A9BBA6F7BAED9F390E0B44538942687C5282ED8A",
+      "Version": "diffutils 0.6.0 (multi-call binary)",
+      "VersionError": "Expected utility name as second argument, got nothing.\n"
+    },
+    {
+      "Name": "uutils-native",
+      "Exe": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\diff-suite\\rust-native\\release\\diffutils.exe",
+      "Prefix": [
+        "diff"
+      ],
+      "Flags": [],
+      "Sha256": "F43AA126CC9847505A9B650C8531DA95ABC084312E71862F7D615BAA554B84B4",
+      "Version": "diffutils 0.6.0 (multi-call binary)",
+      "VersionError": "Expected utility name as second argument, got nothing.\n"
+    },
+    {
+      "Name": "busybox",
+      "Exe": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\sed-suite\\busybox.exe",
+      "Prefix": [
+        "diff"
+      ],
+      "Flags": [
+        "-a"
+      ],
+      "Sha256": "6E263D154D8548D1EB936F65D1D8312C80DF31C45974E48D6335E4DCC0F4F34C",
+      "Version": "BusyBox v1.38.0-FRP-6075-g169694ebd (2026-05-06 12:57:04 UTC)",
+      "VersionError": ""
+    },
+    {
+      "Name": "git-myers",
+      "Exe": "C:\\Program Files\\Git/cmd/git.exe",
+      "Prefix": [
+        "--no-pager",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.safecrlf=false",
+        "diff",
+        "--no-index",
+        "--no-ext-diff",
+        "--no-textconv",
+        "--no-color",
+        "--no-renames",
+        "--text",
+        "--src-prefix=a/",
+        "--dst-prefix=b/",
+        "--diff-algorithm=myers"
+      ],
+      "Flags": [],
+      "Sha256": "3B64043B9E4DC225225F43FF9C1173B57493FF72E5B729ACCFAE051EB160CCA3",
+      "Version": "git version 2.56.0.windows.3",
+      "VersionError": ""
+    },
+    {
+      "Name": "git-minimal",
+      "Exe": "C:\\Program Files\\Git/cmd/git.exe",
+      "Prefix": [
+        "--no-pager",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.safecrlf=false",
+        "diff",
+        "--no-index",
+        "--no-ext-diff",
+        "--no-textconv",
+        "--no-color",
+        "--no-renames",
+        "--text",
+        "--src-prefix=a/",
+        "--dst-prefix=b/",
+        "--diff-algorithm=minimal"
+      ],
+      "Flags": [],
+      "Sha256": "3B64043B9E4DC225225F43FF9C1173B57493FF72E5B729ACCFAE051EB160CCA3",
+      "Version": "git version 2.56.0.windows.3",
+      "VersionError": ""
+    },
+    {
+      "Name": "git-patience",
+      "Exe": "C:\\Program Files\\Git/cmd/git.exe",
+      "Prefix": [
+        "--no-pager",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.safecrlf=false",
+        "diff",
+        "--no-index",
+        "--no-ext-diff",
+        "--no-textconv",
+        "--no-color",
+        "--no-renames",
+        "--text",
+        "--src-prefix=a/",
+        "--dst-prefix=b/",
+        "--diff-algorithm=patience"
+      ],
+      "Flags": [],
+      "Sha256": "3B64043B9E4DC225225F43FF9C1173B57493FF72E5B729ACCFAE051EB160CCA3",
+      "Version": "git version 2.56.0.windows.3",
+      "VersionError": ""
+    },
+    {
+      "Name": "git-histogram",
+      "Exe": "C:\\Program Files\\Git/cmd/git.exe",
+      "Prefix": [
+        "--no-pager",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.safecrlf=false",
+        "diff",
+        "--no-index",
+        "--no-ext-diff",
+        "--no-textconv",
+        "--no-color",
+        "--no-renames",
+        "--text",
+        "--src-prefix=a/",
+        "--dst-prefix=b/",
+        "--diff-algorithm=histogram"
+      ],
+      "Flags": [],
+      "Sha256": "3B64043B9E4DC225225F43FF9C1173B57493FF72E5B729ACCFAE051EB160CCA3",
+      "Version": "git version 2.56.0.windows.3",
+      "VersionError": ""
+    }
+  ],
+  "PatchTool": {
+    "Path": "C:\\Users\\jeffd\\Documents\\Codex\\2026-10-26\\benchmark-sed-and-grep-and-awk\\tools\\msys64\\usr\\bin\\patch.exe",
+    "Sha256": "61353F8AAAA9F12EC517D7971C7C57DFD3A064183C534CC77DDE9113E19DD93D"
+  },
+  "Fixtures": [
+    {
+      "Name": "identical",
+      "Scale": 1024,
+      "BeforeBytes": 1056,
+      "AfterBytes": 1056,
+      "BeforeSha256": "B1A1E5B30FB82C4BF51A34AA9C69D33A9F1B47663E70870F29639AAB797D8A2D",
+      "AfterSha256": "B1A1E5B30FB82C4BF51A34AA9C69D33A9F1B47663E70870F29639AAB797D8A2D"
+    },
+    {
+      "Name": "scattered",
+      "Scale": 1024,
+      "BeforeBytes": 1056,
+      "AfterBytes": 1156,
+      "BeforeSha256": "B1A1E5B30FB82C4BF51A34AA9C69D33A9F1B47663E70870F29639AAB797D8A2D",
+      "AfterSha256": "D3D05F9C93AB2AEE211B035F5950E694C6F81B2A4599E7474BB18F1AC074C732"
+    },
+    {
+      "Name": "insert-delete",
+      "Scale": 1024,
+      "BeforeBytes": 1056,
+      "AfterBytes": 924,
+      "BeforeSha256": "B1A1E5B30FB82C4BF51A34AA9C69D33A9F1B47663E70870F29639AAB797D8A2D",
+      "AfterSha256": "DE34D72913A6DF0DD0BBE34F0CB4D1A46E0D796FC65D6D8A2FEF983DFF9D9317"
+    },
+    {
+      "Name": "moved",
+      "Scale": 1024,
+      "BeforeBytes": 1056,
+      "AfterBytes": 1056,
+      "BeforeSha256": "B1A1E5B30FB82C4BF51A34AA9C69D33A9F1B47663E70870F29639AAB797D8A2D",
+      "AfterSha256": "64A79AD8E5799ADC682A6C779E82D4C9BE62692F62B10BD4D208C423E64791DE"
+    },
+    {
+      "Name": "repeated",
+      "Scale": 1024,
+      "BeforeBytes": 1026,
+      "AfterBytes": 1034,
+      "BeforeSha256": "9F48029E5909157A5EF0BB3D2BF16312630A98BA7DE6337C6D4C5150B06592FA",
+      "AfterSha256": "040E876597B2D33E8FB8B92081AABFBD0DB94B26D30574642BF37AADA6164117"
+    },
+    {
+      "Name": "different",
+      "Scale": 1024,
+      "BeforeBytes": 1056,
+      "AfterBytes": 420,
+      "BeforeSha256": "B1A1E5B30FB82C4BF51A34AA9C69D33A9F1B47663E70870F29639AAB797D8A2D",
+      "AfterSha256": "9D50807548E402524DA0C694BC6C43E65FACA513E5A7EAA19F1D2A826B1E3369"
+    },
+    {
+      "Name": "long-line",
+      "Scale": 1024,
+      "BeforeBytes": 1025,
+      "AfterBytes": 1025,
+      "BeforeSha256": "3165A5ABC3677F934E4F28B24268968C9D2DA81362BD5CFACCFEAD76F129445D",
+      "AfterSha256": "3CF7C41C4BB6A8E24D4B89097E5446422204F3E1549E332546FEA1B82427CF45"
+    },
+    {
+      "Name": "identical",
+      "Scale": 65536,
+      "BeforeBytes": 65584,
+      "AfterBytes": 65584,
+      "BeforeSha256": "31D82ACAD4FB8F038E6ADFAF77E47796E7F0C10C043CAA808AA7036F751BE9AD",
+      "AfterSha256": "31D82ACAD4FB8F038E6ADFAF77E47796E7F0C10C043CAA808AA7036F751BE9AD"
+    },
+    {
+      "Name": "scattered",
+      "Scale": 65536,
+      "BeforeBytes": 65584,
+      "AfterBytes": 65689,
+      "BeforeSha256": "31D82ACAD4FB8F038E6ADFAF77E47796E7F0C10C043CAA808AA7036F751BE9AD",
+      "AfterSha256": "FE9B266405D66B4471F8408A987779C308D774234F0FCD5EDE8C31B52E240751"
+    },
+    {
+      "Name": "insert-delete",
+      "Scale": 65536,
+      "BeforeBytes": 65584,
+      "AfterBytes": 58956,
+      "BeforeSha256": "31D82ACAD4FB8F038E6ADFAF77E47796E7F0C10C043CAA808AA7036F751BE9AD",
+      "AfterSha256": "F08356480F7204BF90C67EFCC7DEB62305F1B696111D7F462B29E349F07472BF"
+    },
+    {
+      "Name": "moved",
+      "Scale": 65536,
+      "BeforeBytes": 65584,
+      "AfterBytes": 65584,
+      "BeforeSha256": "31D82ACAD4FB8F038E6ADFAF77E47796E7F0C10C043CAA808AA7036F751BE9AD",
+      "AfterSha256": "E5B8EC0CFC164055715672367EEBD5D0018C06BF59DF6B6812F221FE503A9DDC"
+    },
+    {
+      "Name": "repeated",
+      "Scale": 65536,
+      "BeforeBytes": 65538,
+      "AfterBytes": 65546,
+      "BeforeSha256": "3D1AA20D61D74C121FFCB408F8BFDD4ACD3CDBC1661698A6FC4AA5B367A77893",
+      "AfterSha256": "4A6794895419CCF29CB0C61740E8B3011E86760C0F21A473FA1DDDF53F7C7F17"
+    },
+    {
+      "Name": "different",
+      "Scale": 65536,
+      "BeforeBytes": 65584,
+      "AfterBytes": 25137,
+      "BeforeSha256": "31D82ACAD4FB8F038E6ADFAF77E47796E7F0C10C043CAA808AA7036F751BE9AD",
+      "AfterSha256": "3CA2749FA12914EC5297922C9AB3487250DDDAC585E9120C6D326C3EBC0E5737"
+    },
+    {
+      "Name": "long-line",
+      "Scale": 65536,
+      "BeforeBytes": 65537,
+      "AfterBytes": 65537,
+      "BeforeSha256": "56479685D124F33AF3523DCFE0E533648115BC71B17BDFE13718156C4F995D06",
+      "AfterSha256": "E85F40226195AACE8802F3EDC8B31DEA6191A0CD18D4CACFDA3B188A9ECF82AC"
+    },
+    {
+      "Name": "identical",
+      "Scale": 1048576,
+      "BeforeBytes": 1048602,
+      "AfterBytes": 1048602,
+      "BeforeSha256": "B30F79CE2B61C919971F2AC33409D314CE5AFEE083E37577A0BC0A89126D15E5",
+      "AfterSha256": "B30F79CE2B61C919971F2AC33409D314CE5AFEE083E37577A0BC0A89126D15E5"
+    },
+    {
+      "Name": "scattered",
+      "Scale": 1048576,
+      "BeforeBytes": 1048602,
+      "AfterBytes": 1048707,
+      "BeforeSha256": "B30F79CE2B61C919971F2AC33409D314CE5AFEE083E37577A0BC0A89126D15E5",
+      "AfterSha256": "1C0CC86ED248C16B70D1FD8F351008351373BD5295174566E065AF0CAA732618"
+    },
+    {
+      "Name": "insert-delete",
+      "Scale": 1048576,
+      "BeforeBytes": 1048602,
+      "AfterBytes": 966109,
+      "BeforeSha256": "B30F79CE2B61C919971F2AC33409D314CE5AFEE083E37577A0BC0A89126D15E5",
+      "AfterSha256": "4608CCCC902B7368EE65B497E58CAE38EBA8DAAC0599E73011697ABD8BC116AF"
+    },
+    {
+      "Name": "moved",
+      "Scale": 1048576,
+      "BeforeBytes": 1048602,
+      "AfterBytes": 1048602,
+      "BeforeSha256": "B30F79CE2B61C919971F2AC33409D314CE5AFEE083E37577A0BC0A89126D15E5",
+      "AfterSha256": "FF9E0CAF8416780FFEE9EA80BB7F2052CC44511608A324388B34CC6FC47708A5"
+    },
+    {
+      "Name": "repeated",
+      "Scale": 1048576,
+      "BeforeBytes": 1048581,
+      "AfterBytes": 1048589,
+      "BeforeSha256": "9D1FAE9C0F51570F4110CAC68C40456C2E52AA7C632FCD95253064E83E236DAA",
+      "AfterSha256": "1664FD28D35F3A1A3D1ABE9A615BCAA7FBD650A8CDAE6B30FB3A797D8D865129"
+    },
+    {
+      "Name": "different",
+      "Scale": 1048576,
+      "BeforeBytes": 1048602,
+      "AfterBytes": 322056,
+      "BeforeSha256": "B30F79CE2B61C919971F2AC33409D314CE5AFEE083E37577A0BC0A89126D15E5",
+      "AfterSha256": "F994FF4FBCC58A1FBD1876D6D74988F4B81D3DB112C31F2831260CF683CCB68C"
+    },
+    {
+      "Name": "long-line",
+      "Scale": 1048576,
+      "BeforeBytes": 1048577,
+      "AfterBytes": 1048577,
+      "BeforeSha256": "EB92CA55EA07796E15FDE2C54BBDA31BDAED01130013C4ECB7BA9FD41533AFD4",
+      "AfterSha256": "E035D14C5AD1758B35DD74A8780A888BADD4A3CF655B9EB0D1212E47934B6C97"
+    },
+    {
+      "Name": "identical",
+      "Scale": 8388608,
+      "BeforeBytes": 8388608,
+      "AfterBytes": 8388608,
+      "BeforeSha256": "912EDE36353096E830144604187FDDBDC093DCDBEC1E3B21249F7007AED378D2",
+      "AfterSha256": "912EDE36353096E830144604187FDDBDC093DCDBEC1E3B21249F7007AED378D2"
+    },
+    {
+      "Name": "scattered",
+      "Scale": 8388608,
+      "BeforeBytes": 8388608,
+      "AfterBytes": 8388713,
+      "BeforeSha256": "912EDE36353096E830144604187FDDBDC093DCDBEC1E3B21249F7007AED378D2",
+      "AfterSha256": "A13272039B38A83087AD09C707C799B65CA623DC06AA36A59B7E55526C0CF189"
+    },
+    {
+      "Name": "long-line",
+      "Scale": 8388608,
+      "BeforeBytes": 8388609,
+      "AfterBytes": 8388609,
+      "BeforeSha256": "6EBD215F5992ADFD7EA049E317A4C23BB6FFF7653CA01E2F8F3E174D32F764E9",
+      "AfterSha256": "575264554B7E80D224F036D08B08600E0296471A17B68225F639A0DBB12FE592"
+    },
+    {
+      "Name": "identical",
+      "Scale": 33554432,
+      "BeforeBytes": 33554502,
+      "AfterBytes": 33554502,
+      "BeforeSha256": "4DDC810618AEEF1B82F8FE940CA58A6C798B8E07D5B61B20A230E93BF7CC147E",
+      "AfterSha256": "4DDC810618AEEF1B82F8FE940CA58A6C798B8E07D5B61B20A230E93BF7CC147E"
+    },
+    {
+      "Name": "scattered",
+      "Scale": 33554432,
+      "BeforeBytes": 33554502,
+      "AfterBytes": 33554607,
+      "BeforeSha256": "4DDC810618AEEF1B82F8FE940CA58A6C798B8E07D5B61B20A230E93BF7CC147E",
+      "AfterSha256": "0E41851335D9EE038EE575F9BA414AA7BF27A3E58CC84D599DDC44B33DAA7ED7"
+    },
+    {
+      "Name": "long-line",
+      "Scale": 33554432,
+      "BeforeBytes": 33554433,
+      "AfterBytes": 33554433,
+      "BeforeSha256": "463A9EB0F9FF5200B8D0E0AE3754FBDD3353D82DDB7B00F5862DF4BB621B9756",
+      "AfterSha256": "2AD8D39D8F1B3A497D6551D29A3207FBF9A677B7459FCD22A954A57ECB356DAA"
+    },
+    {
+      "Name": "code-scattered",
+      "Scale": 65536,
+      "BeforeBytes": 65642,
+      "AfterBytes": 65747,
+      "BeforeSha256": "4D029ED4324FB36303DF52C760B7AD86A460BABBCCBBF0F3AEDCC0CFC1E8929A",
+      "AfterSha256": "0208B85B27DB46BC4E0412E3181F7062001B71CB921BF15F6E25FEEFC3938A00"
+    },
+    {
+      "Name": "code-moved",
+      "Scale": 65536,
+      "BeforeBytes": 65642,
+      "AfterBytes": 65642,
+      "BeforeSha256": "4D029ED4324FB36303DF52C760B7AD86A460BABBCCBBF0F3AEDCC0CFC1E8929A",
+      "AfterSha256": "611548CFB98D9E812B03FDBFDBB3BC20C133F56F7E0B1EB118458E4F56DD3E40"
+    },
+    {
+      "Name": "code-insert-delete",
+      "Scale": 65536,
+      "BeforeBytes": 65642,
+      "AfterBytes": 57277,
+      "BeforeSha256": "4D029ED4324FB36303DF52C760B7AD86A460BABBCCBBF0F3AEDCC0CFC1E8929A",
+      "AfterSha256": "01FB6FE5953E63069CA79019623BBCCCEB2D9574532295E7A32A6A221A4BA0F5"
+    }
+  ],
+  "Cells": 372,
+  "Rejected": [
+    {
+      "Fixture": "scattered",
+      "Scale": 1048576,
+      "Engine": "uutils-official",
+      "Reason": "Resource exclusion: predicted LCS table 939054736 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 1048576,
+      "Engine": "uutils-generic",
+      "Reason": "Resource exclusion: predicted LCS table 939054736 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 1048576,
+      "Engine": "uutils-native",
+      "Reason": "Resource exclusion: predicted LCS table 939054736 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "moved",
+      "Scale": 1048576,
+      "Engine": "uutils-official",
+      "Reason": "Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "moved",
+      "Scale": 1048576,
+      "Engine": "uutils-generic",
+      "Reason": "Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "moved",
+      "Scale": 1048576,
+      "Engine": "uutils-native",
+      "Reason": "Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "repeated",
+      "Scale": 1048576,
+      "Engine": "uutils-official",
+      "Reason": "Resource exclusion: predicted LCS table 1508390244 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "repeated",
+      "Scale": 1048576,
+      "Engine": "uutils-generic",
+      "Reason": "Resource exclusion: predicted LCS table 1508390244 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "repeated",
+      "Scale": 1048576,
+      "Engine": "uutils-native",
+      "Reason": "Resource exclusion: predicted LCS table 1508390244 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "different",
+      "Scale": 1048576,
+      "Engine": "uutils-official",
+      "Reason": "Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "different",
+      "Scale": 1048576,
+      "Engine": "uutils-generic",
+      "Reason": "Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "different",
+      "Scale": 1048576,
+      "Engine": "uutils-native",
+      "Reason": "Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 8388608,
+      "Engine": "uutils-official",
+      "Reason": "Resource exclusion: predicted LCS table 59674672656 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 8388608,
+      "Engine": "uutils-generic",
+      "Reason": "Resource exclusion: predicted LCS table 59674672656 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 8388608,
+      "Engine": "uutils-native",
+      "Reason": "Resource exclusion: predicted LCS table 59674672656 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 33554432,
+      "Engine": "uutils-official",
+      "Reason": "Resource exclusion: predicted LCS table 955084016656 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 33554432,
+      "Engine": "uutils-generic",
+      "Reason": "Resource exclusion: predicted LCS table 955084016656 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    },
+    {
+      "Fixture": "scattered",
+      "Scale": 33554432,
+      "Engine": "uutils-native",
+      "Reason": "Resource exclusion: predicted LCS table 955084016656 bytes exceeds 256 MiB; not a measured timeout or correctness failure"
+    }
+  ],
+  "SourceSha256": "907674E1D2F1B2736F44F94A3A514498D00EA2496FB98CF2E923777D3A3C3167",
+  "Notes": "One sequential session; startup and stdout capture included; patch application excluded and checked for every output. Unified context=3, LC_ALL=C, git indentation heuristic disabled. PeakWorkingSetBytes is the OS process peak, not allocation or whole-process-tree memory. Seven observations are not confidence intervals. Same-source compiler pairs are distinct from installed binaries."
+}

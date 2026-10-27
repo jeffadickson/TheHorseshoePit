@@ -1,7 +1,7 @@
-✔ all cohort/workload/size views preserve session boundaries and sorted measured values (1348.4029ms)
-✔ static artifact is offline, complete, accessible and has valid local evidence links (74.8595ms)
-✔ deliberate descending-rank mutation is detected (96.3342ms)
-✔ deliberate cross-cohort row-filter mutation is detected (305.4778ms)
+✔ all cohort/workload/size views preserve session boundaries and sorted measured values (2766.7151ms)
+✔ static artifact is offline, complete, accessible and has valid local evidence links (196.1656ms)
+✔ deliberate descending-rank mutation is detected (217.4295ms)
+✔ deliberate cross-cohort row-filter mutation is detected (858.3231ms)
 ℹ tests 4
 ℹ suites 0
 ℹ pass 4
@@ -9,7 +9,7 @@
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 4191.7537
+ℹ duration_ms 8834.3258
 ℹ start of coverage report
 ℹ ------------------------------------------------------------------------
 ℹ file                    | line % | branch % | funcs % | uncovered lines

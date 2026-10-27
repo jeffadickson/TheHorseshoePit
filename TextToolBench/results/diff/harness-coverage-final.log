@@ -1,0 +1,39 @@
+diff validation: 351 reconstructed, 0 incompatibilities, 26 negatives, 13 patch mutants
+
+Calculating coverage result...
+  Generating report 'results\diff\harness.json'
+  Generating report 'results\diff\harness.cobertura.xml'
++-----------+--------+--------+--------+
+| Module    | Line   | Branch | Method |
++-----------+--------+--------+--------+
+| DiffBench | 54.83% | 44.17% | 77.27% |
++-----------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 54.83% | 44.17% | 77.27% |
++---------+--------+--------+--------+
+| Average | 54.83% | 44.17% | 77.27% |
++---------+--------+--------+--------+
+
+Diff report: 372 cells
+
+Calculating coverage result...
+MergeWith: 'results/diff/harness.json'.
+  Generating report 'results\diff\harness.json'
+  Generating report 'results\diff\harness.cobertura.xml'
++-----------+--------+--------+--------+
+| Module    | Line   | Branch | Method |
++-----------+--------+--------+--------+
+| DiffBench | 69.89% | 55.33% | 81.81% |
++-----------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 69.89% | 55.33% | 81.81% |
++---------+--------+--------+--------+
+| Average | 69.89% | 55.33% | 81.81% |
++---------+--------+--------+--------+
+

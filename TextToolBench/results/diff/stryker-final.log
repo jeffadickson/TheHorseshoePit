@@ -1,0 +1,52 @@
+
+   _____ _              _               _   _ ______ _______  
+  / ____| |            | |             | \ | |  ____|__   __| 
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |    
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |    
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |    
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|    
+                   __/ |                                      
+                  |___/                                       
+
+
+Version: 5.0.0
+
+[18:36:26 INF] Stryker will use a max of 4 parallel testsessions.
+[18:36:27 INF] Analysis starting.
+[18:36:27 INF] Analyzing 1 test project(s).
+[18:37:04 INF] Picking net10.0 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj. 
+[18:37:05 INF] Found project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj to mutate.
+[18:37:05 INF] Analysis complete.
+[18:37:05 INF] Building test project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\DiffBench.Tests.csproj (1/1)
+[18:37:06 INF] Building project DiffBench.Tests.csproj using dotnet build DiffBench.Tests.csproj -c Debug --property:Platform=AnyCPU (directory C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests.)
+[18:37:48 INF] Number of tests found: 19 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj. Initial test run started.
+[18:37:58 INF] 544 mutants created
+[18:37:58 INF] Capture mutant coverage using 'CoverageBasedTest' mode.
+Hint: by passing "--open-report or -o" the report will open automatically and 
+update the report in real-time.
+[18:38:00 INF] 45    mutants got status CompileError. Reason: Mutant caused compile errors
+[18:38:00 INF] 9     mutants got status Ignored.      Reason: Removed by block already covered filter
+[18:38:00 INF] 374   mutants got status Ignored.      Reason: Removed by mutate filter
+[18:38:00 INF] 428   total mutants are skipped for the above mentioned reasons
+[18:38:00 INF] 116   total mutants will be tested
+[18:39:16 WRN] Failed to restore output assembly C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Debug\net10.0\DiffBench.dll. Mutated assembly is still in place.
+System.IO.IOException: The process cannot access the file 'C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Debug\net10.0\DiffBench.dll' because it is being used by another process.
+   at System.IO.FileSystem.CopyFile(String sourceFullPath, String destFullPath, Boolean overwrite)
+   at System.IO.Abstractions.FileWrapper.Copy(String sourceFileName, String destFileName, Boolean overwrite)
+   at Stryker.Core.ProjectComponents.TestProjects.TestProjectsInfo.RestoreOriginalAssembly(IAnalyzerResult sourceProject) in /_/src/Stryker.Core/Stryker.Core/ProjectComponents/TestProjects/TestProjectsInfo.cs:line 53
+
+Killed:    79
+Survived:  30
+Timeout:    7
+Errors:    0
+
+Your json report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/
+DiffBench.Tests/StrykerOutput/2026-10-26.18-36-26/reports/mutation-report.json
+
+Your html report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/benchmark-sed-and-grep-and-awk/
+DiffBench.Tests/StrykerOutput/2026-10-26.18-36-26/reports/mutation-report.html
+You can open it in your browser of choice.
+[18:39:18 INF] Time Elapsed 00:02:51.1306879
+[18:39:18 INF] The final mutation score is 74.14 %

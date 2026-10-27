@@ -131,7 +131,7 @@ Push-Location $script:Root
 try {
     Set-BenchEnvironment
     switch($Action){
-        help { Write-Output 'make deps source native build test coverage profile grep-tuned benchmark report requirements all';Write-Output 'Windows x64; install GNU make first with: powershell -File scripts/manage.ps1 -Action bootstrap';Write-Output 'make all reruns the full benchmark and can take tens of minutes. make report uses retained measurements.' }
+        help { Write-Output 'make deps source native build test coverage profile grep-tuned benchmark report requirements all';Write-Output 'make diff-build diff diff-test diff-coverage diff-mutation diff-report';Write-Output 'Windows x64; install GNU make first with: powershell -File scripts/manage.ps1 -Action bootstrap';Write-Output 'make all reruns the full benchmark and can take tens of minutes. make report uses retained measurements.' }
         bootstrap { Install-WingetPackage GnuWin32.Make;Write-Output 'Restart your shell or invoke C:\Program Files (x86)\GnuWin32\bin\make.exe' }
         deps { Ensure-Dependencies }
         source { Get-VerifiedFile $script:Lock.source;foreach($item in $script:Lock.archives | Select-Object -First 2){Get-VerifiedFile $item} }

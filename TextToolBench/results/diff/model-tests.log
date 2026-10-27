@@ -1,0 +1,12 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  DiffBench -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\bin\Release\net10.0\DiffBench.dll
+  DiffBench.Tests -> C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll
+Test run for C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\bin\Release\net10.0\DiffBench.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+Results File: C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\results\diff\unit-tests\model.trx
+
+Passed!  - Failed:     0, Passed:    18, Skipped:     0, Total:    18, Duration: 2 s - DiffBench.Tests.dll (net10.0)
+
+Attachments:
+  C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\results\diff\unit-tests\97a9623f-9167-4376-a2f0-35d4ea156829\coverage.cobertura.xml

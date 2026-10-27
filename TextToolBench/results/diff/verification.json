@@ -1,0 +1,78 @@
+{
+  "Requirement": "BENCH-012",
+  "Measurements": {
+    "Measured": 2604,
+    "Warmups": 372,
+    "Cells": 372,
+    "Candidates": 390,
+    "ResourceExclusions": 18,
+    "OriginalCampaignExitCode": 1,
+    "Reason": "Postprocessing failed on an open writer after all eight complete rounds; raw data preserved",
+    "RecoveredReportExitCode": 0,
+    "MissingChildMetrics": "Git CPU/memory raw counters are launcher-only; summary memory is null"
+  },
+  "Tests": {
+    "NUnitPassed": 30,
+    "NUnitFailed": 0,
+    "FsCheckCases": 1000,
+    "FsCheckReplay": [
+      20261027,
+      17
+    ],
+    "CliSeed": 20261027,
+    "CliPassed": 351,
+    "CliFailures": 0,
+    "NegativeChecks": 26,
+    "PatchCorruptionMutantsKilled": 13,
+    "MinimalReferenceChecks": 8,
+    "DomChecks": 3,
+    "OverviewDomChecks": 4,
+    "OverviewViews": 134,
+    "UpstreamRustPassed": 251,
+    "UpstreamRustSkipped": 32
+  },
+  "Coverage": {
+    "ModelLinePercent": 100.0,
+    "ModelBranchPercent": 100.0,
+    "UnitEvidence": "results/diff/unit-tests/38ca23d0-6753-4447-ad47-e46e6a19575e/coverage.cobertura.xml",
+    "CliAndReportModuleLinePercent": 69.89,
+    "CliAndReportModuleBranchPercent": 55.33,
+    "CliEvidence": "results/diff/harness.cobertura.xml",
+    "Scope": "CLI conformance plus report mode, not instrumented timings. Model uses final NUnit/FsCheck. Earlier coverage files are historical intermediate versions, not comparable improvements.",
+    "Unmeasured": [
+      "native binaries",
+      "Git child CPU/memory",
+      "PowerShell/shell wrappers",
+      "rendered layout",
+      "Linux",
+      "coverage-guided fuzzing"
+    ]
+  },
+  "Mutation": {
+    "Tool": "Stryker.NET 5.0.0",
+    "Scope": "DiffModel only; 20-test baseline before report tests were added",
+    "ScorePercent": 95.69,
+    "Killed": 103,
+    "Timeout": 8,
+    "Survived": 5,
+    "CompileError": 47,
+    "Ignored": 404,
+    "IncludesTimeouts": true,
+    "Report": "results/diff/mutation-report.json"
+  },
+  "Libraries": {
+    "FsCheck": "3.3.2",
+    "NUnit": "4.3.2",
+    "CoverletCollector": "6.0.4",
+    "CoverletConsole": "10.1.0",
+    "Jsdom": "30.1.3",
+    "Production": "System.Diagnostics.Process, System.Text.Json, SHA256, filesystem, minimal Windows counter interop; GNU patch"
+  },
+  "SourceIdentity": {
+    "AsMeasuredAssembly": "4D02C4104B8D604F42B2BA67F5016CCE7D967C30534958E494BBFD5373ECE0DF",
+    "FinalAssembly": "1F90E71003C6C7D43F6DB9709F9267C1CBDFA62DDBB1DA6AF8D070F5F19F659E",
+    "CodeFixture": "30EF4EB7B230CA81F29A428E95C549112DA35311B5591C16EFAC7637277E67C5",
+    "ArchivedMain": "30EF4EB7B230CA81F29A428E95C549112DA35311B5591C16EFAC7637277E67C5",
+    "PostMeasurementChanges": "File-lease regression fix, saved code-fixture reuse, responsive HTML and unavailable Git child metrics; no recorded measurements replaced"
+  }
+}

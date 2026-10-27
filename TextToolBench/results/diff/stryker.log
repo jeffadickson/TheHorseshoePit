@@ -1,0 +1,22 @@
+
+   _____ _              _               _   _ ______ _______  
+  / ____| |            | |             | \ | |  ____|__   __| 
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |    
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |    
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |    
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|    
+                   __/ |                                      
+                  |___/                                       
+
+
+Version: 5.0.0
+
+[18:33:31 INF] Stryker will use a max of 4 parallel testsessions.
+[18:33:32 INF] Analysis starting.
+[18:33:32 INF] Analyzing 1 test project(s).
+[18:34:28 INF] Picking net10.0 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj. 
+[18:34:29 INF] Found project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj to mutate.
+[18:34:29 INF] Analysis complete.
+[18:34:29 INF] Building test project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests\DiffBench.Tests.csproj (1/1)
+[18:34:30 INF] Building project DiffBench.Tests.csproj using dotnet build DiffBench.Tests.csproj -c Debug --property:Platform=AnyCPU (directory C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.Tests.)
+[18:35:12 INF] Number of tests found: 18 for project C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.csproj. Initial test run started.

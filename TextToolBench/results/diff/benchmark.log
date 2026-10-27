@@ -1,0 +1,36 @@
+diff validation: 351 reconstructed, 0 incompatibilities, 26 negatives, 13 patch mutants
+Excluded uutils-official/scattered/1048576: Resource exclusion: predicted LCS table 939054736 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-generic/scattered/1048576: Resource exclusion: predicted LCS table 939054736 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-native/scattered/1048576: Resource exclusion: predicted LCS table 939054736 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-official/moved/1048576: Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-generic/moved/1048576: Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-native/moved/1048576: Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-official/repeated/1048576: Resource exclusion: predicted LCS table 1508390244 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-generic/repeated/1048576: Resource exclusion: predicted LCS table 1508390244 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-native/repeated/1048576: Resource exclusion: predicted LCS table 1508390244 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-official/different/1048576: Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-generic/different/1048576: Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-native/different/1048576: Resource exclusion: predicted LCS table 940894276 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-official/scattered/8388608: Resource exclusion: predicted LCS table 59674672656 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-generic/scattered/8388608: Resource exclusion: predicted LCS table 59674672656 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-native/scattered/8388608: Resource exclusion: predicted LCS table 59674672656 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-official/scattered/33554432: Resource exclusion: predicted LCS table 955084016656 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-generic/scattered/33554432: Resource exclusion: predicted LCS table 955084016656 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+Excluded uutils-native/scattered/33554432: Resource exclusion: predicted LCS table 955084016656 bytes exceeds 256 MiB; not a measured timeout or correctness failure
+diff round 0/7: 372 outputs reconstructed exactly
+diff round 1/7: 372 outputs reconstructed exactly
+diff round 2/7: 372 outputs reconstructed exactly
+diff round 3/7: 372 outputs reconstructed exactly
+diff round 4/7: 372 outputs reconstructed exactly
+diff round 5/7: 372 outputs reconstructed exactly
+diff round 6/7: 372 outputs reconstructed exactly
+diff round 7/7: 372 outputs reconstructed exactly
+System.IO.IOException: The process cannot access the file 'C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\results\diff\runs.jsonl' because it is being used by another process.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Int32 bufferSize)
+   at System.IO.File.ReadLines(String path)
+   at DiffBench.Report() in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 183
+   at DiffBench.Main(String[] args) in C:\Users\jeffd\Documents\Codex\2026-10-26\benchmark-sed-and-grep-and-awk\DiffBench.cs:line 93
