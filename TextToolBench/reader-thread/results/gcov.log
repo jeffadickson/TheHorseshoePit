@@ -1,0 +1,206 @@
+File 'read-ahead.cpp'
+Lines executed:98.97% of 97
+Branches executed:98.31% of 118
+Taken at least once:67.80% of 118
+Calls executed:90.36% of 83
+Creating 'read-ahead.cpp.gcov'
+
+File '/usr/include/c++/13/tuple'
+Lines executed:92.59% of 81
+No branches
+Calls executed:90.62% of 32
+Creating 'tuple.gcov'
+
+File '/usr/include/c++/13/bits/invoke.h'
+Lines executed:100.00% of 5
+No branches
+Calls executed:100.00% of 4
+Creating 'invoke.h.gcov'
+
+File '/usr/include/c++/13/bits/move.h'
+Lines executed:90.32% of 62
+No branches
+Calls executed:100.00% of 13
+Creating 'move.h.gcov'
+
+File '/usr/include/c++/13/bits/std_thread.h'
+Lines executed:78.95% of 38
+Branches executed:83.33% of 12
+Taken at least once:41.67% of 12
+Calls executed:83.33% of 30
+Creating 'std_thread.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_construct.h'
+Lines executed:59.09% of 66
+Branches executed:83.33% of 12
+Taken at least once:50.00% of 12
+Calls executed:52.00% of 25
+Creating 'stl_construct.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_algobase.h'
+Lines executed:82.76% of 29
+Branches executed:83.33% of 12
+Taken at least once:50.00% of 12
+Calls executed:100.00% of 5
+Creating 'stl_algobase.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_vector.h'
+Lines executed:92.65% of 136
+Branches executed:84.62% of 26
+Taken at least once:46.15% of 26
+Calls executed:83.33% of 54
+Creating 'stl_vector.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_uninitialized.h'
+Lines executed:65.62% of 64
+Branches executed:62.50% of 16
+Taken at least once:37.50% of 16
+Calls executed:50.00% of 30
+Creating 'stl_uninitialized.h.gcov'
+
+File '/usr/include/c++/13/bits/alloc_traits.h'
+Lines executed:55.56% of 9
+No branches
+Calls executed:33.33% of 6
+Creating 'alloc_traits.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_iterator.h'
+Lines executed:68.97% of 29
+No branches
+Calls executed:100.00% of 2
+Creating 'stl_iterator.h.gcov'
+
+File '/usr/include/c++/13/bits/new_allocator.h'
+Lines executed:72.00% of 25
+Branches executed:66.67% of 6
+Taken at least once:33.33% of 6
+Calls executed:57.14% of 7
+Creating 'new_allocator.h.gcov'
+
+File '/usr/include/c++/13/bits/allocator.h'
+Lines executed:58.33% of 12
+Branches executed:66.67% of 12
+Taken at least once:33.33% of 12
+Calls executed:57.14% of 14
+Creating 'allocator.h.gcov'
+
+File '/usr/include/c++/13/bits/unique_ptr.h'
+Lines executed:83.54% of 79
+Branches executed:71.43% of 14
+Taken at least once:42.86% of 14
+Calls executed:78.00% of 50
+Creating 'unique_ptr.h.gcov'
+
+File '/usr/include/c++/13/bits/stl_iterator_base_types.h'
+Lines executed:100.00% of 1
+No branches
+No calls
+Creating 'stl_iterator_base_types.h.gcov'
+
+File '/usr/include/c++/13/thread'
+Lines executed:86.21% of 29
+Branches executed:100.00% of 4
+Taken at least once:50.00% of 4
+Calls executed:83.33% of 24
+Creating 'thread.gcov'
+
+File '/usr/include/c++/13/bits/vector.tcc'
+Lines executed:75.00% of 28
+Branches executed:85.71% of 14
+Taken at least once:42.86% of 14
+Calls executed:58.82% of 17
+Creating 'vector.tcc.gcov'
+
+File '/usr/include/c++/13/condition_variable'
+Lines executed:100.00% of 12
+Branches executed:100.00% of 4
+Taken at least once:100.00% of 4
+Calls executed:100.00% of 4
+Creating 'condition_variable.gcov'
+
+File '/usr/include/c++/13/bits/unique_lock.h'
+Lines executed:87.50% of 24
+Branches executed:100.00% of 10
+Taken at least once:50.00% of 10
+Calls executed:62.50% of 8
+Creating 'unique_lock.h.gcov'
+
+File '/usr/include/c++/13/stop_token'
+Lines executed:39.36% of 94
+Branches executed:28.57% of 28
+Taken at least once:21.43% of 28
+Calls executed:47.62% of 42
+Creating 'stop_token.gcov'
+
+File '/usr/include/c++/13/bits/std_mutex.h'
+Lines executed:92.86% of 14
+Branches executed:100.00% of 2
+Taken at least once:50.00% of 2
+Calls executed:83.33% of 6
+Creating 'std_mutex.h.gcov'
+
+File '/usr/include/c++/13/semaphore'
+Lines executed:0.00% of 2
+No branches
+No calls
+Creating 'semaphore.gcov'
+
+File '/usr/include/c++/13/bits/semaphore_base.h'
+Lines executed:0.00% of 5
+Branches executed:0.00% of 4
+Taken at least once:0.00% of 4
+Calls executed:0.00% of 2
+Creating 'semaphore_base.h.gcov'
+
+File '/usr/include/c++/13/bits/atomic_base.h'
+Lines executed:13.33% of 15
+Branches executed:0.00% of 46
+Taken at least once:0.00% of 46
+Calls executed:0.00% of 20
+Creating 'atomic_base.h.gcov'
+
+File '/usr/include/c++/13/bits/atomic_wait.h'
+Lines executed:0.00% of 6
+Branches executed:0.00% of 2
+Taken at least once:0.00% of 2
+Calls executed:0.00% of 2
+Creating 'atomic_wait.h.gcov'
+
+File '/usr/include/c++/13/ext/atomicity.h'
+Lines executed:0.00% of 1
+No branches
+No calls
+Creating 'atomicity.h.gcov'
+
+File '/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h'
+Lines executed:66.67% of 3
+No branches
+Calls executed:0.00% of 1
+Creating 'c++config.h.gcov'
+
+File '/usr/include/c++/13/atomic'
+Lines executed:100.00% of 1
+No branches
+Calls executed:100.00% of 1
+Creating 'atomic.gcov'
+
+File '/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h'
+Lines executed:66.67% of 12
+Branches executed:100.00% of 4
+Taken at least once:50.00% of 4
+Calls executed:80.00% of 5
+Creating 'gthr-default.h.gcov'
+
+File '/usr/include/c++/13/new'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'new.gcov'
+
+File '/usr/include/c++/13/type_traits'
+Lines executed:100.00% of 2
+No branches
+No calls
+Creating 'type_traits.gcov'
+
+Lines executed:76.91% of 983

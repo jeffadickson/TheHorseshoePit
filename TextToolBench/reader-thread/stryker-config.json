@@ -1,0 +1,18 @@
+{
+  "stryker-config": {
+    "project": "Experiment.csproj",
+    "test-projects": [
+      "Experiment.Tests.csproj"
+    ],
+    "mutate": [
+      "Experiment.cs{8841..9950}",
+      "Experiment.cs{14113..14350}"
+    ],
+    "reporters": [
+      "json",
+      "html",
+      "progress"
+    ],
+    "concurrency": 3
+  }
+}

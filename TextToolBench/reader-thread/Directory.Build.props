@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- The executable and test project share a folder, never NuGet assets. -->
+    <BaseIntermediateOutputPath>obj/$(MSBuildProjectName)/</BaseIntermediateOutputPath>
+    <BaseOutputPath>bin/$(MSBuildProjectName)/</BaseOutputPath>
+  </PropertyGroup>
+</Project>

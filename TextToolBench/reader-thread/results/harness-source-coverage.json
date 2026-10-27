@@ -1,0 +1,26 @@
+[
+  {
+    "Report": "harness-unit.cobertura.xml",
+    "Scope": "Unique handwritten Experiment.cs lines; maximum recorded branch coverage per source line",
+    "LinesCovered": 15,
+    "LinesValid": 158,
+    "LinePercent": 9.49367088607595,
+    "BranchesCovered": 20.0,
+    "BranchesValid": 76.0,
+    "BranchPercent": 26.31578947368421,
+    "OverallIncludingGeneratedLine": "0.0097",
+    "OverallIncludingGeneratedBranch": "0.1063"
+  },
+  {
+    "Report": "harness-integration.cobertura.xml",
+    "Scope": "Unique handwritten Experiment.cs lines; maximum recorded branch coverage per source line",
+    "LinesCovered": 118,
+    "LinesValid": 158,
+    "LinePercent": 74.68354430379746,
+    "BranchesCovered": 56.0,
+    "BranchesValid": 74.0,
+    "BranchPercent": 75.67567567567568,
+    "OverallIncludingGeneratedLine": "0.22010000000000002",
+    "OverallIncludingGeneratedBranch": "0.4139"
+  }
+]

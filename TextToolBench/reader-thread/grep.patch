@@ -1,0 +1,100 @@
+diff --git a/src/grep.c b/src/grep.c
+index 74acb0b..ec45509 100644
+--- a/src/grep.c
++++ b/src/grep.c
+@@ -45,6 +45,7 @@
+ #include "propername.h"
+ #include "quote.h"
+ #include "safe-read.h"
++#include "read-ahead.h"
+ #include "search.h"
+ #include "version-etc.h"
+ #include "xalloc.h"
+@@ -730,16 +731,16 @@ file_must_have_nulls (size_t size, int fd, struct stat const *st)
+       off_t cur = size;
+       if (O_BINARY || fd == STDIN_FILENO)
+         {
+-          cur = lseek (fd, 0, SEEK_CUR);
++          cur = read_ahead_seek (fd, 0, SEEK_CUR);
+           if (cur < 0)
+             return false;
+         }
+ 
+       /* Look for a hole after the current location.  */
+-      off_t hole_start = lseek (fd, cur, SEEK_HOLE);
++      off_t hole_start = read_ahead_seek (fd, cur, SEEK_HOLE);
+       if (0 <= hole_start)
+         {
+-          if (lseek (fd, cur, SEEK_SET) < 0)
++          if (read_ahead_seek (fd, cur, SEEK_SET) < 0)
+             suppressible_error (errno);
+           if (hole_start < st->st_size)
+             return true;
+@@ -850,7 +851,7 @@ reset (int fd, struct stat const *st)
+   bufbeg = buflim = ALIGN_TO (buffer + 1, pagesize);
+   bufbeg[-1] = eolbyte;
+   bufdesc = fd;
+-  bufoffset = fd == STDIN_FILENO ? lseek (fd, 0, SEEK_CUR) : 0;
++  bufoffset = fd == STDIN_FILENO ? read_ahead_seek (fd, 0, SEEK_CUR) : 0;
+   seek_failed = bufoffset < 0;
+ 
+   /* Assume SEEK_DATA fails if SEEK_CUR does.  */
+@@ -943,7 +944,7 @@ fillbuf (size_t save, struct stat const *st)
+ 
+   while (true)
+     {
+-      fillsize = safe_read (bufdesc, readbuf, readsize);
++      fillsize = read_ahead_read (bufdesc, readbuf, readsize);
+       if (fillsize == SAFE_READ_ERROR)
+         {
+           fillsize = 0;
+@@ -958,10 +959,10 @@ fillbuf (size_t save, struct stat const *st)
+       if (SEEK_DATA != SEEK_SET && !seek_data_failed)
+         {
+           /* Solaris SEEK_DATA fails with errno == ENXIO in a hole at EOF.  */
+-          off_t data_start = lseek (bufdesc, bufoffset, SEEK_DATA);
++          off_t data_start = read_ahead_seek (bufdesc, bufoffset, SEEK_DATA);
+           if (data_start < 0 && errno == ENXIO
+               && usable_st_size (st) && bufoffset < st->st_size)
+-            data_start = lseek (bufdesc, 0, SEEK_END);
++            data_start = read_ahead_seek (bufdesc, 0, SEEK_END);
+ 
+           if (data_start < 0)
+             seek_data_failed = true;
+@@ -1739,7 +1740,7 @@ drain_input (int fd, struct stat const *st)
+         }
+ #endif
+     }
+-  while ((nbytes = safe_read (fd, buffer, bufalloc)))
++  while ((nbytes = read_ahead_read (fd, buffer, bufalloc)))
+     if (nbytes == SAFE_READ_ERROR)
+       return false;
+   return true;
+@@ -1757,12 +1758,12 @@ finalize_input (int fd, struct stat const *st, bool ineof)
+       && (outleft
+           ? (!ineof
+              && (seek_failed
+-                 || (lseek (fd, 0, SEEK_END) < 0
++                 || (read_ahead_seek (fd, 0, SEEK_END) < 0
+                      /* Linux proc file system has EINVAL (Bug#25180).  */
+                      && errno != EINVAL))
+              && ! drain_input (fd, st))
+           : (bufoffset != after_last_match && !seek_failed
+-             && lseek (fd, after_last_match, SEEK_SET) < 0)))
++             && read_ahead_seek (fd, after_last_match, SEEK_SET) < 0)))
+     suppressible_error (errno);
+ }
+ 
+@@ -1865,7 +1866,12 @@ grepdesc (int desc, bool command_line)
+   if (O_BINARY && !isatty (desc))
+     set_binary_mode (desc, O_BINARY);
+ 
++  /* Join before finalize_input restores grep's documented file position. */
++  if (desc != STDIN_FILENO && S_ISREG (st.st_mode))
++    read_ahead_begin (desc);
+   count = grep (desc, &st, &ineof);
++  if (read_ahead_end () != 0)
++    suppressible_error (errno);
+   if (count_matches)
+     {
+       if (out_file)

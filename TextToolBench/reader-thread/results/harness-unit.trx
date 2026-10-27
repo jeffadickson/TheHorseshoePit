@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a9f40e1d-8fae-45bd-9f50-30364cd8ecc7" name="jeffd@OPTIPLEX7090 2026-10-26 17:39:10" runUser="OPTIPLEX7090\jeffd" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-26T17:39:10.5425338-07:00" queuing="2026-10-26T17:39:10.5425349-07:00" start="2026-10-26T17:39:05.1535304-07:00" finish="2026-10-26T17:39:11.2011010-07:00" />
+  <TestSettings name="default" id="0b9554d4-26b4-40cb-8ed1-45de7446bb51">
+    <Deployment runDeploymentRoot="jeffd_OPTIPLEX7090_2026-10-26_17_39_10" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="073668f9-9c1f-483b-99f7-0a7dc8fd028c" testId="843b7345-4931-e90e-5a68-8f2fcad806ec" testName="QuantilesInterpolateSortedObservations(0,1)" computerName="OPTIPLEX7090" duration="00:00:00.0012270" startTime="2026-10-26T17:39:10.4098633-07:00" endTime="2026-10-26T17:39:10.4110899-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="073668f9-9c1f-483b-99f7-0a7dc8fd028c" />
+    <UnitTestResult executionId="ef69e07d-9df5-4b57-b1b2-77c891c87b35" testId="f716e98c-b3af-0b90-f47c-54b6c23f1dc1" testName="OracleMatchesExplicitExpectedBytes(&quot;\n&quot;,&quot;literal&quot;,&quot;&quot;,1)" computerName="OPTIPLEX7090" duration="00:00:00.0013070" startTime="2026-10-26T17:39:10.4033601-07:00" endTime="2026-10-26T17:39:10.4046670-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef69e07d-9df5-4b57-b1b2-77c891c87b35" />
+    <UnitTestResult executionId="634c2c27-2f22-4ef6-a343-f34eec443f3c" testId="d7607e32-b0ec-2133-93f2-bc5f905aa767" testName="OracleMatchesExplicitExpectedBytes(&quot;Prince&quot;,&quot;literal&quot;,&quot;Prince\n&quot;,0)" computerName="OPTIPLEX7090" duration="00:00:00.0002460" startTime="2026-10-26T17:39:10.4047414-07:00" endTime="2026-10-26T17:39:10.4049877-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="634c2c27-2f22-4ef6-a343-f34eec443f3c" />
+    <UnitTestResult executionId="b2023e54-4bbf-498a-abc3-43ba6bb884db" testId="a08ab6f9-72c5-e405-62cb-b9fe7a1463d2" testName="QuantilesInterpolateSortedObservations(0.75d,4)" computerName="OPTIPLEX7090" duration="00:00:00.0000400" startTime="2026-10-26T17:39:10.4121158-07:00" endTime="2026-10-26T17:39:10.4121559-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b2023e54-4bbf-498a-abc3-43ba6bb884db" />
+    <UnitTestResult executionId="ce1a17de-a357-4a65-8a3f-b7a48d1ae41a" testId="f96ea1ca-6b3d-1130-7db8-25923b57084c" testName="UnknownOracleTaskFails" computerName="OPTIPLEX7090" duration="00:00:00.0080510" startTime="2026-10-26T17:39:10.4125868-07:00" endTime="2026-10-26T17:39:10.4206371-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce1a17de-a357-4a65-8a3f-b7a48d1ae41a" />
+    <UnitTestResult executionId="7e156fbf-a095-429f-aef4-8565753c394d" testId="9da9dd35-96c3-c3ce-9df4-1cd1e8e603d5" testName="OracleMatchesExplicitExpectedBytes(&quot;war\npeace\nWAR\nwar peace&quot;,&quot;regex&quot;,&quot;war\npeace\nwar peace\n&quot;,0)" computerName="OPTIPLEX7090" duration="00:00:00.0000749" startTime="2026-10-26T17:39:10.4055000-07:00" endTime="2026-10-26T17:39:10.4055746-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e156fbf-a095-429f-aef4-8565753c394d" />
+    <UnitTestResult executionId="a381fb39-a5ed-41ae-b7fd-f309d931dfaf" testId="65b90539-2cba-07bf-da3a-1fc8092c792b" testName="QuantilesInterpolateSortedObservations(0.25d,2)" computerName="OPTIPLEX7090" duration="00:00:00.0005280" startTime="2026-10-26T17:39:10.4112261-07:00" endTime="2026-10-26T17:39:10.4117539-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a381fb39-a5ed-41ae-b7fd-f309d931dfaf" />
+    <UnitTestResult executionId="6e4c4fbf-a68d-4652-9fd5-72f26ee15f2e" testId="3190b5bf-afd7-9e68-5c26-b5a2e75cd623" testName="OracleMatchesExplicitExpectedBytes(&quot; \t\n\n x\n\t&quot;,&quot;nonblank&quot;,&quot; x\n&quot;,0)" computerName="OPTIPLEX7090" duration="00:00:00.0003320" startTime="2026-10-26T17:39:10.4058860-07:00" endTime="2026-10-26T17:39:10.4062180-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6e4c4fbf-a68d-4652-9fd5-72f26ee15f2e" />
+    <UnitTestResult executionId="e9cee99c-c488-4881-9d33-c8c3dd9a9949" testId="f588262f-23ea-7043-81fb-1b70d50ea8c0" testName="OracleMatchesExplicitExpectedBytes(&quot;Prince Prince\nnone\nPrince&quot;,&quot;count&quot;,&quot;2\n&quot;,0)" computerName="OPTIPLEX7090" duration="00:00:00.0000749" startTime="2026-10-26T17:39:10.4064847-07:00" endTime="2026-10-26T17:39:10.4065600-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9cee99c-c488-4881-9d33-c8c3dd9a9949" />
+    <UnitTestResult executionId="c79b1f4a-d016-476e-a705-97096852f3bf" testId="de4aeb60-127a-424c-11f8-49ef3eb61fce" testName="QuantilesInterpolateSortedObservations(1,5)" computerName="OPTIPLEX7090" duration="00:00:00.0000310" startTime="2026-10-26T17:39:10.4123798-07:00" endTime="2026-10-26T17:39:10.4124114-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c79b1f4a-d016-476e-a705-97096852f3bf" />
+    <UnitTestResult executionId="5d8792ba-800c-4f9f-adb4-9e22d4d9b1f9" testId="9a5e2829-360e-e011-5029-0aee28ba18c1" testName="OracleMatchesExplicitExpectedBytes(&quot;&quot;,&quot;count&quot;,&quot;0\n&quot;,1)" computerName="OPTIPLEX7090" duration="00:00:00.0000640" startTime="2026-10-26T17:39:10.4066776-07:00" endTime="2026-10-26T17:39:10.4067422-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d8792ba-800c-4f9f-adb4-9e22d4d9b1f9" />
+    <UnitTestResult executionId="f06a2bc3-eced-49d2-8d97-5c778a11da8f" testId="39db3c50-81d2-bd15-85af-99721d2e9e71" testName="OracleMatchesExplicitExpectedBytes(&quot;&quot;,&quot;literal&quot;,&quot;&quot;,1)" computerName="OPTIPLEX7090" duration="00:00:00.0197710" startTime="2026-10-26T17:39:10.3833850-07:00" endTime="2026-10-26T17:39:10.4031565-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f06a2bc3-eced-49d2-8d97-5c778a11da8f" />
+    <UnitTestResult executionId="37a8c60c-00c9-489b-b578-03437574589e" testId="572b1eaa-faf4-c15f-197f-68a02c1adf5d" testName="OracleMatchesExplicitExpectedBytes(&quot;prince\nPrince Prince\n&quot;,&quot;literal&quot;,&quot;Prince Prince\n&quot;,0)" computerName="OPTIPLEX7090" duration="00:00:00.0000690" startTime="2026-10-26T17:39:10.4053546-07:00" endTime="2026-10-26T17:39:10.4054234-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37a8c60c-00c9-489b-b578-03437574589e" />
+    <UnitTestResult executionId="a877d035-653e-4632-9fa1-5759e756a56b" testId="132607f2-9c14-c9c3-7c1b-71e2abd5669f" testName="QuantilesInterpolateSortedObservations(0.5d,3)" computerName="OPTIPLEX7090" duration="00:00:00.0000520" startTime="2026-10-26T17:39:10.4118519-07:00" endTime="2026-10-26T17:39:10.4119046-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a877d035-653e-4632-9fa1-5759e756a56b" />
+    <UnitTestResult executionId="a136f3cb-025e-4775-8aa5-fc6bbd95d554" testId="f08dfb8f-81a9-8df3-a36a-2f38bd74ca8e" testName="OracleMatchesExplicitExpectedBytes(&quot;missing\n&quot;,&quot;absent&quot;,&quot;1\n&quot;,0)" computerName="OPTIPLEX7090" duration="00:00:00.0000520" startTime="2026-10-26T17:39:10.4071973-07:00" endTime="2026-10-26T17:39:10.4072487-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a136f3cb-025e-4775-8aa5-fc6bbd95d554" />
+    <UnitTestResult executionId="e1659934-699e-4f81-8909-25957d53a7c2" testId="5209d6b6-56f9-9140-dff5-49987a7402e4" testName="OracleMatchesExplicitExpectedBytes(&quot;none\n&quot;,&quot;absent&quot;,&quot;0\n&quot;,1)" computerName="OPTIPLEX7090" duration="00:00:00.0001470" startTime="2026-10-26T17:39:10.4070338-07:00" endTime="2026-10-26T17:39:10.4071807-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e1659934-699e-4f81-8909-25957d53a7c2" />
+    <UnitTestResult executionId="50f7dd1e-be34-471a-9f4b-43c4f2e851e3" testId="360b1a9f-78ba-b21f-8292-ce841b9e613d" testName="OracleMatchesExplicitExpectedBytes(&quot;Prince\n&quot;,&quot;literal&quot;,&quot;Prince\n&quot;,0)" computerName="OPTIPLEX7090" duration="00:00:00.0001030" startTime="2026-10-26T17:39:10.4050758-07:00" endTime="2026-10-26T17:39:10.4051794-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="50f7dd1e-be34-471a-9f4b-43c4f2e851e3" />
+    <UnitTestResult executionId="c4e5a255-26f9-4608-aea6-ecf5d49840fd" testId="47e96505-c6f8-f0df-0c23-37029597cb3f" testName="MedianEvenCountAndSingleton" computerName="OPTIPLEX7090" duration="00:00:00.3575650" startTime="2026-10-26T17:39:10.0225084-07:00" endTime="2026-10-26T17:39:10.3799300-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4e5a255-26f9-4608-aea6-ecf5d49840fd" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;Prince&quot;,&quot;literal&quot;,&quot;Prince\n&quot;,0)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="d7607e32-b0ec-2133-93f2-bc5f905aa767">
+      <Execution id="634c2c27-2f22-4ef6-a343-f34eec443f3c" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;Prince&quot;,&quot;literal&quot;,&quot;Prince\n&quot;,0)" />
+    </UnitTest>
+    <UnitTest name="MedianEvenCountAndSingleton" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="47e96505-c6f8-f0df-0c23-37029597cb3f">
+      <Execution id="c4e5a255-26f9-4608-aea6-ecf5d49840fd" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="MedianEvenCountAndSingleton" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;missing\n&quot;,&quot;absent&quot;,&quot;1\n&quot;,0)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="f08dfb8f-81a9-8df3-a36a-2f38bd74ca8e">
+      <Execution id="a136f3cb-025e-4775-8aa5-fc6bbd95d554" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;missing\n&quot;,&quot;absent&quot;,&quot;1\n&quot;,0)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;prince\nPrince Prince\n&quot;,&quot;literal&quot;,&quot;Prince Prince\n&quot;,0)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="572b1eaa-faf4-c15f-197f-68a02c1adf5d">
+      <Execution id="37a8c60c-00c9-489b-b578-03437574589e" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;prince\nPrince Prince\n&quot;,&quot;literal&quot;,&quot;Prince Prince\n&quot;,0)" />
+    </UnitTest>
+    <UnitTest name="UnknownOracleTaskFails" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="f96ea1ca-6b3d-1130-7db8-25923b57084c">
+      <Execution id="ce1a17de-a357-4a65-8a3f-b7a48d1ae41a" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="UnknownOracleTaskFails" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;&quot;,&quot;literal&quot;,&quot;&quot;,1)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="39db3c50-81d2-bd15-85af-99721d2e9e71">
+      <Execution id="f06a2bc3-eced-49d2-8d97-5c778a11da8f" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;&quot;,&quot;literal&quot;,&quot;&quot;,1)" />
+    </UnitTest>
+    <UnitTest name="QuantilesInterpolateSortedObservations(1,5)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="de4aeb60-127a-424c-11f8-49ef3eb61fce">
+      <Execution id="c79b1f4a-d016-476e-a705-97096852f3bf" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="QuantilesInterpolateSortedObservations(1,5)" />
+    </UnitTest>
+    <UnitTest name="QuantilesInterpolateSortedObservations(0.75d,4)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="a08ab6f9-72c5-e405-62cb-b9fe7a1463d2">
+      <Execution id="b2023e54-4bbf-498a-abc3-43ba6bb884db" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="QuantilesInterpolateSortedObservations(0.75d,4)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot; \t\n\n x\n\t&quot;,&quot;nonblank&quot;,&quot; x\n&quot;,0)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="3190b5bf-afd7-9e68-5c26-b5a2e75cd623">
+      <Execution id="6e4c4fbf-a68d-4652-9fd5-72f26ee15f2e" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot; \t\n\n x\n\t&quot;,&quot;nonblank&quot;,&quot; x\n&quot;,0)" />
+    </UnitTest>
+    <UnitTest name="QuantilesInterpolateSortedObservations(0.25d,2)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="65b90539-2cba-07bf-da3a-1fc8092c792b">
+      <Execution id="a381fb39-a5ed-41ae-b7fd-f309d931dfaf" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="QuantilesInterpolateSortedObservations(0.25d,2)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;Prince Prince\nnone\nPrince&quot;,&quot;count&quot;,&quot;2\n&quot;,0)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="f588262f-23ea-7043-81fb-1b70d50ea8c0">
+      <Execution id="e9cee99c-c488-4881-9d33-c8c3dd9a9949" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;Prince Prince\nnone\nPrince&quot;,&quot;count&quot;,&quot;2\n&quot;,0)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;Prince\n&quot;,&quot;literal&quot;,&quot;Prince\n&quot;,0)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="360b1a9f-78ba-b21f-8292-ce841b9e613d">
+      <Execution id="50f7dd1e-be34-471a-9f4b-43c4f2e851e3" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;Prince\n&quot;,&quot;literal&quot;,&quot;Prince\n&quot;,0)" />
+    </UnitTest>
+    <UnitTest name="QuantilesInterpolateSortedObservations(0.5d,3)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="132607f2-9c14-c9c3-7c1b-71e2abd5669f">
+      <Execution id="a877d035-653e-4632-9fa1-5759e756a56b" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="QuantilesInterpolateSortedObservations(0.5d,3)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;war\npeace\nWAR\nwar peace&quot;,&quot;regex&quot;,&quot;war\npeace\nwar peace\n&quot;,0)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="9da9dd35-96c3-c3ce-9df4-1cd1e8e603d5">
+      <Execution id="7e156fbf-a095-429f-aef4-8565753c394d" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;war\npeace\nWAR\nwar peace&quot;,&quot;regex&quot;,&quot;war\npeace\nwar peace\n&quot;,0)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;none\n&quot;,&quot;absent&quot;,&quot;0\n&quot;,1)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="5209d6b6-56f9-9140-dff5-49987a7402e4">
+      <Execution id="e1659934-699e-4f81-8909-25957d53a7c2" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;none\n&quot;,&quot;absent&quot;,&quot;0\n&quot;,1)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;\n&quot;,&quot;literal&quot;,&quot;&quot;,1)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="f716e98c-b3af-0b90-f47c-54b6c23f1dc1">
+      <Execution id="ef69e07d-9df5-4b57-b1b2-77c891c87b35" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;\n&quot;,&quot;literal&quot;,&quot;&quot;,1)" />
+    </UnitTest>
+    <UnitTest name="OracleMatchesExplicitExpectedBytes(&quot;&quot;,&quot;count&quot;,&quot;0\n&quot;,1)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="9a5e2829-360e-e011-5029-0aee28ba18c1">
+      <Execution id="5d8792ba-800c-4f9f-adb4-9e22d4d9b1f9" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="OracleMatchesExplicitExpectedBytes(&quot;&quot;,&quot;count&quot;,&quot;0\n&quot;,1)" />
+    </UnitTest>
+    <UnitTest name="QuantilesInterpolateSortedObservations(0,1)" storage="c:\users\jeffd\documents\codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\experiment.tests\release\net10.0\experiment.tests.dll" id="843b7345-4931-e90e-5a68-8f2fcad806ec">
+      <Execution id="073668f9-9c1f-483b-99f7-0a7dc8fd028c" />
+      <TestMethod codeBase="C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll" adapterTypeName="executor://nunit3testexecutor/" className="ExperimentTests" name="QuantilesInterpolateSortedObservations(0,1)" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="843b7345-4931-e90e-5a68-8f2fcad806ec" executionId="073668f9-9c1f-483b-99f7-0a7dc8fd028c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f716e98c-b3af-0b90-f47c-54b6c23f1dc1" executionId="ef69e07d-9df5-4b57-b1b2-77c891c87b35" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7607e32-b0ec-2133-93f2-bc5f905aa767" executionId="634c2c27-2f22-4ef6-a343-f34eec443f3c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a08ab6f9-72c5-e405-62cb-b9fe7a1463d2" executionId="b2023e54-4bbf-498a-abc3-43ba6bb884db" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f96ea1ca-6b3d-1130-7db8-25923b57084c" executionId="ce1a17de-a357-4a65-8a3f-b7a48d1ae41a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9da9dd35-96c3-c3ce-9df4-1cd1e8e603d5" executionId="7e156fbf-a095-429f-aef4-8565753c394d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65b90539-2cba-07bf-da3a-1fc8092c792b" executionId="a381fb39-a5ed-41ae-b7fd-f309d931dfaf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3190b5bf-afd7-9e68-5c26-b5a2e75cd623" executionId="6e4c4fbf-a68d-4652-9fd5-72f26ee15f2e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f588262f-23ea-7043-81fb-1b70d50ea8c0" executionId="e9cee99c-c488-4881-9d33-c8c3dd9a9949" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de4aeb60-127a-424c-11f8-49ef3eb61fce" executionId="c79b1f4a-d016-476e-a705-97096852f3bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a5e2829-360e-e011-5029-0aee28ba18c1" executionId="5d8792ba-800c-4f9f-adb4-9e22d4d9b1f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39db3c50-81d2-bd15-85af-99721d2e9e71" executionId="f06a2bc3-eced-49d2-8d97-5c778a11da8f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="572b1eaa-faf4-c15f-197f-68a02c1adf5d" executionId="37a8c60c-00c9-489b-b578-03437574589e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="132607f2-9c14-c9c3-7c1b-71e2abd5669f" executionId="a877d035-653e-4632-9fa1-5759e756a56b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f08dfb8f-81a9-8df3-a36a-2f38bd74ca8e" executionId="a136f3cb-025e-4775-8aa5-fc6bbd95d554" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5209d6b6-56f9-9140-dff5-49987a7402e4" executionId="e1659934-699e-4f81-8909-25957d53a7c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="360b1a9f-78ba-b21f-8292-ce841b9e613d" executionId="50f7dd1e-be34-471a-9f4b-43c4f2e851e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="47e96505-c6f8-f0df-0c23-37029597cb3f" executionId="c4e5a255-26f9-4608-aea6-ecf5d49840fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="18" executed="18" passed="18" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>NUnit Adapter 5.0.0.0: Test execution started&#xD;
+Running all tests in C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll&#xD;
+   NUnit3TestExecutor discovered 18 of 18 NUnit test cases using Current Discovery mode, Non-Explicit run&#xD;
+NUnit Adapter 5.0.0.0: Test execution complete&#xD;
+</StdOut>
+    </Output>
+    <CollectorDataEntries>
+      <Collector agentName="OPTIPLEX7090" uri="datacollector://microsoft/CoverletCodeCoverage/1.0" collectorDisplayName="XPlat code coverage">
+        <UriAttachments>
+          <UriAttachment>
+            <A href="OPTIPLEX7090\coverage.cobertura.xml"></A>
+          </UriAttachment>
+        </UriAttachments>
+      </Collector>
+    </CollectorDataEntries>
+  </ResultSummary>
+</TestRun>

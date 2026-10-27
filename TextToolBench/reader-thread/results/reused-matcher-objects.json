@@ -1,0 +1,26 @@
+[
+  {
+    "File": "tools\\grep-build\\native-o3\\lib\\libgreputils.a",
+    "Sha256": "64F2F2B04B7F03EB75B739D82FB8788EBD5C0AD6F1EAAE9E35D6D287AA0BC248"
+  },
+  {
+    "File": "tools\\grep-build\\native-o3\\src\\dfasearch.o",
+    "Sha256": "8F68BB54D7C40165FD1E41A57F473FF02C3BFB63602B85102BA561F3B6CCFDCA"
+  },
+  {
+    "File": "tools\\grep-build\\native-o3\\src\\kwsearch.o",
+    "Sha256": "EBF234E33BF6527E4E7173EBBC0CBF1BCC1E432AF2920C5F61EA897F475661FD"
+  },
+  {
+    "File": "tools\\grep-build\\native-o3\\src\\kwset.o",
+    "Sha256": "23AFB2DD79705881895BFF648CFDFB85710FC7F3EA26803562BB7EC718F68638"
+  },
+  {
+    "File": "tools\\grep-build\\native-o3\\src\\pcresearch.o",
+    "Sha256": "AA9F8EDE09143D94C338A87766E9D179A9AA20F14A6EA87A1FA2CBAE6EBE4F1C"
+  },
+  {
+    "File": "tools\\grep-build\\native-o3\\src\\searchutils.o",
+    "Sha256": "F8B3F8AB153509A004C1ED83044F96F1F039F6CE137EAF2E57EAEDDEA2A64169"
+  }
+]

@@ -1,0 +1,42 @@
+[DOCUMENT]
+TITLE: GNU grep reader-thread experiment requirements
+
+[REQUIREMENT]
+UID: READAHEAD-001
+TITLE: Preserve the matcher and source provenance
+STATEMENT: >>>
+Integrate a C++20 bounded reader pipeline into GNU grep 3.0 without replacing its matcher. Compare with the original source build used in the existing benchmark. Preserve the official archive identity, compiler flags, patch and executable hashes.
+<<<
+COMMENT: grep.patch; build.sh; results/environment.json; results/compiler.txt; README.rst. User-requested experiment; no upstream or general compatibility claim.
+
+[REQUIREMENT]
+UID: READAHEAD-002
+TITLE: Preserve input bytes and observable search output
+STATEMENT: >>>
+The adapter shall deliver input bytes in order without duplication or loss. Check empty files, unterminated and long lines, binary bytes, multiple files, stdin fallback, line counts and selected-line output. Verify every timed output length, SHA-256 and exit status against an independent ASCII oracle.
+<<<
+COMMENT: read-ahead.cpp Reader::read; native-check.cpp property; Experiment.cs Oracle and Validate; results/validation.json; results/runs.jsonl. Finite checks establish tested behavior only.
+
+[REQUIREMENT]
+UID: READAHEAD-003
+TITLE: Coordinate cancellation, errors and seeks
+STATEMENT: >>>
+Join the reader before grep finalizes or closes the descriptor. Restore the consumed-byte offset rather than the prefetched offset. Coordinate seeks by discarding pending buffers. Propagate EOF and read errors; retain synchronous behavior for stdin and unsupported descriptors. Test early exits and malformed inputs with timeouts.
+<<<
+COMMENT: read-ahead.cpp read_ahead_end and read_ahead_seek; grep.patch; native-check.cpp property and negative_cases; Experiment.cs Validate; results/native-check.log. Allocation/thread creation failure, interrupted system calls and exceptional library failures remain incompletely exercised.
+
+[REQUIREMENT]
+UID: READAHEAD-004
+TITLE: Bound buffering and retain the original path
+STATEMENT: >>>
+Use at most the configured slot count, with 3 slots of 256 KiB by default. Accept chunk sizes from 4096 through 8388608 bytes and slot counts from 1 through 16. Enable explicitly using GREP_READ_AHEAD=1. Invalid settings or unavailable resources shall fall back to the original reader.
+<<<
+COMMENT: read-ahead.cpp setting and read_ahead_begin; native-check.cpp negative_cases; Experiment.cs Validate. Bounds are inferred implementation choices for this experiment, not independent user acceptance criteria.
+
+[REQUIREMENT]
+UID: READAHEAD-005
+TITLE: Reproducible measurement and verification evidence
+STATEMENT: >>>
+Reuse the original 32 MiB corpus and retain its exact size and hash. Run original, adapter-disabled and three queue sizes sequentially in seeded shuffled order, with two warmups and fifteen measured runs per cell. Record raw wall and CPU time, medians and quartiles. Collect source coverage, sanitizer, libFuzzer, negative and mutation evidence, and disclose scope limitations and background workload interference.
+<<<
+COMMENT: Experiment.cs Main; native-verify.sh; results/summary.csv; results/environment.json; results/gcov.log; results/fuzz.log; results/mutations.csv; results/stryker. Warm-cache Windows/MSYS2 measurement only; no cold-storage or CPU-cache-residency conclusion.

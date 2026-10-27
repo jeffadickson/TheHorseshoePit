@@ -1,0 +1,30 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Experiment -> C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment\Release\net10.0\Experiment.dll
+  Experiment.Tests -> C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll
+Test run for C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment.Tests\Release\net10.0\Experiment.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+WARNING: Overwriting results file: C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\results\harness-tests\harness.trx
+Results File: C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\results\harness-tests\harness.trx
+
+Passed!  - Failed:     0, Passed:    18, Skipped:     0, Total:    18, Duration: 398 ms - Experiment.Tests.dll (net10.0)
+
+Attachments:
+  C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\results\harness-tests\e2325dab-e995-429f-88e0-75fad264e498\coverage.cobertura.xml
+PASS 150 independent oracle checks; 193 differential checks; 30 negatives
+
+Calculating coverage result...
+Coverage result has no modules. Instrumented modules: 0; modules with hits: 0. The generated report will be empty. This can happen if no modules were instrumented, the target process exited abruptly, or no instrumented code was exercised. Run with higher verbosity for details.
+  Generating report 'C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\results\harness-integration.cobertura.xml'
++--------+------+--------+--------+
+| Module | Line | Branch | Method |
++--------+------+--------+--------+
+
++---------+------+--------+--------+
+|         | Line | Branch | Method |
++---------+------+--------+--------+
+| Total   | 0%   | 0%     | 0%     |
++---------+------+--------+--------+
+| Average | 0%   | 0%     | 0%     |
++---------+------+--------+--------+
+

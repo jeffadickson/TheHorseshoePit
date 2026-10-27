@@ -227,3 +227,7 @@ dotnet run --project Analyze.csproj -c Release
 
 GNU executables are expected in C:\Program Files\Git\usr\bin. Set BENCH_PWSH to override PowerShell and BENCH_RG to override ripgrep. By default the ripgrep runner resolves the installed winget package, not Codex's bundled rg.exe. Ripgrep-only validation: dotnet run --project RipgrepBench.csproj -c Release -- --test. Restore .NET 10 SDK and the recorded native tool versions to reproduce the environment. The retained source hash allows detecting future Gutenberg changes. Raw JSONL includes warmups with Round=-1; exclude them from statistics.
 
+
+## GNU grep reader-thread experiment
+
+The [C++20 reader-thread experiment](reader-thread/README.rst) retains GNU grep's matcher and compares the original executable, an adapter-disabled control, and three bounded queue sizes on the same 32 MiB corpus. All 425 timed outputs passed validation. Default-queue medians improved modestly against original grep, but broad variation and mixed results against the disabled control do not justify enabling it by default. Source, StrictDoc requirements, reproduction scripts, raw timings, coverage and fuzz/mutation evidence are in `reader-thread/`.

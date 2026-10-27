@@ -1,0 +1,21 @@
+Included module filter '[Experiment]*'
+Instrumented module: 'C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\bin\Experiment\Release\net10.0\Experiment.dll'
+PASS 150 independent oracle checks; 193 differential checks; 30 negatives
+
+Calculating coverage result...
+Hit file 'C:\Users\jeffd\AppData\Local\Temp\Experiment_0c275199-4797-45ff-9b0f-2f3e84741201' deleted
+  Generating report 'C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\results\harness-integration.cobertura.xml'
++------------+--------+--------+--------+
+| Module     | Line   | Branch | Method |
++------------+--------+--------+--------+
+| Experiment | 22.01% | 41.39% | 40.78% |
++------------+--------+--------+--------+
+
++---------+--------+--------+--------+
+|         | Line   | Branch | Method |
++---------+--------+--------+--------+
+| Total   | 22.01% | 41.39% | 40.78% |
++---------+--------+--------+--------+
+| Average | 22.01% | 41.39% | 40.78% |
++---------+--------+--------+--------+
+

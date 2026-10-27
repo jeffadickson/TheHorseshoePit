@@ -1,0 +1,15 @@
+/source/
+/build/
+/bin/
+/obj/
+/*.exe
+/*.o
+/*.tar.xz
+/results/native-harness/
+/results/covered-run/
+/results/requirements/
+/results/stryker/**/bin/
+/results/stryker/**/obj/
+/results/stryker/**/logs/
+/results/stryker/**/stryker.log
+/docs/_build/

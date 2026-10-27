@@ -1,0 +1,47 @@
+
+   _____ _              _               _   _ ______ _______  
+  / ____| |            | |             | \ | |  ____|__   __| 
+ | (___ | |_ _ __ _   _| | _____ _ __  |  \| | |__     | |    
+  \___ \| __| '__| | | | |/ / _ \ '__| | . ` |  __|    | |    
+  ____) | |_| |  | |_| |   <  __/ |    | |\  | |____   | |    
+ |_____/ \__|_|   \__, |_|\_\___|_| (_)|_| \_|______|  |_|    
+                   __/ |                                      
+                  |___/                                       
+
+
+Version: 5.0.0
+
+[17:32:06 INF] Stryker will use a max of 3 parallel testsessions.
+[17:32:06 INF] Analysis starting.
+[17:32:06 INF] Analyzing 1 test project(s).
+[17:32:22 INF] Picking net10.0 for project C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\Experiment.csproj. 
+[17:32:23 INF] Found project C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\Experiment.csproj to mutate.
+[17:32:23 INF] Analysis complete.
+[17:32:23 INF] Building test project C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\Experiment.Tests.csproj (1/1)
+[17:32:25 INF] Building project Experiment.Tests.csproj using dotnet build Experiment.Tests.csproj -c Debug --property:Platform=AnyCPU (directory C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread.)
+[17:33:05 INF] Number of tests found: 18 for project C:\Users\jeffd\Documents\Codex\2026-10-26\we-were-talking-about-speeding-up\reader-thread\Experiment.csproj. Initial test run started.
+[17:33:23 INF] 286 mutants created
+[17:33:23 INF] Capture mutant coverage using 'CoverageBasedTest' mode.
+Hint: by passing "--open-report or -o" the report will open automatically and 
+update the report in real-time.
+[17:33:26 INF] 7     mutants got status CompileError. Reason: Mutant caused compile errors
+[17:33:26 INF] 2     mutants got status Ignored.      Reason: Removed by block already covered filter
+[17:33:26 INF] 243   mutants got status Ignored.      Reason: Removed by mutate filter
+[17:33:26 INF] 252   total mutants are skipped for the above mentioned reasons
+[17:33:26 INF] 34    total mutants will be tested
+
+Killed:   31
+Survived:  3
+Timeout:   0
+Errors:   0
+
+Your json report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/we-were-talking-about-speeding-
+up/reader-thread/results/stryker/reports/mutation-report.json
+
+Your html report has been generated at:
+file://C:/Users/jeffd/Documents/Codex/2026-10-26/we-were-talking-about-speeding-
+up/reader-thread/results/stryker/reports/mutation-report.html
+You can open it in your browser of choice.
+[17:33:49 INF] Time Elapsed 00:01:42.9549568
+[17:33:49 INF] The final mutation score is 91.18 %
