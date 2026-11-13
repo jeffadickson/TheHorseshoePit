@@ -35,6 +35,7 @@ try {
     Assert-Contains $html 'class="sort-button"' 'visible sortable table controls'
     Assert-Contains $html 'Type to filter...' 'filterable table control'
     Assert-Contains $html 'aria-sort="none"' 'unsorted indicator'
+    Assert-Contains $html 'title="Ben Alpha: 7 goals"' 'player bar hover detail'
     if ($html.Contains('team-logos.svg')) { throw 'Report should not reference team logos' }
 
     Write-Output 'HockeyBalance tests passed.'
