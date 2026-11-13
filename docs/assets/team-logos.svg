@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <symbol id="flyers-1" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#e85d04"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#fff">F1</text></symbol>
+  <symbol id="sdia" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#345995"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff">SDIA</text></symbol>
+  <symbol id="flyers-2" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#f48c06"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#fff">F2</text></symbol>
+  <symbol id="avalanche-1" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#277da1"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#fff">A1</text></symbol>
+  <symbol id="stars" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#277da1"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#fff">★</text></symbol>
+  <symbol id="bears" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#6a994e"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#fff">B</text></symbol>
+  <symbol id="10b-jr-kings" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#6d597a"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#fff">K</text></symbol>
+  <symbol id="saints" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#8338ec"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#fff">S</text></symbol>
+  <symbol id="ice-dogs" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#118ab2"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" fill="#fff">ID</text></symbol>
+  <symbol id="maple-leafs" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#1d3557"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#fff">ML</text></symbol>
+  <symbol id="jr-gulls" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#457b9d"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#fff">JG</text></symbol>
+  <symbol id="jr-firebirds" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#d00000"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#fff">JF</text></symbol>
+  <symbol id="red-wings-bb-to-b" viewBox="0 0 96 96"><rect width="96" height="96" rx="20" fill="#c1121f"/><text x="48" y="59" text-anchor="middle" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#fff">RW</text></symbol>
+</svg>

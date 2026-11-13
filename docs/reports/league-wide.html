@@ -1,9 +1,9 @@
 ﻿<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HockeyBalance report</title><style>
-body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0;cursor:pointer}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}.toolbar{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}.filter{border:1px solid #b9c5d8;border-radius:6px;padding:.5rem;min-width:16rem}.button{border:0;border-radius:6px;padding:.5rem .75rem;background:#1d5fa7;color:#fff;cursor:pointer}.assist-column{display:none}.assist-visible .assist-column{display:table-cell}.bar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}.bar-card{border:1px solid #d9e1ef;border-radius:9px;padding:.8rem;background:#fbfdff}.bar-label{display:flex;justify-content:space-between;gap:.5rem;font-weight:600}.bar-sub{color:#526078;font-size:.85rem;margin:.2rem 0 .5rem}.bar-track{height:1rem;border-radius:999px;background:#e5edf7;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,#246bb2,#4da3df);border-radius:999px}@media(max-width:900px){.bar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){body{padding:1rem}.bar-grid{grid-template-columns:1fr}}
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0;cursor:pointer}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}.toolbar{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}.filter{border:1px solid #b9c5d8;border-radius:6px;padding:.5rem;min-width:16rem}.button{border:0;border-radius:6px;padding:.5rem .75rem;background:#1d5fa7;color:#fff;cursor:pointer}.assist-column{display:none}.assist-visible .assist-column{display:table-cell}.team-logo{width:1.65rem;height:1.65rem;vertical-align:middle;margin-right:.35rem}.bar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}.bar-card{border:1px solid #d9e1ef;border-radius:9px;padding:.8rem;background:#fbfdff}.bar-label{display:flex;justify-content:space-between;gap:.5rem;font-weight:600}.bar-sub{color:#526078;font-size:.85rem;margin:.2rem 0 .5rem}.bar-track{height:1rem;border-radius:999px;background:#e5edf7;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,#246bb2,#4da3df);border-radius:999px}@media(max-width:900px){.bar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){body{padding:1rem}.bar-grid{grid-template-columns:1fr}}
 </style></head><body><main>
-<h1>HockeyBalance</h1><p class="meta">Schedule: <strong>10U B Regular Season</strong> · Generated: 2026-11-13 09:13 -08:00</p>
+<h1>HockeyBalance</h1><p class="meta">Schedule: <strong>10U B Regular Season</strong> · Generated: 2026-11-13 09:20 -08:00</p>
 <section class="card"><h2>Goals per scoring player</h2><p class="note">Sorted by player goals divided by the number of players who scored at least one goal.</p><div class="bar-grid">
 <div class="bar-card"><div class="bar-label"><span>Saints</span><span>5.9</span></div><div class="bar-sub">47 player goals ÷ 8 scorers</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div></div>
 <div class="bar-card"><div class="bar-label"><span>Ice Dogs</span><span>5.4</span></div><div class="bar-sub">49 player goals ÷ 9 scorers</div><div class="bar-track"><div class="bar-fill" style="width:92.7%"></div></div></div>
@@ -24,343 +24,533 @@ body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;
 <div class="toolbar"><button class="button" id="toggle-assists" type="button">Include assists</button><span class="note">Assists and points are supplemental; the percentage remains goal share.</span></div>
 <div style="overflow:auto"><table id="goals-table"><thead><tr>
 <th>#</th><th>Player</th><th>Team</th><th>Team GF</th><th>G</th><th class="assist-column">A</th><th class="assist-column">Pts</th><th class="assist-column">G+A</th><th>% of team goals</th></tr></thead><tbody>
-<tr><td>1</td><td>Remy Silegy</td><td>Ice Dogs</td><td>49</td><td>20</td><td class="assist-column">4</td><td class="assist-column">24</td><td class="assist-column">24</td><td>40.8%</td></tr>
-<tr><td>2</td><td>Odin Hawes</td><td>Saints</td><td>47</td><td>16</td><td class="assist-column">4</td><td class="assist-column">20</td><td class="assist-column">20</td><td>34.0%</td></tr>
-<tr><td>3</td><td>Abram Ramirez</td><td>Maple Leafs</td><td>30</td><td>14</td><td class="assist-column">4</td><td class="assist-column">18</td><td class="assist-column">18</td><td>46.7%</td></tr>
-<tr><td>4</td><td>Sullivan Creeley</td><td>Saints</td><td>47</td><td>13</td><td class="assist-column">4</td><td class="assist-column">17</td><td class="assist-column">17</td><td>27.7%</td></tr>
-<tr><td>4</td><td>Kaimana Harris</td><td>10B Jr. Kings</td><td>35</td><td>13</td><td class="assist-column">4</td><td class="assist-column">17</td><td class="assist-column">17</td><td>37.1%</td></tr>
-<tr><td>6</td><td>Koa Laszlo Nole Kerekes</td><td>Stars</td><td>36</td><td>12</td><td class="assist-column">2</td><td class="assist-column">14</td><td class="assist-column">14</td><td>33.3%</td></tr>
-<tr><td>7</td><td>Cole Taylor</td><td>Jr. Gulls</td><td>18</td><td>10</td><td class="assist-column">1</td><td class="assist-column">11</td><td class="assist-column">11</td><td>55.6%</td></tr>
-<tr><td>8</td><td>Liam Asmuth</td><td>Stars</td><td>36</td><td>9</td><td class="assist-column">1</td><td class="assist-column">10</td><td class="assist-column">10</td><td>25.0%</td></tr>
-<tr><td>8</td><td>Crosby Trudeau Viriato</td><td>10B Jr. Kings</td><td>35</td><td>9</td><td class="assist-column">0</td><td class="assist-column">9</td><td class="assist-column">9</td><td>25.7%</td></tr>
-<tr><td>10</td><td>Rex Holliday</td><td>Avalanche (1)</td><td>23</td><td>8</td><td class="assist-column">1</td><td class="assist-column">9</td><td class="assist-column">9</td><td>34.8%</td></tr>
-<tr><td>10</td><td>Samuel Kitsembel</td><td>Saints</td><td>47</td><td>8</td><td class="assist-column">5</td><td class="assist-column">13</td><td class="assist-column">13</td><td>17.0%</td></tr>
-<tr><td>10</td><td>Ilan Touazi</td><td>Ice Dogs</td><td>49</td><td>8</td><td class="assist-column">3</td><td class="assist-column">11</td><td class="assist-column">11</td><td>16.3%</td></tr>
-<tr><td>13</td><td>Brady Cignoli</td><td>Ice Dogs</td><td>49</td><td>7</td><td class="assist-column">3</td><td class="assist-column">10</td><td class="assist-column">10</td><td>14.3%</td></tr>
-<tr><td>13</td><td>Danila Grebinchenko</td><td>Flyers (2)</td><td>27</td><td>7</td><td class="assist-column">3</td><td class="assist-column">10</td><td class="assist-column">10</td><td>25.9%</td></tr>
-<tr><td>13</td><td>Declan Griffis</td><td>Flyers (2)</td><td>27</td><td>7</td><td class="assist-column">3</td><td class="assist-column">10</td><td class="assist-column">10</td><td>25.9%</td></tr>
-<tr><td>16</td><td>Everett Phariss</td><td>Ice Dogs</td><td>49</td><td>6</td><td class="assist-column">3</td><td class="assist-column">9</td><td class="assist-column">9</td><td>12.2%</td></tr>
-<tr><td>17</td><td>Quinn Dickson</td><td>Flyers (2)</td><td>27</td><td>5</td><td class="assist-column">4</td><td class="assist-column">9</td><td class="assist-column">9</td><td>18.5%</td></tr>
-<tr><td>17</td><td>Conor Gomez</td><td>Flyers (1)</td><td>34</td><td>5</td><td class="assist-column">2</td><td class="assist-column">7</td><td class="assist-column">7</td><td>14.7%</td></tr>
-<tr><td>17</td><td>Stryker Lawry</td><td>Flyers (1)</td><td>34</td><td>5</td><td class="assist-column">0</td><td class="assist-column">5</td><td class="assist-column">5</td><td>14.7%</td></tr>
-<tr><td>17</td><td>Callum Nuttall</td><td>Stars</td><td>36</td><td>5</td><td class="assist-column">4</td><td class="assist-column">9</td><td class="assist-column">9</td><td>13.9%</td></tr>
-<tr><td>17</td><td>Carson Quigley</td><td>Jr Firebirds</td><td>7</td><td>5</td><td class="assist-column">1</td><td class="assist-column">6</td><td class="assist-column">6</td><td>71.4%</td></tr>
-<tr><td>17</td><td>Landon Scamehorn</td><td>Flyers (1)</td><td>34</td><td>5</td><td class="assist-column">3</td><td class="assist-column">8</td><td class="assist-column">8</td><td>14.7%</td></tr>
-<tr><td>23</td><td>Merrick Bishop</td><td>Bears</td><td>13</td><td>4</td><td class="assist-column">2</td><td class="assist-column">6</td><td class="assist-column">6</td><td>30.8%</td></tr>
-<tr><td>23</td><td>Theodore Dale</td><td>SDIA</td><td>15</td><td>4</td><td class="assist-column">1</td><td class="assist-column">5</td><td class="assist-column">5</td><td>26.7%</td></tr>
-<tr><td>23</td><td>Martin Oliden</td><td>Maple Leafs</td><td>30</td><td>4</td><td class="assist-column">2</td><td class="assist-column">6</td><td class="assist-column">6</td><td>13.3%</td></tr>
-<tr><td>23</td><td>Zao Perez</td><td>Avalanche (1)</td><td>23</td><td>4</td><td class="assist-column">1</td><td class="assist-column">5</td><td class="assist-column">5</td><td>17.4%</td></tr>
-<tr><td>23</td><td>Aram Safarian</td><td>Bears</td><td>13</td><td>4</td><td class="assist-column">0</td><td class="assist-column">4</td><td class="assist-column">4</td><td>30.8%</td></tr>
-<tr><td>23</td><td>Curtis Zhu</td><td>Maple Leafs</td><td>30</td><td>4</td><td class="assist-column">3</td><td class="assist-column">7</td><td class="assist-column">7</td><td>13.3%</td></tr>
-<tr><td>29</td><td>Hubertus Arkeveld</td><td>10B Jr. Kings</td><td>35</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.6%</td></tr>
-<tr><td>29</td><td>Luca Bish</td><td>Saints</td><td>47</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>6.4%</td></tr>
-<tr><td>29</td><td>Remington Busch</td><td>Avalanche (1)</td><td>23</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>13.0%</td></tr>
-<tr><td>29</td><td>Liam Deaver</td><td>Stars</td><td>36</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.3%</td></tr>
-<tr><td>29</td><td>Odin Klatzko</td><td>10B Jr. Kings</td><td>35</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.6%</td></tr>
-<tr><td>29</td><td>Emmet Lynch</td><td>Ice Dogs</td><td>49</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>6.1%</td></tr>
-<tr><td>29</td><td>Aria Morgan</td><td>Flyers (1)</td><td>34</td><td>3</td><td class="assist-column">6</td><td class="assist-column">9</td><td class="assist-column">9</td><td>8.8%</td></tr>
-<tr><td>29</td><td>Levi Nicklas</td><td>Stars</td><td>36</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.3%</td></tr>
-<tr><td>29</td><td>Layne Peek</td><td>Stars</td><td>36</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.3%</td></tr>
-<tr><td>29</td><td>Christian Sabin</td><td>Jr. Gulls</td><td>18</td><td>3</td><td class="assist-column">0</td><td class="assist-column">3</td><td class="assist-column">3</td><td>16.7%</td></tr>
-<tr><td>29</td><td>Leo Santogrossi</td><td>10B Jr. Kings</td><td>35</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.6%</td></tr>
-<tr><td>29</td><td>Kai-Syuan Tsao</td><td>Maple Leafs</td><td>30</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>10.0%</td></tr>
-<tr><td>41</td><td>Archer Alarid</td><td>Ice Dogs</td><td>49</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>4.1%</td></tr>
-<tr><td>41</td><td>David Avetisyan</td><td>Bears</td><td>13</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>15.4%</td></tr>
-<tr><td>41</td><td>Amir Aziz</td><td>Flyers (2)</td><td>27</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>7.4%</td></tr>
-<tr><td>41</td><td>Stevie Baltazar</td><td>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>5.9%</td></tr>
-<tr><td>41</td><td>Nico Beal</td><td>SDIA</td><td>15</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>13.3%</td></tr>
-<tr><td>41</td><td>Addison Belair</td><td>Saints</td><td>47</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>4.3%</td></tr>
-<tr><td>41</td><td>Adelaide Buckley</td><td>Saints</td><td>47</td><td>2</td><td class="assist-column">4</td><td class="assist-column">6</td><td class="assist-column">6</td><td>4.3%</td></tr>
-<tr><td>41</td><td>Waylon Carpenter</td><td>SDIA</td><td>15</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>13.3%</td></tr>
-<tr><td>41</td><td>Dominick Dolphin</td><td>Avalanche (1)</td><td>23</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.7%</td></tr>
-<tr><td>41</td><td>Sumiko Duffin</td><td>Maple Leafs</td><td>30</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>6.7%</td></tr>
-<tr><td>41</td><td>Aubrey Eaton</td><td>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>5.9%</td></tr>
-<tr><td>41</td><td>James Eisner</td><td>Avalanche (1)</td><td>23</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.7%</td></tr>
-<tr><td>41</td><td>Miles Gan</td><td>Maple Leafs</td><td>30</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>6.7%</td></tr>
-<tr><td>41</td><td>Sofia Hernandez</td><td>Flyers (2)</td><td>27</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>7.4%</td></tr>
-<tr><td>41</td><td>Locklan Johnson</td><td>SDIA</td><td>15</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>13.3%</td></tr>
-<tr><td>41</td><td>Luke Joseph</td><td>Red Wings (BB to B)</td><td>2</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>100.0%</td></tr>
-<tr><td>41</td><td>Ratana Krause</td><td>Saints</td><td>47</td><td>2</td><td class="assist-column">7</td><td class="assist-column">9</td><td class="assist-column">9</td><td>4.3%</td></tr>
-<tr><td>41</td><td>Nolan Mcmanus</td><td>SDIA</td><td>15</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>13.3%</td></tr>
-<tr><td>41</td><td>Carter Raden</td><td>Flyers (2)</td><td>27</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>7.4%</td></tr>
-<tr><td>41</td><td>David Shuklin</td><td>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>5.9%</td></tr>
-<tr><td>41</td><td>Winston Tankersley</td><td>10B Jr. Kings</td><td>35</td><td>2</td><td class="assist-column">6</td><td class="assist-column">8</td><td class="assist-column">8</td><td>5.7%</td></tr>
-<tr><td>41</td><td>Bennett Terry</td><td>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>5.9%</td></tr>
-<tr><td>41</td><td>Carly Tsang</td><td>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>5.9%</td></tr>
-<tr><td>41</td><td>Logan Tsang</td><td>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>5.9%</td></tr>
-<tr><td>41</td><td>August White</td><td>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>5.9%</td></tr>
-<tr><td>41</td><td>Bextyn Wittmann</td><td>Jr. Gulls</td><td>18</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>11.1%</td></tr>
-<tr><td>67</td><td>Louis Ace Aldini</td><td>10B Jr. Kings</td><td>35</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.9%</td></tr>
-<tr><td>67</td><td>Oliver Brown</td><td>Jr Firebirds</td><td>7</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>14.3%</td></tr>
-<tr><td>67</td><td>Dallas Churchill</td><td>Jr Firebirds</td><td>7</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>14.3%</td></tr>
-<tr><td>67</td><td>Archer Daley</td><td>SDIA</td><td>15</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>6.7%</td></tr>
-<tr><td>67</td><td>Reagan Dickson</td><td>Flyers (2)</td><td>27</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>3.7%</td></tr>
-<tr><td>67</td><td>Wyatt Dimaggio</td><td>Jr Firebirds</td><td>7</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>14.3%</td></tr>
-<tr><td>67</td><td>Rowen Escobar</td><td>Flyers (1)</td><td>34</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>2.9%</td></tr>
-<tr><td>67</td><td>Bronson Fischer</td><td>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>4.3%</td></tr>
-<tr><td>67</td><td>Eli Gaska</td><td>Ice Dogs</td><td>49</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.0%</td></tr>
-<tr><td>67</td><td>August Genovese</td><td>Ice Dogs</td><td>49</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>2.0%</td></tr>
-<tr><td>67</td><td>Waylon Kaufold</td><td>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>4.3%</td></tr>
-<tr><td>67</td><td>Jackson Latimer</td><td>Ice Dogs</td><td>49</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>2.0%</td></tr>
-<tr><td>67</td><td>Landon Lerman</td><td>Bears</td><td>13</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>7.7%</td></tr>
-<tr><td>67</td><td>Sean Lockshin</td><td>Flyers (1)</td><td>34</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.9%</td></tr>
-<tr><td>67</td><td>Hector Maxwell</td><td>Jr. Gulls</td><td>18</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>5.6%</td></tr>
-<tr><td>67</td><td>James McBride</td><td>Bears</td><td>13</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>7.7%</td></tr>
-<tr><td>67</td><td>Knox McBride</td><td>SDIA</td><td>15</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>6.7%</td></tr>
-<tr><td>67</td><td>Bennett Moodie</td><td>Jr. Gulls</td><td>18</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>5.6%</td></tr>
-<tr><td>67</td><td>Arwa Perumal</td><td>Stars</td><td>36</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.8%</td></tr>
-<tr><td>67</td><td>Zoraver Rishi</td><td>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>4.3%</td></tr>
-<tr><td>67</td><td>Stella Robertson</td><td>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>4.3%</td></tr>
-<tr><td>67</td><td>Domenico Rossetti</td><td>SDIA</td><td>15</td><td>1</td><td class="assist-column">4</td><td class="assist-column">5</td><td class="assist-column">5</td><td>6.7%</td></tr>
-<tr><td>67</td><td>Logan Rumeld</td><td>Bears</td><td>13</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>7.7%</td></tr>
-<tr><td>67</td><td>James Sutantyo</td><td>Maple Leafs</td><td>30</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>3.3%</td></tr>
-<tr><td>67</td><td>Hiro Takamoto</td><td>10B Jr. Kings</td><td>35</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>2.9%</td></tr>
-<tr><td>67</td><td>Ever Wade</td><td>Saints</td><td>47</td><td>1</td><td class="assist-column">5</td><td class="assist-column">6</td><td class="assist-column">6</td><td>2.1%</td></tr>
-<tr><td>67</td><td>Daniel Yeh</td><td>Flyers (2)</td><td>27</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>3.7%</td></tr>
+<tr><td>1</td><td>Remy Silegy</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>20</td><td class="assist-column">4</td><td class="assist-column">24</td><td class="assist-column">24</td><td>40.8%</td></tr>
+<tr><td>2</td><td>Odin Hawes</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>16</td><td class="assist-column">4</td><td class="assist-column">20</td><td class="assist-column">20</td><td>34.0%</td></tr>
+<tr><td>3</td><td>Abram Ramirez</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>14</td><td class="assist-column">4</td><td class="assist-column">18</td><td class="assist-column">18</td><td>46.7%</td></tr>
+<tr><td>4</td><td>Sullivan Creeley</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>13</td><td class="assist-column">4</td><td class="assist-column">17</td><td class="assist-column">17</td><td>27.7%</td></tr>
+<tr><td>4</td><td>Kaimana Harris</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>13</td><td class="assist-column">4</td><td class="assist-column">17</td><td class="assist-column">17</td><td>37.1%</td></tr>
+<tr><td>6</td><td>Koa Laszlo Nole Kerekes</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>12</td><td class="assist-column">2</td><td class="assist-column">14</td><td class="assist-column">14</td><td>33.3%</td></tr>
+<tr><td>7</td><td>Cole Taylor</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>18</td><td>10</td><td class="assist-column">1</td><td class="assist-column">11</td><td class="assist-column">11</td><td>55.6%</td></tr>
+<tr><td>8</td><td>Liam Asmuth</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>9</td><td class="assist-column">1</td><td class="assist-column">10</td><td class="assist-column">10</td><td>25.0%</td></tr>
+<tr><td>8</td><td>Crosby Trudeau Viriato</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>9</td><td class="assist-column">0</td><td class="assist-column">9</td><td class="assist-column">9</td><td>25.7%</td></tr>
+<tr><td>10</td><td>Rex Holliday</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>8</td><td class="assist-column">1</td><td class="assist-column">9</td><td class="assist-column">9</td><td>34.8%</td></tr>
+<tr><td>10</td><td>Samuel Kitsembel</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>8</td><td class="assist-column">5</td><td class="assist-column">13</td><td class="assist-column">13</td><td>17.0%</td></tr>
+<tr><td>10</td><td>Ilan Touazi</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>8</td><td class="assist-column">3</td><td class="assist-column">11</td><td class="assist-column">11</td><td>16.3%</td></tr>
+<tr><td>13</td><td>Brady Cignoli</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>7</td><td class="assist-column">3</td><td class="assist-column">10</td><td class="assist-column">10</td><td>14.3%</td></tr>
+<tr><td>13</td><td>Danila Grebinchenko</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>7</td><td class="assist-column">3</td><td class="assist-column">10</td><td class="assist-column">10</td><td>25.9%</td></tr>
+<tr><td>13</td><td>Declan Griffis</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>7</td><td class="assist-column">3</td><td class="assist-column">10</td><td class="assist-column">10</td><td>25.9%</td></tr>
+<tr><td>16</td><td>Everett Phariss</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>6</td><td class="assist-column">3</td><td class="assist-column">9</td><td class="assist-column">9</td><td>12.2%</td></tr>
+<tr><td>17</td><td>Quinn Dickson</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>5</td><td class="assist-column">4</td><td class="assist-column">9</td><td class="assist-column">9</td><td>18.5%</td></tr>
+<tr><td>17</td><td>Conor Gomez</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>5</td><td class="assist-column">2</td><td class="assist-column">7</td><td class="assist-column">7</td><td>14.7%</td></tr>
+<tr><td>17</td><td>Stryker Lawry</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>5</td><td class="assist-column">0</td><td class="assist-column">5</td><td class="assist-column">5</td><td>14.7%</td></tr>
+<tr><td>17</td><td>Callum Nuttall</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>5</td><td class="assist-column">4</td><td class="assist-column">9</td><td class="assist-column">9</td><td>13.9%</td></tr>
+<tr><td>17</td><td>Carson Quigley</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>5</td><td class="assist-column">1</td><td class="assist-column">6</td><td class="assist-column">6</td><td>71.4%</td></tr>
+<tr><td>17</td><td>Landon Scamehorn</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>5</td><td class="assist-column">3</td><td class="assist-column">8</td><td class="assist-column">8</td><td>14.7%</td></tr>
+<tr><td>23</td><td>Merrick Bishop</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>4</td><td class="assist-column">2</td><td class="assist-column">6</td><td class="assist-column">6</td><td>30.8%</td></tr>
+<tr><td>23</td><td>Theodore Dale</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>4</td><td class="assist-column">1</td><td class="assist-column">5</td><td class="assist-column">5</td><td>26.7%</td></tr>
+<tr><td>23</td><td>Martin Oliden</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>4</td><td class="assist-column">2</td><td class="assist-column">6</td><td class="assist-column">6</td><td>13.3%</td></tr>
+<tr><td>23</td><td>Zao Perez</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>4</td><td class="assist-column">1</td><td class="assist-column">5</td><td class="assist-column">5</td><td>17.4%</td></tr>
+<tr><td>23</td><td>Aram Safarian</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>4</td><td class="assist-column">0</td><td class="assist-column">4</td><td class="assist-column">4</td><td>30.8%</td></tr>
+<tr><td>23</td><td>Curtis Zhu</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>4</td><td class="assist-column">3</td><td class="assist-column">7</td><td class="assist-column">7</td><td>13.3%</td></tr>
+<tr><td>29</td><td>Hubertus Arkeveld</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.6%</td></tr>
+<tr><td>29</td><td>Luca Bish</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>6.4%</td></tr>
+<tr><td>29</td><td>Remington Busch</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>13.0%</td></tr>
+<tr><td>29</td><td>Liam Deaver</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.3%</td></tr>
+<tr><td>29</td><td>Odin Klatzko</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.6%</td></tr>
+<tr><td>29</td><td>Emmet Lynch</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>6.1%</td></tr>
+<tr><td>29</td><td>Aria Morgan</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>3</td><td class="assist-column">6</td><td class="assist-column">9</td><td class="assist-column">9</td><td>8.8%</td></tr>
+<tr><td>29</td><td>Levi Nicklas</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.3%</td></tr>
+<tr><td>29</td><td>Layne Peek</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>3</td><td class="assist-column">2</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.3%</td></tr>
+<tr><td>29</td><td>Christian Sabin</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>18</td><td>3</td><td class="assist-column">0</td><td class="assist-column">3</td><td class="assist-column">3</td><td>16.7%</td></tr>
+<tr><td>29</td><td>Leo Santogrossi</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.6%</td></tr>
+<tr><td>29</td><td>Kai-Syuan Tsao</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>3</td><td class="assist-column">1</td><td class="assist-column">4</td><td class="assist-column">4</td><td>10.0%</td></tr>
+<tr><td>41</td><td>Archer Alarid</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>4.1%</td></tr>
+<tr><td>41</td><td>David Avetisyan</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>15.4%</td></tr>
+<tr><td>41</td><td>Amir Aziz</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>7.4%</td></tr>
+<tr><td>41</td><td>Stevie Baltazar</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>5.9%</td></tr>
+<tr><td>41</td><td>Nico Beal</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>13.3%</td></tr>
+<tr><td>41</td><td>Addison Belair</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>4.3%</td></tr>
+<tr><td>41</td><td>Adelaide Buckley</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>2</td><td class="assist-column">4</td><td class="assist-column">6</td><td class="assist-column">6</td><td>4.3%</td></tr>
+<tr><td>41</td><td>Waylon Carpenter</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>13.3%</td></tr>
+<tr><td>41</td><td>Dominick Dolphin</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>8.7%</td></tr>
+<tr><td>41</td><td>Sumiko Duffin</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>6.7%</td></tr>
+<tr><td>41</td><td>Aubrey Eaton</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>5.9%</td></tr>
+<tr><td>41</td><td>James Eisner</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>8.7%</td></tr>
+<tr><td>41</td><td>Miles Gan</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>6.7%</td></tr>
+<tr><td>41</td><td>Sofia Hernandez</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>7.4%</td></tr>
+<tr><td>41</td><td>Locklan Johnson</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>13.3%</td></tr>
+<tr><td>41</td><td>Luke Joseph</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>2</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>100.0%</td></tr>
+<tr><td>41</td><td>Ratana Krause</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>2</td><td class="assist-column">7</td><td class="assist-column">9</td><td class="assist-column">9</td><td>4.3%</td></tr>
+<tr><td>41</td><td>Nolan Mcmanus</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>13.3%</td></tr>
+<tr><td>41</td><td>Carter Raden</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>2</td><td class="assist-column">0</td><td class="assist-column">2</td><td class="assist-column">2</td><td>7.4%</td></tr>
+<tr><td>41</td><td>David Shuklin</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>5.9%</td></tr>
+<tr><td>41</td><td>Winston Tankersley</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>2</td><td class="assist-column">6</td><td class="assist-column">8</td><td class="assist-column">8</td><td>5.7%</td></tr>
+<tr><td>41</td><td>Bennett Terry</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>5.9%</td></tr>
+<tr><td>41</td><td>Carly Tsang</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>5.9%</td></tr>
+<tr><td>41</td><td>Logan Tsang</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">2</td><td class="assist-column">4</td><td class="assist-column">4</td><td>5.9%</td></tr>
+<tr><td>41</td><td>August White</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>2</td><td class="assist-column">1</td><td class="assist-column">3</td><td class="assist-column">3</td><td>5.9%</td></tr>
+<tr><td>41</td><td>Bextyn Wittmann</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>18</td><td>2</td><td class="assist-column">3</td><td class="assist-column">5</td><td class="assist-column">5</td><td>11.1%</td></tr>
+<tr><td>67</td><td>Louis Ace Aldini</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.9%</td></tr>
+<tr><td>67</td><td>Oliver Brown</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>14.3%</td></tr>
+<tr><td>67</td><td>Dallas Churchill</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>14.3%</td></tr>
+<tr><td>67</td><td>Archer Daley</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>6.7%</td></tr>
+<tr><td>67</td><td>Reagan Dickson</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>3.7%</td></tr>
+<tr><td>67</td><td>Wyatt Dimaggio</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>14.3%</td></tr>
+<tr><td>67</td><td>Rowen Escobar</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>2.9%</td></tr>
+<tr><td>67</td><td>Bronson Fischer</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>4.3%</td></tr>
+<tr><td>67</td><td>Eli Gaska</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.0%</td></tr>
+<tr><td>67</td><td>August Genovese</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>2.0%</td></tr>
+<tr><td>67</td><td>Waylon Kaufold</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>4.3%</td></tr>
+<tr><td>67</td><td>Jackson Latimer</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>2.0%</td></tr>
+<tr><td>67</td><td>Landon Lerman</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>7.7%</td></tr>
+<tr><td>67</td><td>Sean Lockshin</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.9%</td></tr>
+<tr><td>67</td><td>Hector Maxwell</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>18</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>5.6%</td></tr>
+<tr><td>67</td><td>James McBride</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>7.7%</td></tr>
+<tr><td>67</td><td>Knox McBride</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>6.7%</td></tr>
+<tr><td>67</td><td>Bennett Moodie</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>18</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>5.6%</td></tr>
+<tr><td>67</td><td>Arwa Perumal</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>2.8%</td></tr>
+<tr><td>67</td><td>Zoraver Rishi</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>4.3%</td></tr>
+<tr><td>67</td><td>Stella Robertson</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>4.3%</td></tr>
+<tr><td>67</td><td>Domenico Rossetti</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>1</td><td class="assist-column">4</td><td class="assist-column">5</td><td class="assist-column">5</td><td>6.7%</td></tr>
+<tr><td>67</td><td>Logan Rumeld</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>1</td><td class="assist-column">0</td><td class="assist-column">1</td><td class="assist-column">1</td><td>7.7%</td></tr>
+<tr><td>67</td><td>James Sutantyo</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>3.3%</td></tr>
+<tr><td>67</td><td>Hiro Takamoto</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>1</td><td class="assist-column">2</td><td class="assist-column">3</td><td class="assist-column">3</td><td>2.9%</td></tr>
+<tr><td>67</td><td>Ever Wade</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>1</td><td class="assist-column">5</td><td class="assist-column">6</td><td class="assist-column">6</td><td>2.1%</td></tr>
+<tr><td>67</td><td>Daniel Yeh</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>1</td><td class="assist-column">1</td><td class="assist-column">2</td><td class="assist-column">2</td><td>3.7%</td></tr>
+</tbody></table></div>
+</section>
+<section class="card"><h2>Player point ranking</h2><p class="note">Ranked by total points, then last name. Equal point totals share a competition rank.</p>
+<div style="overflow:auto"><table id="points-table"><thead><tr>
+<th>Rank</th><th>Player</th><th>Team</th><th>G</th><th>A</th><th>Pts</th></tr></thead><tbody>
+<tr><td>1</td><td>Remy Silegy</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>20</td><td>4</td><td>24</td></tr>
+<tr><td>2</td><td>Odin Hawes</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>16</td><td>4</td><td>20</td></tr>
+<tr><td>3</td><td>Abram Ramirez</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>14</td><td>4</td><td>18</td></tr>
+<tr><td>4</td><td>Sullivan Creeley</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>13</td><td>4</td><td>17</td></tr>
+<tr><td>4</td><td>Kaimana Harris</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>13</td><td>4</td><td>17</td></tr>
+<tr><td>6</td><td>Koa Laszlo Nole Kerekes</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>12</td><td>2</td><td>14</td></tr>
+<tr><td>7</td><td>Samuel Kitsembel</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>8</td><td>5</td><td>13</td></tr>
+<tr><td>8</td><td>Cole Taylor</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>10</td><td>1</td><td>11</td></tr>
+<tr><td>8</td><td>Ilan Touazi</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>8</td><td>3</td><td>11</td></tr>
+<tr><td>10</td><td>Liam Asmuth</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>9</td><td>1</td><td>10</td></tr>
+<tr><td>10</td><td>Brady Cignoli</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>3</td><td>10</td></tr>
+<tr><td>10</td><td>Danila Grebinchenko</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>7</td><td>3</td><td>10</td></tr>
+<tr><td>10</td><td>Declan Griffis</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>7</td><td>3</td><td>10</td></tr>
+<tr><td>14</td><td>Quinn Dickson</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>5</td><td>4</td><td>9</td></tr>
+<tr><td>14</td><td>Rex Holliday</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>8</td><td>1</td><td>9</td></tr>
+<tr><td>14</td><td>Ratana Krause</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>2</td><td>7</td><td>9</td></tr>
+<tr><td>14</td><td>Aria Morgan</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>3</td><td>6</td><td>9</td></tr>
+<tr><td>14</td><td>Callum Nuttall</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>4</td><td>9</td></tr>
+<tr><td>14</td><td>Everett Phariss</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>6</td><td>3</td><td>9</td></tr>
+<tr><td>14</td><td>Crosby Trudeau Viriato</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>9</td><td>0</td><td>9</td></tr>
+<tr><td>21</td><td>Landon Scamehorn</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>5</td><td>3</td><td>8</td></tr>
+<tr><td>21</td><td>Winston Tankersley</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>2</td><td>6</td><td>8</td></tr>
+<tr><td>23</td><td>Conor Gomez</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>5</td><td>2</td><td>7</td></tr>
+<tr><td>23</td><td>Curtis Zhu</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>4</td><td>3</td><td>7</td></tr>
+<tr><td>25</td><td>Merrick Bishop</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>4</td><td>2</td><td>6</td></tr>
+<tr><td>25</td><td>Adelaide Buckley</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>2</td><td>4</td><td>6</td></tr>
+<tr><td>25</td><td>Martin Oliden</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>4</td><td>2</td><td>6</td></tr>
+<tr><td>25</td><td>Carson Quigley</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>5</td><td>1</td><td>6</td></tr>
+<tr><td>25</td><td>Ever Wade</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>1</td><td>5</td><td>6</td></tr>
+<tr><td>30</td><td>Archer Alarid</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>30</td><td>Hubertus Arkeveld</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>3</td><td>2</td><td>5</td></tr>
+<tr><td>30</td><td>Addison Belair</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>30</td><td>Luca Bish</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>3</td><td>2</td><td>5</td></tr>
+<tr><td>30</td><td>Remington Busch</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>3</td><td>2</td><td>5</td></tr>
+<tr><td>30</td><td>Theodore Dale</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>4</td><td>1</td><td>5</td></tr>
+<tr><td>30</td><td>Liam Deaver</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>3</td><td>2</td><td>5</td></tr>
+<tr><td>30</td><td>James Eisner</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>30</td><td>Stryker Lawry</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>5</td><td>0</td><td>5</td></tr>
+<tr><td>30</td><td>Layne Peek</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>3</td><td>2</td><td>5</td></tr>
+<tr><td>30</td><td>Zao Perez</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>4</td><td>1</td><td>5</td></tr>
+<tr><td>30</td><td>Domenico Rossetti</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>1</td><td>4</td><td>5</td></tr>
+<tr><td>30</td><td>David Shuklin</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>30</td><td>Carly Tsang</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>30</td><td>Bextyn Wittmann</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>2</td><td>3</td><td>5</td></tr>
+<tr><td>45</td><td>Amir Aziz</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>2</td><td>2</td><td>4</td></tr>
+<tr><td>45</td><td>Dominick Dolphin</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>2</td><td>2</td><td>4</td></tr>
+<tr><td>45</td><td>Sumiko Duffin</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>2</td><td>2</td><td>4</td></tr>
+<tr><td>45</td><td>Miles Gan</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>2</td><td>2</td><td>4</td></tr>
+<tr><td>45</td><td>Sofia Hernandez</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>2</td><td>2</td><td>4</td></tr>
+<tr><td>45</td><td>Odin Klatzko</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>3</td><td>1</td><td>4</td></tr>
+<tr><td>45</td><td>Emmet Lynch</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>3</td><td>1</td><td>4</td></tr>
+<tr><td>45</td><td>Levi Nicklas</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>3</td><td>1</td><td>4</td></tr>
+<tr><td>45</td><td>Aram Safarian</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>4</td><td>0</td><td>4</td></tr>
+<tr><td>45</td><td>Leo Santogrossi</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>3</td><td>1</td><td>4</td></tr>
+<tr><td>45</td><td>Jhaymar De La Torre</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>0</td><td>4</td><td>4</td></tr>
+<tr><td>45</td><td>Logan Tsang</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>2</td><td>2</td><td>4</td></tr>
+<tr><td>45</td><td>Kai-Syuan Tsao</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>3</td><td>1</td><td>4</td></tr>
+<tr><td>58</td><td>Archer Daley</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>58</td><td>Aubrey Eaton</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>2</td><td>1</td><td>3</td></tr>
+<tr><td>58</td><td>Bronson Fischer</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>58</td><td>Lucas Henok</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>0</td><td>3</td><td>3</td></tr>
+<tr><td>58</td><td>Ace Jenkins</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>0</td><td>3</td><td>3</td></tr>
+<tr><td>58</td><td>Locklan Johnson</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>2</td><td>1</td><td>3</td></tr>
+<tr><td>58</td><td>Liam Kiger</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>0</td><td>3</td><td>3</td></tr>
+<tr><td>58</td><td>Jackson Latimer</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>58</td><td>Landon Lerman</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>58</td><td>Nolan Mcmanus</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>2</td><td>1</td><td>3</td></tr>
+<tr><td>58</td><td>Zoraver Rishi</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>58</td><td>Stella Robertson</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>58</td><td>Christian Sabin</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>3</td><td>0</td><td>3</td></tr>
+<tr><td>58</td><td>Hiro Takamoto</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td>58</td><td>Bennett Terry</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>2</td><td>1</td><td>3</td></tr>
+<tr><td>58</td><td>August White</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>2</td><td>1</td><td>3</td></tr>
+<tr><td>74</td><td>David Avetisyan</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>2</td><td>0</td><td>2</td></tr>
+<tr><td>74</td><td>Stevie Baltazar</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>2</td><td>0</td><td>2</td></tr>
+<tr><td>74</td><td>Nico Beal</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>2</td><td>0</td><td>2</td></tr>
+<tr><td>74</td><td>Waylon Carpenter</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>2</td><td>0</td><td>2</td></tr>
+<tr><td>74</td><td>Liam Derzaph</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>74</td><td>Reagan Dickson</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>74</td><td>Rowen Escobar</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>74</td><td>August Genovese</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>74</td><td>Marlen Shaw III</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>74</td><td>Luke Joseph</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>2</td><td>0</td><td>2</td></tr>
+<tr><td>74</td><td>Waylon Kaufold</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>74</td><td>Jaemoon Kim</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>74</td><td>Knox McBride</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>74</td><td>Carter Raden</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>2</td><td>0</td><td>2</td></tr>
+<tr><td>74</td><td>James Sutantyo</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>74</td><td>Silas Tuchman</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>74</td><td>Isabelle Wilks</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>74</td><td>Daniel Yeh</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>92</td><td>Louis Ace Aldini</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Jack Bemiller</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Andrey Brilkov</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Oliver Brown</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Reagan Busch</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Elijah Canchola</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Jameson Causey</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Dallas Churchill</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Oz De Cordova</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Theo Decaire</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Wyatt Dimaggio</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Brady Flynn</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Chayse Foster</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Eli Gaska</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Christopher Grigoryan</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Bryce Kadish</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Coby Konzen</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Abigail Kopp</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Benjamin Koren</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Sean Lockshin</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Finn Mark</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Hector Maxwell</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>James McBride</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Clover Mehegan</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Bennett Moodie</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Arwa Perumal</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Emerson Podruski</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Owen Power</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Logan Rumeld</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>1</td><td>0</td><td>1</td></tr>
+<tr><td>92</td><td>Yixin Tan</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Zachary Vogel-Seidenberg</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Oxlee Wright</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>92</td><td>Alasdair Zuill</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>125</td><td>Leonid Alisov</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Robert Amirkhanian</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Philip Ball</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Evan Boland</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Parker Boyd</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Remy Broughton</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Jameson Busch</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Ignacio Ryser Carter</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Jesse Cheng</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Owen Coulthard</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Wesley Danney</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>James Davis</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Maximus Deacon</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Nicholas Delgadillo</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Francis Denue</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Henry Doyle</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Sawyer Dreischmeyer</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Jack Ellenz</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Lincoln Flareau</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Elan Gamez</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Ricardo Garcia</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Hakon Gawlik</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Olivier Gignac</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Peter Goodman</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Connor Gutierrez</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Killian Harrell</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Raiden Horwitz</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Patrick Hassell III</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Andrew Jensen</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Colleen Jiardina</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>August Johnson</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Myles Kucera</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Melody Li</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Cal Livermont</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Brayden Macculloch</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Brooklyn Magana</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Hayk Martirosyan</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Anders Mckinnon</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Banks Mcrae</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Colton Miller</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Eugene Monroe</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Sebastian Garcia Morales</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Tyler Morgan</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Tyler Niles-Byrd</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Michale Oliver</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Jameson Panico</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Lyle Peterschick-Cornejo</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Phantaphat Pongmaykin</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Sean Robertson</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Luke Rowan</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Brody Saldana</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Ryan Sniffin</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Jameson Solis</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Gavin Soto</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Zachary Summers</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Alyssa Taylor-Hurtado</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Vic Wang</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Avelina Williamson</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Landon Yoo</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Wanlin Zhou</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>125</td><td>Grayson Zipperman</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>0</td><td>0</td><td>0</td></tr>
 </tbody></table></div>
 </section>
 <section class="card"><h2>Team goal balance</h2>
 <div style="overflow:auto"><table id="balance-table"><thead><tr>
 <th>Rank</th><th>Team</th><th>GF</th><th>Scorers</th><th>Top scorer %</th><th>Top 3 %</th><th>Effective scorers</th><th>Top 3 scorers (G:A:Pts)</th></tr></thead><tbody>
-<tr><td>1</td><td>Flyers (1)</td><td>34</td><td>13</td><td>14.7%</td><td>44.1%</td><td>10.1</td><td>Conor Gomez (5:2:7)<br>Stryker Lawry (5:0:5)<br>Landon Scamehorn (5:3:8)</td></tr>
-<tr><td>2</td><td>SDIA</td><td>15</td><td>8</td><td>26.7%</td><td>53.3%</td><td>6.4</td><td>Theodore Dale (4:1:5)<br>Nico Beal (2:0:2)<br>Waylon Carpenter (2:0:2)</td></tr>
-<tr><td>3</td><td>Flyers (2)</td><td>27</td><td>8</td><td>25.9%</td><td>70.4%</td><td>5.3</td><td>Danila Grebinchenko (7:3:10)<br>Declan Griffis (7:3:10)<br>Quinn Dickson (5:4:9)</td></tr>
-<tr><td>4</td><td>Avalanche (1)</td><td>23</td><td>9</td><td>34.8%</td><td>65.2%</td><td>5.2</td><td>Rex Holliday (8:1:9)<br>Zao Perez (4:1:5)<br>Remington Busch (3:2:5)</td></tr>
-<tr><td>5</td><td>Stars</td><td>36</td><td>7</td><td>33.3%</td><td>72.2%</td><td>4.7</td><td>Koa Laszlo Nole Kerekes (12:2:14)<br>Liam Asmuth (9:1:10)<br>Callum Nuttall (5:4:9)</td></tr>
-<tr><td>6</td><td>Bears</td><td>13</td><td>6</td><td>30.8%</td><td>76.9%</td><td>4.3</td><td>Merrick Bishop (4:2:6)<br>Aram Safarian (4:0:4)<br>David Avetisyan (2:0:2)</td></tr>
-<tr><td>7</td><td>10B Jr. Kings</td><td>35</td><td>8</td><td>37.1%</td><td>71.4%</td><td>4.3</td><td>Kaimana Harris (13:4:17)<br>Crosby Trudeau Viriato (9:0:9)<br>Hubertus Arkeveld (3:2:5)</td></tr>
-<tr><td>8</td><td>Saints</td><td>47</td><td>8</td><td>34.0%</td><td>78.7%</td><td>4.3</td><td>Odin Hawes (16:4:20)<br>Sullivan Creeley (13:4:17)<br>Samuel Kitsembel (8:5:13)</td></tr>
-<tr><td>9</td><td>Ice Dogs</td><td>49</td><td>9</td><td>40.8%</td><td>71.4%</td><td>4.2</td><td>Remy Silegy (20:4:24)<br>Ilan Touazi (8:3:11)<br>Brady Cignoli (7:3:10)</td></tr>
-<tr><td>10</td><td>Maple Leafs</td><td>30</td><td>7</td><td>46.7%</td><td>73.3%</td><td>3.7</td><td>Abram Ramirez (14:4:18)<br>Martin Oliden (4:2:6)<br>Curtis Zhu (4:3:7)</td></tr>
-<tr><td>11</td><td>Jr. Gulls</td><td>18</td><td>5</td><td>55.6%</td><td>83.3%</td><td>2.5</td><td>Cole Taylor (10:1:11)<br>Christian Sabin (3:0:3)<br>Bextyn Wittmann (2:3:5)</td></tr>
-<tr><td>12</td><td>Jr Firebirds</td><td>7</td><td>4</td><td>71.4%</td><td>100.0%</td><td>2.3</td><td>Carson Quigley (5:1:6)<br>Oliver Brown (1:0:1)<br>Dallas Churchill (1:0:1)</td></tr>
-<tr><td>13</td><td>Red Wings (BB to B)</td><td>2</td><td>1</td><td>100.0%</td><td>100.0%</td><td>1.0</td><td>Luke Joseph (2:0:2)<br>Elijah Canchola (0:1:1)<br>Nicholas Delgadillo (0:0:0)</td></tr>
+<tr><td>1</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>13</td><td>14.7%</td><td>44.1%</td><td>10.1</td><td>Conor Gomez (5:2:7)<br>Stryker Lawry (5:0:5)<br>Landon Scamehorn (5:3:8)</td></tr>
+<tr><td>2</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>8</td><td>26.7%</td><td>53.3%</td><td>6.4</td><td>Theodore Dale (4:1:5)<br>Nico Beal (2:0:2)<br>Waylon Carpenter (2:0:2)</td></tr>
+<tr><td>3</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>8</td><td>25.9%</td><td>70.4%</td><td>5.3</td><td>Danila Grebinchenko (7:3:10)<br>Declan Griffis (7:3:10)<br>Quinn Dickson (5:4:9)</td></tr>
+<tr><td>4</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>9</td><td>34.8%</td><td>65.2%</td><td>5.2</td><td>Rex Holliday (8:1:9)<br>Zao Perez (4:1:5)<br>Remington Busch (3:2:5)</td></tr>
+<tr><td>5</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>7</td><td>33.3%</td><td>72.2%</td><td>4.7</td><td>Koa Laszlo Nole Kerekes (12:2:14)<br>Liam Asmuth (9:1:10)<br>Callum Nuttall (5:4:9)</td></tr>
+<tr><td>6</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>6</td><td>30.8%</td><td>76.9%</td><td>4.3</td><td>Merrick Bishop (4:2:6)<br>Aram Safarian (4:0:4)<br>David Avetisyan (2:0:2)</td></tr>
+<tr><td>7</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>8</td><td>37.1%</td><td>71.4%</td><td>4.3</td><td>Kaimana Harris (13:4:17)<br>Crosby Trudeau Viriato (9:0:9)<br>Hubertus Arkeveld (3:2:5)</td></tr>
+<tr><td>8</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>8</td><td>34.0%</td><td>78.7%</td><td>4.3</td><td>Odin Hawes (16:4:20)<br>Sullivan Creeley (13:4:17)<br>Samuel Kitsembel (8:5:13)</td></tr>
+<tr><td>9</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>9</td><td>40.8%</td><td>71.4%</td><td>4.2</td><td>Remy Silegy (20:4:24)<br>Ilan Touazi (8:3:11)<br>Brady Cignoli (7:3:10)</td></tr>
+<tr><td>10</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>7</td><td>46.7%</td><td>73.3%</td><td>3.7</td><td>Abram Ramirez (14:4:18)<br>Martin Oliden (4:2:6)<br>Curtis Zhu (4:3:7)</td></tr>
+<tr><td>11</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>18</td><td>5</td><td>55.6%</td><td>83.3%</td><td>2.5</td><td>Cole Taylor (10:1:11)<br>Christian Sabin (3:0:3)<br>Bextyn Wittmann (2:3:5)</td></tr>
+<tr><td>12</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>4</td><td>71.4%</td><td>100.0%</td><td>2.3</td><td>Carson Quigley (5:1:6)<br>Oliver Brown (1:0:1)<br>Dallas Churchill (1:0:1)</td></tr>
+<tr><td>13</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>2</td><td>1</td><td>100.0%</td><td>100.0%</td><td>1.0</td><td>Luke Joseph (2:0:2)<br>Elijah Canchola (0:1:1)<br>Nicholas Delgadillo (0:0:0)</td></tr>
 </tbody></table></div>
 </section>
 <section class="card"><h2>Team standings</h2>
 <div style="overflow:auto"><table id="teams-table"><thead><tr>
 <th>Team</th><th>GP</th><th>W</th><th>L</th><th>T</th><th>Pts</th><th>GF</th><th>GA</th><th>GD</th></tr></thead><tbody>
-<tr><td>10B Jr. Kings</td><td>6</td><td>4</td><td>2</td><td>0</td><td>8</td><td>35</td><td>19</td><td>9</td></tr>
-<tr><td>Avalanche (1)</td><td>7</td><td>3</td><td>3</td><td>1</td><td>7</td><td>23</td><td>21</td><td>2</td></tr>
-<tr><td>Bears</td><td>6</td><td>0</td><td>6</td><td>0</td><td>0</td><td>13</td><td>47</td><td>-28</td></tr>
-<tr><td>Flyers (1)</td><td>7</td><td>4</td><td>1</td><td>2</td><td>10</td><td>34</td><td>19</td><td>14</td></tr>
-<tr><td>Flyers (2)</td><td>6</td><td>4</td><td>0</td><td>2</td><td>10</td><td>27</td><td>18</td><td>9</td></tr>
-<tr><td>Ice Dogs</td><td>7</td><td>3</td><td>4</td><td>0</td><td>6</td><td>49</td><td>32</td><td>5</td></tr>
-<tr><td>Jr Firebirds</td><td>6</td><td>1</td><td>5</td><td>0</td><td>2</td><td>7</td><td>47</td><td>-30</td></tr>
-<tr><td>Jr. Gulls</td><td>5</td><td>3</td><td>1</td><td>1</td><td>7</td><td>18</td><td>14</td><td>4</td></tr>
-<tr><td>Maple Leafs</td><td>6</td><td>3</td><td>3</td><td>0</td><td>6</td><td>30</td><td>24</td><td>5</td></tr>
-<tr><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>4</td><td>0</td><td>0</td><td>2</td><td>40</td><td>-22</td></tr>
-<tr><td>Saints</td><td>6</td><td>4</td><td>2</td><td>0</td><td>8</td><td>47</td><td>23</td><td>18</td></tr>
-<tr><td>SDIA</td><td>7</td><td>2</td><td>5</td><td>0</td><td>4</td><td>15</td><td>21</td><td>-6</td></tr>
-<tr><td>Stars</td><td>5</td><td>5</td><td>0</td><td>0</td><td>10</td><td>36</td><td>11</td><td>20</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>4</td><td>2</td><td>0</td><td>8</td><td>35</td><td>19</td><td>9</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>3</td><td>3</td><td>1</td><td>7</td><td>23</td><td>21</td><td>2</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>6</td><td>0</td><td>0</td><td>13</td><td>47</td><td>-28</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>4</td><td>1</td><td>2</td><td>10</td><td>34</td><td>19</td><td>14</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>4</td><td>0</td><td>2</td><td>10</td><td>27</td><td>18</td><td>9</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>3</td><td>4</td><td>0</td><td>6</td><td>49</td><td>32</td><td>5</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>6</td><td>1</td><td>5</td><td>0</td><td>2</td><td>7</td><td>47</td><td>-30</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>3</td><td>1</td><td>1</td><td>7</td><td>18</td><td>14</td><td>4</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>3</td><td>3</td><td>0</td><td>6</td><td>30</td><td>24</td><td>5</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>4</td><td>0</td><td>0</td><td>2</td><td>40</td><td>-22</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>4</td><td>2</td><td>0</td><td>8</td><td>47</td><td>23</td><td>18</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>2</td><td>5</td><td>0</td><td>4</td><td>15</td><td>21</td><td>-6</td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>5</td><td>0</td><td>0</td><td>10</td><td>36</td><td>11</td><td>20</td></tr>
 </tbody></table></div>
 </section>
 <section class="card"><h2>Player totals</h2>
 <div style="overflow:auto"><table id="players-table"><thead><tr>
-<th>#</th><th>Player</th><th>Team</th><th>GP</th><th>G</th><th>A</th><th>Pts</th><th>PIMS</th></tr></thead><tbody>
-<tr><td>1</td><td>Remy Silegy</td><td>Ice Dogs</td><td>7</td><td>20</td><td>4</td><td>24</td><td>18</td></tr>
-<tr><td>2</td><td>Odin Hawes</td><td>Saints</td><td>6</td><td>16</td><td>4</td><td>20</td><td>4</td></tr>
-<tr><td>3</td><td>Abram Ramirez</td><td>Maple Leafs</td><td>6</td><td>14</td><td>4</td><td>18</td><td>0</td></tr>
-<tr><td>5</td><td>Sullivan Creeley</td><td>Saints</td><td>6</td><td>13</td><td>4</td><td>17</td><td>4</td></tr>
-<tr><td>4</td><td>Kaimana Harris</td><td>10B Jr. Kings</td><td>6</td><td>13</td><td>4</td><td>17</td><td>2</td></tr>
-<tr><td>6</td><td>Koa Laszlo Nole Kerekes</td><td>Stars</td><td>5</td><td>12</td><td>2</td><td>14</td><td>2</td></tr>
-<tr><td>8</td><td>Cole Taylor</td><td>Jr. Gulls</td><td>5</td><td>10</td><td>1</td><td>11</td><td>2</td></tr>
-<tr><td>13</td><td>Liam Asmuth</td><td>Stars</td><td>5</td><td>9</td><td>1</td><td>10</td><td>0</td></tr>
-<tr><td>16</td><td>Crosby Trudeau Viriato</td><td>10B Jr. Kings</td><td>6</td><td>9</td><td>0</td><td>9</td><td>0</td></tr>
-<tr><td>20</td><td>Rex Holliday</td><td>Avalanche (1)</td><td>7</td><td>8</td><td>1</td><td>9</td><td>0</td></tr>
-<tr><td>7</td><td>Samuel Kitsembel</td><td>Saints</td><td>6</td><td>8</td><td>5</td><td>13</td><td>8</td></tr>
-<tr><td>9</td><td>Ilan Touazi</td><td>Ice Dogs</td><td>7</td><td>8</td><td>3</td><td>11</td><td>4</td></tr>
-<tr><td>10</td><td>Brady Cignoli</td><td>Ice Dogs</td><td>7</td><td>7</td><td>3</td><td>10</td><td>2</td></tr>
-<tr><td>11</td><td>Danila Grebinchenko</td><td>Flyers (2)</td><td>6</td><td>7</td><td>3</td><td>10</td><td>2</td></tr>
-<tr><td>12</td><td>Declan Griffis</td><td>Flyers (2)</td><td>6</td><td>7</td><td>3</td><td>10</td><td>4</td></tr>
-<tr><td>17</td><td>Everett Phariss</td><td>Ice Dogs</td><td>7</td><td>6</td><td>3</td><td>9</td><td>6</td></tr>
-<tr><td>18</td><td>Quinn Dickson</td><td>Flyers (2)</td><td>6</td><td>5</td><td>4</td><td>9</td><td>0</td></tr>
-<tr><td>23</td><td>Conor Gomez</td><td>Flyers (1)</td><td>7</td><td>5</td><td>2</td><td>7</td><td>2</td></tr>
-<tr><td>42</td><td>Stryker Lawry</td><td>Flyers (1)</td><td>7</td><td>5</td><td>0</td><td>5</td><td>0</td></tr>
-<tr><td>15</td><td>Callum Nuttall</td><td>Stars</td><td>5</td><td>5</td><td>4</td><td>9</td><td>8</td></tr>
-<tr><td>26</td><td>Carson Quigley</td><td>Jr Firebirds</td><td>7</td><td>5</td><td>1</td><td>6</td><td>8</td></tr>
-<tr><td>21</td><td>Landon Scamehorn</td><td>Flyers (1)</td><td>7</td><td>5</td><td>3</td><td>8</td><td>4</td></tr>
-<tr><td>29</td><td>Merrick Bishop</td><td>Bears</td><td>6</td><td>4</td><td>2</td><td>6</td><td>0</td></tr>
-<tr><td>43</td><td>Theodore Dale</td><td>SDIA</td><td>7</td><td>4</td><td>1</td><td>5</td><td>0</td></tr>
-<tr><td>28</td><td>Martin Oliden</td><td>Maple Leafs</td><td>6</td><td>4</td><td>2</td><td>6</td><td>0</td></tr>
-<tr><td>44</td><td>Zao Perez</td><td>Avalanche (1)</td><td>7</td><td>4</td><td>1</td><td>5</td><td>0</td></tr>
-<tr><td>46</td><td>Aram Safarian</td><td>Bears</td><td>5</td><td>4</td><td>0</td><td>4</td><td>0</td></tr>
-<tr><td>24</td><td>Curtis Zhu</td><td>Maple Leafs</td><td>6</td><td>4</td><td>3</td><td>7</td><td>2</td></tr>
-<tr><td>36</td><td>Hubertus Arkeveld</td><td>10B Jr. Kings</td><td>6</td><td>3</td><td>2</td><td>5</td><td>0</td></tr>
-<tr><td>40</td><td>Luca Bish</td><td>Saints</td><td>4</td><td>3</td><td>2</td><td>5</td><td>2</td></tr>
-<tr><td>41</td><td>Remington Busch</td><td>Avalanche (1)</td><td>7</td><td>3</td><td>2</td><td>5</td><td>6</td></tr>
-<tr><td>39</td><td>Liam Deaver</td><td>Stars</td><td>4</td><td>3</td><td>2</td><td>5</td><td>0</td></tr>
-<tr><td>55</td><td>Odin Klatzko</td><td>10B Jr. Kings</td><td>6</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
-<tr><td>48</td><td>Emmet Lynch</td><td>Ice Dogs</td><td>5</td><td>3</td><td>1</td><td>4</td><td>0</td></tr>
-<tr><td>14</td><td>Aria Morgan</td><td>Flyers (1)</td><td>6</td><td>3</td><td>6</td><td>9</td><td>8</td></tr>
-<tr><td>52</td><td>Levi Nicklas</td><td>Stars</td><td>5</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
-<tr><td>38</td><td>Layne Peek</td><td>Stars</td><td>5</td><td>3</td><td>2</td><td>5</td><td>4</td></tr>
-<tr><td>64</td><td>Christian Sabin</td><td>Jr. Gulls</td><td>5</td><td>3</td><td>0</td><td>3</td><td>10</td></tr>
-<tr><td>51</td><td>Leo Santogrossi</td><td>10B Jr. Kings</td><td>6</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
-<tr><td>50</td><td>Kai-Syuan Tsao</td><td>Maple Leafs</td><td>6</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
-<tr><td>31</td><td>Archer Alarid</td><td>Ice Dogs</td><td>7</td><td>2</td><td>3</td><td>5</td><td>6</td></tr>
-<tr><td>77</td><td>David Avetisyan</td><td>Bears</td><td>6</td><td>2</td><td>0</td><td>2</td><td>4</td></tr>
-<tr><td>45</td><td>Amir Aziz</td><td>Flyers (2)</td><td>6</td><td>2</td><td>2</td><td>4</td><td>2</td></tr>
-<tr><td>89</td><td>Stevie Baltazar</td><td>Flyers (1)</td><td>6</td><td>2</td><td>0</td><td>2</td><td>2</td></tr>
-<tr><td>85</td><td>Nico Beal</td><td>SDIA</td><td>7</td><td>2</td><td>0</td><td>2</td><td>2</td></tr>
-<tr><td>30</td><td>Addison Belair</td><td>Saints</td><td>6</td><td>2</td><td>3</td><td>5</td><td>0</td></tr>
-<tr><td>25</td><td>Adelaide Buckley</td><td>Saints</td><td>6</td><td>2</td><td>4</td><td>6</td><td>0</td></tr>
-<tr><td>90</td><td>Waylon Carpenter</td><td>SDIA</td><td>7</td><td>2</td><td>0</td><td>2</td><td>4</td></tr>
-<tr><td>47</td><td>Dominick Dolphin</td><td>Avalanche (1)</td><td>7</td><td>2</td><td>2</td><td>4</td><td>12</td></tr>
-<tr><td>57</td><td>Sumiko Duffin</td><td>Maple Leafs</td><td>6</td><td>2</td><td>2</td><td>4</td><td>2</td></tr>
-<tr><td>60</td><td>Aubrey Eaton</td><td>Flyers (1)</td><td>7</td><td>2</td><td>1</td><td>3</td><td>4</td></tr>
-<tr><td>37</td><td>James Eisner</td><td>Avalanche (1)</td><td>7</td><td>2</td><td>3</td><td>5</td><td>2</td></tr>
-<tr><td>54</td><td>Miles Gan</td><td>Maple Leafs</td><td>6</td><td>2</td><td>2</td><td>4</td><td>0</td></tr>
-<tr><td>56</td><td>Sofia Hernandez</td><td>Flyers (2)</td><td>6</td><td>2</td><td>2</td><td>4</td><td>0</td></tr>
-<tr><td>69</td><td>Locklan Johnson</td><td>SDIA</td><td>7</td><td>2</td><td>1</td><td>3</td><td>0</td></tr>
-<tr><td>83</td><td>Luke Joseph</td><td>Red Wings (BB to B)</td><td>4</td><td>2</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>19</td><td>Ratana Krause</td><td>Saints</td><td>5</td><td>2</td><td>7</td><td>9</td><td>0</td></tr>
-<tr><td>71</td><td>Nolan Mcmanus</td><td>SDIA</td><td>7</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
-<tr><td>75</td><td>Carter Raden</td><td>Flyers (2)</td><td>6</td><td>2</td><td>0</td><td>2</td><td>0</td></tr>
-<tr><td>34</td><td>David Shuklin</td><td>Flyers (1)</td><td>6</td><td>2</td><td>3</td><td>5</td><td>0</td></tr>
-<tr><td>22</td><td>Winston Tankersley</td><td>10B Jr. Kings</td><td>6</td><td>2</td><td>6</td><td>8</td><td>2</td></tr>
-<tr><td>62</td><td>Bennett Terry</td><td>Flyers (1)</td><td>7</td><td>2</td><td>1</td><td>3</td><td>4</td></tr>
-<tr><td>33</td><td>Carly Tsang</td><td>Flyers (1)</td><td>7</td><td>2</td><td>3</td><td>5</td><td>0</td></tr>
-<tr><td>53</td><td>Logan Tsang</td><td>Flyers (1)</td><td>7</td><td>2</td><td>2</td><td>4</td><td>6</td></tr>
-<tr><td>61</td><td>August White</td><td>Flyers (1)</td><td>7</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
-<tr><td>32</td><td>Bextyn Wittmann</td><td>Jr. Gulls</td><td>5</td><td>2</td><td>3</td><td>5</td><td>2</td></tr>
-<tr><td>114</td><td>Louis Ace Aldini</td><td>10B Jr. Kings</td><td>6</td><td>1</td><td>0</td><td>1</td><td>2</td></tr>
-<tr><td>115</td><td>Oliver Brown</td><td>Jr Firebirds</td><td>7</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
-<tr><td>104</td><td>Dallas Churchill</td><td>Jr Firebirds</td><td>7</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
-<tr><td>59</td><td>Archer Daley</td><td>SDIA</td><td>7</td><td>1</td><td>2</td><td>3</td><td>0</td></tr>
-<tr><td>86</td><td>Reagan Dickson</td><td>Flyers (2)</td><td>6</td><td>1</td><td>1</td><td>2</td><td>0</td></tr>
-<tr><td>122</td><td>Wyatt Dimaggio</td><td>Jr Firebirds</td><td>7</td><td>1</td><td>0</td><td>1</td><td>2</td></tr>
-<tr><td>87</td><td>Rowen Escobar</td><td>Flyers (1)</td><td>7</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
-<tr><td>63</td><td>Bronson Fischer</td><td>Avalanche (1)</td><td>7</td><td>1</td><td>2</td><td>3</td><td>0</td></tr>
-<tr><td>105</td><td>Eli Gaska</td><td>Ice Dogs</td><td>7</td><td>1</td><td>0</td><td>1</td><td>2</td></tr>
-<tr><td>74</td><td>August Genovese</td><td>Ice Dogs</td><td>6</td><td>1</td><td>1</td><td>2</td><td>0</td></tr>
-<tr><td>91</td><td>Waylon Kaufold</td><td>Avalanche (1)</td><td>7</td><td>1</td><td>1</td><td>2</td><td>0</td></tr>
-<tr><td>66</td><td>Jackson Latimer</td><td>Ice Dogs</td><td>7</td><td>1</td><td>2</td><td>3</td><td>6</td></tr>
-<tr><td>67</td><td>Landon Lerman</td><td>Bears</td><td>6</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
-<tr><td>120</td><td>Sean Lockshin</td><td>Flyers (1)</td><td>7</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
-<tr><td>109</td><td>Hector Maxwell</td><td>Jr. Gulls</td><td>5</td><td>1</td><td>0</td><td>1</td><td>6</td></tr>
-<tr><td>111</td><td>James McBride</td><td>Bears</td><td>6</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>81</td><td>Knox McBride</td><td>SDIA</td><td>6</td><td>1</td><td>1</td><td>2</td><td>4</td></tr>
-<tr><td>97</td><td>Bennett Moodie</td><td>Jr. Gulls</td><td>5</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
-<tr><td>95</td><td>Arwa Perumal</td><td>Stars</td><td>5</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>73</td><td>Zoraver Rishi</td><td>Avalanche (1)</td><td>7</td><td>1</td><td>2</td><td>3</td><td>6</td></tr>
-<tr><td>72</td><td>Stella Robertson</td><td>Avalanche (1)</td><td>7</td><td>1</td><td>2</td><td>3</td><td>2</td></tr>
-<tr><td>35</td><td>Domenico Rossetti</td><td>SDIA</td><td>7</td><td>1</td><td>4</td><td>5</td><td>2</td></tr>
-<tr><td>113</td><td>Logan Rumeld</td><td>Bears</td><td>6</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
-<tr><td>80</td><td>James Sutantyo</td><td>Maple Leafs</td><td>5</td><td>1</td><td>1</td><td>2</td><td>4</td></tr>
-<tr><td>65</td><td>Hiro Takamoto</td><td>10B Jr. Kings</td><td>6</td><td>1</td><td>2</td><td>3</td><td>2</td></tr>
-<tr><td>27</td><td>Ever Wade</td><td>Saints</td><td>5</td><td>1</td><td>5</td><td>6</td><td>0</td></tr>
-<tr><td>76</td><td>Daniel Yeh</td><td>Flyers (2)</td><td>6</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
-<tr><td>156</td><td>Leonid Alisov</td><td>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>175</td><td>Robert Amirkhanian</td><td>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>171</td><td>Philip Ball</td><td>10B Jr. Kings</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>110</td><td>Jack Bemiller</td><td>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>140</td><td>Evan Boland</td><td>10B Jr. Kings</td><td>6</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
-<tr><td>167</td><td>Parker Boyd</td><td>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>94</td><td>Andrey Brilkov</td><td>Bears</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>173</td><td>Remy Broughton</td><td>SDIA</td><td>4</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
-<tr><td>150</td><td>Jameson Busch</td><td>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>119</td><td>Reagan Busch</td><td>Avalanche (1)</td><td>7</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>106</td><td>Elijah Canchola</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>147</td><td>Ignacio Ryser Carter</td><td>Maple Leafs</td><td>6</td><td>0</td><td>0</td><td>0</td><td>12</td></tr>
-<tr><td>112</td><td>Jameson Causey</td><td>Maple Leafs</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>153</td><td>Jesse Cheng</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>118</td><td>Oz De Cordova</td><td>Bears</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>166</td><td>Owen Coulthard</td><td>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>184</td><td>Wesley Danney</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>149</td><td>James Davis</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>160</td><td>Maximus Deacon</td><td>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>121</td><td>Theo Decaire</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>164</td><td>Nicholas Delgadillo</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>6</td></tr>
-<tr><td>141</td><td>Francis Denue</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>82</td><td>Liam Derzaph</td><td>Ice Dogs</td><td>7</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
-<tr><td>146</td><td>Henry Doyle</td><td>Bears</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>177</td><td>Sawyer Dreischmeyer</td><td>SDIA</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>148</td><td>Jack Ellenz</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>157</td><td>Lincoln Flareau</td><td>Jr Firebirds</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>98</td><td>Brady Flynn</td><td>Stars</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>100</td><td>Chayse Foster</td><td>SDIA</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>138</td><td>Elan Gamez</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>174</td><td>Ricardo Garcia</td><td>10B Jr. Kings</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>144</td><td>Hakon Gawlik</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>165</td><td>Olivier Gignac</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>169</td><td>Peter Goodman</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>101</td><td>Christopher Grigoryan</td><td>Bears</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>137</td><td>Connor Gutierrez</td><td>Jr Firebirds</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>154</td><td>Killian Harrell</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>70</td><td>Lucas Henok</td><td>10B Jr. Kings</td><td>6</td><td>0</td><td>3</td><td>3</td><td>4</td></tr>
-<tr><td>172</td><td>Raiden Horwitz</td><td>Ice Dogs</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>84</td><td>Marlen Shaw III</td><td>Ice Dogs</td><td>6</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
-<tr><td>168</td><td>Patrick Hassell III</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>58</td><td>Ace Jenkins</td><td>10B Jr. Kings</td><td>6</td><td>0</td><td>3</td><td>3</td><td>2</td></tr>
-<tr><td>127</td><td>Andrew Jensen</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>135</td><td>Colleen Jiardina</td><td>Saints</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>128</td><td>August Johnson</td><td>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>99</td><td>Bryce Kadish</td><td>Stars</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>68</td><td>Liam Kiger</td><td>10B Jr. Kings</td><td>6</td><td>0</td><td>3</td><td>3</td><td>8</td></tr>
-<tr><td>79</td><td>Jaemoon Kim</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>2</td><td>2</td><td>2</td></tr>
-<tr><td>103</td><td>Coby Konzen</td><td>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>92</td><td>Abigail Kopp</td><td>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>96</td><td>Benjamin Koren</td><td>Avalanche (1)</td><td>7</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>163</td><td>Myles Kucera</td><td>Ice Dogs</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>161</td><td>Melody Li</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>134</td><td>Cal Livermont</td><td>Bears</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>131</td><td>Brayden Macculloch</td><td>Flyers (1)</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>133</td><td>Brooklyn Magana</td><td>Ice Dogs</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>108</td><td>Finn Mark</td><td>Saints</td><td>4</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>145</td><td>Hayk Martirosyan</td><td>Bears</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>126</td><td>Anders Mckinnon</td><td>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>130</td><td>Banks Mcrae</td><td>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>102</td><td>Clover Mehegan</td><td>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>136</td><td>Colton Miller</td><td>Flyers (2)</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>139</td><td>Eugene Monroe</td><td>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>179</td><td>Sebastian Garcia Morales</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>180</td><td>Tyler Morgan</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>181</td><td>Tyler Niles-Byrd</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>162</td><td>Michale Oliver</td><td>Flyers (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>151</td><td>Jameson Panico</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
-<tr><td>159</td><td>Lyle Peterschick-Cornejo</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>107</td><td>Emerson Podruski</td><td>Avalanche (1)</td><td>7</td><td>0</td><td>1</td><td>1</td><td>4</td></tr>
-<tr><td>170</td><td>Phantaphat Pongmaykin</td><td>Saints</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>116</td><td>Owen Power</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
-<tr><td>178</td><td>Sean Robertson</td><td>Stars</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>158</td><td>Luke Rowan</td><td>Maple Leafs</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>132</td><td>Brody Saldana</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>176</td><td>Ryan Sniffin</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>152</td><td>Jameson Solis</td><td>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>142</td><td>Gavin Soto</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>185</td><td>Zachary Summers</td><td>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>123</td><td>Yixin Tan</td><td>Jr. Gulls</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>125</td><td>Alyssa Taylor-Hurtado</td><td>Jr Firebirds</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>49</td><td>Jhaymar De La Torre</td><td>Saints</td><td>5</td><td>0</td><td>4</td><td>4</td><td>0</td></tr>
-<tr><td>88</td><td>Silas Tuchman</td><td>Flyers (2)</td><td>6</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
-<tr><td>124</td><td>Zachary Vogel-Seidenberg</td><td>Maple Leafs</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>182</td><td>Vic Wang</td><td>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>78</td><td>Isabelle Wilks</td><td>Saints</td><td>6</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
-<tr><td>129</td><td>Avelina Williamson</td><td>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>117</td><td>Oxlee Wright</td><td>Stars</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
-<tr><td>155</td><td>Landon Yoo</td><td>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>183</td><td>Wanlin Zhou</td><td>Maple Leafs</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
-<tr><td>143</td><td>Grayson Zipperman</td><td>Jr Firebirds</td><td>5</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
-<tr><td>93</td><td>Alasdair Zuill</td><td>SDIA</td><td>6</td><td>0</td><td>1</td><td>1</td><td>4</td></tr>
+<th>Player</th><th>Team</th><th>GP</th><th>G</th><th>A</th><th>Pts</th><th>PIMS</th></tr></thead><tbody>
+<tr><td>Remy Silegy</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>20</td><td>4</td><td>24</td><td>18</td></tr>
+<tr><td>Odin Hawes</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>16</td><td>4</td><td>20</td><td>4</td></tr>
+<tr><td>Abram Ramirez</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>14</td><td>4</td><td>18</td><td>0</td></tr>
+<tr><td>Sullivan Creeley</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>13</td><td>4</td><td>17</td><td>4</td></tr>
+<tr><td>Kaimana Harris</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>13</td><td>4</td><td>17</td><td>2</td></tr>
+<tr><td>Koa Laszlo Nole Kerekes</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>12</td><td>2</td><td>14</td><td>2</td></tr>
+<tr><td>Cole Taylor</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>10</td><td>1</td><td>11</td><td>2</td></tr>
+<tr><td>Liam Asmuth</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>9</td><td>1</td><td>10</td><td>0</td></tr>
+<tr><td>Crosby Trudeau Viriato</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>9</td><td>0</td><td>9</td><td>0</td></tr>
+<tr><td>Rex Holliday</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>8</td><td>1</td><td>9</td><td>0</td></tr>
+<tr><td>Samuel Kitsembel</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>8</td><td>5</td><td>13</td><td>8</td></tr>
+<tr><td>Ilan Touazi</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>8</td><td>3</td><td>11</td><td>4</td></tr>
+<tr><td>Brady Cignoli</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>7</td><td>3</td><td>10</td><td>2</td></tr>
+<tr><td>Danila Grebinchenko</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>7</td><td>3</td><td>10</td><td>2</td></tr>
+<tr><td>Declan Griffis</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>7</td><td>3</td><td>10</td><td>4</td></tr>
+<tr><td>Everett Phariss</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>6</td><td>3</td><td>9</td><td>6</td></tr>
+<tr><td>Quinn Dickson</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>5</td><td>4</td><td>9</td><td>0</td></tr>
+<tr><td>Conor Gomez</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>5</td><td>2</td><td>7</td><td>2</td></tr>
+<tr><td>Stryker Lawry</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>5</td><td>0</td><td>5</td><td>0</td></tr>
+<tr><td>Callum Nuttall</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>5</td><td>4</td><td>9</td><td>8</td></tr>
+<tr><td>Carson Quigley</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>5</td><td>1</td><td>6</td><td>8</td></tr>
+<tr><td>Landon Scamehorn</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>5</td><td>3</td><td>8</td><td>4</td></tr>
+<tr><td>Merrick Bishop</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>4</td><td>2</td><td>6</td><td>0</td></tr>
+<tr><td>Theodore Dale</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>4</td><td>1</td><td>5</td><td>0</td></tr>
+<tr><td>Martin Oliden</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>4</td><td>2</td><td>6</td><td>0</td></tr>
+<tr><td>Zao Perez</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>4</td><td>1</td><td>5</td><td>0</td></tr>
+<tr><td>Aram Safarian</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>5</td><td>4</td><td>0</td><td>4</td><td>0</td></tr>
+<tr><td>Curtis Zhu</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>4</td><td>3</td><td>7</td><td>2</td></tr>
+<tr><td>Hubertus Arkeveld</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>3</td><td>2</td><td>5</td><td>0</td></tr>
+<tr><td>Luca Bish</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>4</td><td>3</td><td>2</td><td>5</td><td>2</td></tr>
+<tr><td>Remington Busch</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>3</td><td>2</td><td>5</td><td>6</td></tr>
+<tr><td>Liam Deaver</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>4</td><td>3</td><td>2</td><td>5</td><td>0</td></tr>
+<tr><td>Odin Klatzko</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
+<tr><td>Emmet Lynch</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>5</td><td>3</td><td>1</td><td>4</td><td>0</td></tr>
+<tr><td>Aria Morgan</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>6</td><td>3</td><td>6</td><td>9</td><td>8</td></tr>
+<tr><td>Levi Nicklas</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
+<tr><td>Layne Peek</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>3</td><td>2</td><td>5</td><td>4</td></tr>
+<tr><td>Christian Sabin</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>3</td><td>0</td><td>3</td><td>10</td></tr>
+<tr><td>Leo Santogrossi</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
+<tr><td>Kai-Syuan Tsao</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>3</td><td>1</td><td>4</td><td>2</td></tr>
+<tr><td>Archer Alarid</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>2</td><td>3</td><td>5</td><td>6</td></tr>
+<tr><td>David Avetisyan</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>2</td><td>0</td><td>2</td><td>4</td></tr>
+<tr><td>Amir Aziz</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>2</td><td>2</td><td>4</td><td>2</td></tr>
+<tr><td>Stevie Baltazar</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>6</td><td>2</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>Nico Beal</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>2</td><td>0</td><td>2</td><td>2</td></tr>
+<tr><td>Addison Belair</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>2</td><td>3</td><td>5</td><td>0</td></tr>
+<tr><td>Adelaide Buckley</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>2</td><td>4</td><td>6</td><td>0</td></tr>
+<tr><td>Waylon Carpenter</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>2</td><td>0</td><td>2</td><td>4</td></tr>
+<tr><td>Dominick Dolphin</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>2</td><td>2</td><td>4</td><td>12</td></tr>
+<tr><td>Sumiko Duffin</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>2</td><td>2</td><td>4</td><td>2</td></tr>
+<tr><td>Aubrey Eaton</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>2</td><td>1</td><td>3</td><td>4</td></tr>
+<tr><td>James Eisner</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>2</td><td>3</td><td>5</td><td>2</td></tr>
+<tr><td>Miles Gan</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>2</td><td>2</td><td>4</td><td>0</td></tr>
+<tr><td>Sofia Hernandez</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>2</td><td>2</td><td>4</td><td>0</td></tr>
+<tr><td>Locklan Johnson</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>2</td><td>1</td><td>3</td><td>0</td></tr>
+<tr><td>Luke Joseph</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>2</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>Ratana Krause</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>5</td><td>2</td><td>7</td><td>9</td><td>0</td></tr>
+<tr><td>Nolan Mcmanus</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
+<tr><td>Carter Raden</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>2</td><td>0</td><td>2</td><td>0</td></tr>
+<tr><td>David Shuklin</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>6</td><td>2</td><td>3</td><td>5</td><td>0</td></tr>
+<tr><td>Winston Tankersley</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>2</td><td>6</td><td>8</td><td>2</td></tr>
+<tr><td>Bennett Terry</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>2</td><td>1</td><td>3</td><td>4</td></tr>
+<tr><td>Carly Tsang</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>2</td><td>3</td><td>5</td><td>0</td></tr>
+<tr><td>Logan Tsang</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>2</td><td>2</td><td>4</td><td>6</td></tr>
+<tr><td>August White</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>2</td><td>1</td><td>3</td><td>2</td></tr>
+<tr><td>Bextyn Wittmann</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>2</td><td>3</td><td>5</td><td>2</td></tr>
+<tr><td>Louis Ace Aldini</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>1</td><td>0</td><td>1</td><td>2</td></tr>
+<tr><td>Oliver Brown</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
+<tr><td>Dallas Churchill</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
+<tr><td>Archer Daley</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>1</td><td>2</td><td>3</td><td>0</td></tr>
+<tr><td>Reagan Dickson</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>1</td><td>1</td><td>2</td><td>0</td></tr>
+<tr><td>Wyatt Dimaggio</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>1</td><td>0</td><td>1</td><td>2</td></tr>
+<tr><td>Rowen Escobar</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>Bronson Fischer</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>1</td><td>2</td><td>3</td><td>0</td></tr>
+<tr><td>Eli Gaska</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>1</td><td>0</td><td>1</td><td>2</td></tr>
+<tr><td>August Genovese</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>6</td><td>1</td><td>1</td><td>2</td><td>0</td></tr>
+<tr><td>Waylon Kaufold</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>1</td><td>1</td><td>2</td><td>0</td></tr>
+<tr><td>Jackson Latimer</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>1</td><td>2</td><td>3</td><td>6</td></tr>
+<tr><td>Landon Lerman</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+<tr><td>Sean Lockshin</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
+<tr><td>Hector Maxwell</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>1</td><td>0</td><td>1</td><td>6</td></tr>
+<tr><td>James McBride</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>Knox McBride</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>6</td><td>1</td><td>1</td><td>2</td><td>4</td></tr>
+<tr><td>Bennett Moodie</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>1</td><td>0</td><td>1</td><td>4</td></tr>
+<tr><td>Arwa Perumal</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>Zoraver Rishi</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>1</td><td>2</td><td>3</td><td>6</td></tr>
+<tr><td>Stella Robertson</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>1</td><td>2</td><td>3</td><td>2</td></tr>
+<tr><td>Domenico Rossetti</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>1</td><td>4</td><td>5</td><td>2</td></tr>
+<tr><td>Logan Rumeld</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>James Sutantyo</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>5</td><td>1</td><td>1</td><td>2</td><td>4</td></tr>
+<tr><td>Hiro Takamoto</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>1</td><td>2</td><td>3</td><td>2</td></tr>
+<tr><td>Ever Wade</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>5</td><td>1</td><td>5</td><td>6</td><td>0</td></tr>
+<tr><td>Daniel Yeh</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>1</td><td>1</td><td>2</td><td>2</td></tr>
+<tr><td>Leonid Alisov</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Robert Amirkhanian</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Philip Ball</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Jack Bemiller</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Evan Boland</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
+<tr><td>Parker Boyd</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Andrey Brilkov</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Remy Broughton</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>4</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
+<tr><td>Jameson Busch</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Reagan Busch</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Elijah Canchola</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Ignacio Ryser Carter</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>0</td><td>0</td><td>0</td><td>12</td></tr>
+<tr><td>Jameson Causey</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Jesse Cheng</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Oz De Cordova</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Owen Coulthard</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Wesley Danney</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>James Davis</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Maximus Deacon</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Theo Decaire</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Nicholas Delgadillo</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>6</td></tr>
+<tr><td>Francis Denue</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Liam Derzaph</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>Henry Doyle</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Sawyer Dreischmeyer</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Jack Ellenz</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Lincoln Flareau</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Brady Flynn</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Chayse Foster</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Elan Gamez</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Ricardo Garcia</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Hakon Gawlik</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Olivier Gignac</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Peter Goodman</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Christopher Grigoryan</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Connor Gutierrez</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Killian Harrell</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Lucas Henok</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>0</td><td>3</td><td>3</td><td>4</td></tr>
+<tr><td>Raiden Horwitz</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Marlen Shaw III</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>6</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>Patrick Hassell III</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Ace Jenkins</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>0</td><td>3</td><td>3</td><td>2</td></tr>
+<tr><td>Andrew Jensen</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Colleen Jiardina</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>August Johnson</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Bryce Kadish</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Liam Kiger</td><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>6</td><td>0</td><td>3</td><td>3</td><td>8</td></tr>
+<tr><td>Jaemoon Kim</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>2</td><td>2</td><td>2</td></tr>
+<tr><td>Coby Konzen</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Abigail Kopp</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Benjamin Koren</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Myles Kucera</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Melody Li</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Cal Livermont</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Brayden Macculloch</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Brooklyn Magana</td><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Finn Mark</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>4</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Hayk Martirosyan</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Anders Mckinnon</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Banks Mcrae</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Clover Mehegan</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Colton Miller</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Eugene Monroe</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Sebastian Garcia Morales</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Tyler Morgan</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Tyler Niles-Byrd</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Michale Oliver</td><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Jameson Panico</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>4</td></tr>
+<tr><td>Lyle Peterschick-Cornejo</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Emerson Podruski</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>0</td><td>1</td><td>1</td><td>4</td></tr>
+<tr><td>Phantaphat Pongmaykin</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Owen Power</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td>Sean Robertson</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Luke Rowan</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Brody Saldana</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Ryan Sniffin</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Jameson Solis</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Gavin Soto</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Zachary Summers</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>7</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Yixin Tan</td><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Alyssa Taylor-Hurtado</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Jhaymar De La Torre</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>5</td><td>0</td><td>4</td><td>4</td><td>0</td></tr>
+<tr><td>Silas Tuchman</td><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>6</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>Zachary Vogel-Seidenberg</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>6</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Vic Wang</td><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>7</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Isabelle Wilks</td><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>6</td><td>0</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>Avelina Williamson</td><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>6</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Oxlee Wright</td><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>5</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td>Landon Yoo</td><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>4</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Wanlin Zhou</td><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>3</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Grayson Zipperman</td><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>5</td><td>0</td><td>0</td><td>0</td><td>2</td></tr>
+<tr><td>Alasdair Zuill</td><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>6</td><td>0</td><td>1</td><td>1</td><td>4</td></tr>
 </tbody></table></div>
 </section>
 <section class="card"><h2>Reconciliation</h2>
 <div style="overflow:auto"><table id="reconciliation-table"><thead><tr>
 <th>Team</th><th>Player goals</th><th>Team GF</th><th>Difference</th><th>Status</th></tr></thead><tbody>
-<tr><td>10B Jr. Kings</td><td>35</td><td>35</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Avalanche (1)</td><td>23</td><td>23</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Bears</td><td>13</td><td>13</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Flyers (1)</td><td>34</td><td>34</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Flyers (2)</td><td>27</td><td>27</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Ice Dogs</td><td>49</td><td>49</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Jr Firebirds</td><td>8</td><td>7</td><td>+1</td><td><span class="off">OFF</span></td></tr>
-<tr><td>Jr. Gulls</td><td>17</td><td>18</td><td>-1</td><td><span class="off">OFF</span></td></tr>
-<tr><td>Maple Leafs</td><td>30</td><td>30</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Red Wings (BB to B)</td><td>2</td><td>2</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Saints</td><td>47</td><td>47</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>SDIA</td><td>15</td><td>15</td><td>0</td><td><span class="ok">OK</span></td></tr>
-<tr><td>Stars</td><td>36</td><td>36</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="10B Jr. Kings logo"><use href="../assets/team-logos.svg#10b-jr-kings"></use></svg>10B Jr. Kings</td><td>35</td><td>35</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Avalanche (1) logo"><use href="../assets/team-logos.svg#avalanche-1"></use></svg>Avalanche (1)</td><td>23</td><td>23</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Bears logo"><use href="../assets/team-logos.svg#bears"></use></svg>Bears</td><td>13</td><td>13</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Flyers (1) logo"><use href="../assets/team-logos.svg#flyers-1"></use></svg>Flyers (1)</td><td>34</td><td>34</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Flyers (2) logo"><use href="../assets/team-logos.svg#flyers-2"></use></svg>Flyers (2)</td><td>27</td><td>27</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Ice Dogs logo"><use href="../assets/team-logos.svg#ice-dogs"></use></svg>Ice Dogs</td><td>49</td><td>49</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Jr Firebirds logo"><use href="../assets/team-logos.svg#jr-firebirds"></use></svg>Jr Firebirds</td><td>8</td><td>7</td><td>+1</td><td><span class="off">OFF</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Jr. Gulls logo"><use href="../assets/team-logos.svg#jr-gulls"></use></svg>Jr. Gulls</td><td>17</td><td>18</td><td>-1</td><td><span class="off">OFF</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Maple Leafs logo"><use href="../assets/team-logos.svg#maple-leafs"></use></svg>Maple Leafs</td><td>30</td><td>30</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Red Wings (BB to B) logo"><use href="../assets/team-logos.svg#red-wings-bb-to-b"></use></svg>Red Wings (BB to B)</td><td>2</td><td>2</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Saints logo"><use href="../assets/team-logos.svg#saints"></use></svg>Saints</td><td>47</td><td>47</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="SDIA logo"><use href="../assets/team-logos.svg#sdia"></use></svg>SDIA</td><td>15</td><td>15</td><td>0</td><td><span class="ok">OK</span></td></tr>
+<tr><td><svg class="team-logo" role="img" aria-label="Stars logo"><use href="../assets/team-logos.svg#stars"></use></svg>Stars</td><td>36</td><td>36</td><td>0</td><td><span class="ok">OK</span></td></tr>
 </tbody></table></div>
 </section>
 <script>document.querySelectorAll('table').forEach(table=>{const filter=document.createElement('input');filter.className='filter';filter.placeholder='Filter this table...';table.parentElement.parentElement.insertAdjacentElement('afterbegin',filter);filter.addEventListener('input',()=>{const q=filter.value.toLowerCase();table.querySelectorAll('tbody tr').forEach(row=>row.style.display=row.innerText.toLowerCase().includes(q)?'':'none')});table.querySelectorAll('th').forEach((th,index)=>{th.addEventListener('click',()=>{const rows=[...table.tBodies[0].rows];const numeric=rows.every(r=>!isNaN(parseFloat(r.cells[index]?.innerText)));rows.sort((a,b)=>{const av=a.cells[index]?.innerText??'',bv=b.cells[index]?.innerText??'';return numeric?parseFloat(av)-parseFloat(bv):av.localeCompare(bv)});rows.forEach(r=>table.tBodies[0].appendChild(r))})})});const goals=document.getElementById('goals-table');document.getElementById('toggle-assists').addEventListener('click',e=>{goals.classList.toggle('assist-visible');e.target.textContent=goals.classList.contains('assist-visible')?'Hide assists':'Include assists'});</script></main></body></html>

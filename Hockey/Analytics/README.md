@@ -19,8 +19,10 @@ HTML is the default:
 dotnet run hockeybalance.cs -- --team "10U B Flyers(2)"
 ```
 
-This writes `hockeybalance.html` in the current directory. Use text output when
-you want the original terminal report:
+This writes a context-specific file in the current directory, such as
+`hockeybalance-10u-b-regular-season-10u-b-flyers-2.html`. That keeps reports for
+different schedules and teams from overwriting one another. Use text output
+when you want the original terminal report:
 
 ```powershell
 dotnet run hockeybalance.cs -- --text --team "10U B Flyers(2)"
@@ -36,8 +38,8 @@ Omit `--team` to include every team in the selected schedule:
 dotnet run hockeybalance.cs
 ```
 
-The report is written to `hockeybalance.html`. To keep separate snapshots, run
-from a separate output directory:
+The report filename includes the schedule. To keep separate snapshots, run from
+a separate output directory:
 
 ```powershell
 New-Item -ItemType Directory -Force reports\10u-b | Out-Null
@@ -97,20 +99,25 @@ This is useful for a mirror, test server, or captured-compatible endpoint:
 dotnet run hockeybalance.cs -- --base-url "https://www.scaha.net/scaha/"
 ```
 
-The HTML report contains five filterable, sortable tables:
+The HTML report contains six filterable, sortable tables:
 
 1. Player goal share
-2. Team goal balance
-3. Source team standings
-4. Source player totals
-5. Player-goal versus team-GF reconciliation
+2. Player point ranking
+3. Team goal balance
+4. Source team standings
+5. Source player totals
+6. Player-goal versus team-GF reconciliation
 
 It also includes a responsive three-column bar chart sorted by average goals per
 scoring player. That metric is calculated as player goals divided by the number
-of players with at least one goal. The source player table preserves the SCAHA
-`#` field as the source ranking/order; goal-rating tables sort by goals
-descending, then last name, and assign competition ranks so equal goal totals
-share a rank (`1, 1, 3`). The source rank is not treated as a jersey number.
+of players with at least one goal. Goal-rating tables sort by goals descending,
+then last name, and assign competition ranks so equal goal totals share a rank
+(`1, 1, 3`). The point-ranking table applies the same tie behavior to total
+points. The SCAHA source ranking number is intentionally omitted.
+
+Team marks are stored locally in `docs/assets/team-logos.svg` and embedded in
+the published reports, so the Pages site does not depend on external image
+hosts.
 
 The source tables preserve every standings and player field used by the report:
 GP, W, L, T, points, GF, GA, GD, goals, assists, points, and PIMS.
@@ -122,6 +129,7 @@ GP, W, L, T, points, GF, GA, GD, goals, assists, points, and PIMS.
 --team NAME        Restrict reports to one team; age/division prefixes allowed
 --top N            Limit the player-share table to the first N goal scorers
 --text             Print the console report instead of writing HTML
+--output PATH      Choose the HTML path; useful for publishing to docs/reports
 --base-url URL     Override the site root
 ```
 
@@ -176,7 +184,7 @@ not an integer. It still validates that every player team exists in standings.
 The report is ordinary self-contained HTML, so it can be opened directly:
 
 ```powershell
-Start-Process .\hockeybalance.html
+Start-Process .\hockeybalance-10u-b-regular-season.html
 ```
 
 It contains no external JavaScript or CSS dependencies and can be archived or
