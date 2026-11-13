@@ -422,11 +422,26 @@ static class HtmlReports
         html.AppendLine("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">");
         html.AppendLine("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
         html.AppendLine("<title>HockeyBalance report</title><style>");
-        html.AppendLine("body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0;cursor:pointer}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}.toolbar{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}.filter{border:1px solid #b9c5d8;border-radius:6px;padding:.5rem;min-width:16rem}.button{border:0;border-radius:6px;padding:.5rem .75rem;background:#1d5fa7;color:#fff;cursor:pointer}.assist-column{display:none}.assist-visible .assist-column{display:table-cell}");
+        html.AppendLine("body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0;cursor:pointer}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}.toolbar{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}.filter{border:1px solid #b9c5d8;border-radius:6px;padding:.5rem;min-width:16rem}.button{border:0;border-radius:6px;padding:.5rem .75rem;background:#1d5fa7;color:#fff;cursor:pointer}.assist-column{display:none}.assist-visible .assist-column{display:table-cell}.bar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}.bar-card{border:1px solid #d9e1ef;border-radius:9px;padding:.8rem;background:#fbfdff}.bar-label{display:flex;justify-content:space-between;gap:.5rem;font-weight:600}.bar-sub{color:#526078;font-size:.85rem;margin:.2rem 0 .5rem}.bar-track{height:1rem;border-radius:999px;background:#e5edf7;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,#246bb2,#4da3df);border-radius:999px}@media(max-width:900px){.bar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){body{padding:1rem}.bar-grid{grid-template-columns:1fr}}");
         html.AppendLine("</style></head><body><main>");
         html.AppendLine($"<h1>HockeyBalance</h1><p class=\"meta\">Schedule: <strong>{E(schedule)}</strong>" +
                         (requestedTeam is null ? "" : $" · Team filter: <strong>{E(requestedTeam)}</strong>") +
                         $" · Generated: {DateTimeOffset.Now:yyyy-MM-dd HH:mm zzz}</p>");
+
+        var chartStats = stats
+            .Select(s => new { Stats = s, GoalsPerScorer = s.Scorers == 0 ? 0 : (double)s.PlayerGoals / s.Scorers })
+            .OrderByDescending(x => x.GoalsPerScorer)
+            .ThenBy(x => x.Stats.Team.Name, StringComparer.Ordinal)
+            .ToList();
+        double maxGoalsPerScorer = chartStats.Select(x => x.GoalsPerScorer).DefaultIfEmpty(0).Max();
+        html.AppendLine("<section class=\"card\"><h2>Goals per scoring player</h2><p class=\"note\">Sorted by player goals divided by the number of players who scored at least one goal.</p><div class=\"bar-grid\">");
+        foreach (var item in chartStats)
+        {
+            string value = item.GoalsPerScorer.ToString("0.0", CultureInfo.InvariantCulture);
+            string width = maxGoalsPerScorer == 0 ? "0" : (100 * item.GoalsPerScorer / maxGoalsPerScorer).ToString("0.0", CultureInfo.InvariantCulture);
+            html.AppendLine($"<div class=\"bar-card\"><div class=\"bar-label\"><span>{E(item.Stats.Team.Name)}</span><span>{value}</span></div><div class=\"bar-sub\">{item.Stats.PlayerGoals} player goals ÷ {item.Stats.Scorers} scorers</div><div class=\"bar-track\"><div class=\"bar-fill\" style=\"width:{width}%\"></div></div></div>");
+        }
+        html.AppendLine("</div></section>");
 
         html.AppendLine("<section class=\"card\"><h2>Player goals and team-goal share</h2>");
         html.AppendLine("<p class=\"note\">Players are ranked by goals. The share uses player goals divided by the selected team's goals-for.</p>");

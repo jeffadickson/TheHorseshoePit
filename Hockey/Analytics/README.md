@@ -105,6 +105,10 @@ The HTML report contains five filterable, sortable tables:
 4. Source player totals
 5. Player-goal versus team-GF reconciliation
 
+It also includes a responsive three-column bar chart sorted by average goals per
+scoring player. That metric is calculated as player goals divided by the number
+of players with at least one goal.
+
 The source tables preserve every standings and player field used by the report:
 GP, W, L, T, points, GF, GA, GD, goals, assists, points, and PIMS.
 
