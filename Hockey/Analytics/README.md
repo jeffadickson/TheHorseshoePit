@@ -30,9 +30,10 @@ dotnet run hockeybalance.cs -- --text --team "10U B Flyers(2)"
 
 ## Detailed examples
 
-### 1. Generate a league-wide HTML report
+### 1. Generate a schedule-wide HTML report
 
-Omit `--team` to include every team in the selected schedule:
+Omit `--team` to include every team in the selected schedule. With the default
+options, this is the 10U B Regular Season report, not every SCAHA division:
 
 ```powershell
 dotnet run hockeybalance.cs
