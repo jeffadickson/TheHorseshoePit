@@ -49,7 +49,8 @@ dotnet run ..\..\hockeybalance.cs
 Pop-Location
 ```
 
-Published reports are organized by season year under `docs/reports/2026/`.
+Published reports mirror the project hierarchy under
+`docs/Hockey/Analytics/2026/`.
 
 ### 2. Report one team
 
