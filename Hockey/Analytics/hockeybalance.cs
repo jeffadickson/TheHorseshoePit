@@ -523,10 +523,11 @@ static class HtmlReports
                 item.Player.Points.ToString(CultureInfo.InvariantCulture)}), false);
         html.AppendLine("</section>");
 
-        html.AppendLine("<section class=\"card\"><h2>Team goal balance</h2>");
-        Table(html, "balance-table", ["Rank", "Team", "GF", "Scorers", "Top scorer %", "Top 3 %", "Effective scorers", "Top 3 scorers (G:A:Pts)"],
-            stats.OrderByDescending(s => s.EffectiveScorers).Select((s, i) => new[] {
-                (i + 1).ToString(CultureInfo.InvariantCulture), E(s.Team.Name),
+        html.AppendLine("<section class=\"card\"><h2>Team goal balance</h2><p class=\"note\">Sorted by Top 3 % from lowest to highest. Lower values mean goals are spread across more players instead of being concentrated in the top three scorers.</p>");
+        Table(html, "balance-table", ["Team", "GF", "Scorers", "Top scorer %", "Top 3 %", "Effective scorers", "Top 3 scorers (G:A:Pts)"],
+            stats.OrderBy(s => s.Team.GoalsFor == 0 ? double.MaxValue : (double)s.Top3Goals / s.Team.GoalsFor)
+                 .ThenBy(s => s.Team.Name, StringComparer.Ordinal).Select(s => new[] {
+                E(s.Team.Name),
                 s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture),
                 s.Scorers.ToString(CultureInfo.InvariantCulture), Pct(s.TopGoals, s.Team.GoalsFor),
                 Pct(s.Top3Goals, s.Team.GoalsFor), s.EffectiveScorers.ToString("0.0", CultureInfo.InvariantCulture),

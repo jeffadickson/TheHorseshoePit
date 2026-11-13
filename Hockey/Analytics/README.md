@@ -116,6 +116,10 @@ then last name, and assign competition ranks so equal goal totals share a rank
 (`1, 1, 3`). The point-ranking table applies the same tie behavior to total
 points. The SCAHA source ranking number is intentionally omitted.
 
+Team goal balance is initially ordered by Top 3 % from lowest to highest. This
+shows the teams with the least concentrated scoring first; the table's visible
+sort controls can be used to choose another order.
+
 Every table has a visible `↕` sort control in each header. Click once for
 ascending order and again for descending order; each table also has its own
 text filter and visible matching-row count. These controls are built into the
