@@ -189,6 +189,26 @@ static bool TeamMatches(string actual, string requested)
     return requestedKey == actualKey || requestedKey.EndsWith(actualKey, StringComparison.Ordinal);
 }
 
+static class Ranking
+{
+    public static IEnumerable<(Player Player, int Rank)> GoalShares(IEnumerable<Player> players, int? top)
+    {
+        int position = 0;
+        int rank = 0;
+        int? previousGoals = null;
+        foreach (Player player in players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue))
+        {
+            position++;
+            if (previousGoals != player.Goals)
+            {
+                rank = position;
+                previousGoals = player.Goals;
+            }
+            yield return (player, rank);
+        }
+    }
+}
+
 record Team(string Name, int GamesPlayed, int Wins, int Losses, int Ties,
             int Points, int GoalsFor, int GoalsAgainst, int GoalDifference);
 
@@ -450,12 +470,12 @@ static class HtmlReports
         html.AppendLine("<p class=\"note\">Players are ranked by goals. The share uses player goals divided by the selected team's goals-for.</p>");
         html.AppendLine("<div class=\"toolbar\"><button class=\"button\" id=\"toggle-assists\" type=\"button\">Include assists</button><span class=\"note\">Assists and points are supplemental; the percentage remains goal share.</span></div>");
         Table(html, "goals-table", ["#", "Player", "Team", "Team GF", "G", "A", "Pts", "G+A", "% of team goals"],
-            players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue).Select((p, i) => new[] {
-                (i + 1).ToString(CultureInfo.InvariantCulture), E(p.Name), E(p.Team),
-                teams[p.Team].GoalsFor.ToString(CultureInfo.InvariantCulture),
-                p.Goals.ToString(CultureInfo.InvariantCulture),
-                p.Assists.ToString(CultureInfo.InvariantCulture), p.Points.ToString(CultureInfo.InvariantCulture),
-                (p.Goals + p.Assists).ToString(CultureInfo.InvariantCulture), Pct(p.Goals, teams[p.Team].GoalsFor)}), true);
+            Ranking.GoalShares(players, top).Select(item => new[] {
+                item.Rank.ToString(CultureInfo.InvariantCulture), E(item.Player.Name), E(item.Player.Team),
+                teams[item.Player.Team].GoalsFor.ToString(CultureInfo.InvariantCulture),
+                item.Player.Goals.ToString(CultureInfo.InvariantCulture),
+                item.Player.Assists.ToString(CultureInfo.InvariantCulture), item.Player.Points.ToString(CultureInfo.InvariantCulture),
+                (item.Player.Goals + item.Player.Assists).ToString(CultureInfo.InvariantCulture), Pct(item.Player.Goals, teams[item.Player.Team].GoalsFor)}), true);
         html.AppendLine("</section>");
 
         html.AppendLine("<section class=\"card\"><h2>Team goal balance</h2>");
@@ -542,11 +562,11 @@ static class Reports
     {
         Title("1. Player share of team goals" + (top is int n ? $" (top {n} by goals)" : ""));
         Console.WriteLine($"{"#",3}  {"Player",-34}{"Team",-22}{"Team GF",8}{"G",4}{"A",4}{"Pts",5}{"G+A",5}{"% of team goals",17}");
-        int i = 0;
-        foreach (Player p in players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue))
+        foreach (var item in Ranking.GoalShares(players, top))
         {
+            Player p = item.Player;
             int gf = teams[p.Team].GoalsFor;
-            Console.WriteLine($"{++i,3}  {p.Name,-34}{p.Team,-22}{gf,8}{p.Goals,4}{p.Assists,4}{p.Points,5}{p.Goals + p.Assists,5}{Pct(p.Goals, gf),17}");
+            Console.WriteLine($"{item.Rank,3}  {p.Name,-34}{p.Team,-22}{gf,8}{p.Goals,4}{p.Assists,4}{p.Points,5}{p.Goals + p.Assists,5}{Pct(p.Goals, gf),17}");
         }
     }
 

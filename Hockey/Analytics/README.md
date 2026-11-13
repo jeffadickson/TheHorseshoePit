@@ -109,7 +109,8 @@ It also includes a responsive three-column bar chart sorted by average goals per
 scoring player. That metric is calculated as player goals divided by the number
 of players with at least one goal. The source player table preserves the SCAHA
 `#` field as the source ranking/order; goal-rating tables sort by goals
-descending, then last name, and do not treat that rank as a jersey number.
+descending, then last name, and assign competition ranks so equal goal totals
+share a rank (`1, 1, 3`). The source rank is not treated as a jersey number.
 
 The source tables preserve every standings and player field used by the report:
 GP, W, L, T, points, GF, GA, GD, goals, assists, points, and PIMS.
