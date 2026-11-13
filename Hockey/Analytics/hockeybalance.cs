@@ -1,16 +1,22 @@
 #!/usr/bin/env dotnet
+#:package System.CommandLine@2.0.0
+// Copyright (c) 2026 Jeff Dickson <jeff.dickson@gmail.com>
+// SPDX-License-Identifier: MIT
 // HockeyBalance - goal-share and goal-balance reports for a league.
 // Goals only: assists are ignored because they are tracked unreliably.
 //
 // Usage (.NET 10 SDK or later, no project file needed):
-//   dotnet run hockeybalance.cs                              live SCAHA data, 10U B Regular Season
+//   dotnet run hockeybalance.cs                              live data -> hockeybalance.html
+//   dotnet run hockeybalance.cs -- --text                   live data -> console text
 //   dotnet run hockeybalance.cs -- --schedule "12U A Regular Season"
 //   dotnet run hockeybalance.cs -- teams.txt players.txt     offline, from pasted tables
 //
 // Options:
 //   --schedule NAME   schedule to fetch, as shown in the site's "Select a Schedule" list
 //                     (default "10U B Regular Season"; the site's current season is used)
+//   --team NAME       restrict reports to one team; age/division prefixes are allowed
 //   --top N           limit report 1 (player shares) to the first N players by goals
+//   --text            print the console report instead of writing HTML
 //   --base-url URL    site root (default https://www.scaha.net/scaha/)
 //
 // Live mode reads two pages of www.scaha.net: scoreboard.xhtml (standings) and
@@ -28,109 +34,147 @@ using System.Globalization;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.CommandLine;
 
-int? top = null;
-string schedule = "10U B Regular Season";
-string? team = null;
-string baseUrl = "https://www.scaha.net/scaha/";
-var files = new List<string>();
-for (int i = 0; i < args.Length; i++)
+var filesArgument = new Argument<string[]>("files")
 {
-    string a = args[i];
-    if (a is "--top" or "--schedule" or "--team" or "--base-url")
+    Arity = ArgumentArity.ZeroOrMore,
+    Description = "Optional teams and players TSV files for offline mode.",
+};
+var scheduleOption = new Option<string>("--schedule")
+{
+    DefaultValueFactory = _ => "10U B Regular Season",
+    Description = "Schedule shown in the site's schedule selector.",
+};
+var teamOption = new Option<string?>("--team")
+{
+    Description = "Restrict reports to one team; age/division prefixes are allowed.",
+};
+var topOption = new Option<int?>("--top")
+{
+    Description = "Limit the player-share table to the first N players by goals.",
+};
+var baseUrlOption = new Option<string>("--base-url")
+{
+    DefaultValueFactory = _ => "https://www.scaha.net/scaha/",
+    Description = "Site root for live mode.",
+};
+var textOption = new Option<bool>("--text")
+{
+    Description = "Print the text reports instead of writing HTML.",
+};
+
+var root = new RootCommand("HockeyBalance goal-share and goal-balance reports.");
+root.Arguments.Add(filesArgument);
+root.Options.Add(scheduleOption);
+root.Options.Add(teamOption);
+root.Options.Add(topOption);
+root.Options.Add(baseUrlOption);
+root.Options.Add(textOption);
+root.SetAction(async parseResult =>
+{
+    string[] files = parseResult.GetValue(filesArgument) ?? [];
+    string schedule = parseResult.GetValue(scheduleOption)!;
+    string? team = parseResult.GetValue(teamOption);
+    int? top = parseResult.GetValue(topOption);
+    string baseUrl = parseResult.GetValue(baseUrlOption)!;
+    bool text = parseResult.GetValue(textOption);
+
+    if (files.Length is not (0 or 2))
     {
-        if (i + 1 >= args.Length) return Usage($"{a} needs a value.");
-        string v = args[++i];
-        if (a == "--schedule") schedule = v;
-        else if (a == "--team") team = v;
-        else if (a == "--base-url") baseUrl = v.EndsWith('/') ? v : v + "/";
-        else if (int.TryParse(v, out int n) && n > 0) top = n;
-        else return Usage("--top needs a positive integer.");
+        Console.Error.WriteLine("Give both a teams file and a players file, or neither to fetch live data.");
+        return 1;
     }
-    else if (a.StartsWith("--")) return Usage($"Unknown option {a}.");
-    else files.Add(a);
-}
-if (files.Count is not (0 or 2)) return Usage("Give both a teams file and a players file, or neither to fetch live data.");
-
-List<string[]> teamRows, playerRows;
-try
-{
-    if (files.Count == 2)
+    if (top is <= 0)
     {
-        teamRows = Parser.FileRows(files[0]);
-        playerRows = Parser.FileRows(files[1]);
+        Console.Error.WriteLine("--top needs a positive integer.");
+        return 1;
+    }
+
+    List<string[]> teamRows, playerRows;
+    try
+    {
+        if (files.Length == 2)
+        {
+            teamRows = Parser.FileRows(files[0]);
+            playerRows = Parser.FileRows(files[1]);
+        }
+        else
+        {
+            if (text) Console.WriteLine($"Fetching \"{schedule}\" from {baseUrl} ...");
+            using var site = new Scaha(baseUrl);
+            teamRows = await site.FetchTable("scoreboard.xhtml", schedule, "parts");
+            playerRows = await site.FetchTable("statscentral.xhtml", schedule, "playertotals");
+        }
+    }
+    catch (Exception ex) when (ex is HttpRequestException or InvalidDataException or IOException or TaskCanceledException)
+    {
+        Console.Error.WriteLine("Error: " + ex.Message);
+        return 1;
+    }
+
+    Dictionary<string, Team> teams;
+    List<Player> players;
+    try
+    {
+        teams = Parser.Teams(teamRows);
+        players = Parser.Players(playerRows);
+    }
+    catch (InvalidDataException ex)
+    {
+        Console.Error.WriteLine("Error: " + ex.Message);
+        return 1;
+    }
+
+    var unknown = players.Select(p => p.Team).Distinct().Where(t => !teams.ContainsKey(t)).ToList();
+    if (unknown.Count > 0)
+    {
+        Console.Error.WriteLine("Players reference teams missing from the teams file: " + string.Join(", ", unknown));
+        return 1;
+    }
+
+    if (team is not null)
+    {
+        var matches = teams.Keys.Where(name => TeamMatches(name, team)).ToList();
+        if (matches.Count == 0)
+        {
+            Console.Error.WriteLine($"Team \"{team}\" was not found. Available teams: " +
+                                     string.Join(", ", teams.Keys.Order(StringComparer.Ordinal)));
+            return 1;
+        }
+        if (matches.Count > 1)
+        {
+            Console.Error.WriteLine($"Team \"{team}\" is ambiguous: " + string.Join(", ", matches));
+            return 1;
+        }
+
+        string selectedTeam = matches[0];
+        teams = teams.Where(pair => pair.Key == selectedTeam)
+                     .ToDictionary(pair => pair.Key, pair => pair.Value);
+        players = players.Where(p => p.Team == selectedTeam).ToList();
+    }
+
+    players = players.OrderByDescending(p => p.Goals).ThenBy(p => p.Name, StringComparer.Ordinal).ToList();
+    List<TeamStats> stats = teams.Values
+        .Select(t => new TeamStats(t, players.Where(p => p.Team == t.Name).ToList()))
+        .ToList();
+
+    if (text)
+    {
+        Reports.PlayerShares(players, teams, top);
+        Reports.GoalBalance(stats);
+        Reports.Reconciliation(stats);
     }
     else
     {
-        Console.WriteLine($"Fetching \"{schedule}\" from {baseUrl} ...");
-        using var site = new Scaha(baseUrl);
-        teamRows = await site.FetchTable("scoreboard.xhtml", schedule, "parts");
-        playerRows = await site.FetchTable("statscentral.xhtml", schedule, "playertotals");
+        string output = Path.Combine(Environment.CurrentDirectory, "hockeybalance.html");
+        await HtmlReports.Write(output, schedule, team, players, teams, stats, top);
+        Console.WriteLine($"Wrote {output}");
     }
-}
-catch (Exception ex) when (ex is HttpRequestException or InvalidDataException or IOException or TaskCanceledException)
-{
-    Console.Error.WriteLine("Error: " + ex.Message);
-    return 1;
-}
+    return 0;
+});
 
-Dictionary<string, Team> teams;
-List<Player> players;
-try
-{
-    teams = Parser.Teams(teamRows);
-    players = Parser.Players(playerRows);
-}
-catch (InvalidDataException ex)
-{
-    Console.Error.WriteLine("Error: " + ex.Message);
-    return 1;
-}
-
-var unknown = players.Select(p => p.Team).Distinct().Where(t => !teams.ContainsKey(t)).ToList();
-if (unknown.Count > 0)
-{
-    Console.Error.WriteLine("Players reference teams missing from the teams file: " + string.Join(", ", unknown));
-    return 1;
-}
-
-if (team is not null)
-{
-    var matches = teams.Keys.Where(name => TeamMatches(name, team)).ToList();
-    if (matches.Count == 0)
-    {
-        Console.Error.WriteLine($"Team \"{team}\" was not found. Available teams: " +
-                                 string.Join(", ", teams.Keys.Order(StringComparer.Ordinal)));
-        return 1;
-    }
-    if (matches.Count > 1)
-    {
-        Console.Error.WriteLine($"Team \"{team}\" is ambiguous: " + string.Join(", ", matches));
-        return 1;
-    }
-
-    string selectedTeam = matches[0];
-    teams = teams.Where(pair => pair.Key == selectedTeam)
-                 .ToDictionary(pair => pair.Key, pair => pair.Value);
-    players = players.Where(p => p.Team == selectedTeam).ToList();
-}
-
-players = players.OrderByDescending(p => p.Goals).ThenBy(p => p.Name, StringComparer.Ordinal).ToList();
-List<TeamStats> stats = teams.Values
-    .Select(t => new TeamStats(t, players.Where(p => p.Team == t.Name).ToList()))
-    .ToList();
-
-Reports.PlayerShares(players, teams, top);
-Reports.GoalBalance(stats);
-Reports.Reconciliation(stats);
-return 0;
-
-static int Usage(string error)
-{
-    Console.Error.WriteLine(error);
-    Console.Error.WriteLine("Usage: dotnet run hockeybalance.cs -- [<teams file> <players file>] [--schedule NAME] [--team NAME] [--top N] [--base-url URL]");
-    return 1;
-}
+return await root.Parse(args).InvokeAsync();
 
 static bool TeamMatches(string actual, string requested)
 {
@@ -142,9 +186,11 @@ static bool TeamMatches(string actual, string requested)
     return requestedKey == actualKey || requestedKey.EndsWith(actualKey, StringComparison.Ordinal);
 }
 
-record Team(string Name, int GoalsFor);
+record Team(string Name, int GamesPlayed, int Wins, int Losses, int Ties,
+            int Points, int GoalsFor, int GoalsAgainst, int GoalDifference);
 
-record Player(string Name, string Team, int Goals);
+record Player(string Name, string Team, int GamesPlayed, int Goals, int Assists,
+              int Points, int Pims);
 
 /// <summary>Per-team goal distribution. Roster is ordered by goals, descending.</summary>
 record TeamStats(Team Team, List<Player> Roster)
@@ -180,8 +226,16 @@ static class Parser
     {
         var teams = new Dictionary<string, Team>();
         foreach (string[] f in rows)
-            if (f.Length >= 10 && int.TryParse(f[7], out int gf))
-                teams[f[1]] = new Team(f[1], gf);
+            if (f.Length >= 10 &&
+                int.TryParse(f[2], out int gp) &&
+                int.TryParse(f[3], out int w) &&
+                int.TryParse(f[4], out int l) &&
+                int.TryParse(f[5], out int t) &&
+                int.TryParse(f[6], out int pts) &&
+                int.TryParse(f[7], out int gf) &&
+                int.TryParse(f[8], out int ga) &&
+                int.TryParse(f[9], out int gd))
+                teams[f[1]] = new Team(f[1], gp, w, l, t, pts, gf, ga, gd);
         if (teams.Count == 0) throw new InvalidDataException("No team rows found.");
         return teams;
     }
@@ -191,8 +245,13 @@ static class Parser
     {
         var players = new List<Player>();
         foreach (string[] f in rows)
-            if (f.Length >= 8 && int.TryParse(f[4], out int g))
-                players.Add(new Player(f[1], f[2], g));
+            if (f.Length >= 8 &&
+                int.TryParse(f[3], out int gp) &&
+                int.TryParse(f[4], out int g) &&
+                int.TryParse(f[5], out int a) &&
+                int.TryParse(f[6], out int pts) &&
+                int.TryParse(f[7], out int pims))
+                players.Add(new Player(f[1], f[2], gp, g, a, pts, pims));
         if (players.Count == 0) throw new InvalidDataException("No player rows found.");
         return players;
     }
@@ -347,6 +406,90 @@ sealed class Scaha : IDisposable
     /// <summary>Text of an HTML fragment: tags removed, entities decoded, whitespace collapsed.</summary>
     static string Clean(string html) =>
         Regex.Replace(WebUtility.HtmlDecode(Regex.Replace(html, "<[^>]*>", "")), @"\s+", " ").Trim();
+}
+
+static class HtmlReports
+{
+    public static async Task Write(string path, string schedule, string? requestedTeam,
+                                   List<Player> players, Dictionary<string, Team> teams,
+                                   List<TeamStats> stats, int? top)
+    {
+        var html = new StringBuilder();
+        html.AppendLine("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">");
+        html.AppendLine("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+        html.AppendLine("<title>HockeyBalance report</title><style>");
+        html.AppendLine("body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}");
+        html.AppendLine("</style></head><body><main>");
+        html.AppendLine($"<h1>HockeyBalance</h1><p class=\"meta\">Schedule: <strong>{E(schedule)}</strong>" +
+                        (requestedTeam is null ? "" : $" · Team filter: <strong>{E(requestedTeam)}</strong>") +
+                        $" · Generated: {DateTimeOffset.Now:yyyy-MM-dd HH:mm zzz}</p>");
+
+        html.AppendLine("<section class=\"card\"><h2>Pivot: player share of team goals</h2>");
+        html.AppendLine("<p class=\"note\">Players are ranked by goals. The share uses player goals divided by the selected team's goals-for.</p>");
+        Table(html, ["#", "Player", "Team", "Team GF", "G", "% of team goals"],
+            players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue).Select((p, i) => new[] {
+                (i + 1).ToString(CultureInfo.InvariantCulture), E(p.Name), E(p.Team),
+                teams[p.Team].GoalsFor.ToString(CultureInfo.InvariantCulture),
+                p.Goals.ToString(CultureInfo.InvariantCulture),
+                Pct(p.Goals, teams[p.Team].GoalsFor)}));
+        html.AppendLine("</section>");
+
+        html.AppendLine("<section class=\"card\"><h2>Pivot: team goal balance</h2>");
+        Table(html, ["Rank", "Team", "GF", "Scorers", "Top scorer %", "Top 3 %", "Effective scorers", "Top scorer(s)"],
+            stats.OrderByDescending(s => s.EffectiveScorers).Select((s, i) => new[] {
+                (i + 1).ToString(CultureInfo.InvariantCulture), E(s.Team.Name),
+                s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture),
+                s.Scorers.ToString(CultureInfo.InvariantCulture), Pct(s.TopGoals, s.Team.GoalsFor),
+                Pct(s.Top3Goals, s.Team.GoalsFor), s.EffectiveScorers.ToString("0.0", CultureInfo.InvariantCulture),
+                E(s.TopGoals == 0 ? "" : string.Join(", ", s.Roster.Where(p => p.Goals == s.TopGoals).Select(p => p.Name)) + $" ({s.TopGoals})") }));
+        html.AppendLine("</section>");
+
+        html.AppendLine("<section class=\"card\"><h2>Source pivot: team standings</h2>");
+        Table(html, ["Team", "GP", "W", "L", "T", "Pts", "GF", "GA", "GD"],
+            teams.Values.OrderBy(t => t.Name).Select(t => new[] {E(t.Name),
+                t.GamesPlayed.ToString(CultureInfo.InvariantCulture), t.Wins.ToString(CultureInfo.InvariantCulture),
+                t.Losses.ToString(CultureInfo.InvariantCulture), t.Ties.ToString(CultureInfo.InvariantCulture),
+                t.Points.ToString(CultureInfo.InvariantCulture), t.GoalsFor.ToString(CultureInfo.InvariantCulture),
+                t.GoalsAgainst.ToString(CultureInfo.InvariantCulture), t.GoalDifference.ToString(CultureInfo.InvariantCulture)}));
+        html.AppendLine("</section>");
+
+        html.AppendLine("<section class=\"card\"><h2>Source pivot: player totals</h2>");
+        Table(html, ["Player", "Team", "GP", "G", "A", "Pts", "PIMS"],
+            players.Select(p => new[] {E(p.Name), E(p.Team), p.GamesPlayed.ToString(CultureInfo.InvariantCulture),
+                p.Goals.ToString(CultureInfo.InvariantCulture), p.Assists.ToString(CultureInfo.InvariantCulture),
+                p.Points.ToString(CultureInfo.InvariantCulture), p.Pims.ToString(CultureInfo.InvariantCulture)}));
+        html.AppendLine("</section>");
+
+        html.AppendLine("<section class=\"card\"><h2>Pivot: reconciliation</h2>");
+        Table(html, ["Team", "Player goals", "Team GF", "Difference", "Status"],
+            stats.OrderBy(s => s.Team.Name).Select(s => {
+                int diff = s.PlayerGoals - s.Team.GoalsFor;
+                return new[] {E(s.Team.Name), s.PlayerGoals.ToString(CultureInfo.InvariantCulture),
+                    s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture), diff.ToString("+0;-0;0"),
+                    diff == 0 ? "<span class=\"ok\">OK</span>" : "<span class=\"off\">OFF</span>"};
+            }));
+        html.AppendLine("</section></main></body></html>");
+        await File.WriteAllTextAsync(path, html.ToString(), Encoding.UTF8);
+    }
+
+    static void Table(StringBuilder html, string[] headers, IEnumerable<string[]> rows)
+    {
+        html.AppendLine("<div style=\"overflow:auto\"><table><thead><tr>");
+        foreach (string header in headers) html.Append($"<th>{E(header)}</th>");
+        html.AppendLine("</tr></thead><tbody>");
+        foreach (string[] row in rows)
+        {
+            html.Append("<tr>");
+            foreach (string cell in row) html.Append($"<td>{cell}</td>");
+            html.AppendLine("</tr>");
+        }
+        html.AppendLine("</tbody></table></div>");
+    }
+
+    static string Pct(double num, double den) =>
+        den == 0 ? "n/a" : (100.0 * num / den).ToString("0.0", CultureInfo.InvariantCulture) + "%";
+
+    static string E(string value) => WebUtility.HtmlEncode(value);
 }
 
 static class Reports
