@@ -177,9 +177,7 @@ root.SetAction(async parseResult =>
     else
     {
         string output = Path.GetFullPath(requestedOutput ?? Path.Combine(Environment.CurrentDirectory, ReportFileName(schedule, team)));
-        string assetsDirectory = Path.Combine(Environment.CurrentDirectory, "docs", "assets");
-        string assetsBase = Path.GetRelativePath(Path.GetDirectoryName(output)!, assetsDirectory).Replace('\\', '/');
-        await HtmlReports.Write(output, assetsBase, schedule, team, players, teams, stats, top);
+        await HtmlReports.Write(output, schedule, team, players, teams, stats, top);
         Console.WriteLine($"Wrote {output}");
     }
     return 0;
@@ -475,7 +473,7 @@ sealed class Scaha : IDisposable
 
 static class HtmlReports
 {
-    public static async Task Write(string path, string assetsBase, string schedule, string? requestedTeam,
+    public static async Task Write(string path, string schedule, string? requestedTeam,
                                    List<Player> players, Dictionary<string, Team> teams,
                                    List<TeamStats> stats, int? top)
     {
@@ -483,24 +481,25 @@ static class HtmlReports
         html.AppendLine("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">");
         html.AppendLine("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
         html.AppendLine("<title>HockeyBalance report</title><style>");
-        html.AppendLine("body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0;cursor:pointer}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}.toolbar{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}.filter{border:1px solid #b9c5d8;border-radius:6px;padding:.5rem;min-width:16rem}.button{border:0;border-radius:6px;padding:.5rem .75rem;background:#1d5fa7;color:#fff;cursor:pointer}.assist-column{display:none}.assist-visible .assist-column{display:table-cell}.team-logo{width:1.65rem;height:1.65rem;vertical-align:middle;margin-right:.35rem}.bar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}.bar-card{border:1px solid #d9e1ef;border-radius:9px;padding:.8rem;background:#fbfdff}.bar-label{display:flex;justify-content:space-between;gap:.5rem;font-weight:600}.bar-sub{color:#526078;font-size:.85rem;margin:.2rem 0 .5rem}.bar-track{height:1rem;border-radius:999px;background:#e5edf7;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,#246bb2,#4da3df);border-radius:999px}@media(max-width:900px){.bar-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){body{padding:1rem}.bar-grid{grid-template-columns:1fr}}");
+        html.AppendLine("body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0;z-index:1}.sort-button{display:flex;align-items:center;gap:.45rem;width:100%;border:0;background:transparent;color:inherit;font:inherit;font-weight:700;text-align:left;cursor:pointer;padding:0}.sort-button:hover,.sort-button:focus-visible{color:#1d5fa7}.sort-indicator{color:#687991;font-size:.9em}.sort-button[aria-sort=ascending] .sort-indicator,.sort-button[aria-sort=descending] .sort-indicator{color:#1d5fa7}.table-tools{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:.75rem 0}.table-filter{border:1px solid #b9c5d8;border-radius:6px;padding:.5rem;min-width:16rem}.table-count{color:#526078;font-size:.9rem}.table-scroll{overflow:auto}tr:nth-child(even){background:#fafcff}tr[hidden]{display:none}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}.toolbar{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}.button{border:0;border-radius:6px;padding:.5rem .75rem;background:#1d5fa7;color:#fff;cursor:pointer}.assist-column{display:none}.assist-visible .assist-column{display:table-cell}.bar-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.85rem}.bar-card{border:1px solid #d9e1ef;border-radius:9px;padding:.8rem;background:#fbfdff}.bar-label{display:flex;justify-content:space-between;gap:.5rem;font-weight:600}.bar-sub{color:#526078;font-size:.85rem;margin:.2rem 0 .5rem}.bar-track{height:1rem;border-radius:999px;background:#e5edf7;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,#246bb2,#4da3df);border-radius:999px}@media(max-width:600px){body{padding:1rem}.table-tools{align-items:flex-start;flex-direction:column}.table-filter{min-width:min(16rem,100%)}.bar-grid{grid-template-columns:1fr}}");
+        html.AppendLine(".bar-chart{height:220px;display:flex;align-items:flex-end;gap:.35rem;border-left:1px solid #b9c5d8;border-bottom:1px solid #b9c5d8;padding:.5rem .5rem 0;overflow-x:auto}.player-bar{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;min-width:2.5rem;height:100%;cursor:help}.player-bar .bar-fill{width:1.35rem;min-height:2px;background:linear-gradient(180deg,#246bb2,#4da3df);border-radius:4px 4px 0 0}.goal-value{font-size:.75rem;color:#526078;margin-bottom:.15rem}.player-label{position:absolute;top:100%;font-size:.68rem;max-width:5rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transform:translateY(.3rem)}.player-bar:hover::after,.player-bar:focus-visible::after{content:attr(data-player) ' — ' attr(data-goals) ' goals';position:absolute;bottom:calc(100% + .35rem);left:50%;transform:translateX(-50%);background:#172033;color:#fff;border-radius:4px;padding:.3rem .45rem;font-size:.75rem;white-space:nowrap;z-index:2}.player-bar:focus-visible{outline:2px solid #1d5fa7;outline-offset:2px}");
         html.AppendLine("</style></head><body><main>");
         html.AppendLine($"<h1>HockeyBalance</h1><p class=\"meta\">Schedule: <strong>{E(schedule)}</strong>" +
                         (requestedTeam is null ? "" : $" · Team filter: <strong>{E(requestedTeam)}</strong>") +
                         $" · Generated: {DateTimeOffset.Now:yyyy-MM-dd HH:mm zzz}</p>");
 
-        var chartStats = stats
-            .Select(s => new { Stats = s, GoalsPerScorer = s.Scorers == 0 ? 0 : (double)s.PlayerGoals / s.Scorers })
-            .OrderByDescending(x => x.GoalsPerScorer)
-            .ThenBy(x => x.Stats.Team.Name, StringComparer.Ordinal)
-            .ToList();
-        double maxGoalsPerScorer = chartStats.Select(x => x.GoalsPerScorer).DefaultIfEmpty(0).Max();
-        html.AppendLine("<section class=\"card\"><h2>Goals per scoring player</h2><p class=\"note\">Sorted by player goals divided by the number of players who scored at least one goal.</p><div class=\"bar-grid\">");
+        var chartStats = stats.OrderBy(s => s.Team.Name, StringComparer.Ordinal).ToList();
+        int maxPlayerGoals = chartStats.SelectMany(s => s.Roster).Select(p => p.Goals).DefaultIfEmpty(0).Max();
+        html.AppendLine("<section class=\"card\"><h2>Goals by player</h2><p class=\"note\">Each team is shown separately. Players run along the X-axis and goals scored are shown on the Y-axis.</p><div class=\"bar-grid\">");
         foreach (var item in chartStats)
         {
-            string value = item.GoalsPerScorer.ToString("0.0", CultureInfo.InvariantCulture);
-            string width = maxGoalsPerScorer == 0 ? "0" : (100 * item.GoalsPerScorer / maxGoalsPerScorer).ToString("0.0", CultureInfo.InvariantCulture);
-            html.AppendLine($"<div class=\"bar-card\"><div class=\"bar-label\"><span>{E(item.Stats.Team.Name)}</span><span>{value}</span></div><div class=\"bar-sub\">{item.Stats.PlayerGoals} player goals ÷ {item.Stats.Scorers} scorers</div><div class=\"bar-track\"><div class=\"bar-fill\" style=\"width:{width}%\"></div></div></div>");
+            html.AppendLine($"<div class=\"bar-card\"><div class=\"bar-label\"><span>{E(item.Team.Name)}</span><span>{item.PlayerGoals} goals</span></div><div class=\"bar-chart\" aria-label=\"Goals by player for {E(item.Team.Name)}\">");
+            foreach (var player in item.Roster.OrderByDescending(p => p.Goals).ThenBy(p => p.LastName, StringComparer.OrdinalIgnoreCase))
+            {
+                string height = maxPlayerGoals == 0 ? "0" : (100.0 * player.Goals / maxPlayerGoals).ToString("0.0", CultureInfo.InvariantCulture);
+                html.AppendLine($"<div class=\"player-bar\" tabindex=\"0\" data-player=\"{E(player.Name)}\" data-goals=\"{player.Goals}\" aria-label=\"{E(player.Name)}: {player.Goals} goals\"><span class=\"goal-value\">{player.Goals}</span><div class=\"bar-fill\" style=\"height:{height}%\"></div></div>");
+            }
+            html.AppendLine("</div></div>");
         }
         html.AppendLine("</div></section>");
 
@@ -509,7 +508,7 @@ static class HtmlReports
         html.AppendLine("<div class=\"toolbar\"><button class=\"button\" id=\"toggle-assists\" type=\"button\">Include assists</button><span class=\"note\">Assists and points are supplemental; the percentage remains goal share.</span></div>");
         Table(html, "goals-table", ["#", "Player", "Team", "Team GF", "G", "A", "Pts", "G+A", "% of team goals"],
             Ranking.GoalShares(players, top).Select(item => new[] {
-                item.Rank.ToString(CultureInfo.InvariantCulture), E(item.Player.Name), TeamCell(item.Player.Team, assetsBase),
+                item.Rank.ToString(CultureInfo.InvariantCulture), E(item.Player.Name), E(item.Player.Team),
                 teams[item.Player.Team].GoalsFor.ToString(CultureInfo.InvariantCulture),
                 item.Player.Goals.ToString(CultureInfo.InvariantCulture),
                 item.Player.Assists.ToString(CultureInfo.InvariantCulture), item.Player.Points.ToString(CultureInfo.InvariantCulture),
@@ -519,7 +518,7 @@ static class HtmlReports
         html.AppendLine("<section class=\"card\"><h2>Player point ranking</h2><p class=\"note\">Ranked by total points, then last name. Equal point totals share a competition rank.</p>");
         Table(html, "points-table", ["Rank", "Player", "Team", "G", "A", "Pts"],
             Ranking.Points(players).Select(item => new[] {
-                item.Rank.ToString(CultureInfo.InvariantCulture), E(item.Player.Name), TeamCell(item.Player.Team, assetsBase),
+                item.Rank.ToString(CultureInfo.InvariantCulture), E(item.Player.Name), E(item.Player.Team),
                 item.Player.Goals.ToString(CultureInfo.InvariantCulture), item.Player.Assists.ToString(CultureInfo.InvariantCulture),
                 item.Player.Points.ToString(CultureInfo.InvariantCulture)}), false);
         html.AppendLine("</section>");
@@ -527,7 +526,7 @@ static class HtmlReports
         html.AppendLine("<section class=\"card\"><h2>Team goal balance</h2>");
         Table(html, "balance-table", ["Rank", "Team", "GF", "Scorers", "Top scorer %", "Top 3 %", "Effective scorers", "Top 3 scorers (G:A:Pts)"],
             stats.OrderByDescending(s => s.EffectiveScorers).Select((s, i) => new[] {
-                (i + 1).ToString(CultureInfo.InvariantCulture), TeamCell(s.Team.Name, assetsBase),
+                (i + 1).ToString(CultureInfo.InvariantCulture), E(s.Team.Name),
                 s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture),
                 s.Scorers.ToString(CultureInfo.InvariantCulture), Pct(s.TopGoals, s.Team.GoalsFor),
                 Pct(s.Top3Goals, s.Team.GoalsFor), s.EffectiveScorers.ToString("0.0", CultureInfo.InvariantCulture),
@@ -536,7 +535,7 @@ static class HtmlReports
 
         html.AppendLine("<section class=\"card\"><h2>Team standings</h2>");
         Table(html, "teams-table", ["Team", "GP", "W", "L", "T", "Pts", "GF", "GA", "GD"],
-            teams.Values.OrderBy(t => t.Name).Select(t => new[] {TeamCell(t.Name, assetsBase),
+            teams.Values.OrderBy(t => t.Name).Select(t => new[] {E(t.Name),
                 t.GamesPlayed.ToString(CultureInfo.InvariantCulture), t.Wins.ToString(CultureInfo.InvariantCulture),
                 t.Losses.ToString(CultureInfo.InvariantCulture), t.Ties.ToString(CultureInfo.InvariantCulture),
                 t.Points.ToString(CultureInfo.InvariantCulture), t.GoalsFor.ToString(CultureInfo.InvariantCulture),
@@ -545,7 +544,7 @@ static class HtmlReports
 
         html.AppendLine("<section class=\"card\"><h2>Player totals</h2>");
         Table(html, "players-table", ["Player", "Team", "GP", "G", "A", "Pts", "PIMS"],
-            players.Select(p => new[] {E(p.Name), TeamCell(p.Team, assetsBase), p.GamesPlayed.ToString(CultureInfo.InvariantCulture),
+            players.Select(p => new[] {E(p.Name), E(p.Team), p.GamesPlayed.ToString(CultureInfo.InvariantCulture),
                 p.Goals.ToString(CultureInfo.InvariantCulture), p.Assists.ToString(CultureInfo.InvariantCulture),
                 p.Points.ToString(CultureInfo.InvariantCulture), p.Pims.ToString(CultureInfo.InvariantCulture)}), false);
         html.AppendLine("</section>");
@@ -554,22 +553,22 @@ static class HtmlReports
         Table(html, "reconciliation-table", ["Team", "Player goals", "Team GF", "Difference", "Status"],
             stats.OrderBy(s => s.Team.Name).Select(s => {
                 int diff = s.PlayerGoals - s.Team.GoalsFor;
-                return new[] {TeamCell(s.Team.Name, assetsBase), s.PlayerGoals.ToString(CultureInfo.InvariantCulture),
+                return new[] {E(s.Team.Name), s.PlayerGoals.ToString(CultureInfo.InvariantCulture),
                     s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture), diff.ToString("+0;-0;0"),
                     diff == 0 ? "<span class=\"ok\">OK</span>" : "<span class=\"off\">OFF</span>"};
             }), false);
         html.AppendLine("</section>");
-        html.AppendLine("<script>document.querySelectorAll('table').forEach(table=>{const filter=document.createElement('input');filter.className='filter';filter.placeholder='Filter this table...';table.parentElement.parentElement.insertAdjacentElement('afterbegin',filter);filter.addEventListener('input',()=>{const q=filter.value.toLowerCase();table.querySelectorAll('tbody tr').forEach(row=>row.style.display=row.innerText.toLowerCase().includes(q)?'':'none')});table.querySelectorAll('th').forEach((th,index)=>{th.addEventListener('click',()=>{const rows=[...table.tBodies[0].rows];const numeric=rows.every(r=>!isNaN(parseFloat(r.cells[index]?.innerText)));rows.sort((a,b)=>{const av=a.cells[index]?.innerText??'',bv=b.cells[index]?.innerText??'';return numeric?parseFloat(av)-parseFloat(bv):av.localeCompare(bv)});rows.forEach(r=>table.tBodies[0].appendChild(r))})})});const goals=document.getElementById('goals-table');document.getElementById('toggle-assists').addEventListener('click',e=>{goals.classList.toggle('assist-visible');e.target.textContent=goals.classList.contains('assist-visible')?'Hide assists':'Include assists'});</script></main></body></html>");
+        html.AppendLine("""<script>document.querySelectorAll('table').forEach(table=>{const rows=[...table.tBodies[0].rows],filter=table.closest('.card').querySelector('.table-filter'),count=table.closest('.card').querySelector('.table-count'),buttons=[...table.querySelectorAll('.sort-button')];const text=cell=>cell.innerText.replace(/\s+/g,' ').trim();function applyFilter(){const q=filter.value.trim().toLowerCase();let shown=0;rows.forEach(row=>{const matches=!q||row.innerText.toLowerCase().includes(q);row.hidden=!matches;if(matches)shown++});count.textContent=`${shown} of ${rows.length} rows`;};buttons.forEach(button=>button.addEventListener('click',()=>{const column=Number(button.dataset.column),direction=button.dataset.direction==='asc'?'desc':'asc';const numeric=rows.every(row=>/^[-+]?\d+(?:\.\d+)?%?$/.test(text(row.cells[column])));rows.sort((a,b)=>{const av=text(a.cells[column]),bv=text(b.cells[column]);const result=numeric?parseFloat(av)-parseFloat(bv):av.localeCompare(bv,undefined,{numeric:true,sensitivity:'base'});return direction==='asc'?result:-result});rows.forEach(row=>table.tBodies[0].appendChild(row));buttons.forEach(other=>{other.dataset.direction='';other.setAttribute('aria-sort','none');other.querySelector('.sort-indicator').textContent='↕'});button.dataset.direction=direction;button.setAttribute('aria-sort',direction==='asc'?'ascending':'descending');button.querySelector('.sort-indicator').textContent=direction==='asc'?'↑':'↓';applyFilter()}));filter.addEventListener('input',applyFilter);applyFilter()});const goals=document.getElementById('goals-table');document.getElementById('toggle-assists').addEventListener('click',e=>{goals.classList.toggle('assist-visible');e.target.textContent=goals.classList.contains('assist-visible')?'Hide assists':'Include assists'});</script></main></body></html>""");
         await File.WriteAllTextAsync(path, html.ToString(), Encoding.UTF8);
     }
 
     static void Table(StringBuilder html, string id, string[] headers, IEnumerable<string[]> rows, bool assistColumns)
     {
-        html.AppendLine($"<div style=\"overflow:auto\"><table id=\"{E(id)}\"><thead><tr>");
+        html.AppendLine($"<div class=\"table-tools\"><label>Filter this table <input class=\"table-filter\" type=\"search\" placeholder=\"Type to filter...\" aria-label=\"Filter {E(id)}\"></label><span class=\"table-count\" aria-live=\"polite\"></span></div><div class=\"table-scroll\"><table id=\"{E(id)}\"><thead><tr>");
         for (int i = 0; i < headers.Length; i++)
         {
             string cls = assistColumns && i is 5 or 6 or 7 ? " class=\"assist-column\"" : "";
-            html.Append($"<th{cls}>{E(headers[i])}</th>");
+            html.Append($"<th scope=\"col\"{cls}><button class=\"sort-button\" type=\"button\" data-column=\"{i}\" data-direction=\"\" aria-sort=\"none\"><span>{E(headers[i])}</span><span class=\"sort-indicator\" aria-hidden=\"true\">↕</span></button></th>");
         }
         html.AppendLine("</tr></thead><tbody>");
         foreach (string[] row in rows)
@@ -587,13 +586,6 @@ static class HtmlReports
 
     static string Pct(double num, double den) =>
         den == 0 ? "n/a" : (100.0 * num / den).ToString("0.0", CultureInfo.InvariantCulture) + "%";
-
-    static string TeamCell(string team, string assetsBase)
-    {
-        string slug = Regex.Replace(team.ToLowerInvariant(), "[^a-z0-9]+", "-").Trim('-');
-        string logo = $"{assetsBase}/team-logos.svg#{slug}";
-        return $"<svg class=\"team-logo\" role=\"img\" aria-label=\"{E(team)} logo\"><use href=\"{E(logo)}\"></use></svg>{E(team)}";
-    }
 
     static string E(string value) => WebUtility.HtmlEncode(value);
 }

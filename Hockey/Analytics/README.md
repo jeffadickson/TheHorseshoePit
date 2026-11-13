@@ -108,16 +108,18 @@ The HTML report contains six filterable, sortable tables:
 5. Source player totals
 6. Player-goal versus team-GF reconciliation
 
-It also includes a responsive three-column bar chart sorted by average goals per
-scoring player. That metric is calculated as player goals divided by the number
-of players with at least one goal. Goal-rating tables sort by goals descending,
+It also includes responsive three-column bar charts showing each team's goal
+distribution: players are on the X-axis and goals scored are on the Y-axis.
+Hover or keyboard-focus a bar to reveal the full player name and goal total.
+Goal-rating tables sort by goals descending,
 then last name, and assign competition ranks so equal goal totals share a rank
 (`1, 1, 3`). The point-ranking table applies the same tie behavior to total
 points. The SCAHA source ranking number is intentionally omitted.
 
-Team marks are stored locally in `docs/assets/team-logos.svg` and embedded in
-the published reports, so the Pages site does not depend on external image
-hosts.
+Every table has a visible `↕` sort control in each header. Click once for
+ascending order and again for descending order; each table also has its own
+text filter and visible matching-row count. These controls are built into the
+report and do not require a third-party JavaScript library or external CDN.
 
 The source tables preserve every standings and player field used by the report:
 GP, W, L, T, points, GF, GA, GD, goals, assists, points, and PIMS.

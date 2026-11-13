@@ -28,10 +28,14 @@ try {
     Copy-Item $generated $htmlPath
     $html = Get-Content -Raw $htmlPath
     Assert-Contains $html 'Player point ranking' 'point ranking table'
-    Assert-Contains $html 'Goals per scoring player' 'goals-per-player chart'
+    Assert-Contains $html 'Goals by player' 'goals-by-player chart'
     Assert-Contains $html 'Include assists' 'assists toggle'
     Assert-Contains $html 'Top 3 scorers (G:A:Pts)' 'team balance detail'
-    Assert-Contains $html '<th>Player</th><th>Team</th><th>GP</th>' 'source table without SCAHA rank'
+    Assert-Contains $html '<span>Player</span>' 'source table without SCAHA rank'
+    Assert-Contains $html 'class="sort-button"' 'visible sortable table controls'
+    Assert-Contains $html 'Type to filter...' 'filterable table control'
+    Assert-Contains $html 'aria-sort="none"' 'unsorted indicator'
+    if ($html.Contains('team-logos.svg')) { throw 'Report should not reference team logos' }
 
     Write-Output 'HockeyBalance tests passed.'
 }
