@@ -2,8 +2,8 @@
 
 HockeyBalance fetches SCAHA standings and player totals, filters an optional
 team, and produces goal-share and goal-balance reports. The default output is a
-self-contained HTML report with pivot-style tables; the original console report
-is available with `--text`.
+self-contained HTML report with filterable and sortable tables; the original
+console report is available with `--text`.
 
 ## Requirements
 
@@ -97,7 +97,7 @@ This is useful for a mirror, test server, or captured-compatible endpoint:
 dotnet run hockeybalance.cs -- --base-url "https://www.scaha.net/scaha/"
 ```
 
-The HTML report contains five tables:
+The HTML report contains five filterable, sortable tables:
 
 1. Player goal share
 2. Team goal balance
@@ -178,9 +178,12 @@ shared as a single file.
 ## Optional Obscura installation
 
 The current SCAHA fetcher uses direct HTTP and does not require Obscura. Obscura
-is an optional headless browser/CDP engine for future browser-backed fetching or
-smoke tests. Keep the `obscura` executable and its `obscura-worker` companion in
-the same directory.
+is an open-source, lightweight headless browser engine for agent and scraping
+workloads. It provides a Chrome DevTools Protocol (CDP) endpoint that can be
+used by Playwright or other browser clients. In this project it is an optional
+dependency for future browser-backed fetching, JavaScript-heavy pages, or smoke
+tests; it is not needed for the default HTTP fetcher. Keep the `obscura`
+executable and its `obscura-worker` companion in the same directory.
 
 ### Linux x86_64
 

@@ -189,8 +189,11 @@ static bool TeamMatches(string actual, string requested)
 record Team(string Name, int GamesPlayed, int Wins, int Losses, int Ties,
             int Points, int GoalsFor, int GoalsAgainst, int GoalDifference);
 
-record Player(string Name, string Team, int GamesPlayed, int Goals, int Assists,
-              int Points, int Pims);
+record Player(int Number, string Name, string Team, int GamesPlayed, int Goals,
+              int Assists, int Points, int Pims)
+{
+    public string DisplayName => $"{Name} #{Number}";
+}
 
 /// <summary>Per-team goal distribution. Roster is ordered by goals, descending.</summary>
 record TeamStats(Team Team, List<Player> Roster)
@@ -246,12 +249,13 @@ static class Parser
         var players = new List<Player>();
         foreach (string[] f in rows)
             if (f.Length >= 8 &&
+                int.TryParse(f[0], out int number) &&
                 int.TryParse(f[3], out int gp) &&
                 int.TryParse(f[4], out int g) &&
                 int.TryParse(f[5], out int a) &&
                 int.TryParse(f[6], out int pts) &&
                 int.TryParse(f[7], out int pims))
-                players.Add(new Player(f[1], f[2], gp, g, a, pts, pims));
+                players.Add(new Player(number, f[1], f[2], gp, g, a, pts, pims));
         if (players.Count == 0) throw new InvalidDataException("No player rows found.");
         return players;
     }
@@ -418,69 +422,80 @@ static class HtmlReports
         html.AppendLine("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">");
         html.AppendLine("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
         html.AppendLine("<title>HockeyBalance report</title><style>");
-        html.AppendLine("body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}");
+        html.AppendLine("body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#f4f7fb;color:#172033;margin:0;padding:2rem}main{max-width:1400px;margin:auto}h1{margin-bottom:.25rem}.meta{color:#526078;margin-top:0}.card{background:white;border:1px solid #d9e1ef;border-radius:12px;padding:1rem;margin:1rem 0;box-shadow:0 2px 8px #17203312}table{border-collapse:collapse;width:100%;font-size:.92rem}th,td{border-bottom:1px solid #e5eaf2;padding:.55rem .65rem;text-align:left;white-space:nowrap}th{background:#eaf0f8;position:sticky;top:0;cursor:pointer}tr:nth-child(even){background:#fafcff}.ok{color:#087443;font-weight:600}.off{color:#a33b16;font-weight:600}.note{font-size:.9rem;color:#526078}.toolbar{display:flex;gap:.75rem;align-items:center;margin:.75rem 0}.filter{border:1px solid #b9c5d8;border-radius:6px;padding:.5rem;min-width:16rem}.button{border:0;border-radius:6px;padding:.5rem .75rem;background:#1d5fa7;color:#fff;cursor:pointer}.assist-column{display:none}.assist-visible .assist-column{display:table-cell}");
         html.AppendLine("</style></head><body><main>");
         html.AppendLine($"<h1>HockeyBalance</h1><p class=\"meta\">Schedule: <strong>{E(schedule)}</strong>" +
                         (requestedTeam is null ? "" : $" · Team filter: <strong>{E(requestedTeam)}</strong>") +
                         $" · Generated: {DateTimeOffset.Now:yyyy-MM-dd HH:mm zzz}</p>");
 
-        html.AppendLine("<section class=\"card\"><h2>Pivot: player share of team goals</h2>");
+        html.AppendLine("<section class=\"card\"><h2>Player goals and team-goal share</h2>");
         html.AppendLine("<p class=\"note\">Players are ranked by goals. The share uses player goals divided by the selected team's goals-for.</p>");
-        Table(html, ["#", "Player", "Team", "Team GF", "G", "% of team goals"],
+        html.AppendLine("<div class=\"toolbar\"><button class=\"button\" id=\"toggle-assists\" type=\"button\">Include assists</button><span class=\"note\">Assists and points are supplemental; the percentage remains goal share.</span></div>");
+        Table(html, "goals-table", ["#", "Player", "Team", "Team GF", "G", "A", "Pts", "G+A", "% of team goals"],
             players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue).Select((p, i) => new[] {
-                (i + 1).ToString(CultureInfo.InvariantCulture), E(p.Name), E(p.Team),
+                (i + 1).ToString(CultureInfo.InvariantCulture), E(p.DisplayName), E(p.Team),
                 teams[p.Team].GoalsFor.ToString(CultureInfo.InvariantCulture),
                 p.Goals.ToString(CultureInfo.InvariantCulture),
-                Pct(p.Goals, teams[p.Team].GoalsFor)}));
+                p.Assists.ToString(CultureInfo.InvariantCulture), p.Points.ToString(CultureInfo.InvariantCulture),
+                (p.Goals + p.Assists).ToString(CultureInfo.InvariantCulture), Pct(p.Goals, teams[p.Team].GoalsFor)}), true);
         html.AppendLine("</section>");
 
-        html.AppendLine("<section class=\"card\"><h2>Pivot: team goal balance</h2>");
-        Table(html, ["Rank", "Team", "GF", "Scorers", "Top scorer %", "Top 3 %", "Effective scorers", "Top scorer(s)"],
+        html.AppendLine("<section class=\"card\"><h2>Team goal balance</h2>");
+        Table(html, "balance-table", ["Rank", "Team", "GF", "Scorers", "Top scorer %", "Top 3 %", "Effective scorers", "Top 3 scorers (G:A:Pts)"],
             stats.OrderByDescending(s => s.EffectiveScorers).Select((s, i) => new[] {
                 (i + 1).ToString(CultureInfo.InvariantCulture), E(s.Team.Name),
                 s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture),
                 s.Scorers.ToString(CultureInfo.InvariantCulture), Pct(s.TopGoals, s.Team.GoalsFor),
                 Pct(s.Top3Goals, s.Team.GoalsFor), s.EffectiveScorers.ToString("0.0", CultureInfo.InvariantCulture),
-                E(s.TopGoals == 0 ? "" : string.Join(", ", s.Roster.Where(p => p.Goals == s.TopGoals).Select(p => p.Name)) + $" ({s.TopGoals})") }));
+                string.Join("<br>", s.Roster.Take(3).Select(p => $"{E(p.DisplayName)} ({p.Goals}:{p.Assists}:{p.Points})")) }), false);
         html.AppendLine("</section>");
 
-        html.AppendLine("<section class=\"card\"><h2>Source pivot: team standings</h2>");
-        Table(html, ["Team", "GP", "W", "L", "T", "Pts", "GF", "GA", "GD"],
+        html.AppendLine("<section class=\"card\"><h2>Team standings</h2>");
+        Table(html, "teams-table", ["Team", "GP", "W", "L", "T", "Pts", "GF", "GA", "GD"],
             teams.Values.OrderBy(t => t.Name).Select(t => new[] {E(t.Name),
                 t.GamesPlayed.ToString(CultureInfo.InvariantCulture), t.Wins.ToString(CultureInfo.InvariantCulture),
                 t.Losses.ToString(CultureInfo.InvariantCulture), t.Ties.ToString(CultureInfo.InvariantCulture),
                 t.Points.ToString(CultureInfo.InvariantCulture), t.GoalsFor.ToString(CultureInfo.InvariantCulture),
-                t.GoalsAgainst.ToString(CultureInfo.InvariantCulture), t.GoalDifference.ToString(CultureInfo.InvariantCulture)}));
+                t.GoalsAgainst.ToString(CultureInfo.InvariantCulture), t.GoalDifference.ToString(CultureInfo.InvariantCulture)}), false);
         html.AppendLine("</section>");
 
-        html.AppendLine("<section class=\"card\"><h2>Source pivot: player totals</h2>");
-        Table(html, ["Player", "Team", "GP", "G", "A", "Pts", "PIMS"],
-            players.Select(p => new[] {E(p.Name), E(p.Team), p.GamesPlayed.ToString(CultureInfo.InvariantCulture),
+        html.AppendLine("<section class=\"card\"><h2>Player totals</h2>");
+        Table(html, "players-table", ["Player", "Team", "GP", "G", "A", "Pts", "PIMS"],
+            players.Select(p => new[] {E(p.DisplayName), E(p.Team), p.GamesPlayed.ToString(CultureInfo.InvariantCulture),
                 p.Goals.ToString(CultureInfo.InvariantCulture), p.Assists.ToString(CultureInfo.InvariantCulture),
-                p.Points.ToString(CultureInfo.InvariantCulture), p.Pims.ToString(CultureInfo.InvariantCulture)}));
+                p.Points.ToString(CultureInfo.InvariantCulture), p.Pims.ToString(CultureInfo.InvariantCulture)}), false);
         html.AppendLine("</section>");
 
-        html.AppendLine("<section class=\"card\"><h2>Pivot: reconciliation</h2>");
-        Table(html, ["Team", "Player goals", "Team GF", "Difference", "Status"],
+        html.AppendLine("<section class=\"card\"><h2>Reconciliation</h2>");
+        Table(html, "reconciliation-table", ["Team", "Player goals", "Team GF", "Difference", "Status"],
             stats.OrderBy(s => s.Team.Name).Select(s => {
                 int diff = s.PlayerGoals - s.Team.GoalsFor;
                 return new[] {E(s.Team.Name), s.PlayerGoals.ToString(CultureInfo.InvariantCulture),
                     s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture), diff.ToString("+0;-0;0"),
                     diff == 0 ? "<span class=\"ok\">OK</span>" : "<span class=\"off\">OFF</span>"};
-            }));
-        html.AppendLine("</section></main></body></html>");
+            }), false);
+        html.AppendLine("</section>");
+        html.AppendLine("<script>document.querySelectorAll('table').forEach(table=>{const filter=document.createElement('input');filter.className='filter';filter.placeholder='Filter this table...';table.parentElement.parentElement.insertAdjacentElement('afterbegin',filter);filter.addEventListener('input',()=>{const q=filter.value.toLowerCase();table.querySelectorAll('tbody tr').forEach(row=>row.style.display=row.innerText.toLowerCase().includes(q)?'':'none')});table.querySelectorAll('th').forEach((th,index)=>{th.addEventListener('click',()=>{const rows=[...table.tBodies[0].rows];const numeric=rows.every(r=>!isNaN(parseFloat(r.cells[index]?.innerText)));rows.sort((a,b)=>{const av=a.cells[index]?.innerText??'',bv=b.cells[index]?.innerText??'';return numeric?parseFloat(av)-parseFloat(bv):av.localeCompare(bv)});rows.forEach(r=>table.tBodies[0].appendChild(r))})})});const goals=document.getElementById('goals-table');document.getElementById('toggle-assists').addEventListener('click',e=>{goals.classList.toggle('assist-visible');e.target.textContent=goals.classList.contains('assist-visible')?'Hide assists':'Include assists'});</script></main></body></html>");
         await File.WriteAllTextAsync(path, html.ToString(), Encoding.UTF8);
     }
 
-    static void Table(StringBuilder html, string[] headers, IEnumerable<string[]> rows)
+    static void Table(StringBuilder html, string id, string[] headers, IEnumerable<string[]> rows, bool assistColumns)
     {
-        html.AppendLine("<div style=\"overflow:auto\"><table><thead><tr>");
-        foreach (string header in headers) html.Append($"<th>{E(header)}</th>");
+        html.AppendLine($"<div style=\"overflow:auto\"><table id=\"{E(id)}\"><thead><tr>");
+        for (int i = 0; i < headers.Length; i++)
+        {
+            string cls = assistColumns && i is 5 or 6 or 7 ? " class=\"assist-column\"" : "";
+            html.Append($"<th{cls}>{E(headers[i])}</th>");
+        }
         html.AppendLine("</tr></thead><tbody>");
         foreach (string[] row in rows)
         {
             html.Append("<tr>");
-            foreach (string cell in row) html.Append($"<td>{cell}</td>");
+            for (int i = 0; i < row.Length; i++)
+            {
+                string cls = assistColumns && i is 5 or 6 or 7 ? " class=\"assist-column\"" : "";
+                html.Append($"<td{cls}>{row[i]}</td>");
+            }
             html.AppendLine("</tr>");
         }
         html.AppendLine("</tbody></table></div>");
@@ -508,12 +523,12 @@ static class Reports
     public static void PlayerShares(List<Player> players, Dictionary<string, Team> teams, int? top)
     {
         Title("1. Player share of team goals" + (top is int n ? $" (top {n} by goals)" : ""));
-        Console.WriteLine($"{"#",3}  {"Player",-28}{"Team",-22}{"Team GF",8}{"G",4}{"% of team goals",17}");
+        Console.WriteLine($"{"#",3}  {"Player",-34}{"Team",-22}{"Team GF",8}{"G",4}{"A",4}{"Pts",5}{"G+A",5}{"% of team goals",17}");
         int i = 0;
         foreach (Player p in players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue))
         {
             int gf = teams[p.Team].GoalsFor;
-            Console.WriteLine($"{++i,3}  {p.Name,-28}{p.Team,-22}{gf,8}{p.Goals,4}{Pct(p.Goals, gf),17}");
+            Console.WriteLine($"{++i,3}  {p.DisplayName,-34}{p.Team,-22}{gf,8}{p.Goals,4}{p.Assists,4}{p.Points,5}{p.Goals + p.Assists,5}{Pct(p.Goals, gf),17}");
         }
     }
 
@@ -521,13 +536,13 @@ static class Reports
     public static void GoalBalance(List<TeamStats> stats)
     {
         Title("2. Team goal balance, ranked by effective scorers (most balanced first)");
-        Console.WriteLine($"{"Rk",2}  {"Team",-22}{"GF",4}{"Scorers",9}{"Top scorer",12}{"Top 3",9}{"Eff. scorers",14}  Top scorer(s)");
+        Console.WriteLine($"{"Rk",2}  {"Team",-22}{"GF",4}{"Scorers",9}{"Top scorer",12}{"Top 3",9}{"Eff. scorers",14}  Top 3 scorers (G:A:Pts)");
         int rank = 0;
         foreach (TeamStats s in stats.OrderByDescending(s => s.EffectiveScorers))
         {
             int gf = s.Team.GoalsFor;
-            string leaders = s.TopGoals == 0 ? "" :
-                string.Join(", ", s.Roster.Where(p => p.Goals == s.TopGoals).Select(p => p.Name)) + $" ({s.TopGoals})";
+            string leaders = string.Join(", ", s.Roster.Take(3).Select(p =>
+                $"{p.DisplayName} ({p.Goals}:{p.Assists}:{p.Points})"));
             string eff = s.EffectiveScorers.ToString("0.0", CultureInfo.InvariantCulture);
             Console.WriteLine($"{++rank,2}  {s.Team.Name,-22}{gf,4}{s.Scorers,9}{Pct(s.TopGoals, gf),12}{Pct(s.Top3Goals, gf),9}{eff,14}  {leaders}");
         }
