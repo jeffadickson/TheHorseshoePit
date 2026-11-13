@@ -49,6 +49,8 @@ dotnet run ..\..\hockeybalance.cs
 Pop-Location
 ```
 
+Published reports are organized by season year under `docs/reports/2026/`.
+
 ### 2. Report one team
 
 The preferred team string can include the age/division prefix. Matching ignores
