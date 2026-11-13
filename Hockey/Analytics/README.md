@@ -26,6 +26,77 @@ you want the original terminal report:
 dotnet run hockeybalance.cs -- --text --team "10U B Flyers(2)"
 ```
 
+## Detailed examples
+
+### 1. Generate a league-wide HTML report
+
+Omit `--team` to include every team in the selected schedule:
+
+```powershell
+dotnet run hockeybalance.cs
+```
+
+The report is written to `hockeybalance.html`. To keep separate snapshots, run
+from a separate output directory:
+
+```powershell
+New-Item -ItemType Directory -Force reports\10u-b | Out-Null
+Push-Location reports\10u-b
+dotnet run ..\..\hockeybalance.cs
+Pop-Location
+```
+
+### 2. Report one team
+
+The preferred team string can include the age/division prefix. Matching ignores
+spaces and punctuation, so `10U B Flyers(2)` matches the site's `Flyers (2)`:
+
+```powershell
+dotnet run hockeybalance.cs -- --team "10U B Flyers(2)"
+```
+
+The equivalent short form is:
+
+```powershell
+dotnet run hockeybalance.cs -- --team "Flyers (2)"
+```
+
+### 3. Limit the player-share table
+
+`--top` affects only the player-share table. Team balance, source tables, and
+reconciliation still use the complete selected dataset:
+
+```powershell
+dotnet run hockeybalance.cs -- --top 5
+dotnet run hockeybalance.cs -- --team "Flyers (2)" --top 3
+```
+
+### 4. Use a different schedule
+
+The schedule name must match an entry in the SCAHA schedule selector:
+
+```powershell
+dotnet run hockeybalance.cs -- --schedule "12U A Regular Season"
+dotnet run hockeybalance.cs -- --schedule "12U A Regular Season" --team "12U A Hawks"
+```
+
+### 5. Keep the output in the terminal
+
+Use `--text` for shell pipelines, quick checks, or logs:
+
+```powershell
+dotnet run hockeybalance.cs -- --text | Tee-Object league-report.txt
+dotnet run hockeybalance.cs -- --text --team "Flyers (2)" --top 10
+```
+
+### 6. Use a custom site root
+
+This is useful for a mirror, test server, or captured-compatible endpoint:
+
+```powershell
+dotnet run hockeybalance.cs -- --base-url "https://www.scaha.net/scaha/"
+```
+
 The HTML report contains five tables:
 
 1. Player goal share
@@ -68,6 +139,41 @@ Expected columns:
 teams:   rank  Team  GP  W  L  T  Pts  GF  GA  GD
 players: #     Name  Team  GP  G  A  Pts  PIMS
 ```
+
+For example, `teams.txt` might contain:
+
+```text
+rank\tTeam\tGP\tW\tL\tT\tPts\tGF\tGA\tGD
+1\tFlyers (2)\t10\t8\t1\t1\t17\t27\t12\t15
+```
+
+And `players.txt` might contain:
+
+```text
+#\tName\tTeam\tGP\tG\tA\tPts\tPIMS
+1\tDanila Grebinchenko\tFlyers (2)\t10\t7\t3\t10\t2
+2\tDeclan Griffis\tFlyers (2)\t10\t7\t1\t8\t0
+```
+
+Run the offline files and filter using the same normalized team syntax:
+
+```powershell
+dotnet run hockeybalance.cs -- teams.txt players.txt --team "10U B Flyers(2)"
+```
+
+Offline mode ignores the header row and any non-data rows whose first field is
+not an integer. It still validates that every player team exists in standings.
+
+### 7. Inspect the generated HTML
+
+The report is ordinary self-contained HTML, so it can be opened directly:
+
+```powershell
+Start-Process .\hockeybalance.html
+```
+
+It contains no external JavaScript or CSS dependencies and can be archived or
+shared as a single file.
 
 ## Optional Obscura installation
 
