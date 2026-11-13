@@ -154,7 +154,10 @@ root.SetAction(async parseResult =>
         players = players.Where(p => p.Team == selectedTeam).ToList();
     }
 
-    players = players.OrderByDescending(p => p.Goals).ThenBy(p => p.Name, StringComparer.Ordinal).ToList();
+    players = players.OrderByDescending(p => p.Goals)
+                     .ThenBy(p => p.LastName, StringComparer.OrdinalIgnoreCase)
+                     .ThenBy(p => p.Name, StringComparer.OrdinalIgnoreCase)
+                     .ToList();
     List<TeamStats> stats = teams.Values
         .Select(t => new TeamStats(t, players.Where(p => p.Team == t.Name).ToList()))
         .ToList();
@@ -193,6 +196,7 @@ record Player(int Number, string Name, string Team, int GamesPlayed, int Goals,
               int Assists, int Points, int Pims)
 {
     public string DisplayName => $"{Name} #{Number}";
+    public string LastName => Name.Split(' ', StringSplitOptions.RemoveEmptyEntries).LastOrDefault() ?? Name;
 }
 
 /// <summary>Per-team goal distribution. Roster is ordered by goals, descending.</summary>
@@ -448,7 +452,7 @@ static class HtmlReports
         html.AppendLine("<div class=\"toolbar\"><button class=\"button\" id=\"toggle-assists\" type=\"button\">Include assists</button><span class=\"note\">Assists and points are supplemental; the percentage remains goal share.</span></div>");
         Table(html, "goals-table", ["#", "Player", "Team", "Team GF", "G", "A", "Pts", "G+A", "% of team goals"],
             players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue).Select((p, i) => new[] {
-                (i + 1).ToString(CultureInfo.InvariantCulture), E(p.DisplayName), E(p.Team),
+                (i + 1).ToString(CultureInfo.InvariantCulture), E(p.Name), E(p.Team),
                 teams[p.Team].GoalsFor.ToString(CultureInfo.InvariantCulture),
                 p.Goals.ToString(CultureInfo.InvariantCulture),
                 p.Assists.ToString(CultureInfo.InvariantCulture), p.Points.ToString(CultureInfo.InvariantCulture),
@@ -462,7 +466,7 @@ static class HtmlReports
                 s.Team.GoalsFor.ToString(CultureInfo.InvariantCulture),
                 s.Scorers.ToString(CultureInfo.InvariantCulture), Pct(s.TopGoals, s.Team.GoalsFor),
                 Pct(s.Top3Goals, s.Team.GoalsFor), s.EffectiveScorers.ToString("0.0", CultureInfo.InvariantCulture),
-                string.Join("<br>", s.Roster.Take(3).Select(p => $"{E(p.DisplayName)} ({p.Goals}:{p.Assists}:{p.Points})")) }), false);
+                string.Join("<br>", s.Roster.Take(3).Select(p => $"{E(p.Name)} ({p.Goals}:{p.Assists}:{p.Points})")) }), false);
         html.AppendLine("</section>");
 
         html.AppendLine("<section class=\"card\"><h2>Team standings</h2>");
@@ -543,7 +547,7 @@ static class Reports
         foreach (Player p in players.Where(p => p.Goals > 0).Take(top ?? int.MaxValue))
         {
             int gf = teams[p.Team].GoalsFor;
-            Console.WriteLine($"{++i,3}  {p.DisplayName,-34}{p.Team,-22}{gf,8}{p.Goals,4}{p.Assists,4}{p.Points,5}{p.Goals + p.Assists,5}{Pct(p.Goals, gf),17}");
+            Console.WriteLine($"{++i,3}  {p.Name,-34}{p.Team,-22}{gf,8}{p.Goals,4}{p.Assists,4}{p.Points,5}{p.Goals + p.Assists,5}{Pct(p.Goals, gf),17}");
         }
     }
 
@@ -557,7 +561,7 @@ static class Reports
         {
             int gf = s.Team.GoalsFor;
             string leaders = string.Join(", ", s.Roster.Take(3).Select(p =>
-                $"{p.DisplayName} ({p.Goals}:{p.Assists}:{p.Points})"));
+                $"{p.Name} ({p.Goals}:{p.Assists}:{p.Points})"));
             string eff = s.EffectiveScorers.ToString("0.0", CultureInfo.InvariantCulture);
             Console.WriteLine($"{++rank,2}  {s.Team.Name,-22}{gf,4}{s.Scorers,9}{Pct(s.TopGoals, gf),12}{Pct(s.Top3Goals, gf),9}{eff,14}  {leaders}");
         }
