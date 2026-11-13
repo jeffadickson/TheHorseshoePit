@@ -36,6 +36,10 @@ try {
     Assert-Contains $html 'Type to filter...' 'filterable table control'
     Assert-Contains $html 'aria-sort="none"' 'unsorted indicator'
     Assert-Contains $html 'title="Ben Alpha: 7 goals"' 'player bar hover detail'
+    if ($html.IndexOf('Player goals and team-goal share') -gt $html.IndexOf('Player point ranking') -or
+        $html.IndexOf('Player point ranking') -gt $html.IndexOf('Goals by player')) {
+        throw 'Goal distribution chart should be the third report section'
+    }
     if ($html.Contains('team-logos.svg')) { throw 'Report should not reference team logos' }
 
     Write-Output 'HockeyBalance tests passed.'

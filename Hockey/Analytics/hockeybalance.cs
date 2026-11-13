@@ -488,21 +488,6 @@ static class HtmlReports
                         (requestedTeam is null ? "" : $" · Team filter: <strong>{E(requestedTeam)}</strong>") +
                         $" · Generated: {DateTimeOffset.Now:yyyy-MM-dd HH:mm zzz}</p>");
 
-        var chartStats = stats.OrderBy(s => s.Team.Name, StringComparer.Ordinal).ToList();
-        int maxPlayerGoals = chartStats.SelectMany(s => s.Roster).Select(p => p.Goals).DefaultIfEmpty(0).Max();
-        html.AppendLine("<section class=\"card\"><h2>Goals by player</h2><p class=\"note\">Each team is shown separately. Players run along the X-axis and goals scored are shown on the Y-axis.</p><div class=\"bar-grid\">");
-        foreach (var item in chartStats)
-        {
-            html.AppendLine($"<div class=\"bar-card\"><div class=\"bar-label\"><span>{E(item.Team.Name)}</span><span>{item.PlayerGoals} goals</span></div><div class=\"bar-chart\" aria-label=\"Goals by player for {E(item.Team.Name)}\">");
-            foreach (var player in item.Roster.OrderByDescending(p => p.Goals).ThenBy(p => p.LastName, StringComparer.OrdinalIgnoreCase))
-            {
-                string height = maxPlayerGoals == 0 ? "0" : (100.0 * player.Goals / maxPlayerGoals).ToString("0.0", CultureInfo.InvariantCulture);
-                html.AppendLine($"<div class=\"player-bar\" tabindex=\"0\" title=\"{E(player.Name)}: {player.Goals} goals\" data-player=\"{E(player.Name)}\" data-goals=\"{player.Goals}\" aria-label=\"{E(player.Name)}: {player.Goals} goals\"><span class=\"goal-value\">{player.Goals}</span><div class=\"bar-fill\" style=\"height:{height}%\"></div></div>");
-            }
-            html.AppendLine("</div></div>");
-        }
-        html.AppendLine("</div></section>");
-
         html.AppendLine("<section class=\"card\"><h2>Player goals and team-goal share</h2>");
         html.AppendLine("<p class=\"note\">Players are ranked by goals. The share uses player goals divided by the selected team's goals-for.</p>");
         html.AppendLine("<div class=\"toolbar\"><button class=\"button\" id=\"toggle-assists\" type=\"button\">Include assists</button><span class=\"note\">Assists and points are supplemental; the percentage remains goal share.</span></div>");
@@ -522,6 +507,8 @@ static class HtmlReports
                 item.Player.Goals.ToString(CultureInfo.InvariantCulture), item.Player.Assists.ToString(CultureInfo.InvariantCulture),
                 item.Player.Points.ToString(CultureInfo.InvariantCulture)}), false);
         html.AppendLine("</section>");
+
+        GoalChart(html, stats);
 
         html.AppendLine("<section class=\"card\"><h2>Team goal balance</h2><p class=\"note\">Sorted by Top 3 % from lowest to highest. Lower values mean goals are spread across more players instead of being concentrated in the top three scorers.</p>");
         Table(html, "balance-table", ["Team", "GF", "Scorers", "Top scorer %", "Top 3 %", "Effective scorers", "Top 3 scorers (G:A:Pts)"],
@@ -561,6 +548,24 @@ static class HtmlReports
         html.AppendLine("</section>");
         html.AppendLine("""<script>document.querySelectorAll('table').forEach(table=>{const rows=[...table.tBodies[0].rows],filter=table.closest('.card').querySelector('.table-filter'),count=table.closest('.card').querySelector('.table-count'),buttons=[...table.querySelectorAll('.sort-button')];const text=cell=>cell.innerText.replace(/\s+/g,' ').trim();function applyFilter(){const q=filter.value.trim().toLowerCase();let shown=0;rows.forEach(row=>{const matches=!q||row.innerText.toLowerCase().includes(q);row.hidden=!matches;if(matches)shown++});count.textContent=`${shown} of ${rows.length} rows`;};buttons.forEach(button=>button.addEventListener('click',()=>{const column=Number(button.dataset.column),direction=button.dataset.direction==='asc'?'desc':'asc';const numeric=rows.every(row=>/^[-+]?\d+(?:\.\d+)?%?$/.test(text(row.cells[column])));rows.sort((a,b)=>{const av=text(a.cells[column]),bv=text(b.cells[column]);const result=numeric?parseFloat(av)-parseFloat(bv):av.localeCompare(bv,undefined,{numeric:true,sensitivity:'base'});return direction==='asc'?result:-result});rows.forEach(row=>table.tBodies[0].appendChild(row));buttons.forEach(other=>{other.dataset.direction='';other.setAttribute('aria-sort','none');other.querySelector('.sort-indicator').textContent='↕'});button.dataset.direction=direction;button.setAttribute('aria-sort',direction==='asc'?'ascending':'descending');button.querySelector('.sort-indicator').textContent=direction==='asc'?'↑':'↓';applyFilter()}));filter.addEventListener('input',applyFilter);applyFilter()});const goals=document.getElementById('goals-table');document.getElementById('toggle-assists').addEventListener('click',e=>{goals.classList.toggle('assist-visible');e.target.textContent=goals.classList.contains('assist-visible')?'Hide assists':'Include assists'});</script></main></body></html>""");
         await File.WriteAllTextAsync(path, html.ToString(), Encoding.UTF8);
+    }
+
+    static void GoalChart(StringBuilder html, List<TeamStats> stats)
+    {
+        var chartStats = stats.OrderBy(s => s.Team.Name, StringComparer.Ordinal).ToList();
+        int maxPlayerGoals = chartStats.SelectMany(s => s.Roster).Select(p => p.Goals).DefaultIfEmpty(0).Max();
+        html.AppendLine("<section class=\"card\"><h2>Goals by player</h2><p class=\"note\">Each team is shown separately. Players run along the X-axis and goals scored are shown on the Y-axis.</p><div class=\"bar-grid\">");
+        foreach (var item in chartStats)
+        {
+            html.AppendLine($"<div class=\"bar-card\"><div class=\"bar-label\"><span>{E(item.Team.Name)}</span><span>{item.PlayerGoals} goals</span></div><div class=\"bar-chart\" aria-label=\"Goals by player for {E(item.Team.Name)}\">");
+            foreach (var player in item.Roster.OrderByDescending(p => p.Goals).ThenBy(p => p.LastName, StringComparer.OrdinalIgnoreCase))
+            {
+                string height = maxPlayerGoals == 0 ? "0" : (100.0 * player.Goals / maxPlayerGoals).ToString("0.0", CultureInfo.InvariantCulture);
+                html.AppendLine($"<div class=\"player-bar\" tabindex=\"0\" title=\"{E(player.Name)}: {player.Goals} goals\" data-player=\"{E(player.Name)}\" data-goals=\"{player.Goals}\" aria-label=\"{E(player.Name)}: {player.Goals} goals\"><span class=\"goal-value\">{player.Goals}</span><div class=\"bar-fill\" style=\"height:{height}%\"></div></div>");
+            }
+            html.AppendLine("</div></div>");
+        }
+        html.AppendLine("</div></section>");
     }
 
     static void Table(StringBuilder html, string id, string[] headers, IEnumerable<string[]> rows, bool assistColumns)
