@@ -107,8 +107,9 @@ The HTML report contains five filterable, sortable tables:
 
 It also includes a responsive three-column bar chart sorted by average goals per
 scoring player. That metric is calculated as player goals divided by the number
-of players with at least one goal. Goal-rating tables show player names without
-the SCAHA jersey number and sort by goals descending, then last name.
+of players with at least one goal. The source player table preserves the SCAHA
+`#` field as the source ranking/order; goal-rating tables sort by goals
+descending, then last name, and do not treat that rank as a jersey number.
 
 The source tables preserve every standings and player field used by the report:
 GP, W, L, T, points, GF, GA, GD, goals, assists, points, and PIMS.

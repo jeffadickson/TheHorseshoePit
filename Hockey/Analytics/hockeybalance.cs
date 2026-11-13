@@ -192,10 +192,9 @@ static bool TeamMatches(string actual, string requested)
 record Team(string Name, int GamesPlayed, int Wins, int Losses, int Ties,
             int Points, int GoalsFor, int GoalsAgainst, int GoalDifference);
 
-record Player(int Number, string Name, string Team, int GamesPlayed, int Goals,
+record Player(int Rank, string Name, string Team, int GamesPlayed, int Goals,
               int Assists, int Points, int Pims)
 {
-    public string DisplayName => $"{Name} #{Number}";
     public string LastName => Name.Split(' ', StringSplitOptions.RemoveEmptyEntries).LastOrDefault() ?? Name;
 }
 
@@ -253,13 +252,13 @@ static class Parser
         var players = new List<Player>();
         foreach (string[] f in rows)
             if (f.Length >= 8 &&
-                int.TryParse(f[0], out int number) &&
+                int.TryParse(f[0], out int rank) &&
                 int.TryParse(f[3], out int gp) &&
                 int.TryParse(f[4], out int g) &&
                 int.TryParse(f[5], out int a) &&
                 int.TryParse(f[6], out int pts) &&
                 int.TryParse(f[7], out int pims))
-                players.Add(new Player(number, f[1], f[2], gp, g, a, pts, pims));
+                players.Add(new Player(rank, f[1], f[2], gp, g, a, pts, pims));
         if (players.Count == 0) throw new InvalidDataException("No player rows found.");
         return players;
     }
@@ -479,8 +478,8 @@ static class HtmlReports
         html.AppendLine("</section>");
 
         html.AppendLine("<section class=\"card\"><h2>Player totals</h2>");
-        Table(html, "players-table", ["Player", "Team", "GP", "G", "A", "Pts", "PIMS"],
-            players.Select(p => new[] {E(p.DisplayName), E(p.Team), p.GamesPlayed.ToString(CultureInfo.InvariantCulture),
+        Table(html, "players-table", ["#", "Player", "Team", "GP", "G", "A", "Pts", "PIMS"],
+            players.Select(p => new[] {p.Rank.ToString(CultureInfo.InvariantCulture), E(p.Name), E(p.Team), p.GamesPlayed.ToString(CultureInfo.InvariantCulture),
                 p.Goals.ToString(CultureInfo.InvariantCulture), p.Assists.ToString(CultureInfo.InvariantCulture),
                 p.Points.ToString(CultureInfo.InvariantCulture), p.Pims.ToString(CultureInfo.InvariantCulture)}), false);
         html.AppendLine("</section>");
